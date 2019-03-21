@@ -11,11 +11,11 @@
   [name="y"]:checked + label > span:first-child {
     display: none;
   }
-  
+
   .c {
     margin-top: 2rem;
   }
-  
+
   #m,
   #g,
   [name="y"]:checked + label,
@@ -23,11 +23,11 @@
     width: 100%;
     margin: 0;
   }
-  
+
   #p .d {
     flex-direction: column;
   }
-  
+
   .g {
     position: static;
     margin: 0;
