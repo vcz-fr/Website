@@ -1,0 +1,35 @@
+@media only screen and (max-width: 48rem) {
+  main,
+  .f,
+  [name="y"] + label {
+    display: block;
+  }
+
+  .e,
+  [name="y"]:not(:checked) + label + nav,
+  [name="y"]:not(:checked) + label > span:nth-child(2),
+  [name="y"]:checked + label > span:first-child {
+    display: none;
+  }
+  
+  .c {
+    margin-top: 2rem;
+  }
+  
+  #m,
+  #g,
+  [name="y"]:checked + label,
+  #p .d > * {
+    width: 100%;
+    margin: 0;
+  }
+  
+  #p .d {
+    flex-direction: column;
+  }
+  
+  .g {
+    position: static;
+    margin: 0;
+  }
+}
