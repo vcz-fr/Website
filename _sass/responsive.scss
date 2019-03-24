@@ -1,5 +1,8 @@
 @media only screen and (max-width: 48rem) {
-  main,
+  body {
+    display: initial;
+  }
+
   .f,
   [name="y"] + label {
     display: block;
