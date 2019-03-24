@@ -4,16 +4,16 @@
   icon: 
 
 - name: portfolio
-  url: /portfolio/
+  url: /portfolio
   text: Portfolio
   icon: 
 
 - name: skills
-  url: /skills/
+  url: /skills
   text: Skills
   icon: 
 
 - name: resume
-  url: /resume/
+  url: /resume
   text: Resume
   icon: 
