@@ -21,12 +21,12 @@
 - name: C.R.A.P.S.
   description: Website for Bordeaux INP's sports resource center
   imageID: i4
-  link: #
+  link: "#"
 
 - name: France Unicycle Federation intranet
   description: Web application dedicated to the management of unicycle competitions in France
   imageID: i5
-  link: #
+  link: "#"
 
 - name: 2015
   description: Loading screen for 2015
