@@ -13,86 +13,18 @@ permalink: /portfolio/
             that did not make it to this list because reasons.
         </p>
     </div>
+    {% for item in site.data.portfolio %}
     <div class="c d">
         <div>
-            <div id=i7 class=g></div>
+            <div id="{{item.imageID}}" class="g"></div>
         </div>
         <div>
-            <h3>VCZ's experimental website</h3>
-            <p>A collection of tools by yours truly</p>
+            <h3>{{item.name}}</h3>
+            <p>{{item.description}}</p>
             <p>
-                <a href="//dev.vcz.fr">Let's go!</a>
+                <a href="{{ item.link }}">{% if item.link == "#" %}-- No demo available! --{% else %}Let's go!{% endif %}</a>
             </p>
         </div>
     </div>
-    <div class="c d">
-        <div>
-            <div id=i1 class=g></div>
-        </div>
-        <div>
-            <h3>FontAwesome +</h3>
-            <p>FontAwesome icon picker and CSS generator</p>
-            <p>
-                <a href="//app.izdev.fr/fa+">Let's go!</a>
-            </p>
-        </div>
-    </div>
-    <div class="c d">
-        <div>
-            <div id=i2 class=g></div>
-        </div>
-        <div>
-            <h3>2016</h3>
-            <p>Tiny multiplayer incremental game to wait for 2016</p>
-            <p>
-                <a href="//stock.vcz.fr/2016">Let's go!</a>
-            </p>
-        </div>
-    </div>
-    <div class="c d">
-        <div>
-            <div id=i3 class=g></div>
-        </div>
-        <div>
-            <h3>BDA ENSEIRB-MATMECA</h3>
-            <p>2015 version of Bordeaux Graduate School of Engineering's Bureau des Arts website</p>
-            <p>
-                <a href="//bda.eirb.fr">Let's go!</a>
-            </p>
-        </div>
-    </div>
-    <div class="c d">
-        <div>
-            <div id=i4 class=g></div>
-        </div>
-        <div>
-            <h3>C.R.A.P.S.</h3>
-            <p>Website for Bordeaux INP's sports resource center</p>
-            <p>
-                <a href="#">-- No demo available! --</a>
-            </p>
-        </div>
-    </div>
-    <div class="c d">
-        <div>
-            <div id=i5 class=g></div>
-        </div>
-        <div>
-            <h3>France Unicycle Federation intranet</h3>
-            <p>Web application dedicated to the management of unicycle competitions in France</p>
-            <p><a href="#">-- No demo available! --</a></p>
-        </div>
-    </div>
-    <div class="c d">
-        <div>
-            <div id=i6 class=g></div>
-        </div>
-        <div>
-            <h3>2015</h3>
-            <p>Loading screen for 2015</p>
-            <p>
-                <a href="//stock.vcz.fr/2015">Let's go!</a>
-            </p>
-        </div>
-    </div>
+    {% endfor %}
 </div>

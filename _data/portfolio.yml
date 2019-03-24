@@ -1,0 +1,34 @@
+- name: VCZ's experimental website
+  description: A collection of tools by yours truly
+  imageID: i7
+  link: https://dev.vcz.fr
+
+- name: FontAwesome +
+  description: FontAwesome icon picker and CSS generator
+  imageID: i1
+  link: https://app.izdev.fr/fa+
+
+- name: 2016
+  description: Tiny multiplayer incremental game to wait for 2016
+  imageID: i2
+  link: https://stock.vcz.fr/2016
+
+- name: BDA ENSEIRB-MATMECA
+  description: 2015 version of Bordeaux Graduate School of Engineering's Bureau des Arts website
+  imageID: i3
+  link: https://bda.eirb.fr
+
+- name: C.R.A.P.S.
+  description: Website for Bordeaux INP's sports resource center
+  imageID: i4
+  link: #
+
+- name: France Unicycle Federation intranet
+  description: Web application dedicated to the management of unicycle competitions in France
+  imageID: i5
+  link: #
+
+- name: 2015
+  description: Loading screen for 2015
+  imageID: i6
+  link: https://stock.vcz.fr/2015
