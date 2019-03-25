@@ -93,6 +93,10 @@ a, nav > a:hover, .p {
         display: flex;
         flex-direction: column;
         justify-content: center;
+
+        img {
+            width: 100%;
+        }
     }
 }
 
