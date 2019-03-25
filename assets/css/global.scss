@@ -83,14 +83,19 @@ a, nav > a:hover, .p {
 
 #p .d {
     display: flex;
-    align-items: stretch;
+
+    & > * {
+        width: 50%;
+        margin: 0 1rem;
+    }
+    
+    .portfolio-image {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
 }
 
-#p .d > * {
-    width: 50%;
-    margin: 0 1rem;
-    position: relative;
-}
 
 u {
     display: inline-block;
@@ -109,44 +114,6 @@ u {
 
 .a {
     transition: all .1s;
-}
-
-.g {
-    padding-top: 63.6%;
-    display: inline-block;
-    width: 100%;
-    background-size: cover;
-    position: absolute;
-    top: 50%;
-    margin-top: -31.8%;
-}
-
-#i1 {
-    background-image: url("/assets/img/1.png");
-}
-
-#i2 {
-    background-image: url("/assets/img/2.png");
-}
-
-#i3 {
-    background-image: url("/assets/img/3.png");
-}
-
-#i4 {
-    background-image: url("/assets/img/4.png");
-}
-
-#i5 {
-    background-image: url("/assets/img/5.png");
-}
-
-#i6 {
-    background-image: url("/assets/img/6.png");
-}
-
-#i7 {
-    background-image: url("/assets/img/7.png");
 }
 
 @import "responsive";

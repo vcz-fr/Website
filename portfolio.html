@@ -4,8 +4,8 @@ active: portfolio
 permalink: /portfolio
 ---
 
-<div id=p>
-    <div class=c>
+<div id="p">
+    <div class="c">
         <h2>When boredom strikes</h2>
         <p>
             The tiles of this section will give you an overall idea of my favorite pass-time. It is just the
@@ -15,8 +15,8 @@ permalink: /portfolio
     </div>
     {% for item in site.data.portfolio %}
     <div class="c d">
-        <div>
-            <div id="{{item.imageID}}" class="g"></div>
+        <div class="portfolio-image">
+            <img alt="{{item.name}}" src="/assets/img/portfolio/{{item.image}}" />
         </div>
         <div>
             <h3>{{item.name}}</h3>
