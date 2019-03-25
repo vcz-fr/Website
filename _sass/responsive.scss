@@ -3,15 +3,11 @@
     display: initial;
   }
 
-  .f,
-  [name="y"] + label {
+  .f {
     display: block;
   }
 
-  .e,
-  [name="y"]:not(:checked) + label + nav,
-  [name="y"]:not(:checked) + label > span:nth-child(2),
-  [name="y"]:checked + label > span:first-child {
+  .e {
     display: none;
   }
 
@@ -21,7 +17,6 @@
 
   #m,
   #g,
-  [name="y"]:checked + label,
   #p .d > * {
     width: 100%;
     margin: 0;

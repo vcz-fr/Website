@@ -4,27 +4,19 @@
         <h1 class=b><span class=p>V</span>in<span class=p>c</span>en<span class=p>z</span>o <b>Scalzi</b></h1>
         <p>Web Performance Addict <b class=p>&amp;&amp;</b> Engineer</p>
     </div>
-    <div class=c>
-        <h2 class=t>Links</h2>
-        <input name=y id=e type=checkbox>
-        <label for=e class=t>
-            <span>▼</span>
-            <span>▲</span>
-        </label>
-        <nav class="links">
-            {% for item in site.data.navigation %}
-            <a {% if page.active == item.name %}class="active"{% endif %} href="{{item.url}}">
-                <i>{{item.icon}}</i> {{item.text}}
-            </a>
-            {% endfor %}
-        </nav>
-    </div>
+    <nav class="c links">
+        {% for item in site.data.navigation %}
+        <a {% if page.active == item.name %}class="active"{% endif %} href="{{item.url}}">
+            <i>{{item.icon}}</i> {{item.text}}
+        </a>
+        {% endfor %}
+    </nav>
     <div class=c>
         <h2 class=t>Social networks</h2>
         <div class="links">
-            <a href=//twitter.com/vcz_fr style=color:#55acee><i></i> Twitter</a>
-            <a href=//linkedin.com/in/vscalzi style=color:#007bb5><i></i> LinkedIn</a>
-            <a href=//medium.com/@vcz_fr style=color:#00ab6c><i></i> Medium</a>
+            <a href="https://twitter.com/vcz_fr" style=color:#55acee><i></i> Twitter</a>
+            <a href="https://linkedin.com/in/vscalzi" style=color:#007bb5><i></i> LinkedIn</a>
+            <a href="https://medium.com/@vcz_fr" style=color:#00ab6c><i></i> Medium</a>
         </div>
     </div>
     <div class="c t e">
