@@ -3,31 +3,26 @@
     display: initial;
   }
 
-  .f {
+  .md-hide {
     display: block;
   }
 
-  .e {
+  .sm-hide {
     display: none;
   }
 
-  .c {
+  .card {
     margin-top: 2rem;
   }
 
-  #m,
-  #g,
-  #p .d > * {
+  #menu,
+  #content,
+  #portfolio .portfolio-item > * {
     width: 100%;
     margin: 0;
   }
 
-  #p .d {
+  #portfolio .portfolio-item {
     flex-direction: column;
-  }
-
-  .g {
-    position: static;
-    margin: 0;
   }
 }

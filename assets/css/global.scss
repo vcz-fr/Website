@@ -7,11 +7,9 @@ html {
     background: #ecf0f1;
 }
 
-i {
-    font-style: normal;
+.icon {
     display: inline-block;
     font-family: icon;
-    font-weight: 100;
 }
 
 body {
@@ -34,26 +32,24 @@ a {
     text-decoration: none;
 }
 
-#m, #g {
+#menu {
+    width: 40%;
     margin: 0 1rem;
 }
 
-#m {
-    width: 40%;
-}
-
-#g {
+#content {
     width: 60%;
+    margin: 0 1rem;
 }
 
-.c {
+.card {
     margin: 2rem 0;
     background: #fff;
     padding: 1rem;
     box-shadow: 5px 5px #ddd;
 }
 
-.t,i {
+.text-center, .icon {
     text-align: center;
 }
 
@@ -62,26 +58,26 @@ a {
     display: block;
     font-size: 1.3rem;
     color: #000;
+
+    &.active {
+        font-weight: 700;
+        color: #809;
+    }
+
+    & > .icon {
+        width: 2rem;
+    }
 }
 
-.links > a > i {
-    width: 2rem;
-}
-
-a, nav > a:hover, .p {
+a, nav > a:hover, .purple {
     color: #809;
 }
-    
-.links a.active {
-    font-weight: 700;
-    color: #809;
-}
 
-.f {
+.md-hide {
     display: none;
 }
 
-#p .d {
+#portfolio .portfolio-item {
     display: flex;
 
     & > * {
@@ -100,23 +96,20 @@ a, nav > a:hover, .p {
     }
 }
 
+#menu {
+    .text-center:hover h1 {
+        color: rgba(0,0,0,.1);
+    }
 
-u {
+    :first-child:hover #logo {
+        transform: rotate(-15deg) scale(1.1);
+    }
+}
+
+#logo {
     display: inline-block;
-    background: url("/assets/img/i.png");
     height: 72px;
     width: 72px;
-}
-
-#m :first-child:hover > u {
-    transform: rotate(-15deg) scale(1.1);
-}
-
-#m .t:hover h1 {
-    color: rgba(0,0,0,.1);
-}
-
-.a {
     transition: all .1s;
 }
 

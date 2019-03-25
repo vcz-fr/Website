@@ -1,25 +1,25 @@
-<div id=m>
-    <div class="c t">
-        <u class=a></u>
-        <h1 class=b><span class=p>V</span>in<span class=p>c</span>en<span class=p>z</span>o <b>Scalzi</b></h1>
-        <p>Web Performance Addict <b class=p>&amp;&amp;</b> Engineer</p>
+<div id="menu">
+    <div class="card text-center">
+        <img alt="My logo" src="/assets/img/i.png" id="logo"/>
+        <h1><span class="purple">V</span>in<span class="purple">c</span>en<span class="purple">z</span>o <b>Scalzi</b></h1>
+        <p>Web Performance Addict <b class="purple">&amp;&amp;</b> Engineer</p>
     </div>
-    <nav class="c links">
+    <nav class="card links">
         {% for item in site.data.navigation %}
         <a {% if page.active == item.name %}class="active"{% endif %} href="{{item.url}}">
-            <i>{{item.icon}}</i> {{item.text}}
+            <span class="icon">{{item.icon}}</span> {{item.text}}
         </a>
         {% endfor %}
     </nav>
-    <div class=c>
-        <h2 class=t>Social networks</h2>
+    <div class="card">
+        <h2 class="text-center">Social networks</h2>
         <div class="links">
-            <a href="https://twitter.com/vcz_fr" style=color:#55acee><i></i> Twitter</a>
-            <a href="https://linkedin.com/in/vscalzi" style=color:#007bb5><i></i> LinkedIn</a>
-            <a href="https://medium.com/@vcz_fr" style=color:#00ab6c><i></i> Medium</a>
+            <a href="https://twitter.com/vcz_fr" style=color:#55acee><span class="icon"></span> Twitter</a>
+            <a href="https://linkedin.com/in/vscalzi" style=color:#007bb5><span class="icon"></span> LinkedIn</a>
+            <a href="https://medium.com/@vcz_fr" style=color:#00ab6c><span class="icon"></span> Medium</a>
         </div>
     </div>
-    <div class="c t e">
+    <div class="card text-center sm-hide">
         <p>Developed with ❤</p>
         <p>Vincenzo <b>Scalzi</b></p>
     </div>

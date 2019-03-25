@@ -4,8 +4,8 @@ active: portfolio
 permalink: /portfolio
 ---
 
-<div id="p">
-    <div class="c">
+<div id="portfolio">
+    <div class="card">
         <h2>When boredom strikes</h2>
         <p>
             The tiles of this section will give you an overall idea of my favorite pass-time. It is just the
@@ -14,7 +14,7 @@ permalink: /portfolio
         </p>
     </div>
     {% for item in site.data.portfolio %}
-    <div class="c d">
+    <div class="card portfolio-item">
         <div class="portfolio-image">
             <img alt="{{item.name}}" src="/assets/img/portfolio/{{item.image}}" />
         </div>
@@ -22,7 +22,7 @@ permalink: /portfolio
             <h3>{{item.name}}</h3>
             <p>{{item.description}}</p>
             <p>
-                <a href="{{ item.link }}">{% if item.link == "#" %}-- No demo available! --{% else %}Let's go!{% endif %}</a>
+                <a href="{{item.link}}">{% if item.link == "#" %}-- No demo available! --{% else %}Let's go!{% endif %}</a>
             </p>
         </div>
     </div>
