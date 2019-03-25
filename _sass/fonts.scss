@@ -1,10 +1,10 @@
 @font-face {
-  font-family: s;
-  src: url(/f/t.woff2) format("woff2"), url(/f/s.woff) format("woff");
+  font-family: text;
+  src: url("/assets/font/text.woff2") format("woff2"), url("/assets/font/text.woff") format("woff");
   font-display: swap;
 }
 
 @font-face {
-  font-family: f;
-  src: url(/f/g.woff2) format("woff2"), url(/f/f.woff) format("woff");
+  font-family: icon;
+  src: url("/assets/font/icon.woff2") format("woff2"), url("/assets/font/icon.woff") format("woff");
 }
