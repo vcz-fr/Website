@@ -4,28 +4,26 @@ active: resume
 permalink: /resume
 ---
 
-<div>
-    <div class="card">
-        <h2>Thy resume</h2>
+<div class="card">
+    <h2>Thy resume</h2>
 
-        <p>
-            Again, thank you for the time you have spent discovering this website.
-            Did you know that it only uses HTML and CSS for everything?
-            Yes, that's right, no JS or back-end technology involved! Everything is static!
-        </p>
-        <p>
-            Anyway, if you want to find out more, here are my English and French resumes.
-            Don't forget to come see me on my social networks!
-        </p>
-    </div>
-    
-    {% for item in site.data.resume %}
-    <div class="card">
-        <h3>{{item.language}}</h3>
-        <p>
-            <a href="/assets/resume/{{item.file}}">Link</a>
-            &mdash; {{item.size}}KB, last modified {{item.last-modified | date: "%m/%d/%Y"}}
-        </p>
-    </div>
-    {% endfor %}
+    <p>
+        Again, thank you for the time you have spent discovering this website.
+        Did you know that it only uses HTML and CSS for everything?
+        Yes, that's right, no JS or back-end technology involved! Everything is static!
+    </p>
+    <p>
+        Anyway, if you want to find out more, here are my English and French resumes.
+        Don't forget to come see me on my social networks!
+    </p>
 </div>
+
+{% for item in site.data.resume %}
+<div class="card">
+    <h3>{{item.language}}</h3>
+    <p>
+        <a href="/assets/resume/{{item.file}}">Link</a>
+        &mdash; {{item.size}}KB, last modified {{item.last-modified | date: "%m/%d/%Y"}}
+    </p>
+</div>
+{% endfor %}

@@ -1,0 +1,7 @@
+<nav class="card links">
+    {% for item in site.data.navigation %}
+    <a {% if page.active == item.name %}class="active"{% endif %} href="{{item.url}}">
+        <span class="icon">{{item.icon}}</span> {{item.text}}
+    </a>
+    {% endfor %}
+</nav>

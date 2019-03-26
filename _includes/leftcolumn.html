@@ -1,26 +1,6 @@
 <div id="menu">
-    <div class="card text-center">
-        <img alt="My logo" src="/assets/img/i.png" id="logo"/>
-        <h1><span class="purple">V</span>in<span class="purple">c</span>en<span class="purple">z</span>o <b>Scalzi</b></h1>
-        <p>Web Performance Addict <b class="purple">&amp;&amp;</b> Engineer</p>
-    </div>
-    <nav class="card links">
-        {% for item in site.data.navigation %}
-        <a {% if page.active == item.name %}class="active"{% endif %} href="{{item.url}}">
-            <span class="icon">{{item.icon}}</span> {{item.text}}
-        </a>
-        {% endfor %}
-    </nav>
-    <div class="card">
-        <h2 class="text-center">Social networks</h2>
-        <div class="links">
-            <a href="https://twitter.com/vcz_fr" style=color:#55acee><span class="icon"></span> Twitter</a>
-            <a href="https://linkedin.com/in/vscalzi" style=color:#007bb5><span class="icon"></span> LinkedIn</a>
-            <a href="https://medium.com/@vcz_fr" style=color:#00ab6c><span class="icon"></span> Medium</a>
-        </div>
-    </div>
-    <div class="card text-center sm-hide">
-        <p>Developed with ❤</p>
-        <p>Vincenzo <b>Scalzi</b></p>
-    </div>
+    {% include title.html %}
+    {% include navigation.html %}
+    {% include social.html %}
+    {% include footer.html additional-class="sm-hide" %}
 </div>
