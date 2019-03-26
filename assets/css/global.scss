@@ -13,7 +13,9 @@ html {
 }
 
 body {
-    max-width: 960px;
+    min-width: 48rem;
+    max-width: 1440px;
+    width: 80%;
     margin: 0 auto;
     overflow-y: scroll;
     display: flex;
@@ -35,11 +37,13 @@ a {
 #menu {
     width: 40%;
     margin: 0 1rem;
+    max-width: 360px;
 }
 
 #content {
     width: 60%;
     margin: 0 1rem;
+    flex-grow: 1;
 }
 
 .card {
