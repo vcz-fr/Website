@@ -18,20 +18,14 @@ permalink: /resume
             Don't forget to come see me on my social networks!
         </p>
     </div>
-
+    
+    {% for item in site.data.resume %}
     <div class="card">
-        <h3>English</h3>
+        <h3>{{item.language}}</h3>
         <p>
-            <a href="/assets/pdf/Vincenzo Scalzi - Resume.pdf">Link</a>
-            &mdash; 60KB, last modified 04/18/2018
+            <a href="/assets/resume/{{item.file}}">Link</a>
+            &mdash; {{item.size}}KB, last modified {{item.last-modified | date: "%m/%d/%Y"}}
         </p>
     </div>
-
-    <div class="card">
-        <h3>French</h3>
-        <p>
-            <a href="/assets/pdf/Vincenzo Scalzi - CV.pdf">Link</a>
-            &mdash; 62KB, last modified 04/18/2018
-        </p>
-    </div>
+    {% endfor %}
 </div>
