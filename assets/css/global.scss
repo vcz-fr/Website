@@ -1,10 +1,11 @@
 ---
 ---
 
+@import "vars";
 @import "fonts";
 
 html {
-    background: #ecf0f1;
+    background: $bg-color;
 }
 
 .icon {
@@ -30,6 +31,12 @@ h1 {
     font-weight: 400;
 }
 
+hr {
+    width: 80%;
+    color: $bg-color;
+    margin: 2rem auto;
+}
+
 a {
     text-decoration: none;
 }
@@ -48,9 +55,9 @@ a {
 
 .card {
     margin: 2rem 0;
-    background: #fff;
+    background: $card-color;
     padding: 1rem;
-    box-shadow: 5px 5px #ddd;
+    box-shadow: 5px 5px $card-accent;
 }
 
 .text-center, .icon {
@@ -61,11 +68,11 @@ a {
     cursor: pointer;
     display: block;
     font-size: 1.3rem;
-    color: #000;
+    color: $text-color;
 
     &.active {
         font-weight: 700;
-        color: #809;
+        color: $text-accent;
     }
 
     & > .icon {
@@ -74,7 +81,7 @@ a {
 }
 
 a, nav > a:hover, .purple {
-    color: #809;
+    color: $text-accent;
 }
 
 .md-hide {
