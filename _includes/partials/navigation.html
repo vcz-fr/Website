@@ -1,7 +1,12 @@
 <nav class="card links">
+    <h2 class="text-center">Menu</h2>
     {% for item in site.data.navigation %}
     <a {% if page.active == item.name %}class="active"{% endif %} href="{{item.url}}">
         <span class="icon">{{item.icon}}</span> {{item.text}}
     </a>
     {% endfor %}
+    <hr>
+    {% if site.data.social.twitter %}<a href="https://twitter.com/{{site.data.social.twitter}}" style=color:#55acee><span class="icon"></span> Twitter</a>{% endif %}
+    {% if site.data.social.linkedin %}<a href="https://linkedin.com/in/{{site.data.social.linkedin}}" style=color:#007bb5><span class="icon"></span> LinkedIn</a>{% endif %}
+    {% if site.data.social.medium %}<a href="https://medium.com/@{{site.data.social.medium}}" style=color:#00ab6c><span class="icon"></span> Medium</a>{% endif %}
 </nav>
