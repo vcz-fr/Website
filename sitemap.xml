@@ -6,17 +6,32 @@
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 <url>
   <loc>https://vcz.fr/</loc>
-  <lastmod>2018-02-11T10:30:22+00:00</lastmod>
+  <lastmod>2019-04-04T22:00:11+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
-  <loc>https://vcz.fr/r/Vincenzo%20Scalzi%20-%20Resume.pdf</loc>
-  <lastmod>2017-08-07T18:37:51+00:00</lastmod>
+  <loc>https://vcz.fr/portfolio</loc>
+  <lastmod>2019-04-04T22:00:11+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://vcz.fr/r/Vincenzo%20Scalzi%20-%20CV.pdf</loc>
-  <lastmod>2017-08-07T18:37:51+00:00</lastmod>
+  <loc>https://vcz.fr/skills</loc>
+  <lastmod>2019-04-04T22:00:11+00:00</lastmod>
   <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vcz.fr/resume</loc>
+  <lastmod>2019-04-04T22:00:11+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vcz.fr/assets/resume/Vincenzo%20Scalzi%20-%20Resume.pdf</loc>
+  <lastmod>2019-04-04T22:00:07+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vcz.fr/assets/resume/Vincenzo%20Scalzi%20-%20CV.pdf</loc>
+  <lastmod>2019-04-04T22:00:07+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 </urlset>
