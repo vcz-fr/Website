@@ -1,6 +1,6 @@
 # ▱ VCZ.fr
 
-The future version of my personal website, out in the open!
+The current version of my personal website, out in the open!
 
 ## The motivation
 My website has to represent my ideal in terms of engineering. I love fast websites that respect standards as much as I love experimenting with stuff online. Every now and then, I want to tackle new challenges, like "open sourcing" my website, using a website generator and yes, hosting it for free.
@@ -13,6 +13,9 @@ Yes, of course you can! If you like it, you are even encouraged to do so. Please
 - Read the code, just in case some ugly monster is laying around.
 
 ## History, reversed
+
+### v6 (current) - Open
+Similar in terms of design, this new version uses [GitHub pages](https://pages.github.com/) and its static website generator [Jekyll](https://jekyllrb.com/). This allows the website to be very lightweight by avoiding most of the hacks of the previous version, generating the sitemap, the robots.txt file and with a layout fit for more resolutions. In addition, the code is open to everyone and changes can be made much faster!
 
 ### v5 - Parallelogram
 The reference. Very lightweight, no JavaScript, represented my fight for extreme performance and backed by a CDN. Made in one inspired afternoon using some trending technologies, this website does not aim to support older browsers.
