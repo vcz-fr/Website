@@ -16,14 +16,14 @@ permalink: /portfolio
     {% for item in site.data.portfolio %}
     <div class="card portfolio-item">
         <div class="portfolio-image">
-            <img alt="{{item.name}}" src="/assets/img/portfolio/{{item.image}}" />
+            <img alt="{{item.name}}" src="/assets/img/portfolio/{{item.image}}">
         </div>
         <div>
             <h3>{{item.name}}</h3>
             <p>{{item.description}}</p>
-            <p>
-                <a href="{{item.link}}">{% if item.link == "#" %}-- No demo available! --{% else %}Let's go!{% endif %}</a>
-            </p>
+            {% if item.link != "#" %}
+            <p><a href="{{item.link}}">Let's go!</a></p>
+            {% endif %}
         </div>
     </div>
     {% endfor %}
