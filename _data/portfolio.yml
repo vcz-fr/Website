@@ -4,24 +4,24 @@
   link: https://meetups.vcz.fr/
 
 - name: MDWS, by Moonda
-  description: MDWS is a product created by <a href="https://moonda.com/">Moonda</a> that generate websites following the parent company guidelines. The product is currently serving about 350 dealerships in Europe and counting. I have been the lead maintainer for this project between 2017 and 2019 and contributed to its AWS migration, technical debt reduction, technical optimizaitons through the addition of monitoring tools, configuration fine tuning, a CDN, etc.
+  description: MDWS is a product created by <a href="https://moonda.com/" rel="nofollow">Moonda</a> that generate websites following the parent company guidelines. The product is currently serving about 350 dealerships in Europe and counting. I have been the lead maintainer for this project between 2017 and 2019 and contributed to its AWS migration, technical debt reduction, technical optimizaitons through the addition of monitoring tools, configuration fine tuning, a CDN, etc.
   image: 8.png
   link: https://mydws.net
 
 - name: VCZ's experimental website
   description: A collection of tools by yours truly
   image: 7.png
-  link: https://dev.vcz.fr
+  link: https://apps.vcz.fr
 
 - name: FontAwesome +
   description: FontAwesome 4 icon picker and CSS generator
   image: 1.png
-  link: https://app.izdev.fr/fa+
+  link: "#"
 
 - name: 2016
   description: Tiny multiplayer incremental game to wait for 2016
   image: 2.png
-  link: https://stock.vcz.fr/2016
+  link: "#"
 
 - name: BDA ENSEIRB-MATMECA
   description: 2015 version of Bordeaux Graduate School of Engineering's Bureau des Arts website
@@ -41,4 +41,4 @@
 - name: 2015
   description: Loading screen for 2015
   image: 6.png
-  link: https://stock.vcz.fr/2015
+  link: "#"
