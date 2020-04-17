@@ -16,7 +16,7 @@ permalink: /portfolio
     {% for item in site.data.portfolio %}
     <div class="card portfolio-item">
         <div class="portfolio-image">
-            <img alt="{{item.name}}" src="/assets/img/portfolio/{{item.image}}">
+            <img alt="{{item.name}}" loading="lazy" src="/assets/img/portfolio/{{item.image}}">
         </div>
         <div>
             <h3>{{item.name}}</h3>
