@@ -1,14 +1,14 @@
 - name: Meetup Notes
-  description: This site contains the notes transcribed from what I learn at my local meetups, with some additions to give more options to the readers, such as a link to the video, the slides, a reading time and a table of contents. The minimalistic interface is here to lead you to a distraction-free content.
+  description: This site contains the notes transcribed from what I learn at my local meetups with some additions to give more options to the readers such as a link to the video, the slides, a reading time and a table of contents. The minimalistic interface provides distraction-free content.
   image: 9.png
   link: https://meetups.vcz.fr/
 
 - name: MDWS, by Moonda
-  description: MDWS is a product created by <a href="https://moonda.com/" rel="nofollow">Moonda</a> that generate websites following the parent company guidelines. The product is currently serving about 350 dealerships in Europe and counting. I have been the lead maintainer for this project between 2017 and 2019 and contributed to its AWS migration, technical debt reduction, technical optimizaitons through the addition of monitoring tools, configuration fine tuning, a CDN, etc.
+  description: MDWS is a product created by <a href="https://moonda.com/" rel="nofollow">Moonda</a> that manages 350 dealership websites in Europe and counting. I have been the lead maintainer between 2017 and 2019 and contributed to its AWS migration, performance improvements, technical debt reduction, implementation of monitoring tools and CDN, etc.
   image: 8.png
   link: https://mydws.net
 
-- name: VCZ's experimental website
+- name: VCZ Apps
   description: A collection of tools by yours truly
   image: 7.png
   link: https://apps.vcz.fr
