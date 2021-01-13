@@ -1,3 +1,8 @@
+- name: VCZ Blog
+  description: A collection of blog posts by yours truly
+  image: 10.png
+  link: https://blog.vcz.fr/
+
 - name: Meetup Notes
   description: This site contains the notes transcribed from what I learn at my local meetups with some additions to give more options to the readers such as a link to the video, the slides, a reading time and a table of contents. The minimalistic interface provides distraction-free content.
   image: 9.png
