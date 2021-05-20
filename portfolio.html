@@ -1,7 +1,6 @@
 ---
 layout: default
 active: portfolio
-permalink: /portfolio
 ---
 
 <div id="portfolio">
@@ -13,14 +12,15 @@ permalink: /portfolio
             that did not make it to this list because reasons.
         </p>
     </div>
+
     {% for item in site.data.portfolio %}
     <div class="card portfolio-item">
         <div class="portfolio-image">
             <img alt="{{item.name}}" loading="lazy" src="/assets/img/portfolio/{{item.image}}">
         </div>
         <div>
-            <h3>{{item.name}}</h3>
-            <p>{{item.description}}</p>
+            <h3>{{ item.name }}</h3>
+            <p>{{ item.description }}</p>
             {% if item.link != "#" %}
             <p><a href="{{item.link}}">Let's go!</a></p>
             {% endif %}

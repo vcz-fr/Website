@@ -8,13 +8,13 @@
   image: 9.png
   link: https://meetups.vcz.fr/
 
-- name: MDWS, by Moonda
-  description: MDWS is a product created by <a href="https://moonda.com/" rel="nofollow">Moonda</a> that manages 350 dealership websites in Europe and counting. I have been the lead maintainer between 2017 and 2019 and contributed to its AWS migration, performance improvements, technical debt reduction, implementation of monitoring tools and CDN, etc.
+- name: DWS, by Moonda
+  description: Dealer Website Solution is a product created by <a href="https://moonda.com/" rel="nofollow">Moonda</a> that manages 400+ dealership websites in Europe. I have been the lead maintainer between 2017 and 2019 and contributed to its AWS migration, performance improvements, technical debt reduction, implementation of monitoring tools and CDN, etc.
   image: 8.png
   link: https://mydws.net
 
 - name: VCZ Apps
-  description: A collection of tools by yours truly
+  description: A collection of small tools by yours truly
   image: 7.png
   link: https://apps.vcz.fr
 
