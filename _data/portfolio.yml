@@ -1,49 +1,69 @@
 - name: Massao
   description: Transforming a hacked Wordpress business website into a static showcase one week before the sales season began
-  image: 12.webp
+  image:
+    id: 12
+    exts: ["avif", "webp"]
   link: https://massao.fr/
 
 - name: Les Tasses de Cafe
   description: A website for a community to store their game rules and assets.
-  image: 11.webp
+  image:
+    id: 11
+    exts: ["avif", "webp"]
   link: https://tasses.cafe/
 
 - name: VCZ Blog
   description: A collection of blog posts by yours truly
-  image: 10.webp
+  image:
+    id: 10
+    exts: ["avif", "webp"]
   link: https://blog.vcz.fr/
 
 - name: Meetup Notes
   description: This site contains the notes transcribed from what I learn at my local meetups with some additions to give more options to the readers such as a link to the video, the slides, a reading time and a table of contents. The minimalistic interface provides distraction-free content.
-  image: 9.webp
+  image:
+    id: 9
+    exts: ["avif", "webp"]
   link: https://meetups.vcz.fr/
 
 - name: DWS, by Moonda
   description: Dealer Website Solution is a product created by <a href="https://moonda.com/" rel="nofollow">Moonda</a> that manages 400+ dealership websites in Europe. I have been the lead maintainer between 2017 and 2019 and contributed to its AWS migration, performance improvements, technical debt reduction, implementation of monitoring tools and CDN, etc.
-  image: 8.webp
+  image:
+    id: 8
+    exts: ["webp"]
   link: https://mydws.net
 
 - name: VCZ Apps
   description: A collection of small tools by yours truly
-  image: 7.webp
+  image:
+    id: 7
+    exts: ["avif", "webp"]
   link: https://apps.vcz.fr
 
 - name: FontAwesome +
   description: FontAwesome 4 icon picker and CSS generator
-  image: 1.webp
+  image:
+    id: 1
+    exts: ["webp"]
   link: "#"
 
 - name: 2016
   description: Tiny multiplayer incremental game to wait for 2016
-  image: 2.webp
+  image:
+    id: 2
+    exts: ["avif", "webp"]
   link: "#"
 
 - name: BDA ENSEIRB-MATMECA
   description: 2015 version of Bordeaux Graduate School of Engineering's Bureau des Arts website
-  image: 3.webp
+  image:
+    id: 3
+    exts: ["avif", "webp"]
   link: https://bda.eirb.fr
 
 - name: Bordeaux INP's sports resource center
   description: Website for Bordeaux INP's sports resource center
-  image: 4.webp
+  image:
+    id: 4
+    exts: ["avif", "webp"]
   link: "#"
