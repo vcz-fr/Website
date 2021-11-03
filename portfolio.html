@@ -22,7 +22,7 @@ active: portfolio
             {% if item.image.exts contains "webp" %}
             <source type="image/webp" srcset="/assets/img/portfolio/{{item.image.id}}.webp">
             {% endif %}
-            <img alt="{{item.name}}" loading="lazy" src="/assets/img/portfolio/{{item.image.id}}.webp">
+            <img alt="{{item.name}}" loading="lazy" decoding="async" src="/assets/img/portfolio/{{item.image.id}}.webp">
         </picture>
         <div>
             <h3>{{ item.name }}</h3>
