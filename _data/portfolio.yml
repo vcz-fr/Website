@@ -1,68 +1,91 @@
 - name: Massao
-  description: Transforming a hacked Wordpress business website into a static showcase one week before the sales season began
+  description: >-
+    Transforming a hacked Wordpress business website into a static showcase one week before the sales season began
   image:
     id: 12
     exts: ["avif", "webp"]
   link: https://massao.fr/
 
 - name: Les Tasses de Cafe
-  description: A website for a community to store their game rules and assets.
+  description: >-
+    A website for a community to store their game rules and assets
+
   image:
     id: 11
     exts: ["avif", "webp"]
   link: https://tasses.cafe/
 
 - name: VCZ Blog
-  description: A collection of blog posts by yours truly
+  description: >-
+    A collection of blog posts by yours truly
+
   image:
     id: 10
     exts: ["avif", "webp"]
   link: https://blog.vcz.fr/
 
 - name: Meetup Notes
-  description: This site contains the notes transcribed from what I learn at my local meetups with some additions to give more options to the readers such as a link to the video, the slides, a reading time and a table of contents. The minimalistic interface provides distraction-free content.
+  description: >-
+    This site contains the notes transcribed from local meetups with some research and more options for readers such as
+    a link to the video, slides, a reading time estimate and a table of contents. The minimalistic interface reduces
+    distractions.
+
   image:
     id: 9
     exts: ["avif", "webp"]
   link: https://meetups.vcz.fr/
 
 - name: DWS, by Moonda
-  description: Dealer Website Solution is a product created by <a href="https://moonda.com/" rel="nofollow">Moonda</a> that manages 400+ dealership websites in Europe. I have been the lead maintainer between 2017 and 2019 and contributed to its AWS migration, performance improvements, technical debt reduction, implementation of monitoring tools and CDN, etc.
+  description: >-
+    Dealer Website Solution is a product created by [Moonda](https://moonda.com/){:rel="nofollow"} that manages 400+
+    dealership websites in Europe. I have been the lead maintainer between 2017 and 2019 and contributed to its AWS
+    migration, performance improvements, technical debt reduction, implementation of monitoring tools and CDN, etc.
+
   image:
     id: 8
     exts: ["webp"]
   link: https://mydws.net
 
 - name: VCZ Apps
-  description: A collection of small tools by yours truly
+  description: >-
+    A collection of small tools
+
   image:
     id: 7
     exts: ["avif", "webp"]
   link: https://apps.vcz.fr
 
 - name: FontAwesome +
-  description: FontAwesome 4 icon picker and CSS generator
+  description: >-
+    FontAwesome 4 icon picker and CSS generator
+
   image:
     id: 1
     exts: ["webp"]
   link: "#"
 
 - name: 2016
-  description: Tiny multiplayer incremental game to wait for 2016
+  description: >-
+    Tiny multiplayer incremental game to wait for 2016
+
   image:
     id: 2
     exts: ["avif", "webp"]
   link: "#"
 
 - name: BDA ENSEIRB-MATMECA
-  description: 2015 version of Bordeaux Graduate School of Engineering's Bureau des Arts website
+  description: >-
+    2015 version of Bordeaux Graduate School of Engineering's Bureau des Arts website
+
   image:
     id: 3
     exts: ["avif", "webp"]
   link: https://bda.eirb.fr
 
 - name: Bordeaux INP's sports resource center
-  description: Website for Bordeaux INP's sports resource center
+  description: >-
+    Website for Bordeaux INP's sports resource center
+
   image:
     id: 4
     exts: ["avif", "webp"]
