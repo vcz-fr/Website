@@ -2,3 +2,7 @@ url: "https://vcz.fr"
 
 plugins:
   - jekyll-sitemap
+
+sass:
+  sourcemap: never
+  style: compressed
