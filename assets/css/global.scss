@@ -6,6 +6,7 @@
 
 html {
     background: $bg-color;
+    color: $text-color;
 }
 
 .icon {
@@ -23,7 +24,8 @@ body {
     font-family: text, Helvetica;
 }
 
-h1, h2 {
+h1,
+h2 {
     margin: 0;
 }
 
@@ -60,7 +62,8 @@ a {
     box-shadow: 5px 5px $card-accent;
 }
 
-.text-center, .icon {
+.text-center,
+.icon {
     text-align: center;
 }
 
@@ -80,12 +83,10 @@ a {
     }
 }
 
-a, nav > a:hover, .purple {
+a,
+nav > a:hover,
+.purple {
     color: $text-accent;
-}
-
-.md-hide {
-    display: none;
 }
 
 #portfolio .portfolio-item {
@@ -95,7 +96,7 @@ a, nav > a:hover, .purple {
         width: 50%;
         margin: 0 1rem;
     }
-    
+
     .portfolio-image {
         display: flex;
         flex-direction: column;
@@ -109,7 +110,7 @@ a, nav > a:hover, .purple {
 
 #menu {
     .text-center:hover h1 {
-        color: rgba(0,0,0,.1);
+        color: rgba(0, 0, 0, 0.1);
     }
 
     :first-child:hover #logo {
@@ -121,7 +122,8 @@ a, nav > a:hover, .purple {
     display: inline-block;
     height: 72px;
     width: 72px;
-    transition: all .1s;
+    transition: all 0.1s;
 }
 
 @import "responsive";
+@import "dark-theme";

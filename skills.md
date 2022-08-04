@@ -8,8 +8,8 @@ active: skills
 ## Abilities
 
 Technologically speaking, I am agnostic. I don't believe in one universally best technology stack. Fundamentally, the
-underlying design processes are similar so it would not make sense to reject some because they contain noisy, old-school
-or proprietary elements.
+underlying design processes are similar so rejecting some technology based on hype, age or for being proprietary would
+not make a lot of sense. Technology is a tool to reach a business outcome and some tools are more efficient, that's all.
 
 </div>
 
@@ -21,17 +21,17 @@ I feel confident with:
 
 - HTML5, CSS3, JS frontend and server ecosystem;
 - AWS, AWS CLI, Terraform;
-- NginX, Docker-based CI;
-- Web performance and engineering;
+- Docker-based CI;
 - Serverless and container infrastructures;
+- Web performance and engineering;
 - Static site generation.
 
 Would like to discover:
 
-- More of Python and C#;
-- Rust;
 - More cultures;
-- Ideas and tools to reduce development and operational chores.
+- Rust;
+- Ideas and tools to reduce development and operational chores;
+- More of Python and C#.
 
 Also worked with:
 
@@ -42,7 +42,7 @@ Also worked with:
 - Web performance:
   - Browser tools: Firefox Developer Edition, Google Chrome Beta;
   - Client performance: Yellowlab, WebpageTest;
-  - Load testing: Octoperf;
+  - Load testing: Octoperf, Gatling;
   - App performance: AppDynamics, BlackFire.
 
 </div>
@@ -51,19 +51,19 @@ Also worked with:
 
 ### The human
 
-I think I am:
+I am:
+- Very open to many topics;
 - Extrovert but not a party person;
 - Calm and collected;
-- Ambitious but moderate;
-- A crazy fast learner.
+- Ambitious. Very.
 
 Want to become:
 - Socially responsible;
-- A world changer
+- A world changer, don't we all?
 
 Though, I am also:
 - Expressive but not talkative;
-- Easily bored when not challenged
+- Easily bored when not challenged.
 
 </div>
 
@@ -71,10 +71,17 @@ Though, I am also:
 
 ### The other stuff
 
-I love trying new things and experimenting, it helps me thinking out of the box. Being creative is really important when
+I enjoy trying new things and experimenting, it helps me thinking out of the box. Being creative is really important when
 dealing with issues almost nobody faced before. I'm obviously not limiting myself to new technologies.
 
-Quite frankly, I love going out for new experiences as much as I fancy watching movies and series, meeting new faces and
-sharing my knowledge.
+I strongly believe in minimalism: reducing the amount of data that gets collected, processed, stored, sent over. Leading
+to lower costs of maintenance and operation, and general satisfaction. I could not optimize this website further with
+the current extent of my knowledge.
+
+This belief translates into strong advocacy for privacy. Tracking users is bad: you would not follow someone on the
+street to know their habits, right?
+
+Other than that, I love trying new places, I do my share of physical activity including climbing and I spend way too
+much time gushing about the latest tech breakthroughs.
 
 </div>

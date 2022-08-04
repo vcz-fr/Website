@@ -29,9 +29,9 @@ and I would be delighted to further go into details about projects that did not 
 
 ### {{ item.name }}
 
-{{ item.description | markdownify }}
+{{ item.description  }}
 
-{% if item.link != "#" %}[Let's go!]({{item.link}}){% endif %}
+{% if item.link.url != "#" %}[Let's go!]({{item.link.url}}){% unless item.link.follow %}{:rel="nofollow"}{% endunless %}{% endif %}
 
 </div>
 

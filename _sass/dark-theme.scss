@@ -1,0 +1,27 @@
+@media screen and (prefers-color-scheme: dark) {
+    html {
+        background: $bg-color-dark;
+        color: $text-color-dark;
+    }
+
+    hr {
+        color: $text-color-dark;
+    }
+
+    .card {
+        background: $card-color-dark;
+        box-shadow: 5px 5px $card-accent-dark;
+    }
+
+    .links > a {
+        color: $text-color-dark;
+
+        &.active {
+            color: $text-accent-dark;
+        }
+    }
+
+    a, nav > a:hover, .purple {
+        color: $text-accent-dark;
+    }
+}
