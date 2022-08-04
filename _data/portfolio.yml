@@ -1,10 +1,25 @@
+- name: io-base, by Terega
+  description: >-
+    From design to production, engineering a Serverless ecosystem that ingests and manipulates massive amounts of sensor
+    data for industrial applications.
+
+  image:
+    id: 13
+    exts: ["avif", "webp"]
+  link:
+    url: "https://www.terega.fr/en/io-base-the-digital-solution-to-improve-your-industrial-performance"
+    follow: false
+
 - name: Massao
   description: >-
     Transforming a hacked Wordpress business website into a static showcase one week before the sales season began
+
   image:
     id: 12
     exts: ["avif", "webp"]
-  link: https://massao.fr/
+  link:
+    url: "https://massao.fr/"
+    follow: false
 
 - name: Les Tasses de Cafe
   description: >-
@@ -13,7 +28,9 @@
   image:
     id: 11
     exts: ["avif", "webp"]
-  link: https://tasses.cafe/
+  link:
+    url: "https://tasses.cafe/"
+    follow: false
 
 - name: VCZ Blog
   description: >-
@@ -22,7 +39,9 @@
   image:
     id: 10
     exts: ["avif", "webp"]
-  link: https://blog.vcz.fr/
+  link:
+    url: "https://blog.vcz.fr/"
+    follow: true
 
 - name: Meetup Notes
   description: >-
@@ -33,7 +52,9 @@
   image:
     id: 9
     exts: ["avif", "webp"]
-  link: https://meetups.vcz.fr/
+  link:
+    url: "https://meetups.vcz.fr/"
+    follow: true
 
 - name: DWS, by Moonda
   description: >-
@@ -44,7 +65,9 @@
   image:
     id: 8
     exts: ["webp"]
-  link: https://mydws.net
+  link:
+    url: "#"
+    follow: false
 
 - name: VCZ Apps
   description: >-
@@ -53,7 +76,9 @@
   image:
     id: 7
     exts: ["avif", "webp"]
-  link: https://apps.vcz.fr
+  link:
+    url: "https://apps.vcz.fr"
+    follow: true
 
 - name: FontAwesome +
   description: >-
@@ -62,7 +87,9 @@
   image:
     id: 1
     exts: ["webp"]
-  link: "#"
+  link:
+    url: "#"
+    follow: false
 
 - name: 2016
   description: >-
@@ -71,7 +98,9 @@
   image:
     id: 2
     exts: ["avif", "webp"]
-  link: "#"
+  link:
+    url: "#"
+    follow: false
 
 - name: BDA ENSEIRB-MATMECA
   description: >-
@@ -80,13 +109,6 @@
   image:
     id: 3
     exts: ["avif", "webp"]
-  link: https://bda.eirb.fr
-
-- name: Bordeaux INP's sports resource center
-  description: >-
-    Website for Bordeaux INP's sports resource center
-
-  image:
-    id: 4
-    exts: ["avif", "webp"]
-  link: "#"
+  link:
+    url: "https://bda.eirb.fr"
+    follow: false
