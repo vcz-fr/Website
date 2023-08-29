@@ -1,4 +1,4 @@
-- name: io-base, by Terega
+- name: io-base, by Terega Solutions
   description: >-
     From design to production, engineering a Serverless ecosystem that ingests and manipulates massive amounts of sensor
     data for industrial applications.
@@ -16,7 +16,7 @@
 
   image:
     id: 12
-    exts: ["avif", "webp"]
+    exts: ["avif", "webp"] 
   link:
     url: "https://massao.fr/"
     follow: false
@@ -91,20 +91,9 @@
     url: "#"
     follow: false
 
-- name: 2016
-  description: >-
-    Tiny multiplayer incremental game to wait for 2016
-
-  image:
-    id: 2
-    exts: ["avif", "webp"]
-  link:
-    url: "#"
-    follow: false
-
 - name: BDA ENSEIRB-MATMECA
   description: >-
-    2015 version of Bordeaux Graduate School of Engineering's Bureau des Arts website
+    2015-2022 version of Bordeaux Graduate School of Engineering's Bureau des Arts website
 
   image:
     id: 3
