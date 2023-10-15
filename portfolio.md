@@ -6,10 +6,10 @@ active: portfolio
 <div id="portfolio">
 <div class="card" markdown="1">
 
-## When boredom strikes
+## The past, the present
 
-The tiles of this section will give you an overall idea of my favorite pass-time. It is just the _tip of the iceberg_
-and I would be delighted to further go into details about projects that did not make it to this list because reasons.
+This is a showcase of my past and present work. There are repeating themes, ideas and technologies. This is only the
+_tip of the iceberg_ and I would enjoy going into details about projects that did not make it to this list.
 
 </div>
 
@@ -24,7 +24,6 @@ and I would be delighted to further go into details about projects that did not 
         {% endif %}
         <img alt="{{item.name}}" loading="lazy" decoding="async" src="/assets/img/portfolio/{{item.image.id}}.webp">
     </picture>
-
 <div markdown="1">
 
 ### {{ item.name }}

@@ -7,9 +7,11 @@ active: skills
 
 ## Abilities
 
-Technologically speaking, I am agnostic. I don't believe in one universally best technology stack. Fundamentally, the
-underlying design processes are similar so rejecting some technology based on hype, age or for being proprietary would
-not make a lot of sense. Technology is a tool to reach a business outcome and some tools are more efficient, that's all.
+There is no perfect technology stack as there is no free lunch. Fundamentally, rejecting some technology based on hype,
+age or for being proprietary does not make a total sense. Technology is a tool to reach a business outcome and some
+tools are more efficient, that's all.
+
+Innovation is not linked to tooling. People and processes are the biggest drivers.
 
 </div>
 
@@ -17,33 +19,36 @@ not make a lot of sense. Technology is a tool to reach a business outcome and so
 
 ### The techie
 
-I feel confident with:
+Let's be honest here: I am a tech practitioner and that's what I do best. Even though I dabble less and less with code,
+I have tried technologies in the past and there are some that I really liked and others that were more _meh_. Here are a
+couple lists that you should use to challenge me!
 
-- HTML5, CSS3, JS frontend and server ecosystem;
-- AWS, AWS CLI, Terraform;
-- Docker-based CI;
-- Serverless and container infrastructures;
+First, I feel quite confident with:
+
+- HTML, CSS, JS. The latter can be frontend and backend;
+- AWS, its CLI and Terraform;
+- Docker-based CI, especially GitLab CI;
+- Serverless and container infrastructures, even Kubernetes even if it's usually hard to justify;
 - Web performance and engineering;
-- Static site generation.
+- Static site generation, because less is more.
 
-Would like to discover:
+I hope to discover these things over time:
 
-- More cultures;
-- Rust;
-- Ideas and tools to reduce development and operational chores;
-- More of Python and C#.
+- More cultures, company and local;
+- Rust, its memory model, why it works;
+- Ideas and tooling to reduce development and operational chores;
+- More of Python and C#, because I'm not too confident with these codebases.
 
-Also worked with:
+And here's the weird stuff I had to deal with. It is milquetoast compared to some gray-beards around but here goes:
 
-- Multi-model non relational database: OrientDB;
-- Database deamons: Maxwell, Debezium;
-- Message broker: Kafka with SpringBoot integration;
-- OpenID Connect: MitreID;
-- Web performance:
-  - Browser tools: Firefox Developer Edition, Google Chrome Beta;
-  - Client performance: Yellowlab, WebpageTest;
-  - Load testing: Octoperf, Gatling;
-  - App performance: AppDynamics, BlackFire.
+- OrientDB, a multi-model non relational database;
+- Maxwell and Debezium, database deamons that retrieve operations and stream them to Kafka for event-based data
+  processing workloads;
+- MitreID and the OpenID Connect specification;
+- OctoPerf and Gatling —thanks, I dislike Scala now— for good load tests;
+- Yellowlab and WebpageTest for decent client-side web performance reporting. Add browser devtools, which get
+  consistently better over time;
+- AppDynamics, BlackFire and Sentry for the backend side of things.
 
 </div>
 
@@ -51,19 +56,25 @@ Also worked with:
 
 ### The human
 
-I am:
-- Very open to many topics;
-- Extrovert but not a party person;
-- Calm and collected;
-- Ambitious. Very.
+Stop for a moment and think about what you are projecting. Use personas and how they perceive you. This is a personal
+website, so this place is about **you** and you only. This section can be read by your future recruiter, your stalkers,
+your friends, random passersby.
 
-Want to become:
-- Socially responsible;
-- A world changer, don't we all?
+The person described below is the one I face every day when I wake up and face my mirror. These are things I genuinely
+believe I am projecting.
 
-Though, I am also:
-- Expressive but not talkative;
-- Easily bored when not challenged.
+Being open to many topics, even those that are usually not talked about is my main thing. Social issues, economics,
+sustainability, inequality, conflict. I cannot bring a lot of references yet, but I'd love to bring hard facts and data,
+not just chit-chat, feelings and validation. Sometimes, I will express myself with the passion of a thousand fiery suns.
+In some occasions, I will just stay calm and listen.
+
+Ambitious and driven at my core, I wish for my dream projects to come true. Let's be realistic: I cannot change the
+whole planet, but my overall impact can be positive nonetheless. I lead by example and encourage people to do better
+with themselves and others. I go through things so that other people don't have to.
+
+To conclude on that part, challenge is my day-to-day. Sometimes I fight with myself, sometimes with weird code,
+sometimes to persuade somebody to follow different ways. Traversing a period without being challenge is boring, plus I
+cannot reasonably expect any reward from taking no risk, can I?
 
 </div>
 
@@ -71,17 +82,17 @@ Though, I am also:
 
 ### The other stuff
 
-I enjoy trying new things and experimenting, it helps me thinking out of the box. Being creative is really important when
-dealing with issues almost nobody faced before. I'm obviously not limiting myself to new technologies.
+I enjoy trying new things and experimenting, it helps me think out of the box. Creativity is crucial when dealing with
+issues few faced before. This is again not limited to technology.
 
-I strongly believe in minimalism: reducing the amount of data that gets collected, processed, stored, sent over. Leading
-to lower costs of maintenance and operation, and general satisfaction. I could not optimize this website further with
-the current extent of my knowledge.
-
-This belief translates into strong advocacy for privacy. Tracking users is bad: you would not follow someone on the
-street to know their habits, right?
+To me, minimalism is the way: reducing what gets used, collected, processed, stored. Lowering costs of design,
+development, delivery, maintenance and operation, and improving general satisfaction. This belief translates into strong
+advocacy for privacy. Tracking users is bad: following anyone on the street to know their habits is weird, why is this
+considered "acceptable behavior" online? On a different note, that's also how I reduce my water, electricity, network
+carrier and other services bills.
 
 Other than that, I love trying new places, I do my share of physical activity including climbing and I spend way too
-much time gushing about the latest tech breakthroughs.
+much time gushing about the latest tech breakthroughs. Tech is not the solution, yet we must celebrate the achievements
+of our time and push for more!
 
 </div>

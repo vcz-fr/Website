@@ -1,7 +1,9 @@
 - name: io-base, by Terega Solutions
   description: >-
-    From design to production, engineering a Serverless ecosystem that ingests and manipulates massive amounts of sensor
-    data for industrial applications.
+    I've grown this project from design to dogfooding then commercialization. It collects and presents massive amounts
+    of near real-time sensor data for industrial applications. I designed its first implementation, the first ecosystem
+    components, all with performance and usability in mind. It could overload the time series vendor without breaking a
+    sweat!
 
   image:
     id: 13
@@ -12,7 +14,9 @@
 
 - name: Massao
   description: >-
-    Transforming a hacked Wordpress business website into a static showcase one week before the sales season began
+    A friend of a friend once had their Wordpress hacked and were panicking because of that. I proposed to redevelop the
+    whole website in a way that prevents any hacking from happening ever again; statically generated. This happened over
+    the course of a week based on their old design, just before their sales season began.
 
   image:
     id: 12
@@ -23,7 +27,10 @@
 
 - name: Les Tasses de Cafe
   description: >-
-    A website for a community to store their game rules and assets
+
+    This small community needed a website to store their game rules and assets and I wanted to help. This is why I
+    prototyped this website in a week. The goal would be to grow it into a platform for the web games the community
+    develops and a more social space that extends their community and reaches out.
 
   image:
     id: 11
@@ -34,7 +41,9 @@
 
 - name: VCZ Blog
   description: >-
-    A collection of blog posts by yours truly
+    Like VCZ Apps, this is a way to express my creativity and share my thoughts in written form. It gets less attention
+    because it requires me a lot of focus and consistently being in the same mood. Moving out of a full-fledged blogging
+    platform like Medium was the best decision I made, I cannot recommend it enough.
 
   image:
     id: 10
@@ -58,9 +67,9 @@
 
 - name: DWS, by Moonda
   description: >-
-    Dealer Website Solution is a product created by [Moonda](https://moonda.com/){:rel="nofollow"} that manages 400+
-    dealership websites in Europe. I have been the lead maintainer between 2017 and 2019 and contributed to its AWS
-    migration, performance improvements, technical debt reduction, implementation of monitoring tools and CDN, etc.
+    Dealer Website Solution is a product created by Moonda that manages 400+ dealership websites in Europe. I have been
+    the lead maintainer between 2017 and 2019 and implemented a slew of new features and modules, migrated it to AWS,
+    implemented its CDN, monitoring, improved its performance and so on.
 
   image:
     id: 8
@@ -71,7 +80,9 @@
 
 - name: VCZ Apps
   description: >-
-    A collection of small tools
+    Sometimes, you come across an article and you get this weird idea you have to prototype. Sometimes the prototype
+    works. That's how this website came into existence. I am not planning on adding too many apps though, there are
+    better websites out there!
 
   image:
     id: 7
@@ -80,20 +91,11 @@
     url: "https://apps.vcz.fr"
     follow: true
 
-- name: FontAwesome +
-  description: >-
-    FontAwesome 4 icon picker and CSS generator
-
-  image:
-    id: 1
-    exts: ["webp"]
-  link:
-    url: "#"
-    follow: false
-
 - name: BDA ENSEIRB-MATMECA
   description: >-
-    2015-2022 version of Bordeaux Graduate School of Engineering's Bureau des Arts website
+    2015-2022 version of the ENSEIRB-MATMECA Arts Club website. Before my intervention, it contained bits of HTML to do
+    the job. I have been pulled in to write some PHP and take design and content cues from what I knew from the web at
+    the time.
 
   image:
     id: 3
