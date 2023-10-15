@@ -1,13 +1,25 @@
 <nav class="card links">
     <h2 class="text-center">Menu</h2>
-    {% for item in site.data.navigation %}
+    {% for item in site.data.navigation[page.site] %}
     <a {% if page.active == item.name %}class="active"{% endif %} href="{{item.url}}">
         <span class="icon">{{item.icon}}</span> {{item.text}}
     </a>
     {% endfor %}
+    {% if page.site == "blog" %}
+    <a href="{{site.posts.first.url}}"><span class="icon"></span> Latest post</a>
+    {% endif %}
 </nav>
+{% if page.site == "blog" %}
 <nav class="card links">
-    <h2 class="text-center">Links</h2>
-    <a href="https://blog.vcz.fr" style=color:#00ab6c><span class="icon">∵</span> VCZ Blog</a>
-    {% if site.data.social.linkedin %}<a href="https://linkedin.com/in/{{site.data.social.linkedin}}" rel="nofollow" style=color:#007bb5><span class="icon"></span> LinkedIn</a>{% endif %}
+    <h2 class="text-center">Categories</h2>
+    {% for category in site.categories %}
+        {% capture name %}{{ category | first }}{% endcapture %}
+        <a href="/blog/categories/{{name | slugify}}">{{name}}</a>
+    {% endfor %}
+</nav>
+{% endif %}
+<nav class="card links">
+    <h2 class="text-center">Socials</h2>
+    {% if site.data.social.linkedin %}<a href="https://linkedin.com/in/{{site.data.social.linkedin}}" rel="nofollow" style="color:#007bb5"><span class="icon">&#xf0e1;</span> LinkedIn</a>{% endif %}
+    {% if site.data.social.github %}<a href="https://github.com/{{site.data.social.github}}" rel="nofollow" style="color: var(--accent-color)"><span class="icon">&#xf113;</span> GitHub</a>{% endif %}
 </nav>

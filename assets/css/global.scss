@@ -4,9 +4,17 @@
 @import "vars";
 @import "fonts";
 
+// Apps
+@import "inputs";
+@import "indicators";
+
+// Blog
+@import "blog";
+@import "code";
+
 html {
-    background: $bg-color;
-    color: $text-color;
+    background: var(--bg-color);
+    color: var(--text-color);
 }
 
 .icon {
@@ -35,7 +43,7 @@ h1 {
 
 hr {
     width: 80%;
-    color: $bg-color;
+    color: var(--bg-color);
     margin: 2rem auto;
 }
 
@@ -57,9 +65,9 @@ a {
 
 .card {
     margin: 2rem 0;
-    background: $card-color;
+    background: var(--card-color);
     padding: 1rem;
-    box-shadow: 5px 5px $card-accent;
+    box-shadow: 5px 5px var(--card-accent);
 }
 
 .text-center,
@@ -71,11 +79,11 @@ a {
     cursor: pointer;
     display: block;
     font-size: 1.3rem;
-    color: $text-color;
+    color: var(--text-color);
 
     &.active {
         font-weight: 700;
-        color: $text-accent;
+        color: var(--text-accent);
     }
 
     & > .icon {
@@ -86,7 +94,7 @@ a {
 a,
 nav > a:hover,
 .purple {
-    color: $text-accent;
+    color: var(--text-accent);
 }
 
 #portfolio .portfolio-item {
@@ -114,16 +122,89 @@ nav > a:hover,
     }
 
     :first-child:hover #logo {
-        transform: skew(33.7deg);
+        transform: skew(-33.7deg);
+        transition-delay: 0s;
+
+        .c {
+            background-color: #4fdfd8;
+            transition-delay: 0s;
+        }
+
+        .b {
+            background-color: #5e97e2;
+            transition-delay: 0s;
+        }
+
+        .g {
+            background-color: #49ff3d;
+            transition-delay: 0s;
+        }
+
+        .y {
+            background-color: #e5f931;
+            transition-delay: 0s;
+        }
     }
 }
 
 #logo {
-    display: inline-block;
+    display: grid;
+    box-sizing: border-box;
+    margin: auto;
+
     height: 72px;
     width: 72px;
-    transition: all 0.1s;
+
+    grid-template-columns: 1fr 5fr 1fr;
+    grid-template-rows: 1fr 5fr 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+        "c c b"
+        "y x b"
+        "y g g";
+
+    filter: drop-shadow(0 0 7px #809);
+    border: solid 2px black;
+    border-radius: 1px;
+
+    transition: transform 0.3s;
+    transition-timing-function: cubic-bezier(1, -0.5, 0, 1);
+    transition-delay: 0.8s;
+
+    .x {
+        grid-area: x;
+        border: solid 2px black;
+    }
+
+    .c {
+        grid-area: c;
+        background-color: color-mix(in srgb, #4fdfd8, black 60%);
+        transition: background-color 0.2s;
+    }
+
+    .b {
+        grid-area: b;
+        background-color: color-mix(in srgb, #5e97e2, black 60%);
+        transition: background-color 0.2s;
+        transition-delay: 0.2s;
+    }
+
+    .g {
+        grid-area: g;
+        background-color: color-mix(in srgb, #49ff3d, black 60%);
+        transition: background-color 0.2s;
+        transition-delay: 0.4s;
+    }
+
+    .y {
+        grid-area: y;
+        background-color: color-mix(in srgb, #e5f931, black 60%);
+        transition: background-color 0.2s;
+        transition-delay: 0.6s;
+    }
 }
 
+@import "apps";
 @import "responsive";
 @import "dark-theme";

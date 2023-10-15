@@ -1,0 +1,24 @@
+// Anagram
+
+.anagram {
+    .a {
+        background: var(--bg-zone-a);
+    }
+
+    .b {
+        background: var(--bg-zone-b);
+    }
+
+    .eql {
+        background: var(--bg-success);
+    }
+
+    table {
+        width: 100%;
+        text-align: center;
+
+        th {
+            font-weight: bold;
+        }
+    }
+}

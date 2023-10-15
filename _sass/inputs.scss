@@ -1,0 +1,33 @@
+input,
+textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.5rem;
+  margin: 0.5rem 0;
+
+  color: var(--text-color);
+
+  border: solid var(--card-accent) 1px;
+  background-color: transparent;
+}
+
+input[type="button"] {
+  text-decoration: underline;
+
+  &:hover {
+    background-color: var(--bg-color);
+  }
+
+  &:active {
+    background-color: var(--card-accent);
+  }
+}
+
+textarea {
+  resize: vertical;
+  min-height: 100px;
+
+  &[readonly] {
+    background-color: var(--bg-color);
+  }
+}

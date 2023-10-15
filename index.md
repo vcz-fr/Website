@@ -43,20 +43,18 @@ about those things people are usually shy about.
 And if you're here to learn about my journey, here you go:
 
 - **Cloud Architect** at [SOPHiA Genetics](https://www.sophiagenetics.com/){:rel="nofollow"}  
-  I initially accelerated the team that accelerates all tech teams; DevOps. Not by being a lead but by solving pain
-  points. Introducing missing practices like commit messages, automating releases, automating foundational Cloud layers,
-  opening the door to more complex infrastructure and CI/CD, more complex releases, communication practices, etc. But
-  it's not only tech: steering the team towards a more sustainable framework, one that involves less firefighting and
-  more building the product.
+  I turbocharged the team that accelerates tech teams; DevOps. By introducing missing practices and a different way of
+  working. Commit conventions, release automation, foundational Cloud layers automation, simplifying infrastructure and
+  CI/CD, etc. It's not just tech and that's what is refreshing about it!
 
-- **Senior Cloud & DevOps Engineer** at **Gekko Part of Accenture**.  
-  Serverless architectures on AWS, DevOps philosophy and Web engineering. My development background was what sold my
-  customers, for whom I delivered optimizations in their critical energy systems, linear TV advertising platform,
+- **Senior Cloud & DevOps Engineer** at **Gekko Part of Accenture**  
+  Serverless architectures on AWS, DevOps philosophy and Web engineering. My development background was what sold it for
+  my customers, for whom I delivered optimizations in their critical energy systems, linear TV advertising platform,
   insurance and real estate IT services and so on. This company taught me the value of the Cloud and how to create
   sustainable and performant services. And documentation, and how to effectively introduce new ideas to customers and
   conduct them to fruition and beyond.
 
-- **Fullstack Developer** at **Moonda**.  
+- **Fullstack Developer** at **Moonda**  
   A now defunct web agency based using an ancient PHP Content Management System called eZPublish to develop dealership
   website generators for John Deere, Yale and other customers. I migrated that product from OVHCloud to AWS, maintained
   it, added Cloudflare and developed new components in PHP and Angular. The rest was about introducing better practices

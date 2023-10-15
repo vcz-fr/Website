@@ -14,7 +14,7 @@
 
 - name: Massao
   description: >-
-    A friend of a friend once had their Wordpress hacked and were panicking because of that. I proposed to redevelop the
+    A friend of a friend had their Wordpress hacked and were panicking because of that. I proposed to redevelop the
     whole website in a way that prevents any hacking from happening ever again; statically generated. This happened over
     the course of a week based on their old design, just before their sales season began.
 
@@ -39,7 +39,7 @@
     url: "https://tasses.cafe/"
     follow: false
 
-- name: VCZ Blog
+- name: Blog
   description: >-
     Like VCZ Apps, this is a way to express my creativity and share my thoughts in written form. It gets less attention
     because it requires me a lot of focus and consistently being in the same mood. Moving out of a full-fledged blogging
@@ -49,7 +49,7 @@
     id: 10
     exts: ["avif", "webp"]
   link:
-    url: "https://blog.vcz.fr/"
+    url: "https://vcz.fr/blog/"
     follow: true
 
 - name: Meetup Notes
@@ -88,7 +88,7 @@
     id: 7
     exts: ["avif", "webp"]
   link:
-    url: "https://apps.vcz.fr"
+    url: "https://vcz.fr/apps/"
     follow: true
 
 - name: BDA ENSEIRB-MATMECA

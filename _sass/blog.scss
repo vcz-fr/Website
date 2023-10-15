@@ -1,0 +1,70 @@
+#article {
+    font-family: blog, serif;
+    font-size: 18px;
+    line-height: 130%;
+    text-align: justify;
+
+    h1, h2, h3, h4, h5, h6 {
+        line-height: normal;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    hr {
+        width: 50%;
+        margin: 2rem auto;
+        text-align: center;
+        font-size: 1.5rem;
+        height: 0px;
+        vertical-align: middle;
+        line-height: 0rem;
+        min-width: 3rem;
+
+        color: #bbb;
+        border: none;
+        border-bottom: solid 2px;
+
+        &::before {
+            content: "§";
+            background: white;
+            padding: 5px;
+        }
+    }
+
+    img {
+        max-width: 80%;
+        display: block;
+        margin: auto;
+    }
+
+    & pre {
+        text-align: left;
+        white-space: pre-wrap;
+        overflow-wrap: break-word;
+    }
+}
+
+.preview {
+    blockquote {
+        border-left: solid 3px #809;
+        padding-left: 1rem;
+    }
+}
+
+#pagination {
+    display: flex;
+
+    .prev, .page, .next {
+        flex-grow: 1;
+    }
+
+    .prev {
+        text-align: right;
+    }
+    .page {
+        text-align: center;
+    }
+    .next {
+        text-align: left;
+    }
+}

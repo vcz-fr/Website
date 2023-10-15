@@ -1,0 +1,128 @@
+---
+---
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>NSFW content ahead, are you sure you want to cross?</title>
+    <meta property="og:title" content="NFSW content ahead!">
+    <meta property="og:description" content="Uh oh! This page leads to NSFW content! Are you sure you want to see that?">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="{{site.url}}/apps/nsfw/i.png">
+    <link rel="icon" type="image/png" href="{{site.url}}/apps/nsfw/i.png">
+    <meta name="theme-color" content="#e74c3c">
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <div id="link" class="hidden">
+        <div class="warn">🙈</div>
+        <p>Uh oh! The next page looks NSFW.</p>
+        <p>Are you sure you want to go there?</p>
+
+        <p>Here is the URL:</p>
+        <code id="url">hold on...</code>
+
+        <p>Processed with <a href="/apps/unlink/">🔗 Unlink</a>:</p>
+        <code id="url-unl">hold on...</code>
+
+        <div class="actions">
+            <a href="" id="go">YES!!</a>
+        </div>
+
+        <p><i>Support this app by <a href="/apps/feedback/?appid=uF48VJ1fgo1s">sharing your feedback</a>. Thanks!</i></p>
+    </div>
+    <div id="no-link" class="hidden">
+        <div class="warn">❓</div>
+        <p>No link has been found.</p>
+        <p>You can prevent people from accidentally viewing NSFW content with this site.</p>
+        <p>Add <code>{{site.url}}/apps/nsfw/?go=</code> before the URL and that's it!</p>
+        <p>You can also use the form below to generate that URL. Don't forget the <code>https://</code>!</p>
+        <p>Thanks for using this tool!</p>
+
+        <form method="get" class="actions">
+            <input type="text" name="go" value="https://" /> <input type="submit" value="submit">
+        </form>
+    </div>
+    <script>
+        (function () {
+            const _id = id => document.getElementById(id);
+            const _unl = (url) => fetch("/api/unlink", {
+                method: "POST",
+                body: JSON.stringify({ url }),
+                headers: { "content-type": "application/json" }
+            })
+                .then(async r => {
+                    const json = await r.json();
+                    if (!r.ok) {
+                        throw "Could not resolve the URL. Reason: " + json.reason;
+                    }
+                    _id("url-unl").innerText = json.content.pop().url;
+                })
+
+            const sp = new URLSearchParams(location.search);
+            if (sp.has("go")) {
+                const URL = sp.get("go");
+                _id("go").setAttribute("href", URL);
+                _id("url").innerText = URL;
+                _id("link").classList.remove("hidden");
+
+                _unl(URL);
+            } else {
+                _id("no-link").classList.remove("hidden");
+            }
+        })();
+    </script>
+    <style>
+        html {
+            min-height: 100vh;
+            background: #000;
+
+            display: grid;
+            justify-content: center;
+            align-content: center;
+        }
+
+        body {
+            color: white;
+            text-align: center;
+            background: rgba(255, 255, 255, .1);
+            padding: 2rem 5rem;
+            font-size: 16px;
+            font-family: sans-serif;
+        }
+
+        a {
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        code {
+            background: #000;
+            padding: .5rem;
+            line-height: 2rem;
+        }
+
+        .warn {
+            font-size: 36px;
+        }
+
+        .actions {
+            margin: 2rem 0;
+        }
+
+        #go {
+            padding: 1rem;
+            margin: 1rem;
+            border: none;
+            background: #2ecc71;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</body>
+
+</html>

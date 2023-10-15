@@ -1,0 +1,14 @@
+{
+  "name": "apps",
+  "version": "1.0.0",
+  "description": "Simplicity-powered tools from Vincenzo Scalzi",
+  "main": "index.js",
+  "repository": "git@github.com:vcz-fr/apps.git",
+  "author": "Vincenzo Scalzi <vcz-fr@users.noreply.github.com>",
+  "license": "UNLICENSED",
+  "private": true,
+  "devDependencies": {
+    "@cloudflare/workers-types": "^3.3.0"
+  },
+  "packageManager": "yarn@3.5.1"
+}

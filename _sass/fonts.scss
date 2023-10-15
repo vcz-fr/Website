@@ -8,3 +8,9 @@
   font-family: icon;
   src: url("/assets/font/icon.woff2") format("woff2"), url("/assets/font/icon.woff") format("woff");
 }
+
+@font-face {
+  font-family: blog;
+  src: url("/assets/font/blog.woff2") format("woff2"), url("/assets/font/blog.woff") format("woff");
+  font-display: swap;
+}

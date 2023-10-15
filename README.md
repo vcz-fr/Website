@@ -4,8 +4,8 @@ The current version of my personal website, out in the open!
 
 ## The motivation
 My website has to represent my ideal in terms of engineering. I love fast websites that respect standards as much as I
-love experimenting with stuff online. Every now and then I want to tackle new challenges, like "open sourcing" my
-website, using a static site generator and hosting it for free.
+love experimenting with stuff online. Occasionally I want to tackle new challenges, like "open sourcing" my website,
+using a static site generator and hosting it for free.
 
 Every iteration adds new ideas and features to the mix like a cleaner design, performance, personality. This one will
 allow me to integrate some features and keep experimenting while keeping some key ideas that have already been developed
@@ -14,11 +14,18 @@ and thoroughly thought about.
 ## About forking this repo to create a personal website
 Yes, of course you can! If you like it, you are even encouraged to do so. Please do me two favors:
 - Share your ideas by leaving your thoughts in an issue. I will gladly come back to you as soon as I can;
-- Read the code, just in case some ugly monster is laying around.
+- Read the code, just in case some ugly monster is lying around.
 
 ## History, reversed
 
-### v7 (current) - Cloudflare Pages
+### v8 (current) - Joining forces
+Why have three websites when you can have just one. Seeing how difficult it was to export and maintain the recipe for UI
+elements, it was best to group the blog and the apps under the umbrella of the main website. That way, all three
+websites will be consistent in experience and design. This makes the whole package easier to maintain.
+
+And look, there's a new logo animation on hover!
+
+### v7 - Cloudflare Pages
 Performance, native Jekyll version support and commercial usage were limiting factors for GitHub Pages. I wanted to
 fully leverage Cloudflare and their [Pages](https://pages.cloudflare.com/) offering to migrate to the latest Jekyll
 version and fully integrate my ecosystem with Cloudflare. This allowed me to host simple backends, an authentication
@@ -71,5 +78,5 @@ My first website ever, hosted on a .tk domain and a free web host. Both are now 
 
 The "About me" page of that website contained a quick presentation as the website focused on two creations:
 - CodeX: a game where players would solve very unbalanced and difficult enigmas;
-- Xoop: a cooperative game where everyone was progressing on the same levels with a semi-social experience with
-  achievements and a point system based on their contributions.
+- Xoop: a cooperative game where everyone was progressing on the same levels with a social experience with achievements
+  and a point system based on their contributions.

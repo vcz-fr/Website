@@ -1,13 +1,21 @@
+---
+site: "home"
+---
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <title>Vincenzo Scalzi - Web Performance Addict && Engineer</title>
     <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
     <link rel="canonical" href="https://vcz.fr"/>
-    <link rel="stylesheet" href="/assets/css/global.css">
+    <link rel="stylesheet" href="/assets/css/global.css"/>
+    {% feed_meta %}
 </head>
 <body>
-    {% include leftcolumn.html %}
+    <div id="menu">
+        {% include partials/title.html %}
+        {% include partials/navigation.html %}
+    </div>
     <div id="content">
         {{ content }}
     </div>

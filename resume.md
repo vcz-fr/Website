@@ -7,11 +7,11 @@ active: resume
 
 ## The Resume
 
-Thank you for the time you have spent discovering this website. Did you know that it only uses HTML and CSS? That is
-correct, no JavaScript. It is open source, hosted and delivered by [Cloudflare](https://www.cloudflare.com/){:rel="nofollow"}
+Thank you for the time you spent discovering this website. This website is statically generated and only contains trace
+amounts of JavaScript for your browsing pleasure. It is open source, hosted and delivered by [Cloudflare](https://www.cloudflare.com/){:rel="nofollow"}
 and uses [Jekyll](https://jekyllrb.com/){:rel="nofollow"} to generate content.
 
-If you want to leave with something, here are my generic resumes. Don't forget to send me a message!
+And if you insist on leaving with something here are my generic resumes. Don't forget to send me a message!
 
 </div>
 

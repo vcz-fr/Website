@@ -1,11 +1,14 @@
-$bg-color: #ddd;
-$card-color: #fff;
-$card-accent: #bbb;
-$text-color: #000;
-$text-accent: #809;
+:root {
+    --bg-color: #ddd;
+    --card-color: #fff;
+    --card-accent: #bbb;
+    --text-color: #000;
+    --text-accent: #809;
 
-$bg-color-dark: #333;
-$card-color-dark: #222;
-$card-accent-dark: #000;
-$text-color-dark: #eee;
-$text-accent-dark: #e6f;
+    --bg-zone-a: #fdd;
+    --bg-zone-b: #ddf;
+    --bg-success: #dfd;
+}
+
+$indicator-error: #ff2828;
+$indicator-success: #b1f626;

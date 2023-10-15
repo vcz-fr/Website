@@ -1,19 +1,76 @@
-- name: index
-  url: /
-  text: Who am I?
-  icon: 
+home:
+  - name: index
+    url: /
+    text: Who am I?
+    icon: "&#xf2bb;"
 
-- name: portfolio
-  url: /portfolio
-  text: Portfolio
-  icon: 
+  - name: apps
+    url: /apps
+    text: Apps
+    icon: "&#xf0c3;"
 
-- name: skills
-  url: /skills
-  text: Skills
-  icon: 
+  - name: blog
+    url: /blog
+    text: Blog
+    icon: "&#xf14b;"
 
-- name: resume
-  url: /resume
-  text: Resume
-  icon: 
+  - name: portfolio
+    url: /portfolio
+    text: Portfolio
+    icon: "&#xf121;"
+
+  - name: skills
+    url: /skills
+    text: Skills
+    icon: "&#xf005;"
+
+  - name: resume
+    url: /resume
+    text: Resume
+    icon: "&#xf15c;"
+
+apps:
+  - name: index
+    url:  /
+    text: Back to Home
+    icon: ◄
+
+  - name: fowler
+    url:  /apps/fowler
+    text: Fowler
+    icon: "&#xf040;"
+
+  - name: feedback
+    url:  /apps/feedback
+    text: Feedback
+    icon: "&#xf0a1;"
+
+  - name: unlink
+    url:  /apps/unlink
+    text: Unlink
+    icon: "&#xf127;"
+
+  - name: anagram
+    url: /apps/anagram
+    text: Anagram
+    icon: "&#xf031;"
+
+  - name: nsfw
+    url: /apps/nsfw
+    text: NSFW proxy
+    icon: "&#xf21b;"
+
+  - name: wed
+    url: /apps/wed
+    text: Write Every Day
+    icon: "&#xf11c;"
+
+blog:
+  - name: index
+    url:  /
+    text: Back to Home
+    icon: ◄
+  - name: all
+    url:  /blog/all
+    text: All posts
+    icon:

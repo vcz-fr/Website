@@ -1,0 +1,46 @@
+---
+layout: default
+---
+
+<div class="card">
+    <h1>Recent articles</h1>
+
+    <p>
+        Here are the most recent articles of this blog. They grow up so fast.
+    </p>
+</div>
+
+{% for post in paginator.posts %}
+<div class="card preview">
+    <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+    <p>
+        Posted {{ post.date | date: "%A %B %d, %Y" }}
+    </p>
+
+    <blockquote>{{post.excerpt | strip_html | truncatewords: 100}}</blockquote>
+
+    <p><i><a href="{{ post.url }}">Read more&hellip;</a></i></p>
+</div>
+{% endfor %}
+
+<div class="card" id="pagination">
+  <span class="prev">
+    {% if paginator.previous_page %}
+      <a href="{{ paginator.previous_page_path }}">Previous</a>
+    {% else %}
+      Previous
+    {% endif %}
+  </span>
+
+  <span class="page">
+    Page {{ paginator.page }} of {{ paginator.total_pages }}
+  </span>
+
+  <span class="next">
+    {% if paginator.next_page %}
+      <a href="{{ paginator.next_page_path }}">Next</a>
+    {% else %}
+      Next
+    {% endif %}
+  </span>
+</div>

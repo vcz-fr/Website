@@ -1,8 +1,53 @@
 url: "https://vcz.fr"
 
-plugins:
-  - jekyll-sitemap
+author:
+  name: Vincenzo Scalzi
+  display_name: vcz
+  web: https://vcz.fr
+  github: vcz-fr
+
+lsi: false
+markdown: kramdown
+kramdown:
+  input: GFM
+  highlighter: rouge
 
 sass:
   sourcemap: never
   style: compressed
+
+plugins:
+  - jekyll-sitemap
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-paginate
+
+feed:
+  posts_limit: 50
+
+excerpt_separator: "<!-- READ MORE -->"
+paginate: 10
+paginate_path: "/blog/all/:num"
+permalink: "/blog/:categories/:year/:month/:day/:title:output_ext"
+
+defaults:
+  - scope: {path: ""}
+    values:
+      site: "home"
+  - scope: {path: "apps"}
+    values:
+      site: "apps"
+  - scope: {path: "blog"}
+    values:
+      site: "blog"
+  - scope: {path: _posts}
+    values:
+      site: "blog"
+      layout: "blog"
+
+exclude:
+  - "Gemfile*"
+  - "*.json"
+  - "bun.lockb"
+  - "*.txt"
+  - README.md
