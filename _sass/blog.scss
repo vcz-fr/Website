@@ -42,6 +42,24 @@
         white-space: pre-wrap;
         overflow-wrap: break-word;
     }
+
+    & table {
+        width: 100%;
+        border-collapse: collapse;
+
+        & > thead {
+            border-bottom: solid 2px;
+        }
+
+        & td {
+            padding: .5rem;
+
+            &:not(:first-child) {
+                border-left: solid 1px;
+            }
+        }
+        
+    }
 }
 
 .preview {
