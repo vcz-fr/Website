@@ -68,3 +68,11 @@
 !/assets/img/**/*.jpg
 !/assets/resume/
 !/assets/resume/*.pdf
+
+# Cloudflare Workers
+!/workers/
+!/workers/src/
+!/workers/src/worker.js
+!/workers/wrangler.toml
+!/workers/package.json
+!/workers/package-lock.json

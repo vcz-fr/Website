@@ -1,0 +1,7 @@
+name = "polar"
+main = "src/worker.js"
+compatibility_date = "2023-12-18"
+workers_dev = true
+
+[triggers]
+crons = ["37 6 * * *"]

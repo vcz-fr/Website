@@ -46,6 +46,7 @@ defaults:
       layout: "blog"
 
 exclude:
+  - workers
   - "Gemfile*"
   - "*.json"
   - "bun.lockb"
