@@ -7,10 +7,10 @@
   vertical-align: middle;
 
   &.error {
-    background-color: $indicator-error;
+    background-color: var(--indicator-error);
   }
 
   &.success {
-    background-color: $indicator-success;
+    background-color: var(--indicator-success);
   }
 }
