@@ -5,7 +5,7 @@ active: slides
 
 <div class="card" markdown="1">
 
-# The slide archive room
+## The slide archive room
 
 When introducing new concepts around, visual explainers in the form of slides are among the best suited to get ideas
 through. This is a collection of slides that have been archived from my Slides.com account, where the free plan limits

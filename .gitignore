@@ -55,7 +55,7 @@
 !/slides/
 !/slides/*/
 !/slides/*/assets/
-!/slides/*/assets/*.png
+!/slides/*/assets/*.avif
 !/slides/*/assets/*.svg
 !/slides/*/assets/*.gif
 !/slides/index.md
