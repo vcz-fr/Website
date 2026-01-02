@@ -9,6 +9,11 @@ home:
     text: Apps
     icon: "&#xf0c3;"
 
+  - name: slides
+    url:  /slides
+    text: Slides
+    icon: "&#x1f5c3;"
+
   - name: blog
     url: /blog
     text: Blog

@@ -1,0 +1,2223 @@
+---
+layout: slide
+title: "Building FaaS apps... FaaSt!"
+---
+
+<section class="stack">
+    <section>
+        <div class="sl-block sl-block-group" data-block-type="group" style="width: auto; height: auto;">
+            <div class="sl-block-content sl-block-group-content" style="transform-origin: 1045.5px 649px; z-index: 13;">
+                <div class="sl-block" data-block-type="image"
+                    style="width: 82px; height: 82px; left: 1159px; top: 608px; min-width: 1px; min-height: 1px;">
+                    <div class="sl-block-content"><img data-natural-width="1350" data-natural-height="1350"
+                            data-lazy-loaded="" data-src="/slides/faas/assets/avatar.png">
+                    </div>
+                </div>
+                <div class="sl-block" data-block-type="text"
+                    style="height: auto; min-width: 30px; min-height: 30px; width: 287px; left: 850px; top: 647px;">
+                    <div class="sl-block-content"
+                        style="z-index: 15; text-align: right; font-size: 70%; line-height: 0.91; color: rgb(170, 170, 170);">
+                        <p>https://vcz.fr</p>
+                    </div>
+                </div>
+                <div class="sl-block" data-block-type="text"
+                    style="height: auto; min-width: 30px; min-height: 30px; width: 287px; left: 850px; top: 608px;">
+                    <div class="sl-block-content"
+                        style="z-index: 14; text-align: right; line-height: 0.78; border-width: 1px;">
+                        <p style="text-align:right"><span style="font-size:1.0em">Vincenzo
+                                <strong>Scalzi</strong></span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="line"
+            style="width: auto; height: auto; min-width: 1px; min-height: 1px; left: 446px; top: 460px;">
+            <div class="sl-block-content" data-line-x1="-94" data-line-y1="200" data-line-x2="310" data-line-y2="200"
+                data-line-color="#000000" data-line-start-type="none" data-line-end-type="none" style="z-index: 12;
+            transition-duration: 0.3s; transition-delay: 2s;" data-line-width="3px"><svg
+                    xmlns="http://www.w3.org/2000/svg" version="1.1" preserveAspectRatio="xMidYMid" width="404"
+                    height="1" viewBox="-94 200 404 1">
+                    <path class="line-element" fill="rgba(0,0,0,0)" stroke="#000000" stroke-width="3"
+                        d="M-94 200 L310 200"></path>
+                    <path class="line-skeleton" fill="rgba(0,0,0,0)" stroke="rgba(0,0,0,0)" d="M-94 200 L310 200">
+                    </path>
+                    <path class="line-hitarea" fill="rgba(0,0,0,0)" stroke="rgba(0,0,0,0)" stroke-width="15"
+                        d="M-94 200 L310 200"></path>
+                </svg></div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="width: 806px; left: 237px; top: 248px; height: auto;">
+            <div class="sl-block-content">
+                <h1>Building FaaS apps… FaaSt!</h1>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="sl-block" data-block-type="text" style="width: 413px; left: 189px; top: 94px; height: auto;">
+            <div class="sl-block-content" style="text-align: left; z-index: 10;">
+                <h2>About me</h2>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="width: 451px; left: 189px; top: 168px; height: auto;">
+            <div class="sl-block-content" style="z-index: 11; text-align: left;">
+                <p>👋 <strong>Vincenzo Scalzi </strong>speaking!</p>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="height: auto; width: 451px; left: 189px; top: 244.5px;">
+            <div class="sl-block-content" style="z-index: 12; text-align: left;">
+                <p><u>I work as:</u></p>
+                <p><strong>Cloud &amp; DevOps Architect</strong></p>
+                <p>@
+                    <strong>Pyl.Tech</strong>
+                </p>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="height: auto; width: 451px; left: 189px; top: 426px;">
+            <div class="sl-block-content" style="z-index: 13; text-align: left;">
+                <p><u>I love:</u></p>
+                <p>- Enjoying my time in <strong>meetups</strong></p>
+                <p>- Talking about emerging
+                    <strong>tech</strong>
+                </p>
+                <p>- Privacy and minimalism</p>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="height: auto; width: 160px; left: 880px; top: 279px;"
+            data-name="text-bb05a1">
+            <div class="sl-block-content" style="z-index: 14; font-size: 500%; text-align: center;">
+                <p>🐘</p>
+            </div>
+        </div>
+    </section>
+</section>
+<section class="stack">
+    <section>
+        <div class="sl-block" data-block-type="text" style="width: 1075px; left: 102px; top: 274px; height: auto;">
+            <div class="sl-block-content">
+                <h1>FaaS?!</h1>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text"
+            style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 520px; top: 393px;">
+            <div class="sl-block-content">
+                <p>A simple definition</p>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text"
+            style="height: auto; min-width: 30px; min-height: 30px; width: 124px; left: 701px; top: 426px;">
+            <div class="sl-block-content"
+                style="z-index: 13; letter-spacing: -0.05em; font-size: 85%; transition-duration: 0.6s; transition-delay: 2s;">
+                <p>simplified</p>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="line"
+            style="width: auto; height: auto; min-width: 1px; min-height: 1px; left: 712px; top: 415px;">
+            <div class="sl-block-content" data-line-x1="5" data-line-y1="200" data-line-x2="107" data-line-y2="200"
+                data-line-color="#000000" data-line-start-type="none" data-line-end-type="none" style="z-index: 14;
+            transition-duration: 0.6s; transition-delay: 2s;" data-line-width="3px"><svg
+                    xmlns="http://www.w3.org/2000/svg" version="1.1" preserveAspectRatio="xMidYMid" width="102"
+                    height="1" viewBox="5 200 102 1">
+                    <path class="line-element" fill="rgba(0,0,0,0)" stroke="#000000" stroke-width="3"
+                        d="M5 200 L107 200"></path>
+                    <path class="line-skeleton" fill="rgba(0,0,0,0)" stroke="rgba(0,0,0,0)" d="M5
+            200 L107 200"></path>
+                    <path class="line-hitarea" fill="rgba(0,0,0,0)" stroke="rgba(0,0,0,0)" stroke-width="15"
+                        d="M5 200 L107 200"></path>
+                </svg></div>
+        </div>
+    </section>
+    <section>
+        <div class="sl-block" data-block-type="text" style="width: 550px; left: 38px; top: 86px; height: auto;">
+            <div class="sl-block-content" style="text-align: left; z-index: 10;">
+                <h2>Yes, FaaS!</h2>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="width: 550px; left: 38px; top: 160px; height: auto;">
+            <div class="sl-block-content" style="z-index: 11; text-align: left;">
+                <p>...for <strong>Function as a Service</strong>, also wrongly called "Serverless".</p>
+                <p>&nbsp;</p>
+                <p>The latest paradigm shift in computing infrastructure. One that involves<strong> code</strong>…
+                    mostly.</p>
+                <p>&nbsp;</p>
+                <p>We will mention <strong>AWS Lambda</strong> and <strong>Cloudflare
+                        Workers</strong> in later slides.</p>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="image" style="min-width: 1px; min-height: 1px; width: 144px; height:
+        144px; left: 808px; top: 183px;"><a class="sl-block-content" href="https://aws.amazon.com/lambda/"
+                rel="nofollow" target="_blank"><img data-natural-width="300" data-natural-height="300"
+                    data-lazy-loaded="" data-src="/slides/faas/assets/aws-lambda-icon.png"></a></div>
+        <div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width:
+        208px; left: 976px; top: 212px;"><a class="sl-block-style" href="https://aws.amazon.com/lambda/" rel="nofollow"
+                target="_blank">
+                <div class="sl-block-content" style="z-index: 14; text-align: left; color: rgb(0, 0, 0);">
+                    <p>AWS</p>
+                    <p><strong>Lambda</strong></p>
+                </div>
+            </a></div>
+        <div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height:
+            30px; width: 208px; left: 976px; top: 435px;"><a class="sl-block-style"
+                href="https://workers.cloudflare.com/" rel="nofollow" target="_blank">
+                <div class="sl-block-content" style="z-index: 15; text-align: left; color: rgb(0, 0, 0);">
+                    <p>Cloudflare</p>
+                    <p><strong>Workers</strong></p>
+                </div>
+            </a></div>
+        <div class="sl-block" data-block-type="image" style="width: 144px; height: 129.938px; left:
+            808px; top: 413.031px; min-width: 1px; min-height: 1px;" data-name="image-82aa8e"><a
+                class="sl-block-content" href="https://workers.cloudflare.com/" rel="nofollow" target="_blank"><img
+                    class="" data-natural-width="256" data-natural-height="231" data-lazy-loaded=""
+                    data-src="/slides/faas/assets/cf-workers-logo.svg"></a></div>
+    </section>
+    <section data-preload="">
+        <div class="sl-block" data-block-type="image"
+            style="width: 1152px; height: 648px; left: 64px; top: 0px; min-width: 1px; min-height: 1px;">
+            <div class="sl-block-content"><img data-natural-width="800" data-natural-height="450" data-lazy-loaded=""
+                    data-src="/slides/faas/assets/meeseeks.gif"></div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="height: auto; width: 543px; left: 673px; top: 648px;">
+            <div class="sl-block-content" style="z-index: 11; color: rgb(136, 136, 136); border-width: 1px;">
+                <p><em><span style="font-size:0.9em">Rick and Morty S1E5 "Meeseeks and Destroy"</span></em></p>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="line"
+            style="width: auto; height: auto; min-width: 0px; min-height: 0px; left: 640px; top: 648px;">
+            <div class="sl-block-content" data-line-x1="0" data-line-y1="0" data-line-x2="0" data-line-y2="647"
+                data-line-color="#000000" data-line-start-type="none" data-line-end-type="line-arrow" style="z-index:
+            12;"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" preserveAspectRatio="xMidYMid" width="1"
+                    height="647" viewBox="0 0 1 647">
+                    <path class="line-element" fill="rgba(0,0,0,0)" stroke="#000000" stroke-width="2" d="M0 0 L0 645">
+                    </path>
+                    <path stroke="#000000" stroke-width="2" d="M 6 640 L 0 646 L -6 640
+            L 0 646" class="line-end"></path>
+                    <path class="line-skeleton" fill="rgba(0,0,0,0)" stroke="rgba(0,0,0,0)" d="M0 0 L0 647"></path>
+                    <path class="line-hitarea" fill="rgba(0,0,0,0)" stroke="rgba(0,0,0,0)" stroke-width="15"
+                        d="M0 0 L0 647"></path>
+                </svg></div>
+        </div>
+        <div class="sl-block" data-block-type="line"
+            style="width: auto; height: auto; min-width: 0px; min-height: 0px; left: 619px; top: 648px;">
+            <div class="sl-block-content" data-line-x1="0" data-line-y1="0" data-line-x2="0" data-line-y2="296"
+                data-line-color="#000000" data-line-start-type="none" data-line-end-type="line-arrow" style="z-index:
+            13;"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" preserveAspectRatio="xMidYMid" width="1"
+                    height="296" viewBox="0 0 1 296">
+                    <path class="line-element" fill="rgba(0,0,0,0)" stroke="#000000" stroke-width="2" d="M0 0 L0 294">
+                    </path>
+                    <path stroke="#000000" stroke-width="2" d="M 6 289 L 0 295 L -6 289
+            L 0 295" class="line-end"></path>
+                    <path class="line-skeleton" fill="rgba(0,0,0,0)" stroke="rgba(0,0,0,0)" d="M0 0 L0 296"></path>
+                    <path class="line-hitarea" fill="rgba(0,0,0,0)" stroke="rgba(0,0,0,0)" stroke-width="15"
+                        d="M0 0 L0 296"></path>
+                </svg></div>
+        </div>
+        <div class="sl-block" data-block-type="line"
+            style="width: auto; height: auto; min-width: 0px; min-height: 0px; left: 672px; top: 648px;">
+            <div class="sl-block-content" data-line-x1="0" data-line-y1="0" data-line-x2="0" data-line-y2="184"
+                data-line-color="#000000" data-line-start-type="none" data-line-end-type="line-arrow" style="z-index:
+            14;"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" preserveAspectRatio="xMidYMid" width="1"
+                    height="184" viewBox="0 0 1 184">
+                    <path class="line-element" fill="rgba(0,0,0,0)" stroke="#000000" stroke-width="2" d="M0 0 L0 182">
+                    </path>
+                    <path stroke="#000000" stroke-width="2" d="M 6 177 L 0 183 L -6 177
+            L 0 183" class="line-end"></path>
+                    <path class="line-skeleton" fill="rgba(0,0,0,0)" stroke="rgba(0,0,0,0)" d="M0 0 L0 184"></path>
+                    <path class="line-hitarea" fill="rgba(0,0,0,0)" stroke="rgba(0,0,0,0)" stroke-width="15"
+                        d="M0 0 L0 184"></path>
+                </svg></div>
+        </div>
+    </section>
+    <section>
+        <div class="sl-block" data-block-type="text" style="width: 1075px; left: 102px; top: 194px; height: auto;">
+            <div class="sl-block-content">
+                <h2>Top-down view of FaaS</h2>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="width: 1075px; left: 102px; top: 268px; height: auto;">
+            <div class="sl-block-content">
+                <ul>
+                    <li>Spawn function environment</li>
+                    <li>Handle request</li>
+                    <li>Execute request</li>
+                    <li>Destroy
+                        function environment</li>
+                </ul>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="line"
+            style="width: auto; height: auto; min-width: 0px; min-height: 0px; left: 640px; top: -382px;">
+            <div class="sl-block-content" data-line-x1="0" data-line-y1="0" data-line-x2="0" data-line-y2="575"
+                data-line-color="#000000" data-line-start-type="none" data-line-end-type="line-arrow" style="z-index:
+            12;"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" preserveAspectRatio="xMidYMid" width="1"
+                    height="575" viewBox="0 0 1 575">
+                    <path class="line-element" fill="rgba(0,0,0,0)" stroke="#000000" stroke-width="2" d="M0 0 L0 573">
+                    </path>
+                    <path stroke="#000000" stroke-width="2" d="M 6 568 L 0 574 L -6 568
+            L 0 574" class="line-end"></path>
+                    <path class="line-skeleton" fill="rgba(0,0,0,0)" stroke="rgba(0,0,0,0)" d="M0 0 L0 575"></path>
+                    <path class="line-hitarea" fill="rgba(0,0,0,0)" stroke="rgba(0,0,0,0)" stroke-width="15"
+                        d="M0 0 L0 575"></path>
+                </svg></div>
+        </div>
+    </section>
+    <section>
+        <div class="sl-block" data-block-type="text" style="width: 550px; left: 38px; top: 86px; height: auto;">
+            <div class="sl-block-content" style="text-align: left; z-index: 11;">
+                <h2>The Stack</h2>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="width: 550px; left: 38px; top: 160px; height: auto;">
+            <div class="sl-block-content" style="z-index: 12; text-align: left;">
+                <p>Here are some different options to host a service:</p>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text"
+            style="height: auto; min-width: 30px; min-height: 30px; width: 220px; left: 50px; top: 576px;">
+            <div class="sl-block-content fragment" data-fragment-index="0">
+                <p>Hosting the infrastructure</p>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text"
+            style="height: auto; min-width: 30px; min-height: 30px; width: 220px; left: 290px; top: 576px;">
+            <div class="sl-block-content fragment" data-fragment-index="1">
+                <p>Renting capacity</p>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text"
+            style="height: auto; min-width: 30px; min-height: 30px; width: 220px; left: 530px; top: 576px;">
+            <div class="sl-block-content fragment" data-fragment-index="2">
+                <p>Allocating capacity</p>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text"
+            style="height: auto; min-width: 30px; min-height: 30px; width: 220px; left: 770px; top: 596px;">
+            <div class="sl-block-content fragment" data-fragment-index="3">
+                <p>Deliver code</p>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text"
+            style="height: auto; min-width: 30px; min-height: 30px; width: 220px; left: 1010px; top: 576px;">
+            <div class="sl-block-content fragment" data-fragment-index="4">
+                <p>Rent the service!</p>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="shape"
+            style="min-width: 4px; min-height: 4px; width: 120px; height: 121px; left: 340px; top: 372px;">
+            <div class="sl-block-content fragment" data-shape-type="rect" data-shape-fill-color="rgba(0, 0, 0, 0)"
+                data-shape-stretch="true" data-shape-stroke-color="#000000" data-shape-stroke-width="3px"
+                data-fragment-index="1"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%"
+                    preserveAspectRatio="none" viewBox="0 0 120 121">
+                    <defs>
+                        <clipPath id="shape-mask-1-1573894194754">
+                            <rect width="120" height="121" rx="0" ry="0" fill="rgba(0, 0, 0, 0)" stroke="#000000"
+                                stroke-width="6"></rect>
+                        </clipPath>
+                    </defs>
+                    <rect width="120" height="121" rx="0" ry="0" class="shape-element" fill="rgba(0, 0, 0, 0)"
+                        stroke="#000000" stroke-width="6" clip-path="url(#shape-mask-1-1573894194754)"></rect>
+                </svg></div>
+        </div>
+        <div class="sl-block" data-block-type="text"
+            style="height: auto; min-width: 30px; min-height: 30px; width: 60px; left: 370px; top: 389px;">
+            <div class="sl-block-content fragment" data-fragment-index="1">
+                <p>OS</p>
+                <p>App</p>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="shape"
+            style="min-width: 4px; min-height: 4px; width: 120px; height: 121px; left: 580px; top: 372px;">
+            <div class="sl-block-content fragment" data-shape-type="rect" data-shape-fill-color="rgba(0, 0, 0, 0)"
+                data-shape-stretch="true" data-shape-stroke-color="#000000" data-shape-stroke-width="3px"
+                data-fragment-index="2"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%"
+                    preserveAspectRatio="none" viewBox="0 0 120 121">
+                    <defs>
+                        <clipPath id="shape-mask-3-1573894362392">
+                            <rect width="120" height="121" rx="0" ry="0" fill="rgba(0, 0, 0, 0)" stroke="#000000"
+                                stroke-width="6"></rect>
+                        </clipPath>
+                    </defs>
+                    <rect width="120" height="121" rx="0" ry="0" class="shape-element" fill="rgba(0, 0, 0, 0)"
+                        stroke="#000000" stroke-width="6" clip-path="url(#shape-mask-3-1573894362392)"></rect>
+                </svg></div>
+        </div>
+        <div class="sl-block" data-block-type="shape"
+            style="min-width: 4px; min-height: 4px; width: 96px; height: 29px; left: 592px; top: 452px;">
+            <div class="sl-block-content fragment" data-shape-type="rect" data-shape-fill-color="rgba(0, 0, 0, 0)"
+                data-shape-stretch="true" data-shape-stroke-color="#000000" data-shape-stroke-width="3px"
+                data-fragment-index="2"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%"
+                    preserveAspectRatio="none" viewBox="0 0 96 29">
+                    <defs>
+                        <clipPath id="shape-mask-4-1573894374935">
+                            <rect width="96" height="29" rx="0" ry="0" fill="rgba(0, 0, 0, 0)" stroke="#000000"
+                                stroke-width="6"></rect>
+                        </clipPath>
+                    </defs>
+                    <rect width="96" height="29" rx="0" ry="0" class="shape-element" fill="rgba(0, 0, 0, 0)"
+                        stroke="#000000" stroke-width="6" clip-path="url(#shape-mask-4-1573894374935)"></rect>
+                </svg></div>
+        </div>
+        <div class="sl-block" data-block-type="shape"
+            style="min-width: 4px; min-height: 4px; width: 42px; height: 29px; left: 592px; top: 383px;">
+            <div class="sl-block-content fragment" data-shape-type="rect" data-shape-fill-color="rgba(0, 0, 0, 0)"
+                data-shape-stretch="true" data-shape-stroke-color="#000000" data-shape-stroke-width="3px"
+                data-fragment-index="2"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%"
+                    preserveAspectRatio="none" viewBox="0 0 42 29">
+                    <defs>
+                        <clipPath id="shape-mask-5-1573894405840">
+                            <rect width="42" height="29" rx="0" ry="0" fill="rgba(0, 0, 0, 0)" stroke="#000000"
+                                stroke-width="6"></rect>
+                        </clipPath>
+                    </defs>
+                    <rect width="42" height="29" rx="0" ry="0" class="shape-element" fill="rgba(0, 0, 0, 0)"
+                        stroke="#000000" stroke-width="6" clip-path="url(#shape-mask-5-1573894405840)"></rect>
+                </svg></div>
+        </div>
+        <div class="sl-block" data-block-type="shape"
+            style="min-width: 4px; min-height: 4px; width: 42px; height: 29px; left: 592px; top: 418px;">
+            <div class="sl-block-content fragment" data-shape-type="rect" data-shape-fill-color="rgba(0, 0, 0, 0)"
+                data-shape-stretch="true" data-shape-stroke-color="#000000" data-shape-stroke-width="3px"
+                data-fragment-index="2"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%"
+                    preserveAspectRatio="none" viewBox="0 0 42 29">
+                    <defs>
+                        <clipPath id="shape-mask-6-1573894414367">
+                            <rect width="42" height="29" rx="0" ry="0" fill="rgba(0, 0, 0, 0)" stroke="#000000"
+                                stroke-width="6"></rect>
+                        </clipPath>
+                    </defs>
+                    <rect width="42" height="29" rx="0" ry="0" class="shape-element" fill="rgba(0, 0, 0, 0)"
+                        stroke="#000000" stroke-width="6" clip-path="url(#shape-mask-6-1573894414367)"></rect>
+                </svg></div>
+        </div>
+        <div class="sl-block" data-block-type="shape"
+            style="min-width: 4px; min-height: 4px; width: 48px; height: 64px; left: 640px; top: 383px;">
+            <div class="sl-block-content fragment" data-shape-type="rect" data-shape-fill-color="rgba(0, 0, 0, 0)"
+                data-shape-stretch="true" data-shape-stroke-color="#000000" data-shape-stroke-width="3px"
+                data-fragment-index="2"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%"
+                    preserveAspectRatio="none" viewBox="0 0 48 64">
+                    <defs>
+                        <clipPath id="shape-mask-7-1573894417447">
+                            <rect width="48" height="64" rx="0" ry="0" fill="rgba(0, 0, 0, 0)" stroke="#000000"
+                                stroke-width="6"></rect>
+                        </clipPath>
+                    </defs>
+                    <rect width="48" height="64" rx="0" ry="0" class="shape-element" fill="rgba(0, 0, 0, 0)"
+                        stroke="#000000" stroke-width="6" clip-path="url(#shape-mask-7-1573894417447)"></rect>
+                </svg></div>
+        </div>
+        <div class="sl-block" data-block-type="text"
+            style="height: auto; min-width: 30px; min-height: 30px; width: 55px; left: 632px; top: 396px;">
+            <div class="sl-block-style" style="z-index: 25; transform: rotate(270deg);">
+                <div class="sl-block-content fragment" data-fragment-index="2">
+                    <p><span style="font-size:0.7em">App</span></p>
+                </div>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text"
+            style="height: auto; min-width: 30px; min-height: 30px; width: 55px; left: 613px; top: 442px;">
+            <div class="sl-block-content fragment" data-fragment-index="2">
+                <p><span style="font-size:0.7em">App</span></p>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="shape"
+            style="min-width: 4px; min-height: 4px; width: 116px; height: 49px; left: 822px; top: 442px;">
+            <div class="sl-block-content fragment" data-shape-type="rect" data-shape-fill-color="rgba(0, 0, 0, 0)"
+                data-shape-stretch="true" data-shape-stroke-color="#888888" data-shape-stroke-width="3px"
+                data-fragment-index="3"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%"
+                    preserveAspectRatio="none" viewBox="0 0 116 49">
+                    <defs>
+                        <clipPath id="shape-mask-14-1573894737626">
+                            <rect width="116" height="49" rx="0" ry="0" fill="rgba(0, 0, 0, 0)" stroke="#888888"
+                                stroke-width="6"></rect>
+                        </clipPath>
+                    </defs>
+                    <rect width="116" height="49" rx="0" ry="0" class="shape-element" fill="rgba(0, 0, 0, 0)"
+                        stroke="#888888" stroke-width="6" clip-path="url(#shape-mask-14-1573894737626)"></rect>
+                </svg></div>
+        </div>
+        <div class="sl-block" data-block-type="line"
+            style="width: auto; height: auto; min-width: 1px; min-height: 1px; left: 807px; top: 431px;">
+            <div class="sl-block-content fragment" data-line-x1="0" data-line-y1="200" data-line-x2="148"
+                data-line-y2="200" data-line-color="#000000" data-line-start-type="none" data-line-end-type="none"
+                data-line-width="3px" data-fragment-index="3"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"
+                    preserveAspectRatio="xMidYMid" width="148" height="1" viewBox="0 200 148 1">
+                    <path class="line-element" fill="rgba(0,0,0,0)" stroke="#000000" stroke-width="3"
+                        d="M0 200 L148 200"></path>
+                    <path class="line-skeleton" fill="rgba(0,0,0,0)" stroke="rgba(0,0,0,0)" d="M0 200 L148 200"></path>
+                    <path class="line-hitarea" fill="rgba(0,0,0,0)" stroke="rgba(0,0,0,0)" stroke-width="15" d="M0 200 L148
+            200"></path>
+                </svg></div>
+        </div>
+        <div class="sl-block" data-block-type="text"
+            style="height: auto; min-width: 30px; min-height: 30px; width: 98px; left: 832px; top: 442px;">
+            <div class="sl-block-content fragment" style="z-index: 29; color: rgb(136, 136, 136);"
+                data-fragment-index="3">
+                <p><span style="font-size:0.5em">OS, Runtime</span></p>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="shape"
+            style="min-width: 4px; min-height: 4px; width: 23px; height: 21px; left: 915px; top: 372px;">
+            <div class="sl-block-content fragment" data-shape-type="rect" data-shape-fill-color="rgba(0, 0, 0, 0)"
+                data-shape-stretch="true" data-shape-stroke-color="#000000" data-shape-stroke-width="3px"
+                data-fragment-index="3"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%"
+                    preserveAspectRatio="none" viewBox="0 0 23 21">
+                    <defs>
+                        <clipPath id="shape-mask-15-1573894910474">
+                            <rect width="23" height="21" rx="0" ry="0" fill="rgba(0, 0, 0, 0)" stroke="#000000"
+                                stroke-width="6"></rect>
+                        </clipPath>
+                    </defs>
+                    <rect width="23" height="21" rx="0" ry="0" class="shape-element" fill="rgba(0, 0, 0, 0)"
+                        stroke="#000000" stroke-width="6" clip-path="url(#shape-mask-15-1573894910474)"></rect>
+                </svg></div>
+        </div>
+        <div class="sl-block" data-block-type="shape"
+            style="min-width: 4px; min-height: 4px; width: 23px; height: 21px; left: 869px; top: 398px;">
+            <div class="sl-block-content fragment" data-shape-type="rect" data-shape-fill-color="rgba(0, 0, 0, 0)"
+                data-shape-stretch="true" data-shape-stroke-color="#000000" data-shape-stroke-width="3px"
+                data-fragment-index="3"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%"
+                    preserveAspectRatio="none" viewBox="0 0 23 21">
+                    <defs>
+                        <clipPath id="shape-mask-16-1573894914017">
+                            <rect width="23" height="21" rx="0" ry="0" fill="rgba(0, 0, 0, 0)" stroke="#000000"
+                                stroke-width="6"></rect>
+                        </clipPath>
+                    </defs>
+                    <rect width="23" height="21" rx="0" ry="0" class="shape-element" fill="rgba(0, 0, 0, 0)"
+                        stroke="#000000" stroke-width="6" clip-path="url(#shape-mask-16-1573894914017)"></rect>
+                </svg></div>
+        </div>
+        <div class="sl-block" data-block-type="shape"
+            style="min-width: 4px; min-height: 4px; width: 23px; height: 21px; left: 915px; top: 397px;">
+            <div class="sl-block-content fragment" data-shape-type="rect" data-shape-fill-color="rgba(0, 0, 0, 0)"
+                data-shape-stretch="true" data-shape-stroke-color="#000000" data-shape-stroke-width="3px"
+                data-fragment-index="3"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%"
+                    preserveAspectRatio="none" viewBox="0 0 23 21">
+                    <defs>
+                        <clipPath id="shape-mask-17-1573894917133">
+                            <rect width="23" height="21" rx="0" ry="0" fill="rgba(0, 0, 0, 0)" stroke="#000000"
+                                stroke-width="6"></rect>
+                        </clipPath>
+                    </defs>
+                    <rect width="23" height="21" rx="0" ry="0" class="shape-element" fill="rgba(0, 0, 0, 0)"
+                        stroke="#000000" stroke-width="6" clip-path="url(#shape-mask-17-1573894917133)"></rect>
+                </svg></div>
+        </div>
+        <div class="sl-block" data-block-type="text"
+            style="height: auto; min-width: 30px; min-height: 30px; width: 30px; left: 822px; top: 373px;">
+            <div class="sl-block-content fragment" data-fragment-index="3">
+                <p>ƒ</p>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="shape"
+            style="min-width: 4px; min-height: 4px; width: 251px; height: 333px; left: 759px; top: 338px;">
+            <div class="sl-block-content" data-shape-type="rect" data-shape-fill-color="rgba(0, 0, 0, 0)"
+                data-shape-stretch="true"
+                style="z-index: 10; transition-duration: 0.6s; transform-origin: 50% 100% 0px;"
+                data-shape-stroke-color="#000000" data-shape-stroke-width="3px" data-animation-trigger="click"
+                data-animation-trigger-id="self"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%"
+                    height="100%" preserveAspectRatio="none" viewBox="0 0 251 333">
+                    <defs>
+                        <clipPath id="shape-mask-44-1573996499949">
+                            <rect width="251" height="333" rx="0" ry="0" fill="rgba(0, 0, 0, 0)" stroke="#000000"
+                                stroke-width="6"></rect>
+                        </clipPath>
+                    </defs>
+                    <rect width="251" height="333" rx="0" ry="0" class="shape-element" fill="rgba(0, 0, 0, 0)"
+                        stroke="#000000" stroke-width="6" clip-path="url(#shape-mask-44-1573996499949)"></rect>
+                </svg></div>
+        </div>
+        <div class="sl-block" data-block-type="shape"
+            style="min-width: 4px; min-height: 4px; width: 62px; height: 109px; left: 80px; top: 360px;"
+            data-locked="true">
+            <div class="sl-block-content fragment" data-shape-type="rect" data-shape-fill-color="#000000"
+                data-shape-stretch="true" data-shape-corner-radius="3px" data-fragment-index="0">
+                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%"
+                    preserveAspectRatio="none" viewBox="0 0 62 109">
+                    <rect width="62" height="109" rx="3" ry="3" class="shape-element" fill="#000000"></rect>
+                </svg>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="shape"
+            style="min-width: 4px; min-height: 4px; width: 48px; height: 48px; left: 162px; top: 430px;"
+            data-locked="true">
+            <div class="sl-block-content fragment" data-shape-type="symbol-globe" data-shape-fill-color="#000000"
+                data-shape-stretch="true" data-fragment-index="0"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"
+                    width="100%" height="100%" preserveAspectRatio="none" viewBox="0 2 30 30">
+                    <g class="shape-element" fill="#000000" data-viewbox="0 2 30 30">
+                        <path d="M15 2c-8.284 0-15 6.716-15 15s6.716 15 15 15c8.284 0 15-6.716
+                        15-15s-6.716-15-15-15zM23.487 22c0.268-1.264 0.437-2.606 0.492-4h3.983c-0.104 1.381-0.426
+                        2.722-0.959 4h-3.516zM6.513 12c-0.268 1.264-0.437 2.606-0.492 4h-3.983c0.104-1.381 0.426-2.722
+                        0.959-4h3.516zM21.439 12c0.3 1.28 0.481 2.62 0.54 4h-5.979v-4h5.439zM16 10v-5.854c0.456 0.133
+                        0.908 0.355 1.351 0.668 0.831 0.586 1.625 1.488 2.298 2.609 0.465 0.775 0.867 1.638 1.203
+                        2.578h-4.852zM10.351 7.422c0.673-1.121 1.467-2.023 2.298-2.609 0.443-0.313 0.895-0.535
+                        1.351-0.668v5.854h-4.852c0.336-0.94 0.738-1.803 1.203-2.578zM14 12v4h-5.979c0.059-1.38 0.24-2.72
+                        0.54-4h5.439zM2.997 22c-0.533-1.278-0.854-2.619-0.959-4h3.983c0.055 1.394 0.224 2.736 0.492
+                        4h-3.516zM8.021 18h5.979v4h-5.439c-0.3-1.28-0.481-2.62-0.54-4zM14
+                        24v5.854c-0.456-0.133-0.908-0.355-1.351-0.668-0.831-0.586-1.625-1.488-2.298-2.609-0.465-0.775-0.867-1.638-1.203-2.578h4.852zM19.649
+                        26.578c-0.673 1.121-1.467 2.023-2.298 2.609-0.443 0.312-0.895 0.535-1.351
+                        0.668v-5.854h4.852c-0.336 0.94-0.738 1.802-1.203 2.578zM16 22v-4h5.979c-0.059 1.38-0.24
+                        2.72-0.54 4h-5.439zM23.98 16c-0.055-1.394-0.224-2.736-0.492-4h3.516c0.533 1.278 0.855 2.619
+                        0.959 4h-3.983zM25.958 10h-2.997c-0.582-1.836-1.387-3.447-2.354-4.732 1.329 0.636 2.533 1.488
+                        3.585 2.54 0.671 0.671 1.261 1.404 1.766 2.192zM5.808 7.808c1.052-1.052 2.256-1.904
+                        3.585-2.54-0.967 1.285-1.771 2.896-2.354 4.732h-2.997c0.504-0.788 1.094-1.521 1.766-2.192zM4.042
+                        24h2.997c0.583 1.836 1.387 3.447 2.354
+                        4.732-1.329-0.636-2.533-1.488-3.585-2.54-0.671-0.671-1.261-1.404-1.766-2.192zM24.192
+                        26.192c-1.052 1.052-2.256 1.904-3.585 2.54 0.967-1.285 1.771-2.896 2.354-4.732h2.997c-0.504
+                        0.788-1.094 1.521-1.766 2.192z"></path>
+                    </g>
+                </svg></div>
+        </div>
+        <div class="sl-block" data-block-type="shape"
+            style="min-width: 4px; min-height: 4px; width: 33px; height: 33px; left: 153px; top: 472px;"
+            data-locked="true">
+            <div class="sl-block-content fragment" data-shape-type="symbol-thin-arrow-up"
+                data-shape-fill-color="#000000" data-shape-stretch="true" data-fragment-index="0">
+                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%"
+                    preserveAspectRatio="none"
+                    viewBox="4.000249862670898 2.0002505779266357 23.999500274658203 27.999752044677734">
+                    <g class="shape-element" fill="#000000"
+                        data-viewbox="4.000249862670898 2.0002505779266357 23.999500274658203 27.999752044677734">
+                        <path d="M27.414 12.586l-10-10c-0.781-0.781-2.047-0.781-2.828 0l-10 10c-0.781 0.781-0.781 2.047
+                        0 2.828s2.047 0.781 2.828 0l6.586-6.586v19.172c0 1.105 0.895 2 2 2s2-0.895 2-2v-19.172l6.586
+                        6.586c0.39 0.39 0.902 0.586 1.414 0.586s1.024-0.195 1.414-0.586c0.781-0.781 0.781-2.047
+                        0-2.828z"></path>
+                    </g>
+                </svg>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="shape"
+            style="min-width: 4px; min-height: 4px; width: 33px; height: 33px; left: 186px; top: 472px;"
+            data-locked="true">
+            <div class="sl-block-content fragment" data-shape-type="symbol-thin-arrow-down"
+                data-shape-fill-color="#000000" data-shape-stretch="true" data-fragment-index="0">
+                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%"
+                    preserveAspectRatio="none"
+                    viewBox="4.000251770019531 1.9999980926513672 23.999500274658203 27.999752044677734">
+                    <g class="shape-element" fill="#000000"
+                        data-viewbox="4.000251770019531 1.9999980926513672 23.999500274658203 27.999752044677734">
+                        <path d="M4.586 19.414l10 10c0.781 0.781 2.047 0.781 2.828 0l10-10c0.781-0.781 0.781-2.047
+                        0-2.828s-2.047-0.781-2.828 0l-6.586 6.586v-19.172c0-1.105-0.895-2-2-2s-2 0.895-2
+                        2v19.172l-6.586-6.586c-0.391-0.39-0.902-0.586-1.414-0.586s-1.024 0.195-1.414 0.586c-0.781
+                        0.781-0.781 2.047 0 2.828z"></path>
+                    </g>
+                </svg>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="line"
+            style="width: auto; height: auto; min-width: 1px; min-height: 1px; left: 87px; top: 374px;"
+            data-locked="true">
+            <div class="sl-block-content fragment" data-line-x1="0" data-line-y1="200" data-line-x2="48"
+                data-line-y2="200" data-line-color="#ffffff" data-line-start-type="none" data-line-end-type="none"
+                data-line-width="3px" data-fragment-index="0"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"
+                    preserveAspectRatio="xMidYMid" width="48" height="1" viewBox="0 200 48 1">
+                    <path class="line-element" fill="rgba(0,0,0,0)" stroke="#ffffff" stroke-width="3"
+                        d="M0 200 L48 200"></path>
+                    <path class="line-skeleton" fill="rgba(0,0,0,0)" stroke="rgba(0,0,0,0)" d="M0 200 L48 200"></path>
+                    <path class="line-hitarea" fill="rgba(0,0,0,0)" stroke="rgba(0,0,0,0)" stroke-width="15" d="M0 200 L48
+            200"></path>
+                </svg></div>
+        </div>
+        <div class="sl-block" data-block-type="line"
+            style="width: auto; height: auto; min-width: 1px; min-height: 1px; left: 87px; top: 383px;"
+            data-locked="true">
+            <div class="sl-block-content fragment" data-line-x1="0" data-line-y1="200" data-line-x2="48"
+                data-line-y2="200" data-line-color="#ffffff" data-line-start-type="none" data-line-end-type="none"
+                data-line-width="3px" data-fragment-index="0"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"
+                    preserveAspectRatio="xMidYMid" width="48" height="1" viewBox="0 200 48 1">
+                    <path class="line-element" fill="rgba(0,0,0,0)" stroke="#ffffff" stroke-width="3"
+                        d="M0 200 L48 200"></path>
+                    <path class="line-skeleton" fill="rgba(0,0,0,0)" stroke="rgba(0,0,0,0)" d="M0 200 L48 200"></path>
+                    <path class="line-hitarea" fill="rgba(0,0,0,0)" stroke="rgba(0,0,0,0)" stroke-width="15" d="M0 200 L48
+            200"></path>
+                </svg></div>
+        </div>
+        <div class="sl-block" data-block-type="line"
+            style="width: auto; height: auto; min-width: 1px; min-height: 1px; left: 87px; top: 398px;"
+            data-locked="true">
+            <div class="sl-block-content fragment" data-line-x1="0" data-line-y1="200" data-line-x2="48"
+                data-line-y2="200" data-line-color="#ffffff" data-line-start-type="none" data-line-end-type="none"
+                data-line-width="3px" data-fragment-index="0"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"
+                    preserveAspectRatio="xMidYMid" width="48" height="1" viewBox="0 200 48 1">
+                    <path class="line-element" fill="rgba(0,0,0,0)" stroke="#ffffff" stroke-width="3"
+                        d="M0 200 L48 200"></path>
+                    <path class="line-skeleton" fill="rgba(0,0,0,0)" stroke="rgba(0,0,0,0)" d="M0 200 L48 200"></path>
+                    <path class="line-hitarea" fill="rgba(0,0,0,0)" stroke="rgba(0,0,0,0)" stroke-width="15" d="M0 200 L48
+            200"></path>
+                </svg></div>
+        </div>
+        <div class="sl-block" data-block-type="line"
+            style="width: auto; height: auto; min-width: 1px; min-height: 1px; left: 87px; top: 407px;"
+            data-locked="true">
+            <div class="sl-block-content fragment" data-line-x1="0" data-line-y1="200" data-line-x2="48"
+                data-line-y2="200" data-line-color="#ffffff" data-line-start-type="none" data-line-end-type="none"
+                data-line-width="3px" data-fragment-index="0"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"
+                    preserveAspectRatio="xMidYMid" width="48" height="1" viewBox="0 200 48 1">
+                    <path class="line-element" fill="rgba(0,0,0,0)" stroke="#ffffff" stroke-width="3"
+                        d="M0 200 L48 200"></path>
+                    <path class="line-skeleton" fill="rgba(0,0,0,0)" stroke="rgba(0,0,0,0)" d="M0 200 L48 200"></path>
+                    <path class="line-hitarea" fill="rgba(0,0,0,0)" stroke="rgba(0,0,0,0)" stroke-width="15" d="M0 200 L48
+            200"></path>
+                </svg></div>
+        </div>
+    </section>
+    <section>
+        <div class="sl-block" data-block-type="text"
+            style="height: auto; min-width: 30px; min-height: 30px; width: 800px; left: 240px; top: 360px;">
+            <div class="sl-block-content">
+                <p>Pay as you go, based on usage.</p>
+                <p>Handle the code, infra is managed.</p>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="width: 1075px; left: 102.5px; top: 190px; height: auto;">
+            <div class="sl-block-content">
+                <h1>Key takeaway</h1>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="line"
+            style="width: auto; height: auto; min-width: 0px; min-height: 0px; left: 160px; top: 332px;">
+            <div class="sl-block-content" data-line-x1="0" data-line-y1="0" data-line-x2="1040" data-line-y2="0"
+                data-line-color="#000000" data-line-start-type="none" data-line-end-type="none" style="z-index: 12;
+            transition-duration: 0.6s; transition-delay: 0.6s;"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"
+                    preserveAspectRatio="xMidYMid" width="1040" height="1" viewBox="0 0 1040 1">
+                    <path class="line-element" fill="rgba(0,0,0,0)" stroke="#000000" stroke-width="2" d="M0 0 L1040 0">
+                    </path>
+                    <path class="line-skeleton" fill="rgba(0,0,0,0)" stroke="rgba(0,0,0,0)" d="M0 0
+            L1040 0"></path>
+                    <path class="line-hitarea" fill="rgba(0,0,0,0)" stroke="rgba(0,0,0,0)" stroke-width="15"
+                        d="M0 0 L1040 0"></path>
+                </svg></div>
+        </div>
+        <div class="sl-block" data-block-type="line"
+            style="width: auto; height: auto; min-width: 0px; min-height: 0px; left: 80px; top: 469px;">
+            <div class="sl-block-content" data-line-x1="0" data-line-y1="0" data-line-x2="1040" data-line-y2="0"
+                data-line-color="#000000" data-line-start-type="none" data-line-end-type="none" style="z-index: 13;
+            transition-duration: 0.6s; transition-delay: 1.2s;"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"
+                    preserveAspectRatio="xMidYMid" width="1040" height="1" viewBox="0 0 1040 1">
+                    <path class="line-element" fill="rgba(0,0,0,0)" stroke="#000000" stroke-width="2" d="M0 0 L1040 0">
+                    </path>
+                    <path class="line-skeleton" fill="rgba(0,0,0,0)" stroke="rgba(0,0,0,0)" d="M0 0
+            L1040 0"></path>
+                    <path class="line-hitarea" fill="rgba(0,0,0,0)" stroke="rgba(0,0,0,0)" stroke-width="15"
+                        d="M0 0 L1040 0"></path>
+                </svg></div>
+        </div>
+        <div class="sl-block" data-block-type="line"
+            style="width: auto; height: auto; min-width: 0px; min-height: 0px; left: 1120px; top: 332px;">
+            <div class="sl-block-content" data-line-x1="80" data-line-y1="0" data-line-x2="0" data-line-y2="137"
+                data-line-color="#000000" data-line-start-type="none" data-line-end-type="none" style="z-index: 14;
+            transition-duration: 0.6s; transition-delay: 0.9s;"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"
+                    preserveAspectRatio="xMidYMid" width="80" height="137" viewBox="0 0 80 137">
+                    <path class="line-element" fill="rgba(0,0,0,0)" stroke="#000000" stroke-width="2" d="M80 0 L0 137">
+                    </path>
+                    <path class="line-skeleton" fill="rgba(0,0,0,0)" stroke="rgba(0,0,0,0)" d="M80 0 L0
+            137"></path>
+                    <path class="line-hitarea" fill="rgba(0,0,0,0)" stroke="rgba(0,0,0,0)" stroke-width="15" d="M80
+            0 L0 137"></path>
+                </svg></div>
+        </div>
+        <div class="sl-block" data-block-type="line"
+            style="width: auto; height: auto; min-width: 0px; min-height: 0px; left: 80px; top: 332px;">
+            <div class="sl-block-content" data-line-x1="80" data-line-y1="0" data-line-x2="0" data-line-y2="137"
+                data-line-color="#000000" data-line-start-type="none" data-line-end-type="none" style="z-index: 15;
+            transition-duration: 0.6s; transition-delay: 1.5s;"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"
+                    preserveAspectRatio="xMidYMid" width="80" height="137" viewBox="0 0 80 137">
+                    <path class="line-element" fill="rgba(0,0,0,0)" stroke="#000000" stroke-width="2" d="M80 0 L0 137">
+                    </path>
+                    <path class="line-skeleton" fill="rgba(0,0,0,0)" stroke="rgba(0,0,0,0)" d="M80 0 L0
+            137"></path>
+                    <path class="line-hitarea" fill="rgba(0,0,0,0)" stroke="rgba(0,0,0,0)" stroke-width="15" d="M80
+            0 L0 137"></path>
+                </svg></div>
+        </div>
+    </section>
+</section>
+<section class="stack">
+    <section>
+        <div class="sl-block" data-block-type="text" style="width: 1075px; left: 102px; top: 274px; height: auto;">
+            <div class="sl-block-content">
+                <h1>The shiƒt</h1>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text"
+            style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 520px; top: 393px;">
+            <div class="sl-block-content">
+                <p>Spot the difference</p>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="line"
+            style="width: auto; height: auto; min-width: 1px; min-height: 1px; left: 732px; top: 379px;">
+            <div class="sl-block-content" data-line-x1="18" data-line-y1="200" data-line-x2="65" data-line-y2="200"
+                data-line-color="#000000" data-line-start-type="none" data-line-end-type="none" style="z-index: 13;
+            transition-duration: 0.6s; transition-delay: 2s;" data-line-width="3px"><svg
+                    xmlns="http://www.w3.org/2000/svg" version="1.1" preserveAspectRatio="xMidYMid" width="47"
+                    height="1" viewBox="18 200 47 1">
+                    <path class="line-element" fill="rgba(0,0,0,0)" stroke="#000000" stroke-width="3"
+                        d="M18 200 L65 200"></path>
+                    <path class="line-skeleton" fill="rgba(0,0,0,0)" stroke="rgba(0,0,0,0)" d="M18
+            200 L65 200"></path>
+                    <path class="line-hitarea" fill="rgba(0,0,0,0)" stroke="rgba(0,0,0,0)" stroke-width="15"
+                        d="M18 200 L65 200"></path>
+                </svg></div>
+        </div>
+    </section>
+    <section>
+        <div class="sl-block" data-block-type="text" style="width: 1075px; left: 102px; top: 274px; height: auto;">
+            <div class="sl-block-content">
+                <h1>What would that change in my code?</h1>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="sl-block" data-block-type="text" style="width: 550px; left: 38px; top: 86px; height: auto;">
+            <div class="sl-block-content" style="text-align: left; z-index: 10;">
+                <h2>Mind the size</h2>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="width: 550px; left: 38px; top: 232px; height: auto;">
+            <div class="sl-block-content" style="z-index: 11; text-align: left;">
+                <p>Unlike classical development, functions are meant to be <strong>self-contained</strong>.</p>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="width: 550px; left: 38px; top: 371px; height: auto;">
+            <div class="sl-block-content" style="z-index: 27; text-align: left;">
+                <p>This translates to the necessity to <strong>specialize your functions</strong>, especially when your
+                    project <strong>scales in size</strong>.</p>
+            </div>
+        </div>
+        <div class="sl-block sl-block-group" data-block-type="group" style="height: auto;">
+            <div class="sl-block-content sl-block-group-content" style="transform-origin: 800px 266px; z-index: 17;">
+                <div class="sl-block" data-block-type="text"
+                    style="height: auto; min-width: 30px; min-height: 30px; width: 110px; left: 745px; top: 260px;">
+                    <div class="sl-block-content" style="z-index: 21; font-size: 50%;">
+                        <p>deps</p>
+                    </div>
+                </div>
+                <div class="sl-block" data-block-type="text"
+                    style="height: auto; min-width: 30px; min-height: 30px; width: 110px; left: 745px; top: 290px;">
+                    <div class="sl-block-content" style="z-index: 20; font-size: 50%;">
+                        <p>assets</p>
+                    </div>
+                </div>
+                <div class="sl-block" data-block-type="text"
+                    style="height: auto; min-width: 30px; min-height: 30px; width: 110px; left: 745px; top: 216px;">
+                    <div class="sl-block-content" style="z-index: 19; font-size: 50%;">
+                        <p>ƒ code</p>
+                    </div>
+                </div>
+                <div class="sl-block" data-block-type="shape"
+                    style="min-width: 4px; min-height: 4px; width: 110px; height: 108px; left: 745px; top: 212px;">
+                    <div class="sl-block-content" data-shape-type="rect" data-shape-fill-color="rgba(0, 0, 0, 0)"
+                        data-shape-stretch="true" data-shape-stroke-color="#000000" data-shape-stroke-width="3px"><svg
+                            xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%"
+                            preserveAspectRatio="none" viewBox="0 0 110 108">
+                            <defs>
+                                <clipPath id="shape-mask-2-1573980709903">
+                                    <rect width="110" height="108" rx="0" ry="0" fill="rgba(0, 0, 0, 0)"
+                                        stroke="#000000" stroke-width="6"></rect>
+                                </clipPath>
+                            </defs>
+                            <rect width="110" height="108" rx="0" ry="0" class="shape-element" fill="rgba(0, 0, 0, 0)"
+                                stroke="#000000" stroke-width="6" clip-path="url(#shape-mask-2-1573980709903)"></rect>
+                        </svg></div>
+                </div>
+            </div>
+        </div>
+        <div class="sl-block sl-block-group" data-block-type="group" style="height: auto;">
+            <div class="sl-block-content sl-block-group-content" style="transform-origin: 800px 454px; z-index: 22;">
+                <div class="sl-block" data-block-type="text"
+                    style="height: auto; min-width: 30px; min-height: 30px; width: 110px; left: 745px; top: 448px;">
+                    <div class="sl-block-content" style="z-index: 26; font-size: 50%;">
+                        <p>deps</p>
+                    </div>
+                </div>
+                <div class="sl-block" data-block-type="text"
+                    style="height: auto; min-width: 30px; min-height: 30px; width: 110px; left: 745px; top: 478px;">
+                    <div class="sl-block-content" style="z-index: 25; font-size: 50%;">
+                        <p>assets</p>
+                    </div>
+                </div>
+                <div class="sl-block" data-block-type="text"
+                    style="height: auto; min-width: 30px; min-height: 30px; width: 110px; left: 745px; top: 404px;">
+                    <div class="sl-block-content" style="z-index: 24; font-size: 50%;">
+                        <p>ƒ code</p>
+                    </div>
+                </div>
+                <div class="sl-block" data-block-type="shape"
+                    style="min-width: 4px; min-height: 4px; width: 110px; height: 108px; left: 745px; top: 400px;">
+                    <div class="sl-block-content" data-shape-type="rect" data-shape-fill-color="rgba(0, 0, 0, 0)"
+                        data-shape-stretch="true" data-shape-stroke-color="#000000" data-shape-stroke-width="3px"><svg
+                            xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%"
+                            preserveAspectRatio="none" viewBox="0 0 110 108">
+                            <defs>
+                                <clipPath id="shape-mask-3-1573980791824">
+                                    <rect width="110" height="108" rx="0" ry="0" fill="rgba(0, 0, 0, 0)"
+                                        stroke="#000000" stroke-width="6"></rect>
+                                </clipPath>
+                            </defs>
+                            <rect width="110" height="108" rx="0" ry="0" class="shape-element" fill="rgba(0, 0, 0, 0)"
+                                stroke="#000000" stroke-width="6" clip-path="url(#shape-mask-3-1573980791824)"></rect>
+                        </svg></div>
+                </div>
+            </div>
+        </div>
+        <div class="sl-block sl-block-group" data-block-type="group" style="height: auto;">
+            <div class="sl-block-content sl-block-group-content" style="transform-origin: 1020px 364px; z-index: 12;">
+                <div class="sl-block" data-block-type="text"
+                    style="height: auto; min-width: 30px; min-height: 30px; width: 220px; left: 910px; top: 386px;">
+                    <div class="sl-block-content">
+                        <p>deps</p>
+                    </div>
+                </div>
+                <div class="sl-block" data-block-type="text"
+                    style="height: auto; min-width: 30px; min-height: 30px; width: 220px; left: 910px; top: 428px;">
+                    <div class="sl-block-content">
+                        <p>assets</p>
+                    </div>
+                </div>
+                <div class="sl-block" data-block-type="text"
+                    style="height: auto; min-width: 30px; min-height: 30px; width: 220px; left: 910px; top: 281px;">
+                    <div class="sl-block-content">
+                        <p>ƒ code</p>
+                    </div>
+                </div>
+                <div class="sl-block" data-block-type="shape"
+                    style="min-width: 4px; min-height: 4px; width: 220px; height: 216px; left: 910px; top: 256px;">
+                    <div class="sl-block-content" data-shape-type="rect" data-shape-fill-color="rgba(255, 0, 0, 0.1)"
+                        data-shape-stretch="true" data-shape-stroke-color="#cc0000" data-shape-stroke-width="3px"><svg
+                            xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%"
+                            preserveAspectRatio="none" viewBox="0 0 220 216">
+                            <defs>
+                                <clipPath id="shape-mask-1-1573980576350">
+                                    <rect width="220" height="216" rx="0" ry="0" fill="rgba(255, 0, 0, 0.1)"
+                                        stroke="#cc0000" stroke-width="6"></rect>
+                                </clipPath>
+                            </defs>
+                            <rect width="220" height="216" rx="0" ry="0" class="shape-element" fill="rgba(255, 0, 0,
+                            0.1)" stroke="#cc0000" stroke-width="6" clip-path="url(#shape-mask-1-1573980576350)">
+                            </rect>
+                        </svg></div>
+                </div>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="width: 550px; left: 38px; top: 576px; height: auto;"
+            data-name="text-162b13">
+            <div class="sl-block-content" style="z-index: 28; text-align: left;">
+                <p><u>Beware:</u> more builds can become a maintainability nightmare!</p>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="sl-block" data-block-type="text" style="width: 550px; left: 38px; top: 86px; height: auto;">
+            <div class="sl-block-content" style="text-align: left; z-index: 10;">
+                <h2>Mind the deps</h2>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="height: auto; width: 550px; left: 45px; top: 218px;">
+            <div class="sl-block-content" style="z-index: 11; text-align: left;">
+                <p>In addition, dependencies and external assets must be kept <strong>at a minimum</strong>.</p>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="height: auto; width: 550px; left: 45px; top: 347px;">
+            <div class="sl-block-content" style="z-index: 12; text-align: left;">
+                <p>You can send the assets to an external storage space. As for common dependencies, check if your
+                    provider supports them.</p>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="line" style="width: auto; height: auto; left: 820px; top: 313px;">
+            <div class="sl-block-content" data-line-x1="1" data-line-y1="200" data-line-x2="243" data-line-y2="200"
+                data-line-color="#000000" data-line-start-type="none" data-line-end-type="none" data-line-width="3px">
+                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" preserveAspectRatio="xMidYMid" width="242"
+                    height="1" viewBox="1 200 242 1">
+                    <path class="line-element" fill="rgba(0,0,0,0)" stroke="#000000" stroke-width="3"
+                        d="M1 200 L243 200"></path>
+                    <path class="line-skeleton" fill="rgba(0,0,0,0)" stroke="rgba(0,0,0,0)" d="M1 200 L243 200"></path>
+                    <path class="line-hitarea" fill="rgba(0,0,0,0)" stroke="rgba(0,0,0,0)" stroke-width="15"
+                        d="M1 200 L243 200"></path>
+                </svg></div>
+        </div>
+        <div class="sl-block sl-block-group" data-block-type="group" style="height: auto;">
+            <div class="sl-block-content sl-block-group-content" style="transform-origin: 886px 261px; z-index: 24;">
+                <div class="sl-block" data-block-type="text"
+                    style="height: auto; width: 74px; left: 849px; top: 262px;">
+                    <div class="sl-block-content" style="z-index: 27; font-size: 50%;">
+                        <p>deps</p>
+                    </div>
+                </div>
+                <div class="sl-block" data-block-type="text"
+                    style="height: auto; width: 74px; left: 849px; top: 232px;">
+                    <div class="sl-block-content" style="z-index: 26; font-size: 50%;">
+                        <p>ƒ</p>
+                    </div>
+                </div>
+                <div class="sl-block" data-block-type="shape"
+                    style="width: 70px; height: 70px; left: 851px; top: 226px;">
+                    <div class="sl-block-content" data-shape-type="rect" data-shape-fill-color="rgba(0, 0, 0, 0)"
+                        data-shape-stretch="true" data-shape-stroke-color="#000000" data-shape-stroke-width="3px"><svg
+                            xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%"
+                            preserveAspectRatio="none" viewBox="0 0 70 70">
+                            <defs>
+                                <clipPath id="shape-mask-35-1573996161519">
+                                    <rect width="70" height="70" rx="0" ry="0" fill="rgba(0, 0, 0, 0)" stroke="#000000"
+                                        stroke-width="6"></rect>
+                                </clipPath>
+                            </defs>
+                            <rect width="70" height="70" rx="0" ry="0" class="shape-element" fill="rgba(0, 0, 0, 0)"
+                                stroke="#000000" stroke-width="6" clip-path="url(#shape-mask-35-1573996161519)"></rect>
+                        </svg></div>
+                </div>
+            </div>
+        </div>
+        <div class="sl-block sl-block-group" data-block-type="group" style="height: auto;">
+            <div class="sl-block-content sl-block-group-content" style="transform-origin: 997px 261px; z-index: 16;">
+                <div class="sl-block" data-block-type="text"
+                    style="height: auto; width: 74px; left: 960px; top: 262px;">
+                    <div class="sl-block-content" style="z-index: 19; font-size: 50%;">
+                        <p>deps</p>
+                    </div>
+                </div>
+                <div class="sl-block" data-block-type="text"
+                    style="height: auto; width: 74px; left: 960px; top: 232px;">
+                    <div class="sl-block-content" style="z-index: 18; font-size: 50%;">
+                        <p>ƒ</p>
+                    </div>
+                </div>
+                <div class="sl-block" data-block-type="shape"
+                    style="width: 70px; height: 70px; left: 962px; top: 226px;">
+                    <div class="sl-block-content" data-shape-type="rect" data-shape-fill-color="rgba(0, 0, 0, 0)"
+                        data-shape-stretch="true" data-shape-stroke-color="#000000" data-shape-stroke-width="3px"><svg
+                            xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%"
+                            preserveAspectRatio="none" viewBox="0 0 70 70">
+                            <defs>
+                                <clipPath id="shape-mask-37-1573996161527">
+                                    <rect width="70" height="70" rx="0" ry="0" fill="rgba(0, 0, 0, 0)" stroke="#000000"
+                                        stroke-width="6"></rect>
+                                </clipPath>
+                            </defs>
+                            <rect width="70" height="70" rx="0" ry="0" class="shape-element" fill="rgba(0, 0, 0, 0)"
+                                stroke="#000000" stroke-width="6" clip-path="url(#shape-mask-37-1573996161527)"></rect>
+                        </svg></div>
+                </div>
+            </div>
+        </div>
+        <div class="sl-block sl-block-group" data-block-type="group" style="height: auto;">
+            <div class="sl-block-content sl-block-group-content" style="transform-origin: 941px 367px; z-index: 20;">
+                <div class="sl-block" data-block-type="text"
+                    style="height: auto; width: 92px; left: 895px; top: 346px;">
+                    <div class="sl-block-content" style="z-index: 22; font-size: 50%;">
+                        <p>common</p>
+                        <p>deps</p>
+                    </div>
+                </div>
+                <div class="sl-block" data-block-type="shape"
+                    style="width: 148px; height: 70px; left: 867px; top: 332px;">
+                    <div class="sl-block-content" data-shape-type="rect" data-shape-fill-color="rgba(0, 255, 0, 0.1)"
+                        data-shape-stretch="true" data-shape-stroke-color="#00ff00" data-shape-stroke-width="3px"><svg
+                            xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%"
+                            preserveAspectRatio="none" viewBox="0 0 148 70">
+                            <defs>
+                                <clipPath id="shape-mask-38-1573996161531">
+                                    <rect width="148" height="70" rx="0" ry="0" fill="rgba(0, 255, 0, 0.1)"
+                                        stroke="#00ff00" stroke-width="6"></rect>
+                                </clipPath>
+                            </defs>
+                            <rect width="148" height="70" rx="0" ry="0" class="shape-element" fill="rgba(0, 255, 0,
+                            0.1)" stroke="#00ff00" stroke-width="6" clip-path="url(#shape-mask-38-1573996161531)">
+                            </rect>
+                        </svg></div>
+                </div>
+            </div>
+        </div>
+        <div class="sl-block sl-block-group" data-block-type="group" style="height: auto;">
+            <div class="sl-block-content sl-block-group-content" style="transform-origin: 941px 460px; z-index: 13;">
+                <div class="sl-block" data-block-type="text"
+                    style="height: auto; width: 92px; left: 895px; top: 437px;">
+                    <div class="sl-block-content">
+                        <p>assets</p>
+                    </div>
+                </div>
+                <div class="sl-block" data-block-type="shape"
+                    style="width: 148px; height: 70px; left: 867px; top: 425px;">
+                    <div class="sl-block-content" data-shape-type="rect" data-shape-fill-color="rgba(0, 255, 0, 0.1)"
+                        data-shape-stretch="true" data-shape-stroke-color="#00ff00" data-shape-stroke-width="3px"><svg
+                            xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%"
+                            preserveAspectRatio="none" viewBox="0 0 148 70">
+                            <defs>
+                                <clipPath id="shape-mask-36-1573996161521">
+                                    <rect width="148" height="70" rx="0" ry="0" fill="rgba(0, 255, 0, 0.1)"
+                                        stroke="#00ff00" stroke-width="6"></rect>
+                                </clipPath>
+                            </defs>
+                            <rect width="148" height="70" rx="0" ry="0" class="shape-element" fill="rgba(0, 255, 0,
+                            0.1)" stroke="#00ff00" stroke-width="6" clip-path="url(#shape-mask-36-1573996161521)">
+                            </rect>
+                        </svg></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="sl-block" data-block-type="text" style="width: 550px; left: 38px; top: 86px; height: auto;">
+            <div class="sl-block-content" style="text-align: left; z-index: 10;">
+                <h2>Mind the code!</h2>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="height: auto; width: 550px; left: 45px; top: 215px;">
+            <div class="sl-block-content" style="z-index: 11; text-align: left;">
+                <p>Use every technique to reduce build size: tree shaking, compression, uglification, comment stripping,
+                    etc.</p>
+            </div>
+        </div>
+        <div class="sl-block sl-block-group" data-block-type="group" style="height: auto;">
+            <div class="sl-block-content sl-block-group-content" style="transform-origin: 913px 371px; z-index: 12;">
+                <div class="sl-block" data-block-type="shape"
+                    style="min-width: 4px; min-height: 4px; width: 253px; height: 123px; left: 787px; top: 350px;">
+                    <div class="sl-block-content" data-shape-type="rect" data-shape-fill-color="rgb(0, 0, 0)"
+                        data-shape-stretch="true"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%"
+                            height="100%" preserveAspectRatio="none" viewBox="0 0 253 123">
+                            <rect width="253" height="123" rx="0" ry="0" class="shape-element" fill="rgb(0, 0, 0)">
+                            </rect>
+                        </svg></div>
+                </div>
+                <div class="sl-block" data-block-type="shape"
+                    style="min-width: 4px; min-height: 4px; width: 253px; height: 64px; left: 787px; top: 272px;">
+                    <div class="sl-block-content" data-shape-type="rect" data-shape-fill-color="rgb(0, 0, 0)"
+                        data-shape-stretch="true"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%"
+                            height="100%" preserveAspectRatio="none" viewBox="0 0 253 64">
+                            <rect width="253" height="64" rx="0" ry="0" class="shape-element" fill="rgb(0, 0, 0)">
+                            </rect>
+                        </svg></div>
+                </div>
+                <div class="sl-block" data-block-type="text"
+                    style="height: auto; width: 74px; left: 876px; top: 392px;">
+                    <div class="sl-block-content"
+                        style="z-index: 17; background-color: rgb(0, 0, 0); color: rgb(255, 255, 255);">
+                        <p>deps</p>
+                    </div>
+                </div>
+                <div class="sl-block" data-block-type="text"
+                    style="height: auto; width: 74px; left: 876px; top: 285px;">
+                    <div class="sl-block-content"
+                        style="z-index: 16; background-color: rgb(0, 0, 0); color: rgb(255, 255, 255);">
+                        <p>ƒ</p>
+                    </div>
+                </div>
+                <div class="sl-block" data-block-type="shape"
+                    style="width: 308px; height: 242px; left: 759px; top: 250px;">
+                    <div class="sl-block-content" data-shape-type="rect" data-shape-fill-color="rgba(0, 0, 0, 0)"
+                        data-shape-stretch="true" data-shape-stroke-color="#000000" data-shape-stroke-width="3px"><svg
+                            xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%"
+                            preserveAspectRatio="none" viewBox="0 0 308 242">
+                            <defs>
+                                <clipPath id="shape-mask-39-1573996282670">
+                                    <rect width="308" height="242" rx="0" ry="0" fill="rgba(0, 0, 0, 0)"
+                                        stroke="#000000" stroke-width="6"></rect>
+                                </clipPath>
+                            </defs>
+                            <rect width="308" height="242" rx="0" ry="0" class="shape-element" fill="rgba(0, 0, 0, 0)"
+                                stroke="#000000" stroke-width="6" clip-path="url(#shape-mask-39-1573996282670)"></rect>
+                        </svg></div>
+                </div>
+            </div>
+        </div>
+        <div class="sl-block sl-block-group" data-block-type="group" style="height: auto;">
+            <div class="sl-block-content sl-block-group-content" style="transform-origin: 1077px 371px; z-index: 21;">
+                <div class="sl-block" data-block-type="shape"
+                    style="min-width: 4px; min-height: 4px; width: 300px; height: 300px; left: 910px; top: 221px;">
+                    <div class="sl-block-content" data-shape-type="triangle-up" data-shape-fill-color="rgb(255, 255,
+                    255)" data-shape-stretch="true" style="z-index: 22; transition-delay: 2s; transition-duration:
+                    0.3s;"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%"
+                            preserveAspectRatio="none" viewBox="0 0 300 300">
+                            <polygon points="150,0
+                    300,300 0,300" class="shape-element" fill="rgb(255, 255, 255)"></polygon>
+                        </svg></div>
+                </div>
+                <div class="sl-block" data-block-type="text"
+                    style="height: auto; min-width: 30px; min-height: 30px; width: 204px; left: 1040px; top: 409px;">
+                    <div class="sl-block-content"
+                        style="z-index: 23; color: rgb(0, 0, 0); transition-duration: 0.3s; transition-delay: 2.3s;">
+                        <p><em>Tree shaking</em></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sl-block sl-block-group" data-block-type="group" style="height: auto;">
+            <div class="sl-block-content sl-block-group-content"
+                style="transform-origin: 789.5px 305.5px; z-index: 18;">
+                <div class="sl-block" data-block-type="shape"
+                    style="min-width: 4px; min-height: 4px; width: 213px; height: 213px; left: 716px; top: 199px;">
+                    <div class="sl-block-content" data-shape-type="rect" data-shape-fill-color="rgb(255, 255, 255)"
+                        data-shape-stretch="true"
+                        style="z-index: 19; transition-duration: 0.3s; transition-delay: 3.5s;"><svg
+                            xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%"
+                            preserveAspectRatio="none" viewBox="0 0 213 213">
+                            <rect width="213" height="213" rx="0" ry="0" class="shape-element"
+                                fill="rgb(255, 255, 255)"></rect>
+                        </svg></div>
+                </div>
+                <div class="sl-block" data-block-type="text"
+                    style="height: auto; min-width: 30px; min-height: 30px; width: 253px; left: 650px; top: 233px;">
+                    <div class="sl-block-content"
+                        style="z-index: 20; color: rgb(0, 0, 0); transition-duration: 0.3s; transition-delay: 3.8s;">
+                        <p><em>Compress / Uglify</em></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="height: auto; width: 550px; left: 38px; top: 431px;"
+            data-name="text-5f6de8">
+            <div class="sl-block-content" style="z-index: 24; text-align: left;">
+                <p>Integrate with your provider if it can further simplify your code: pre-included libraries, secrets
+                    management, key-value store, metrics, logging, feature toggles, etc.</p>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="sl-block" data-block-type="text" style="width: 550px; left: 38px; top: 86px; height: auto;">
+            <div class="sl-block-content" style="text-align: left; z-index: 10;">
+                <h2>Mind the provider</h2>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="height: auto; width: 550px; left: 45px; top: 196px;">
+            <div class="sl-block-content" style="z-index: 11; text-align: left;">
+                <p>Depending on your service provider, the runtime may propose more recent language versions enabling
+                    the usage of a more recent target language.</p>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="height: auto; width: 550px; left: 45px; top: 406px;">
+            <div class="sl-block-content" style="z-index: 12; text-align: left;">
+                <p>Look for reference architectures or additional options such as ARM support or green workers.</p>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="line"
+            style="width: auto; height: auto; min-width: 1px; min-height: 1px; left: 812px; top: 285px;">
+            <div class="sl-block-content" data-line-x1="1" data-line-y1="200" data-line-x2="243" data-line-y2="200"
+                data-line-color="#000000" data-line-start-type="none" data-line-end-type="none" data-line-width="3px">
+                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" preserveAspectRatio="xMidYMid" width="242"
+                    height="1" viewBox="1 200 242 1">
+                    <path class="line-element" fill="rgba(0,0,0,0)" stroke="#000000" stroke-width="3"
+                        d="M1 200 L243 200"></path>
+                    <path class="line-skeleton" fill="rgba(0,0,0,0)" stroke="rgba(0,0,0,0)" d="M1 200 L243 200"></path>
+                    <path class="line-hitarea" fill="rgba(0,0,0,0)" stroke="rgba(0,0,0,0)" stroke-width="15"
+                        d="M1 200 L243 200"></path>
+                </svg></div>
+        </div>
+        <div class="sl-block" data-block-type="line"
+            style="width: auto; height: auto; min-width: 1px; min-height: 1px; left: 812px; top: 433px;">
+            <div class="sl-block-content" data-line-x1="1" data-line-y1="200" data-line-x2="243" data-line-y2="200"
+                data-line-color="#000000" data-line-start-type="none" data-line-end-type="none" data-line-width="3px">
+                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" preserveAspectRatio="xMidYMid" width="242"
+                    height="1" viewBox="1 200 242 1">
+                    <path class="line-element" fill="rgba(0,0,0,0)" stroke="#000000" stroke-width="3"
+                        d="M1 200 L243 200"></path>
+                    <path class="line-skeleton" fill="rgba(0,0,0,0)" stroke="rgba(0,0,0,0)" d="M1 200 L243 200"></path>
+                    <path class="line-hitarea" fill="rgba(0,0,0,0)" stroke="rgba(0,0,0,0)" stroke-width="15"
+                        d="M1 200 L243 200"></path>
+                </svg></div>
+        </div>
+        <div class="sl-block sl-block-group" data-block-type="group" style="height: auto;">
+            <div class="sl-block-content sl-block-group-content" style="transform-origin: 974px 245px; z-index: 27;">
+                <div class="sl-block" data-block-type="text"
+                    style="height: auto; width: 44px; left: 952px; top: 233px;">
+                    <div class="sl-block-content" style="z-index: 29; font-size: 50%;">
+                        <p>ƒ</p>
+                    </div>
+                </div>
+                <div class="sl-block" data-block-type="shape"
+                    style="width: 44px; height: 40px; left: 952px; top: 225px;">
+                    <div class="sl-block-content" data-shape-type="rect" data-shape-fill-color="rgba(0, 0, 0, 0)"
+                        data-shape-stretch="true" data-shape-stroke-color="#000000" data-shape-stroke-width="3px"><svg
+                            xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%"
+                            preserveAspectRatio="none" viewBox="0 0 44 40">
+                            <defs>
+                                <clipPath id="shape-mask-47-1573997536767">
+                                    <rect width="44" height="40" rx="0" ry="0" fill="rgba(0, 0, 0, 0)" stroke="#000000"
+                                        stroke-width="6"></rect>
+                                </clipPath>
+                            </defs>
+                            <rect width="44" height="40" rx="0" ry="0" class="shape-element" fill="rgba(0, 0, 0, 0)"
+                                stroke="#000000" stroke-width="6" clip-path="url(#shape-mask-47-1573997536767)"></rect>
+                        </svg></div>
+                </div>
+            </div>
+        </div>
+        <div class="sl-block sl-block-group" data-block-type="group" style="height: auto;">
+            <div class="sl-block-content sl-block-group-content" style="transform-origin: 893px 245px; z-index: 13;">
+                <div class="sl-block" data-block-type="text"
+                    style="height: auto; width: 44px; left: 871px; top: 233px;">
+                    <div class="sl-block-content" style="z-index: 15; font-size: 50%;">
+                        <p>ƒ</p>
+                    </div>
+                </div>
+                <div class="sl-block" data-block-type="shape"
+                    style="width: 44px; height: 40px; left: 871px; top: 225px;">
+                    <div class="sl-block-content" data-shape-type="rect" data-shape-fill-color="rgba(0, 0, 0, 0)"
+                        data-shape-stretch="true" data-shape-stroke-color="#000000" data-shape-stroke-width="3px"><svg
+                            xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%"
+                            preserveAspectRatio="none" viewBox="0 0 44 40">
+                            <defs>
+                                <clipPath id="shape-mask-24-1573981748072">
+                                    <rect width="44" height="40" rx="0" ry="0" fill="rgba(0, 0, 0, 0)" stroke="#000000"
+                                        stroke-width="6"></rect>
+                                </clipPath>
+                            </defs>
+                            <rect width="44" height="40" rx="0" ry="0" class="shape-element" fill="rgba(0, 0, 0, 0)"
+                                stroke="#000000" stroke-width="6" clip-path="url(#shape-mask-24-1573981748072)"></rect>
+                        </svg></div>
+                </div>
+            </div>
+        </div>
+        <div class="sl-block sl-block-group" data-block-type="group" style="height: auto;">
+            <div class="sl-block-content sl-block-group-content" style="transform-origin: 933px 320.5px; z-index: 19;">
+                <div class="sl-block" data-block-type="text"
+                    style="height: auto; width: 148px; left: 859px; top: 304px;">
+                    <div class="sl-block-content" style="z-index: 21; font-size: 50%; line-height: 0.78;">
+                        <p>common</p>
+                        <p>deps</p>
+                    </div>
+                </div>
+                <div class="sl-block" data-block-type="shape"
+                    style="width: 148px; height: 45px; left: 859px; top: 298px;">
+                    <div class="sl-block-content" data-shape-type="rect" data-shape-fill-color="rgba(0, 0, 0, 0)"
+                        data-shape-stretch="true" data-shape-stroke-color="#000000" data-shape-stroke-width="3px"><svg
+                            xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%"
+                            preserveAspectRatio="none" viewBox="0 0 148 45">
+                            <defs>
+                                <clipPath id="shape-mask-27-1573981748081">
+                                    <rect width="148" height="45" rx="0" ry="0" fill="rgba(0, 0, 0, 0)" stroke="#000000"
+                                        stroke-width="6"></rect>
+                                </clipPath>
+                            </defs>
+                            <rect width="148" height="45" rx="0" ry="0" class="shape-element" fill="rgba(0, 0, 0, 0)"
+                                stroke="#000000" stroke-width="6" clip-path="url(#shape-mask-27-1573981748081)"></rect>
+                        </svg></div>
+                </div>
+            </div>
+        </div>
+        <div class="sl-block sl-block-group" data-block-type="group" style="height: auto;">
+            <div class="sl-block-content sl-block-group-content" style="transform-origin: 933px 386px; z-index: 16;">
+                <div class="sl-block" data-block-type="text"
+                    style="height: auto; width: 92px; left: 887px; top: 363px;">
+                    <div class="sl-block-content">
+                        <p>assets</p>
+                    </div>
+                </div>
+                <div class="sl-block" data-block-type="shape"
+                    style="width: 148px; height: 70px; left: 859px; top: 351px;">
+                    <div class="sl-block-content" data-shape-type="rect" data-shape-fill-color="rgba(0, 0, 0, 0)"
+                        data-shape-stretch="true" data-shape-stroke-color="#000000" data-shape-stroke-width="3px"><svg
+                            xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%"
+                            preserveAspectRatio="none" viewBox="0 0 148 70">
+                            <defs>
+                                <clipPath id="shape-mask-25-1573981748073">
+                                    <rect width="148" height="70" rx="0" ry="0" fill="rgba(0, 0, 0, 0)" stroke="#000000"
+                                        stroke-width="6"></rect>
+                                </clipPath>
+                            </defs>
+                            <rect width="148" height="70" rx="0" ry="0" class="shape-element" fill="rgba(0, 0, 0, 0)"
+                                stroke="#000000" stroke-width="6" clip-path="url(#shape-mask-25-1573981748073)"></rect>
+                        </svg></div>
+                </div>
+            </div>
+        </div>
+        <div class="sl-block sl-block-group" data-block-type="group" style="height: auto;">
+            <div class="sl-block-content sl-block-group-content" style="transform-origin: 933px 471px; z-index: 24;">
+                <div class="sl-block" data-block-type="text"
+                    style="height: auto; width: 148px; left: 859px; top: 453px;">
+                    <div class="sl-block-content" style="z-index: 26; font-size: 50%; line-height: 0.91;">
+                        <p>provider</p>
+                        <p>deps</p>
+                    </div>
+                </div>
+                <div class="sl-block" data-block-type="shape"
+                    style="width: 148px; height: 50px; left: 859px; top: 446px;">
+                    <div class="sl-block-content" data-shape-type="rect" data-shape-fill-color="rgba(0, 0, 0, 0)"
+                        data-shape-stretch="true" data-shape-stroke-color="#000000" data-shape-stroke-width="3px"><svg
+                            xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%"
+                            preserveAspectRatio="none" viewBox="0 0 148 50">
+                            <defs>
+                                <clipPath id="shape-mask-33-1573992989924">
+                                    <rect width="148" height="50" rx="0" ry="0" fill="rgba(0, 0, 0, 0)" stroke="#000000"
+                                        stroke-width="6"></rect>
+                                </clipPath>
+                            </defs>
+                            <rect width="148" height="50" rx="0" ry="0" class="shape-element" fill="rgba(0, 0, 0, 0)"
+                                stroke="#000000" stroke-width="6" clip-path="url(#shape-mask-33-1573992989924)"></rect>
+                        </svg></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="sl-block" data-block-type="line"
+            style="width: auto; height: auto; min-width: 0px; min-height: 0px; left: 80px; top: 332px;">
+            <div class="sl-block-content" data-line-x1="80" data-line-y1="0" data-line-x2="0" data-line-y2="137"
+                data-line-color="#000000" data-line-start-type="none" data-line-end-type="none" style="z-index: 15;
+            transition-duration: 0.6s; transition-delay: 1.5s;"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"
+                    preserveAspectRatio="xMidYMid" width="80" height="137" viewBox="0 0 80 137">
+                    <path class="line-element" fill="rgba(0,0,0,0)" stroke="#000000" stroke-width="2" d="M80 0 L0 137">
+                    </path>
+                    <path class="line-skeleton" fill="rgba(0,0,0,0)" stroke="rgba(0,0,0,0)" d="M80 0 L0
+            137"></path>
+                    <path class="line-hitarea" fill="rgba(0,0,0,0)" stroke="rgba(0,0,0,0)" stroke-width="15" d="M80
+            0 L0 137"></path>
+                </svg></div>
+        </div>
+        <div class="sl-block" data-block-type="line"
+            style="width: auto; height: auto; min-width: 0px; min-height: 0px; left: 1120px; top: 332px;">
+            <div class="sl-block-content" data-line-x1="80" data-line-y1="0" data-line-x2="0" data-line-y2="137"
+                data-line-color="#000000" data-line-start-type="none" data-line-end-type="none" style="z-index: 14;
+            transition-duration: 0.6s; transition-delay: 0.9s;"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"
+                    preserveAspectRatio="xMidYMid" width="80" height="137" viewBox="0 0 80 137">
+                    <path class="line-element" fill="rgba(0,0,0,0)" stroke="#000000" stroke-width="2" d="M80 0 L0 137">
+                    </path>
+                    <path class="line-skeleton" fill="rgba(0,0,0,0)" stroke="rgba(0,0,0,0)" d="M80 0 L0
+            137"></path>
+                    <path class="line-hitarea" fill="rgba(0,0,0,0)" stroke="rgba(0,0,0,0)" stroke-width="15" d="M80
+            0 L0 137"></path>
+                </svg></div>
+        </div>
+        <div class="sl-block" data-block-type="line"
+            style="width: auto; height: auto; min-width: 0px; min-height: 0px; left: 80px; top: 469px;">
+            <div class="sl-block-content" data-line-x1="0" data-line-y1="0" data-line-x2="1040" data-line-y2="0"
+                data-line-color="#000000" data-line-start-type="none" data-line-end-type="none" style="z-index: 13;
+            transition-duration: 0.6s; transition-delay: 1.2s;"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"
+                    preserveAspectRatio="xMidYMid" width="1040" height="1" viewBox="0 0 1040 1">
+                    <path class="line-element" fill="rgba(0,0,0,0)" stroke="#000000" stroke-width="2" d="M0 0 L1040 0">
+                    </path>
+                    <path class="line-skeleton" fill="rgba(0,0,0,0)" stroke="rgba(0,0,0,0)" d="M0 0
+            L1040 0"></path>
+                    <path class="line-hitarea" fill="rgba(0,0,0,0)" stroke="rgba(0,0,0,0)" stroke-width="15"
+                        d="M0 0 L1040 0"></path>
+                </svg></div>
+        </div>
+        <div class="sl-block" data-block-type="line"
+            style="width: auto; height: auto; min-width: 0px; min-height: 0px; left: 160px; top: 332px;">
+            <div class="sl-block-content" data-line-x1="0" data-line-y1="0" data-line-x2="1040" data-line-y2="0"
+                data-line-color="#000000" data-line-start-type="none" data-line-end-type="none" style="z-index: 12;
+            transition-duration: 0.6s; transition-delay: 0.6s;"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"
+                    preserveAspectRatio="xMidYMid" width="1040" height="1" viewBox="0 0 1040 1">
+                    <path class="line-element" fill="rgba(0,0,0,0)" stroke="#000000" stroke-width="2" d="M0 0 L1040 0">
+                    </path>
+                    <path class="line-skeleton" fill="rgba(0,0,0,0)" stroke="rgba(0,0,0,0)" d="M0 0
+            L1040 0"></path>
+                    <path class="line-hitarea" fill="rgba(0,0,0,0)" stroke="rgba(0,0,0,0)" stroke-width="15"
+                        d="M0 0 L1040 0"></path>
+                </svg></div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="width: 1075px; left: 102.5px; top: 190px; height: auto;">
+            <div class="sl-block-content">
+                <h1>Key takeaway</h1>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text"
+            style="height: auto; min-width: 30px; min-height: 30px; width: 800px; left: 240px; top: 360px;">
+            <div class="sl-block-content">
+                <p>Land to cover with FaaS is wide.<br></p>
+                <p>Practices change, follow the guide.<br></p>
+            </div>
+        </div>
+    </section>
+</section>
+<section class="stack">
+    <section>
+        <div class="sl-block" data-block-type="text" style="width: 471px; left: 404px; top: 274px; height: auto;">
+            <div class="sl-block-content">
+                <h1>How do I...?</h1>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="height: auto; width: 197px; left: 923px; top: 450px;">
+            <div class="sl-block-content"
+                style="z-index: 11; color: rgb(102, 102, 102); transition-duration: 0.6s; transition-delay: 2s;">
+                <p><span style="font-size:1.4em">Code!</span></p>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text"
+            style="height: auto; min-width: 30px; min-height: 30px; width: 158px; left: 519px; top: 477px;">
+            <div class="sl-block-content"
+                style="z-index: 12; color: rgb(102, 102, 102); transition-duration: 0.6s; transition-delay: 10.1s;">
+                <p><span style="font-size:1.4em">Build!</span></p>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text"
+            style="height: auto; min-width: 30px; min-height: 30px; width: 173px; left: 253px; top: 539px;">
+            <div class="sl-block-content"
+                style="z-index: 13; color: rgb(102, 102, 102); transition-duration: 0.6s; transition-delay: 4s;">
+                <p><span style="font-size:1.4em">Lint</span></p>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text"
+            style="height: auto; min-width: 30px; min-height: 30px; width: 291px; left: 794px; top: 802px;">
+            <div class="sl-block-content"
+                style="z-index: 14; color: rgb(102, 102, 102); transition-duration: 0.6s; transition-delay: 12.5s;">
+                <p><span style="font-size:1.4em">Check the syntax</span></p>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text"
+            style="height: auto; min-width: 30px; min-height: 30px; width: 149px; left: -111px; top: -47px;">
+            <div class="sl-block-content"
+                style="z-index: 15; color: rgb(102, 102, 102); transition-duration: 0.6s; transition-delay: 9.5s;">
+                <p><span style="font-size:1.4em">Test!</span></p>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text"
+            style="height: auto; min-width: 30px; min-height: 30px; width: 173px; left: 887px; top: -82px;">
+            <div class="sl-block-content"
+                style="z-index: 16; color: rgb(102, 102, 102); transition-duration: 0.6s; transition-delay: 7s;">
+                <p><span style="font-size:1.4em">Deploy</span></p>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text"
+            style="height: auto; min-width: 30px; min-height: 30px; width: 173px; left: 17px; top: 394px;">
+            <div class="sl-block-content"
+                style="z-index: 17; color: rgb(102, 102, 102); transition-duration: 0.6s; transition-delay: 10.5s;">
+                <p><span style="font-size:1.4em">Monitor</span></p>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text"
+            style="height: auto; min-width: 30px; min-height: 30px; width: 173px; left: 411px; top: -47px;">
+            <div class="sl-block-content"
+                style="z-index: 18; color: rgb(102, 102, 102); transition-duration: 0.6s; transition-delay: 13.4s;">
+                <p><span style="font-size:1.4em">Maintain</span></p>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text"
+            style="height: auto; min-width: 30px; min-height: 30px; width: 173px; left: -77px; top: 739px;">
+            <div class="sl-block-content"
+                style="z-index: 19; color: rgb(102, 102, 102); transition-duration: 0.6s; transition-delay: 13.3s;">
+                <p><span style="font-size:1.4em">Debug</span></p>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text"
+            style="height: auto; min-width: 30px; min-height: 30px; width: 173px; left: 1072px; top: 189px;">
+            <div class="sl-block-content"
+                style="z-index: 20; color: rgb(102, 102, 102); transition-duration: 0.6s; transition-delay: 11s;">
+                <p><span style="font-size:1.4em">Trace</span></p>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="height: auto; width: 111px; left: 689px; top: 648px;">
+            <div class="sl-block-content"
+                style="z-index: 21; color: rgb(102, 102, 102); transition-duration: 0.6s; transition-delay: 8s;">
+                <p><span style="font-size:1.4em">Log</span></p>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text"
+            style="height: auto; min-width: 30px; min-height: 30px; width: 198px; left: 122px; top: -207px;">
+            <div class="sl-block-content"
+                style="z-index: 22; color: rgb(102, 102, 102); transition-duration: 0.6s; transition-delay: 13.6s;">
+                <p><span style="font-size:1.4em">Plan for changes</span></p>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text"
+            style="height: auto; min-width: 30px; min-height: 30px; width: 212px; left: 1119px; top: -157px;">
+            <div class="sl-block-content"
+                style="z-index: 23; color: rgb(102, 102, 102); transition-duration: 0.6s; transition-delay: 13.5s;">
+                <p><span style="font-size:1.4em">Document</span></p>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text"
+            style="height: auto; min-width: 30px; min-height: 30px; width: 158px; left: 387px; top: 794px;">
+            <div class="sl-block-content"
+                style="z-index: 24; color: rgb(102, 102, 102); transition-duration: 0.6s; transition-delay: 11.6s;">
+                <p><span style="font-size:1.4em">Review!</span></p>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text"
+            style="height: auto; min-width: 30px; min-height: 30px; width: 319px; left: -336px; top: 515px;">
+            <div class="sl-block-content"
+                style="z-index: 25; color: rgb(102, 102, 102); transition-duration: 0.6s; transition-delay: 12.7s;">
+                <p><span style="font-size:1.4em">Plan the Architecture</span></p>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text"
+            style="height: auto; min-width: 30px; min-height: 30px; width: 342px; left: -439px; top: 154px;">
+            <div class="sl-block-content"
+                style="z-index: 26; color: rgb(102, 102, 102); transition-duration: 0.6s; transition-delay: 11.9s;">
+                <p><span style="font-size:1.4em">Migrate to this solution</span></p>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text"
+            style="height: auto; min-width: 30px; min-height: 30px; width: 291px; left: 1126px; top: 594px;">
+            <div class="sl-block-content"
+                style="z-index: 27; color: rgb(102, 102, 102); transition-duration: 0.6s; transition-delay: 13.7s;">
+                <p><span style="font-size:1.4em">Use it with other services</span></p>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="height: auto; width: 197px; left: 1280px; top: 345px;">
+            <div class="sl-block-content"
+                style="z-index: 28; color: rgb(102, 102, 102); transition-duration: 0.6s; transition-delay: 13.1s;">
+                <p><span style="font-size:1.4em">A/B</span></p>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="height: auto; width: 235px; left: 559px; top: 127px;">
+            <div class="sl-block-content"
+                style="z-index: 29; color: rgb(102, 102, 102); transition-duration: 0.6s; transition-delay: 8.8s;">
+                <p><span style="font-size:1.4em">Benchmark</span></p>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text"
+            style="height: auto; min-width: 30px; min-height: 30px; width: 173px; left: 1373px; top: 26px;">
+            <div class="sl-block-content"
+                style="z-index: 30; color: rgb(102, 102, 102); transition-duration: 0.6s; transition-delay: 12.2s;">
+                <p><span style="font-size:1.4em">Analyze costs</span></p>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text"
+            style="height: auto; min-width: 30px; min-height: 30px; width: 173px; left: 741px; top: -213px;">
+            <div class="sl-block-content"
+                style="z-index: 31; color: rgb(102, 102, 102); transition-duration: 0.6s; transition-delay: 12.9s;">
+                <p><span style="font-size:1.4em">Upgrade</span></p>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text"
+            style="height: auto; min-width: 30px; min-height: 30px; width: 173px; left: 154px; top: 107px;">
+            <div class="sl-block-content"
+                style="z-index: 32; color: rgb(102, 102, 102); transition-duration: 0.6s; transition-delay: 5.5s;">
+                <p><span style="font-size:1.4em">Release!</span></p>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="height: auto; width: 281px; left: 72px; top: 904px;">
+            <div class="sl-block-content"
+                style="z-index: 33; color: rgb(102, 102, 102); transition-duration: 0.6s; transition-delay: 13.8s;">
+                <p><span style="font-size:1.4em">Assess performance</span></p>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="height: auto; width: 281px; left: 1490px; top: -243px;">
+            <div class="sl-block-content"
+                style="z-index: 34; color: rgb(102, 102, 102); transition-duration: 0.6s; transition-delay: 13.9s;">
+                <p><span style="font-size:1.4em">Foobar</span></p>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="height: auto; width: 281px; left: -445px; top: 863px;">
+            <div class="sl-block-content"
+                style="z-index: 36; color: rgb(102, 102, 102); transition-duration: 0.6s; transition-delay: 14s;">
+                <p><span style="font-size:1.4em">Version&nbsp; the</span></p>
+                <p><span style="font-size:1.4em">code</span></p>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="sl-block" data-block-type="text" style="width: 550px; left: 38px; top: 86px; height: auto;">
+            <div class="sl-block-content" style="text-align: left; z-index: 10;">
+                <h2>Coding fun</h2>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="width: 550px; left: 38px; top: 160px; height: auto;">
+            <div class="sl-block-content" style="z-index: 11; text-align: left;">
+                <p>You can use the same IDE and will just need to target the latest version of the runtime recommended
+                    by your cloud provider.</p>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="width: 550px; left: 38px; top: 360px; height: auto;">
+            <div class="sl-block-content" style="z-index: 12; text-align: left;">
+                <p>The same goes for linting, versioning, building and testing. The only difference is that your code
+                    may not look the same.</p>
+            </div>
+        </div>
+        <div class="sl-block sl-block-group" data-block-type="group" style="height: auto;">
+            <div class="sl-block-content sl-block-group-content" style="transform-origin: 960px 360px; z-index: 13;">
+                <div class="sl-block" data-block-type="text"
+                    style="height: auto; min-width: 30px; min-height: 30px; width: 300px; left: 810px; top: 262px;">
+                    <div class="sl-block-content" style="z-index: 15; text-align: left;">
+                        <p>&gt; vi main.ts_</p>
+                    </div>
+                </div>
+                <div class="sl-block" data-block-type="shape"
+                    style="min-width: 4px; min-height: 4px; width: 320px; height: 216px; left: 800px; top: 252px;">
+                    <div class="sl-block-content" data-shape-type="rect" data-shape-fill-color="rgba(0, 0, 0, 0)"
+                        data-shape-stretch="true" data-shape-stroke-color="#111111" data-shape-stroke-width="3px"><svg
+                            xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%"
+                            preserveAspectRatio="none" viewBox="0 0 320 216">
+                            <defs>
+                                <clipPath id="shape-mask-48-1574010071145">
+                                    <rect width="320" height="216" rx="0" ry="0" fill="rgba(0, 0, 0, 0)"
+                                        stroke="#111111" stroke-width="6"></rect>
+                                </clipPath>
+                            </defs>
+                            <rect width="320" height="216" rx="0" ry="0" class="shape-element" fill="rgba(0, 0, 0, 0)"
+                                stroke="#111111" stroke-width="6" clip-path="url(#shape-mask-48-1574010071145)"></rect>
+                        </svg></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="sl-block" data-block-type="text" style="width: 550px; left: 38px; top: 86px; height: auto;">
+            <div class="sl-block-content" style="text-align: left; z-index: 10;">
+                <h2>Building joy</h2>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="width: 550px; left: 38px; top: 160px; height: auto;">
+            <div class="sl-block-content" style="z-index: 11; text-align: left;">
+                <p>Building is also identical! Retrieve your dependencies, compile your code, execute some tests and it
+                    will be ready to go.</p>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="width: 550px; left: 38px; top: 360px; height: auto;">
+            <div class="sl-block-content" style="z-index: 12; text-align: left;">
+                <p>However, since you will rarely change all the functions in a project, it is recommended to only
+                    rebuild the ones that changed. This could save valuable time and headaches.</p>
+            </div>
+        </div>
+        <div class="sl-block sl-block-group" data-block-type="group" style="height: auto;">
+            <div class="sl-block-content sl-block-group-content" style="transform-origin: 960px 360px; z-index: 13;">
+                <div class="sl-block" data-block-type="text"
+                    style="height: auto; width: 300px; left: 810px; top: 262px;">
+                    <div class="sl-block-content" style="z-index: 15; text-align: left;">
+                        <p>&gt; killall vi</p>
+                        <p>&gt; make build_</p>
+                    </div>
+                </div>
+                <div class="sl-block" data-block-type="shape"
+                    style="width: 320px; height: 216px; left: 800px; top: 252px;">
+                    <div class="sl-block-content" data-shape-type="rect" data-shape-fill-color="rgba(0, 0, 0, 0)"
+                        data-shape-stretch="true" data-shape-stroke-color="#111111" data-shape-stroke-width="3px"><svg
+                            xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%"
+                            preserveAspectRatio="none" viewBox="0 0 320 216">
+                            <defs>
+                                <clipPath id="shape-mask-49-1574010218038">
+                                    <rect width="320" height="216" rx="0" ry="0" fill="rgba(0, 0, 0, 0)"
+                                        stroke="#111111" stroke-width="6"></rect>
+                                </clipPath>
+                            </defs>
+                            <rect width="320" height="216" rx="0" ry="0" class="shape-element" fill="rgba(0, 0, 0, 0)"
+                                stroke="#111111" stroke-width="6" clip-path="url(#shape-mask-49-1574010218038)"></rect>
+                        </svg></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="sl-block" data-block-type="text" style="width: 550px; left: 38px; top: 86px; height: auto;">
+            <div class="sl-block-content" style="text-align: left; z-index: 10;">
+                <h2>Deployment blast</h2>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="width: 550px; left: 38px; top: 160px; height: auto;">
+            <div class="sl-block-content" style="z-index: 11; text-align: left;">
+                <p>Things are different when it comes to deployment. Each tool comes with a set of advantages and
+                    drawbacks.</p>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="width: 550px; left: 38px; top: 303px; height: auto;">
+            <div class="sl-block-content" style="z-index: 12; text-align: left;">
+                <p>You may choose between Serverless, SAM, Wrangler and many more or do it yourself with Terraform or
+                    any IT automation tool using your cloud provider's API.</p>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="width: 550px; left: 38px; top: 537px; height: auto;">
+            <div class="sl-block-content" style="z-index: 16; text-align: left;">
+                <p>You guessed right: this is not the simplest step.</p>
+            </div>
+        </div>
+        <div class="sl-block sl-block-group" data-block-type="group" style="height: auto;">
+            <div class="sl-block-content sl-block-group-content" style="transform-origin: 960px 360px; z-index: 13;">
+                <div class="sl-block" data-block-type="text"
+                    style="height: auto; width: 300px; left: 810px; top: 262px;">
+                    <div class="sl-block-content" style="z-index: 15; text-align: left;">
+                        <p>&gt; sleep 600_</p>
+                    </div>
+                </div>
+                <div class="sl-block" data-block-type="shape"
+                    style="width: 320px; height: 216px; left: 800px; top: 252px;">
+                    <div class="sl-block-content" data-shape-type="rect" data-shape-fill-color="rgba(0, 0, 0, 0)"
+                        data-shape-stretch="true" data-shape-stroke-color="#111111" data-shape-stroke-width="3px"><svg
+                            xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%"
+                            preserveAspectRatio="none" viewBox="0 0 320 216">
+                            <defs>
+                                <clipPath id="shape-mask-50-1574010828165">
+                                    <rect width="320" height="216" rx="0" ry="0" fill="rgba(0, 0, 0, 0)"
+                                        stroke="#111111" stroke-width="6"></rect>
+                                </clipPath>
+                            </defs>
+                            <rect width="320" height="216" rx="0" ry="0" class="shape-element" fill="rgba(0, 0, 0, 0)"
+                                stroke="#111111" stroke-width="6" clip-path="url(#shape-mask-50-1574010828165)"></rect>
+                        </svg></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="sl-block" data-block-type="text" style="width: 550px; left: 38px; top: 86px; height: auto;">
+            <div class="sl-block-content" style="text-align: left; z-index: 10;">
+                <h2>After party</h2>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="width: 550px; left: 38px; top: 160px; height: auto;">
+            <div class="sl-block-content" style="z-index: 11; text-align: left;">
+                <p>How to observe the very time-sensitive? To catch errors as soon as they happen?</p>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="width: 550px; left: 38px; top: 351px; height: auto;">
+            <div class="sl-block-content" style="z-index: 15; text-align: left;">
+                <p>These questions have no definitive answers. Default to provider solutions or common app practices
+                    when in doubt.</p>
+            </div>
+        </div>
+        <div class="sl-block sl-block-group" data-block-type="group" style="height: auto;">
+            <div class="sl-block-content sl-block-group-content" style="transform-origin: 960px 360px; z-index: 12;">
+                <div class="sl-block" data-block-type="text"
+                    style="height: auto; width: 300px; left: 810px; top: 262px;">
+                    <div class="sl-block-content" style="z-index: 14; text-align: left;">
+                        <p>&gt; exit_</p>
+                    </div>
+                </div>
+                <div class="sl-block" data-block-type="shape"
+                    style="width: 320px; height: 216px; left: 800px; top: 252px;">
+                    <div class="sl-block-content" data-shape-type="rect" data-shape-fill-color="rgba(0, 0, 0, 0)"
+                        data-shape-stretch="true" data-shape-stroke-color="#111111" data-shape-stroke-width="3px"><svg
+                            xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%"
+                            preserveAspectRatio="none" viewBox="0 0 320 216">
+                            <defs>
+                                <clipPath id="shape-mask-51-1574011703864">
+                                    <rect width="320" height="216" rx="0" ry="0" fill="rgba(0, 0, 0, 0)"
+                                        stroke="#111111" stroke-width="6"></rect>
+                                </clipPath>
+                            </defs>
+                            <rect width="320" height="216" rx="0" ry="0" class="shape-element" fill="rgba(0, 0, 0, 0)"
+                                stroke="#111111" stroke-width="6" clip-path="url(#shape-mask-51-1574011703864)"></rect>
+                        </svg></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="sl-block" data-block-type="text"
+            style="height: auto; min-width: 30px; min-height: 30px; width: 800px; left: 240px; top: 360px;">
+            <div class="sl-block-content">
+                <p>Needs are plenty, answers are scarce.</p>
+                <p>Knowledge all over, growing yet sparse.</p>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="width: 1075px; left: 102.5px; top: 190px; height: auto;">
+            <div class="sl-block-content">
+                <h1>Key takeaway</h1>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="line"
+            style="width: auto; height: auto; min-width: 0px; min-height: 0px; left: 160px; top: 332px;">
+            <div class="sl-block-content" data-line-x1="0" data-line-y1="0" data-line-x2="1040" data-line-y2="0"
+                data-line-color="#000000" data-line-start-type="none" data-line-end-type="none" style="z-index: 12;
+            transition-duration: 0.6s; transition-delay: 0.6s;"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"
+                    preserveAspectRatio="xMidYMid" width="1040" height="1" viewBox="0 0 1040 1">
+                    <path class="line-element" fill="rgba(0,0,0,0)" stroke="#000000" stroke-width="2" d="M0 0 L1040 0">
+                    </path>
+                    <path class="line-skeleton" fill="rgba(0,0,0,0)" stroke="rgba(0,0,0,0)" d="M0 0
+            L1040 0"></path>
+                    <path class="line-hitarea" fill="rgba(0,0,0,0)" stroke="rgba(0,0,0,0)" stroke-width="15"
+                        d="M0 0 L1040 0"></path>
+                </svg></div>
+        </div>
+        <div class="sl-block" data-block-type="line"
+            style="width: auto; height: auto; min-width: 0px; min-height: 0px; left: 80px; top: 469px;">
+            <div class="sl-block-content" data-line-x1="0" data-line-y1="0" data-line-x2="1040" data-line-y2="0"
+                data-line-color="#000000" data-line-start-type="none" data-line-end-type="none" style="z-index: 13;
+            transition-duration: 0.6s; transition-delay: 1.2s;"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"
+                    preserveAspectRatio="xMidYMid" width="1040" height="1" viewBox="0 0 1040 1">
+                    <path class="line-element" fill="rgba(0,0,0,0)" stroke="#000000" stroke-width="2" d="M0 0 L1040 0">
+                    </path>
+                    <path class="line-skeleton" fill="rgba(0,0,0,0)" stroke="rgba(0,0,0,0)" d="M0 0
+            L1040 0"></path>
+                    <path class="line-hitarea" fill="rgba(0,0,0,0)" stroke="rgba(0,0,0,0)" stroke-width="15"
+                        d="M0 0 L1040 0"></path>
+                </svg></div>
+        </div>
+        <div class="sl-block" data-block-type="line"
+            style="width: auto; height: auto; min-width: 0px; min-height: 0px; left: 1120px; top: 332px;">
+            <div class="sl-block-content" data-line-x1="80" data-line-y1="0" data-line-x2="0" data-line-y2="137"
+                data-line-color="#000000" data-line-start-type="none" data-line-end-type="none" style="z-index: 14;
+            transition-duration: 0.6s; transition-delay: 0.9s;"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"
+                    preserveAspectRatio="xMidYMid" width="80" height="137" viewBox="0 0 80 137">
+                    <path class="line-element" fill="rgba(0,0,0,0)" stroke="#000000" stroke-width="2" d="M80 0 L0 137">
+                    </path>
+                    <path class="line-skeleton" fill="rgba(0,0,0,0)" stroke="rgba(0,0,0,0)" d="M80 0 L0
+            137"></path>
+                    <path class="line-hitarea" fill="rgba(0,0,0,0)" stroke="rgba(0,0,0,0)" stroke-width="15" d="M80
+            0 L0 137"></path>
+                </svg></div>
+        </div>
+        <div class="sl-block" data-block-type="line"
+            style="width: auto; height: auto; min-width: 0px; min-height: 0px; left: 80px; top: 332px;">
+            <div class="sl-block-content" data-line-x1="80" data-line-y1="0" data-line-x2="0" data-line-y2="137"
+                data-line-color="#000000" data-line-start-type="none" data-line-end-type="none" style="z-index: 15;
+            transition-duration: 0.6s; transition-delay: 1.5s;"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"
+                    preserveAspectRatio="xMidYMid" width="80" height="137" viewBox="0 0 80 137">
+                    <path class="line-element" fill="rgba(0,0,0,0)" stroke="#000000" stroke-width="2" d="M80 0 L0 137">
+                    </path>
+                    <path class="line-skeleton" fill="rgba(0,0,0,0)" stroke="rgba(0,0,0,0)" d="M80 0 L0
+            137"></path>
+                    <path class="line-hitarea" fill="rgba(0,0,0,0)" stroke="rgba(0,0,0,0)" stroke-width="15" d="M80
+            0 L0 137"></path>
+                </svg></div>
+        </div>
+    </section>
+</section>
+<section class="stack">
+    <section data-preload="">
+        <div class="sl-block" data-block-type="text" style="width: 1075px; left: 58px; top: 262px; height: auto;">
+            <div class="sl-block-content"
+                style="z-index: 16; color: rgb(255, 255, 255); transition-duration: 0.6s; transition-delay: 1.8s;">
+                <h1>DEMO</h1>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="width: 1075px; left: 132px; top: 360px; height: auto;">
+            <div class="sl-block-content"
+                style="z-index: 17; color: rgb(255, 255, 255); transition-duration: 0.6s; transition-delay: 2.3s;">
+                <h1>TIME!</h1>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="shape"
+            style="min-width: 4px; min-height: 4px; width: 300px; height: 300px; left: 255px; top: 210px;">
+            <div class="sl-block-content" data-shape-type="triangle-up" data-shape-fill-color="rgb(136, 0, 153)"
+                data-shape-stretch="true" style="z-index: 12; transition-duration: 0.6s; transform-origin: 50% 100% 0px;
+            transition-delay: 1s;" data-animation-trigger-id="self"><svg xmlns="http://www.w3.org/2000/svg"
+                    version="1.1" width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 300 300">
+                    <polygon points="150,0 300,300 0,300" class="shape-element" fill="rgb(136, 0,
+            153)"></polygon>
+                </svg></div>
+        </div>
+        <div class="sl-block" data-block-type="shape"
+            style="min-width: 4px; min-height: 4px; width: 300px; height: 300px; left: 405px; top: 210px;">
+            <div class="sl-block-content" data-shape-type="triangle-down" data-shape-fill-color="rgb(136, 0, 153)"
+                data-shape-stretch="true" style="z-index: 13; transition-duration: 0.6s; transition-delay: 1.1s;
+            transform-origin: 50% 0% 0px;"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%"
+                    height="100%" preserveAspectRatio="none" viewBox="0 0 300 300">
+                    <polygon points="0,0 300,0 150,300" class="shape-element" fill="rgb(136, 0, 153)"></polygon>
+                </svg></div>
+        </div>
+        <div class="sl-block" data-block-type="shape"
+            style="min-width: 4px; min-height: 4px; width: 300px; height: 300px; left: 552px; top: 210px;">
+            <div class="sl-block-content" data-shape-type="triangle-up" data-shape-fill-color="rgb(136, 0, 153)"
+                data-shape-stretch="true" style="z-index: 14; transition-duration: 0.6s; transform-origin: 50% 100% 0px;
+            transition-delay: 1.2s;" data-animation-trigger-id="self"><svg xmlns="http://www.w3.org/2000/svg"
+                    version="1.1" width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 300 300">
+                    <polygon points="150,0 300,300 0,300" class="shape-element" fill="rgb(136, 0,
+            153)"></polygon>
+                </svg></div>
+        </div>
+        <div class="sl-block" data-block-type="shape"
+            style="min-width: 4px; min-height: 4px; width: 300px; height: 300px; left: 702px; top: 210px;">
+            <div class="sl-block-content" data-shape-type="triangle-down" data-shape-fill-color="rgb(136, 0, 153)"
+                data-shape-stretch="true" style="z-index: 15; transition-duration: 0.6s; transition-delay: 1.3s;
+            transform-origin: 50% 0% 0px;"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%"
+                    height="100%" preserveAspectRatio="none" viewBox="0 0 300 300">
+                    <polygon points="0,0 300,0 150,300" class="shape-element" fill="rgb(136, 0, 153)"></polygon>
+                </svg></div>
+        </div>
+        <div class="sl-block" data-block-type="image"
+            style="min-width: 1px; min-height: 1px; width: 1280px; height: 720px; left: 0px; top: 0px;">
+            <div class="sl-block-content" style="z-index: 10; transition-duration: 0.5s; transition-delay: 0.5s;"><img
+                    data-natural-width="2400" data-natural-height="1350" data-lazy-loaded=""
+                    data-src="/slides/faas/assets/cf-home.png"></div>
+        </div>
+    </section>
+    <section>
+        <div class="sl-block" data-block-type="text" style="width: 550px; left: 38px; top: 86px; height: auto;">
+            <div class="sl-block-content" style="text-align: left; z-index: 12;">
+                <h2>What did we learn?</h2>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="width: 1008px; left: 32px; top: 216px; height: auto;">
+            <div class="sl-block-content" style="z-index: 13; text-align: left;">
+                <ul>
+                    <li>Cloudflare Workers deploys code worldwide<br> &nbsp;</li>
+                    <li>Code is executed where it's
+                        optimal (closer to user or service)<br> &nbsp;</li>
+                    <li>It is possible to work from their online
+                        editor<br> &nbsp;</li>
+                    <li>Node.JS and WebAssembly are supported</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+</section>
+<section class="stack">
+    <section>
+        <div class="sl-block" data-block-type="text" style="width: 1075px; left: 58px; top: 262px; height: auto;">
+            <div class="sl-block-content"
+                style="z-index: 16; color: rgb(255, 255, 255); transition-duration: 0.6s; transition-delay: 1.8s;">
+                <h1>DEMO</h1>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="shape" style="width: 300px; height: 300px; left: 255px; top: 210px;">
+            <div class="sl-block-content" data-shape-type="triangle-up" data-shape-fill-color="rgb(136, 0, 153)"
+                data-shape-stretch="true" style="z-index: 12; transition-duration: 0.6s; transition-delay: 1s;
+            transform-origin: 50% 100% 0px;"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%"
+                    height="100%" preserveAspectRatio="none" viewBox="0 0 300 300">
+                    <polygon points="150,0 300,300 0,300" class="shape-element" fill="rgb(136, 0, 153)"></polygon>
+                </svg></div>
+        </div>
+        <div class="sl-block" data-block-type="shape" style="width: 300px; height: 300px; left: 405px; top: 210px;">
+            <div class="sl-block-content" data-shape-type="triangle-down" data-shape-fill-color="rgb(136, 0, 153)"
+                data-shape-stretch="true" style="z-index: 13; transition-duration: 0.6s; transition-delay: 1.1s;
+            transform-origin: 50% 0% 0px;"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%"
+                    height="100%" preserveAspectRatio="none" viewBox="0 0 300 300">
+                    <polygon points="0,0 300,0 150,300" class="shape-element" fill="rgb(136, 0, 153)"></polygon>
+                </svg></div>
+        </div>
+        <div class="sl-block" data-block-type="shape" style="width: 300px; height: 300px; left: 552px; top: 210px;">
+            <div class="sl-block-content" data-shape-type="triangle-up" data-shape-fill-color="rgb(136, 0, 153)"
+                data-shape-stretch="true" style="z-index: 14; transition-duration: 0.6s; transition-delay: 1.2s;
+            transform-origin: 50% 100% 0px;"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%"
+                    height="100%" preserveAspectRatio="none" viewBox="0 0 300 300">
+                    <polygon points="150,0 300,300 0,300" class="shape-element" fill="rgb(136, 0, 153)"></polygon>
+                </svg></div>
+        </div>
+        <div class="sl-block" data-block-type="shape" style="width: 300px; height: 300px; left: 702px; top: 210px;">
+            <div class="sl-block-content" data-shape-type="triangle-down" data-shape-fill-color="rgb(136, 0, 153)"
+                data-shape-stretch="true" style="z-index: 15; transition-duration: 0.6s; transition-delay: 1.3s;
+            transform-origin: 50% 0% 0px;"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%"
+                    height="100%" preserveAspectRatio="none" viewBox="0 0 300 300">
+                    <polygon points="0,0 300,0 150,300" class="shape-element" fill="rgb(136, 0, 153)"></polygon>
+                </svg></div>
+        </div>
+        <div class="sl-block" data-block-type="image"
+            style="width: 1280px; height: 720px; left: 0px; top: 0px; min-width: 1px; min-height: 1px;">
+            <div class="sl-block-content" style="z-index: 11; transition-duration: 0.5s; transition-delay: 0.5s;"><img
+                    data-natural-width="2400" data-natural-height="1350" data-lazy-loaded=""
+                    data-src="/slides/faas/assets/aws-home.png"></div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="width: 1075px; left: 132px; top: 360px; height: auto;">
+            <div class="sl-block-content"
+                style="z-index: 17; color: rgb(255, 255, 255); transition-duration: 0.6s; transition-delay: 2.3s;">
+                <h1>TIME!</h1>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="sl-block" data-block-type="text" style="width: 550px; left: 38px; top: 86px; height: auto;">
+            <div class="sl-block-content" style="text-align: left; z-index: 10;">
+                <h2>What did we learn?</h2>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="width: 1082px; left: 38px; top: 216px; height: auto;">
+            <div class="sl-block-content" style="z-index: 11; text-align: left;">
+                <ul>
+                    <li>AWS Lambda is <strong>comprehensive</strong> but comes with a learning curve<br> &nbsp;</li>
+                    <li>Many programming languages are natively supported<br> &nbsp;</li>
+                    <li>AWS Lambda is well
+                        connected to other AWS offerings<br> &nbsp;</li>
+                    <li>Complex configuration means manually creating
+                        Lambdas is hazardous</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+</section>
+<section class="stack">
+    <section>
+        <div class="sl-block" data-block-type="text" style="width: 1075px; left: 102px; top: 274px; height: auto;">
+            <div class="sl-block-content">
+                <h1>A word of caution</h1>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="height: auto; width: 294px; left: 681px; top: 360px;">
+            <div class="sl-block-content">
+                <p>⚠️ ⚠️ ⚠️ ⚠️ ⚠️ ⚠️ ⚠️</p>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="sl-block" data-block-type="text" style="width: 762px; left: 38px; top: 85px; height: auto;">
+            <div class="sl-block-content" style="text-align: left; z-index: 10;">
+                <h2>Remain critical of FaaS...</h2>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="width: 1162px; left: 38px; top: 216px; height: auto;">
+            <div class="sl-block-content" style="z-index: 11; text-align: left;">
+                <p>Before using FaaS, assess their<strong> relevance</strong> for your project. Equivalent solutions
+                    exist like managed <u>container</u> services.</p>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="width: 960px; left: 160px; top: 360px; height: auto;">
+            <div class="sl-block-style" style="z-index: 12; opacity: 0.8;">
+                <div class="sl-block-content"
+                    style="z-index: 12; text-align: left; font-size: 90%; color: rgb(0, 0, 0); line-height: 1.417; transition-duration: 0.6s; transition-delay: 0.6s;">
+                    <p><span style="color:#696969">Are chunks of the code supposed to function independently? What are
+                            my fallback solutions when I need to upgrade one component? What guarantees do I get from
+                            FaaS that
+                            I cannot get from more traditional approaches? Doesn't cost get out of control? Don't I need
+                            to
+                            write more code to get to the same result? Are developers ready for the switch? Is it
+                            necessary to
+                            get into devops to get started? Is it necessary to have cloud expertise to get started? What
+                            does it
+                            change in terms of cloud and software architecture? Wouldn't it be wise to wait for
+                            Serverless
+                            technologies to mature? How is it possible to guarantee security in such constrained
+                            environments?
+                            How to achieve the same quality of deployment with Serverless technologies? What is the
+                            performance
+                            vs. managed environment trade-off? What is it possible to gain from this change? Is this new
+                            computing model sustainable? Who is accountable in the case of a failure? Can we afford to
+                            R&amp;D
+                            into Serverless technologies? Is our organization mature enough to make this switch? Is this
+                            solution really cost-effective? Are there unknown side effects to Serverless technologies?
+                            Is it too
+                            soon? Are my other applications compatible with this model or would I need to convert them
+                            as well?
+                            How well does it interact with external services? How well does it play with specialized
+                            software?</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="sl-block" data-block-type="text" style="width: 1082px; left: 38px; top: 85px; height: auto;">
+            <div class="sl-block-content" style="text-align: left; z-index: 10;">
+                <h2>... because there are horror stories</h2>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="iframe" style="width: 800px; height: 360px; left: 240px; top: 216px;">
+            <div class="sl-block-content"><iframe sandbox="allow-forms allow-scripts allow-popups
+            allow-same-origin allow-pointer-lock allow-presentation"
+                    data-src="https://einaregilsson.com/serverless-15-percent-slower-and-eight-times-more-expensive/"
+                    allow="fullscreen; accelerometer; geolocation; gyroscope; camera; encrypted-media; microphone; midi;
+            autoplay" ysexohufg="" bbui4kdt4=""></iframe></div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="height: auto; width: 720px; left: 320px; top: 576px;"><a
+                class="sl-block-style"
+                href="https://einaregilsson.com/serverless-15-percent-slower-and-eight-times-more-expensive/"
+                rel="nofollow" target="_blank">
+                <div class="sl-block-content"
+                    style="z-index: 12; font-size: 80%; color: rgb(136, 0, 153); text-align: right;">
+                    <p><em>Einar Egilsson - Serverless: 15% slower and 8x more expensive</em></p>
+                </div>
+            </a></div>
+    </section>
+    <section>
+        <div class="sl-block" data-block-type="text" style="width: 1082px; left: 38px; top: 85px; height: auto;">
+            <div class="sl-block-content" style="text-align: left; z-index: 10;">
+                <h2>... and bad incentives</h2>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="table"
+            style="height: auto; min-width: 839px; width: 1120px; left: 80px; top: 194.5px;" data-name="table-8cabf9">
+            <div class="sl-block-content" data-table-rows="6" data-table-cols="3">
+                <table>
+                    <tbody>
+                        <tr>
+                            <th style="width: 482px;"></th>
+                            <th style="width: 317px;">per M rqs.</th>
+                            <th>per M GB•s</th>
+                        </tr>
+                        <tr>
+                            <td style="width: 482px;">
+                                <strong>AWS</strong> Lambda x86 eu-west-1
+                            </td>
+                            <td style="width: 317px;">$0.20</td>
+                            <td>$16.67 (<em>Wall</em> time)</td>
+                        </tr>
+                        <tr>
+                            <td style="width: 482px;">
+                                <strong>AWS</strong> Lambda ARM eu-west-1
+                            </td>
+                            <td style="width: 317px;">$0.20</td>
+                            <td>$13.34 (<em>Wall</em> time)</td>
+                        </tr>
+                        <tr>
+                            <td style="width: 482px;">
+                                <strong>AWS</strong> Lambda@Edge eu-west-1
+                            </td>
+                            <td style="width: 317px;">$0.60</td>
+                            <td>$50.01 (<em>Wall</em> time)</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>Amazon </strong>CloudFront functions
+                            </td>
+                            <td>$0.10</td>
+                            <td>*</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>Cloudflare</strong> Workers
+                            </td>
+                            <td>$0.15</td>
+                            <td>$12.50 (<em>CPU</em>
+                                time)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="height: auto; width: 1120px; left: 80px; top: 576px;"
+            data-name="text-0acb91">
+            <div class="sl-block-content" style="z-index: 12; border-width: 1px;">
+                <p style="text-align:left">Providers are incentivized to offer <strong>slower</strong> infrastructure to
+                    their FaaS offerings; requests taking more time to complete means more to bill to the customer.</p>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="sl-block" data-block-type="text" style="width: 1082px; left: 38px; top: 85px; height: auto;">
+            <div class="sl-block-content" style="text-align: left; z-index: 10;">
+                <h2>... and cargo culting</h2>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="height: auto; width: 1120px; left: 80px; top: 216px;"
+            data-name="text-0acb91">
+            <div class="sl-block-content" style="z-index: 11; border-style: solid; border-width: 1px; padding: 16px;">
+                <p style="text-align: left;">Cargo cult programming can also refer to the practice of applying a design
+                    pattern or coding style blindly without understanding the reasons behind that design principle. Some
+                    examples are adding unnecessary comments to self-explanatory code, overzealous adherence to the
+                    conventions of a programming paradigm, or adding deletion code for objects that garbage collection
+                    automatically collects.</p>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="height: auto; width: 1120px; left: 80px; top: 576px;"
+            data-name="text-a4e6aa">
+            <div class="sl-block-content">
+                <p style="text-align:left">i.e. design an architecture that <strong>makes sense today</strong>, don't
+                    shoehorn everything into a standard.</p>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="sl-block" data-block-type="text" style="width: 1082px; left: 38px; top: 85px; height: auto;">
+            <div class="sl-block-content" style="text-align: left; z-index: 10;">
+                <h2>... and many questions left unanswered</h2>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="height: auto; width: 560px; left: 80px; top: 288px;">
+            <div class="sl-block-content" style="z-index: 11; text-align: left;">
+                <p>This presentation scratched the surface and intentionally took shortcuts.</p>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="height: auto; width: 560px; left: 80px; top: 432px;">
+            <div class="sl-block-content"
+                style="z-index: 12; text-align: left; transition-duration: 0.6s; transition-delay: 1.5s;">
+                <p>Do you have any question?</p>
+            </div>
+        </div>
+    </section>
+</section>
+<section>
+    <div class="sl-block" data-block-type="text" style="width: 1075px; left: 102px; top: 274px; height: auto;">
+        <div class="sl-block-content">
+            <h1>That is all folks <span>🎉 </span>
+            </h1>
+        </div>
+    </div>
+    <div class="sl-block sl-block-group" data-block-type="group" style="width: auto; height: auto;">
+        <div class="sl-block-content sl-block-group-content" style="transform-origin: 1045.5px 648px; z-index: 15;">
+            <div class="sl-block" data-block-type="image"
+                style="width: 82px; height: 82px; left: 1159px; top: 607px; min-width: 1px; min-height: 1px;">
+                <div class="sl-block-content"><img data-natural-width="1350" data-natural-height="1350"
+                        data-lazy-loaded="" data-src="/slides/faas/assets/avatar.png"></div>
+            </div>
+            <div class="sl-block" data-block-type="text"
+                style="height: auto; min-width: 30px; min-height: 30px; width: 287px; left: 850px; top: 646px;">
+                <div class="sl-block-content"
+                    style="z-index: 17; text-align: right; font-size: 70%; line-height: 0.91; color: rgb(170, 170, 170);">
+                    <p>https://vcz.fr</p>
+                </div>
+            </div>
+            <div class="sl-block" data-block-type="text"
+                style="height: auto; min-width: 30px; min-height: 30px; width: 287px; left: 850px; top: 607px;">
+                <div class="sl-block-content"
+                    style="z-index: 16; text-align: right; line-height: 0.78; border-width: 1px;">
+                    <p style="text-align:right"><span style="font-size:1.0em">Vincenzo <strong>Scalzi</strong></span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -81,7 +81,8 @@ a {
 
 .links > a {
     cursor: pointer;
-    display: block;
+    display: flex;
+    align-items: center;
     font-size: 1.3rem;
     color: var(--text-color);
 
@@ -91,7 +92,7 @@ a {
     }
 
     & > .icon {
-        width: 2rem;
+        width: 3rem;
     }
 }
 

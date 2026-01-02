@@ -25,19 +25,21 @@ couple lists that you should use to challenge me!
 
 First, I feel quite confident with:
 
-- HTML, CSS, JS. The latter can be frontend and backend;
-- AWS, its CLI and Terraform;
-- Docker-based CI, especially GitLab CI;
-- Serverless and container infrastructures, even Kubernetes even if it's usually hard to justify;
+- AWS, its quirks and configuration languages;
+- Terraform / OpenTofu;
+- GitLab CI, GitHub Actions, etc. ;
+- Serverless and container infrastructures, including Kubernetes;
+- Delivering efficient organizations, products and services through DevOps practices;
 - Web performance and engineering;
-- Static site generation, because less is more.
+- HTML, CSS, JS. The latter can be frontend and backend;
+- Static site generation.
 
 I hope to discover these things over time:
 
 - More cultures, company and local;
 - Rust, its memory model, why it works;
 - Ideas and tooling to reduce development and operational chores;
-- More of Python and C#, because I'm not too confident with these codebases.
+- More of Python and C#, because I don't feel confident enough with them.
 
 And here's the weird stuff I had to deal with. It is milquetoast compared to some gray-beards around but here goes:
 
@@ -60,20 +62,20 @@ Stop for a moment and think about what you are projecting. Use personas and how 
 website, so this place is about **you** and you only. This section can be read by your future recruiter, your stalkers,
 your friends, random passersby.
 
-The person described below is the one I face every day when I wake up and face my mirror. These are things I genuinely
-believe I am projecting.
+The person described below is the one I face every day when I see myself in the proverbial mirror. These are things I
+genuinely believe I am projecting.
 
 Being open to many topics, even those that are usually not talked about is my main thing. Social issues, economics,
 sustainability, inequality, conflict. I cannot bring a lot of references yet, but I'd love to bring hard facts and data,
 not just chit-chat, feelings and validation. Sometimes, I will express myself with the passion of a thousand fiery suns.
-In some occasions, I will just stay calm and listen.
+In most occasions, I will just stay calm and listen.
 
 Ambitious and driven at my core, I wish for my dream projects to come true. Let's be realistic: I cannot change the
 whole planet, but my overall impact can be positive nonetheless. I lead by example and encourage people to do better
 with themselves and others. I go through things so that other people don't have to.
 
 To conclude on that part, challenge is my day-to-day. Sometimes I fight with myself, sometimes with weird code,
-sometimes to persuade somebody to follow different ways. Traversing a period without being challenge is boring, plus I
+sometimes to persuade somebody to follow different ways. Traversing a period without being challenged is boring, plus I
 cannot reasonably expect any reward from taking no risk, can I?
 
 </div>
@@ -82,14 +84,13 @@ cannot reasonably expect any reward from taking no risk, can I?
 
 ### The other stuff
 
-I enjoy trying new things and experimenting, it helps me think out of the box. Creativity is crucial when dealing with
+I enjoy trying new things and experimenting, it makes me think out of the box. Creativity is crucial when dealing with
 issues few faced before. This is again not limited to technology.
 
 To me, minimalism is the way: reducing what gets used, collected, processed, stored. Lowering costs of design,
 development, delivery, maintenance and operation, and improving general satisfaction. This belief translates into strong
-advocacy for privacy. Tracking users is bad: following anyone on the street to know their habits is weird, why is this
-considered "acceptable behavior" online? On a different note, that's also how I reduce my water, electricity, network
-carrier and other services bills.
+advocacy for privacy. Tracking users is bad: following anyone on the street to know their habits is weird, why would
+this be "acceptable behavior" online? On a different note, I reduced my energy use by applying the same principles.
 
 Other than that, I love trying new places, I do my share of physical activity including climbing and I spend way too
 much time gushing about the latest tech breakthroughs. Tech is not the solution, yet we must celebrate the achievements

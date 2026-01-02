@@ -52,6 +52,15 @@
 !/blog/all/index.html
 !/blog/categories/*.md
 
+!/slides/
+!/slides/*/
+!/slides/*/assets/
+!/slides/*/assets/*.png
+!/slides/*/assets/*.svg
+!/slides/*/assets/*.gif
+!/slides/index.md
+!/slides/*/index.html
+
 !/assets/
 !/assets/css/
 !/assets/css/global.scss

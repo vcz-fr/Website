@@ -41,8 +41,9 @@ go ahead. I'm open to discussion, even about those things people are usually shy
 And if you're here to learn about my journey, here you go:
 
 - **Cloud Architect, DevOps & SRE Lead** at [Pyl.Tech](https://pyl.tech/){:rel="nofollow"}  
-  I help our customers better understand the Cloud, the tooling and the piping, whether it's GCP, AWS or Azure! I also
-  organize events, write contents like LinkedIn, blog posts and [a public newsletter](https://buttondown.com/pylote){:rel="nofollow"} and contribute things I'm not allowed to talk about ;)
+  I help our customers better understand the Cloud, the tooling and the piping! I also organize events, write contents
+  on LinkedIn, blog posts and [a public newsletter](https://buttondown.com/pylote){:rel="nofollow"} and contribute
+  things I'm not allowed to talk about ;)
 
 - **Cloud Architect** at [SOPHiA Genetics](https://www.sophiagenetics.com/){:rel="nofollow"}  
   I turbocharged the team that accelerates tech teams; DevOps. By introducing missing practices and a different way of
