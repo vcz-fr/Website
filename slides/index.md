@@ -16,6 +16,7 @@ differences between the open source version of the framework and the SaaS. An ex
 slides should be significantly faster to load, but they're missing a lot of features including the presenter notes. At
 least they will be here for as long as this website and its archived version exists.
 
+- [Introducing the Cloud with AWS](/slides/aws-intro/)
 - [Building FaaS apps... FaaSt!](/slides/faas/)
 - More coming soon...
 

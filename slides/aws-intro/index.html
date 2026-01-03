@@ -1,0 +1,1999 @@
+---
+layout: slide
+title: "Introducing the Cloud with AWS"
+---
+
+<section class="stack">
+    <section>
+        <div class="sl-block sl-block-group" data-block-type="group" style="width: auto; height: auto;">
+            <div class="sl-block-content sl-block-group-content"
+                style="transform-origin: 1045.5px 648px 0px; z-index: 10;">
+                <div class="sl-block" data-block-type="image"
+                    style="width: 82px; height: 82px; left: 1159px; top: 607px; min-width: 1px; min-height: 1px;">
+                    <div class="sl-block-content" style="z-index: 13;"><img data-lazy-loaded=""
+                            data-src="/slides/aws-intro/assets/avatar.avif">
+                    </div>
+                </div>
+                <div class="sl-block" data-block-type="text"
+                    style="height: auto; min-width: 30px; min-height: 30px; width: 287px; left: 850px; top: 646px;">
+                    <div class="sl-block-content"
+                        style="z-index: 12; text-align: right; font-size: 70%; line-height: 0.91; color: rgb(170, 170, 170);">
+                        <p>https://vcz.fr</p>
+                    </div>
+                </div>
+                <div class="sl-block" data-block-type="text"
+                    style="height: auto; min-width: 30px; min-height: 30px; width: 287px; left: 850px; top: 607px;">
+                    <div class="sl-block-content"
+                        style="z-index: 11; text-align: right; line-height: 0.78; border-width: 1px;">
+                        <p style="text-align:right"><span style="font-size:1.0em">Vincenzo
+                                <strong>Scalzi</strong></span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="image"
+            style="width: 240px; height: 326.292px; left: 520px; top: 340.854px; min-width: 1px; min-height: 1px;">
+            <div class="sl-block-content" style="z-index: 14;"><img data-lazy-loaded=""
+                    data-src="/slides/aws-intro/assets/bbl.avif">
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="height: auto; width: 1074px; left: 103px; top: 199.5px;">
+            <div class="sl-block-content" style="z-index: 15;">
+                <h1>Cloud <span style="color:#808080">with</span> AWS <span style="color:#808080">on the side</span>
+                </h1>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="image"
+            style="width: 67.9675px; height: 40.6672px; left: 675.403px; top: 596.333px; min-width: 1px; min-height: 1px;">
+            <div class="sl-block-style" style="z-index: 16; transform: rotate(-6deg);">
+                <div class="sl-block-content" style="z-index: 16;"><img data-lazy-loaded=""
+                        data-src="/slides/aws-intro/assets/aws-logo.avif">
+                </div>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="line" style="width: auto; height: auto; left: 435px; top: 297.5px;">
+            <div class="sl-block-content" data-line-x1="-94" data-line-y1="200" data-line-x2="310" data-line-y2="200"
+                data-line-color="#000000" data-line-start-type="none" data-line-end-type="none" style="z-index: 17;"
+                data-line-width="3px"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"
+                    preserveAspectRatio="xMidYMid" width="404" height="1" viewBox="-94 200 404 1">
+                    <line stroke="rgba(0,0,0,0)" stroke-width="15" x1="-93.5" y1="200.5" x2="310.5" y2="200.5"></line>
+                    <line class="line-element" stroke="#000000" stroke-width="3" x1="-93.5" y1="200.5" x2="310.5"
+                        y2="200.5"></line>
+                </svg></div>
+        </div>
+    </section>
+    <section>
+        <div class="sl-block" data-block-type="text" style="width: 413px; left: 189px; top: 94px; height: auto;">
+            <div class="sl-block-content" style="text-align: left; z-index: 10;">
+                <h2>About me</h2>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="width: 451px; left: 189px; top: 168px; height: auto;">
+            <div class="sl-block-content" data-placeholder-tag="p"
+                data-placeholder-text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec metus justo. Aliquam erat volutpat."
+                style="z-index: 11; text-align: left;">
+                <p>👋 <strong>Vincenzo Scalzi </strong>speaking!</p>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="height: auto; width: 451px; left: 189px; top: 244.5px;">
+            <div class="sl-block-content" style="z-index: 16; text-align: left;">
+                <p><u>I work as a:</u></p>
+
+                <p><strong>Cloud <span style="color:#EE82EE">&amp;&amp;</span> DevOps Engineer</strong></p>
+
+                <p>@ <strong>Gekko</strong></p>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="height: auto; width: 451px; left: 189px; top: 426px;">
+            <div class="sl-block-content" style="z-index: 17; text-align: left;">
+                <p><u>I love:</u></p>
+
+                <p>- Developing <strong>web</strong> applications</p>
+
+                <p>- Enjoying my time in <strong>meetups</strong></p>
+
+                <p>- Talking about new <strong>tech</strong></p>
+
+                <p>- Performance</p>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="height: auto; width: 160px; left: 880px; top: 279px;">
+            <div class="sl-block-content" style="z-index: 14; font-size: 500%; text-align: center;">
+                <p>🦎</p>
+            </div>
+        </div>
+    </section>
+</section>
+<section class="stack">
+    <section>
+        <div class="sl-block" data-block-type="text" style="width: 1075px; left: 102.5px; top: 274px; height: auto;">
+            <div class="sl-block-content" style="z-index: 10;">
+                <h1>The Cloud</h1>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="image"
+            style="width: 909.103px; height: 569px; left: 184.949px; top: 38.5px; min-width: 1px; min-height: 1px;">
+            <div class="sl-block-style" style="z-index: 11; opacity: 0.15;">
+                <div class="sl-block-content" style="z-index: 11;"><img data-lazy-loaded=""
+                        data-src="/slides/aws-intro/assets/cloud.avif">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="sl-block" data-block-type="text" style="width: 1075px; left: 102px; top: 274px; height: auto;">
+            <div class="sl-block-content" style="z-index: 11;">
+                <h1>Word cloud</h1>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="image"
+            style="width: 909.103px; height: 569px; left: 184.949px; top: 38.5px; min-width: 1px; min-height: 1px;">
+            <div class="sl-block-style" style="z-index: 12; opacity: 0.15;">
+                <div class="sl-block-content" style="z-index: 12; transition-duration: 0.6s; transition-delay: 3s;"
+                    data-animation-type="fade-in"><img data-lazy-loaded=""
+                        data-src="/slides/aws-intro/assets/cloud.avif">
+                </div>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="shape" style="width: 1280px; height: 720px; left: 0px; top: 0px;">
+            <div class="sl-block-content" data-shape-type="rect" data-shape-fill-color="rgba(0, 0, 0, 0)"
+                data-shape-stretch="true" style="z-index: 10;" data-shape-stroke-color="#0000ff"
+                data-shape-stroke-width="10px"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%"
+                    height="100%" preserveAspectRatio="none" viewBox="0 0 1280 720">
+                    <defs>
+                        <clipPath id="shape-mask-1-1582920112516">
+                            <rect width="1280" height="720" rx="0" ry="0" fill="rgba(0, 0, 0, 0)" stroke="#0000ff"
+                                stroke-width="20"></rect>
+                        </clipPath>
+                    </defs>
+                    <rect width="1280" height="720" rx="0" ry="0" class="shape-element" fill="rgba(0, 0, 0, 0)"
+                        stroke="#0000ff" stroke-width="20" clip-path="url(#shape-mask-1-1582920112516)"></rect>
+                </svg></div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="height: auto; width: 133px; left: 1133.5px; top: 671.5px;">
+            <div class="sl-block-content" style="z-index: 13; color: rgb(0, 0, 255); text-align: right;">
+                <p>Exercise</p>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="height: auto; width: 600px; left: 339.5px; top: 393px;">
+            <div class="sl-block-content" style="z-index: 14; transition-duration: 0.6s; transition-delay: 4s;"
+                data-animation-type="slide-up">
+                <p>What does the Cloud mean to you, in one word?</p>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="sl-block" data-block-type="image"
+            style="width: 480.677px; height: 287.605px; left: 399.323px; top: 216.395px; min-width: 1px; min-height: 1px;">
+            <div class="sl-block-content" style="z-index: 10;"><img data-lazy-loaded=""
+                    data-src="/slides/aws-intro/assets/aws-logo.avif">
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="sl-block" data-block-type="shape" style="width: 1280px; height: 720px; left: 0px; top: 0px;">
+            <div class="sl-block-content" data-shape-type="rect" data-shape-fill-color="rgba(0, 0, 0, 0)"
+                data-shape-stretch="true" style="z-index: 10;" data-shape-stroke-color="#00ff00"
+                data-shape-stroke-width="10px"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%"
+                    height="100%" preserveAspectRatio="none" viewBox="0 0 1280 720">
+                    <defs>
+                        <clipPath id="shape-mask-2-1582929235310">
+                            <rect width="1280" height="720" rx="0" ry="0" fill="rgba(0, 0, 0, 0)" stroke="#00ff00"
+                                stroke-width="20"></rect>
+                        </clipPath>
+                    </defs>
+                    <rect width="1280" height="720" rx="0" ry="0" class="shape-element" fill="rgba(0, 0, 0, 0)"
+                        stroke="#00ff00" stroke-width="20" clip-path="url(#shape-mask-2-1582929235310)"></rect>
+                </svg></div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="height: auto; width: 226.5px; left: 1040px; top: 671px;">
+            <div class="sl-block-content" style="z-index: 11; color: rgb(0, 255, 0); text-align: right;">
+                <p>Knowledge</p>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="width: 1075px; left: 102.5px; top: 46px; height: auto;">
+            <div class="sl-block-content" style="z-index: 12;">
+                <h1>Overview</h1>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="image"
+            style="width: 800px; height: 432px; left: 240px; top: 177px; min-width: 1px; min-height: 1px;">
+            <div class="sl-block-content"><img data-lazy-loaded=""
+                    data-src="/slides/aws-intro/assets/aws-overview-pdf.avif"></div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="height: auto; width: 118px; left: 922px; top: 609px;">
+            <div class="sl-block-content" style="z-index: 14;">
+                <p><a href="https://d1.awsstatic.com/whitepapers/aws-overview.pdf" rel="nofollow"
+                        target="_blank">Source</a></p>
+            </div>
+        </div>
+    </section>
+</section>
+<section class="stack">
+    <section>
+        <div class="sl-block" data-block-type="text" style="height: auto; width: 930px; left: 175px; top: 432px;">
+            <div class="sl-block-content" style="z-index: 10;">
+                <h1>Cloud responsibly</h1>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="shape" style="width: 201px; height: 193px; left: 539.5px; top: 191.5px;">
+            <div class="sl-block-content" data-shape-type="symbol-umbrella" data-shape-fill-color="#000000"
+                data-shape-stretch="true" style="z-index: 11;"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"
+                    width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 31.99799919128418 32">
+                    <g class="shape-element" fill="#000000" data-viewbox="0 0 31.99799919128418 32">
+                        <path
+                            d="M16 0c-8.82 0-16 7.178-16 16h4c0-0.826 0.676-1.5 1.5-1.5 0.828 0 1.5 0.674 1.5 1.5h4c0-0.826 0.676-1.5 1.5-1.5 0.828 0 1.5 0.674 1.5 1.5v10c0 1.102-0.895 2-2 2-1.102 0-2-0.898-2-2h-4c0 3.309 2.695 6 6 6 3.312 0 6-2.691 6-6v-10c0-0.826 0.676-1.5 1.5-1.5 0.828 0 1.498 0.674 1.498 1.5h4c0-0.826 0.68-1.5 1.5-1.5 0.828 0 1.5 0.674 1.5 1.5h4c0-8.822-7.172-16-15.998-16z">
+                        </path>
+                    </g>
+                </svg></div>
+        </div>
+    </section>
+    <section>
+        <div class="sl-block" data-block-type="shape" style="width: 1280px; height: 720px; left: 0px; top: 0px;">
+            <div class="sl-block-content " data-shape-type="rect" data-shape-fill-color="rgba(0, 0, 0, 0)"
+                data-shape-stretch="true" style="z-index: 10;" data-shape-stroke-color="#0000ff"
+                data-shape-stroke-width="10px"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%"
+                    height="100%" preserveAspectRatio="none" viewBox="0 0 1280 720">
+                    <defs>
+                        <clipPath id="shape-mask-7-1582932674877">
+                            <rect width="1280" height="720" rx="0" ry="0" fill="rgba(0, 0, 0, 0)" stroke="#0000ff"
+                                stroke-width="20"></rect>
+                        </clipPath>
+                    </defs>
+                    <rect width="1280" height="720" rx="0" ry="0" class="shape-element" fill="rgba(0, 0, 0, 0)"
+                        stroke="#0000ff" stroke-width="20" clip-path="url(#shape-mask-7-1582932674877)"></rect>
+                </svg></div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="height: auto; width: 133px; left: 1133.5px; top: 671.5px;">
+            <div class="sl-block-content" style="z-index: 12; color: rgb(0, 0, 255); text-align: right;">
+                <p>Exercise</p>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="height: auto; width: 841px; left: 240px; top: 204px;">
+            <div class="sl-block-content" style="z-index: 13;">
+                <p><span style="font-size:2.0em">Physical security of the datacenter</span></p>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="image"
+            style="width: 120.334px; height: 72px; left: 419.833px; top: 504px; min-width: 1px; min-height: 1px;">
+            <div class="sl-block-content" style="z-index: 14;"><img data-lazy-loaded=""
+                    data-src="/slides/aws-intro/assets/aws-logo.avif">
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="height: auto; width: 119px; left: 580.5px; top: 520.5px;">
+            <div class="sl-block-content" style="z-index: 15;">
+                <p>or</p>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="shape"
+            style="width: 69.0566px; height: 91.5px; left: 765.472px; top: 484.5px;">
+            <div class="sl-block-content" data-shape-type="symbol-user" data-shape-fill-color="#000000"
+                data-shape-stretch="true" style="z-index: 16;"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"
+                    width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 24 32">
+                    <g class="shape-element" fill="#000000" data-viewbox="0 0 24 32">
+                        <path
+                            d="M12 16c-6.625 0-12 5.375-12 12 0 2.211 1.789 4 4 4h16c2.211 0 4-1.789 4-4 0-6.625-5.375-12-12-12zM6 6c0-3.314 2.686-6 6-6s6 2.686 6 6c0 3.314-2.686 6-6 6-3.314 0-6-2.686-6-6z">
+                        </path>
+                    </g>
+                </svg></div>
+        </div>
+        <div class="sl-block" data-block-type="shape" style="width: 192px; height: 112px; left: 384px; top: 484px;">
+            <div class="sl-block-content fragment fade-in" data-shape-type="rect"
+                data-shape-fill-color="rgba(0, 0, 0, 0)" data-shape-stretch="true" style="z-index: 11;"
+                data-shape-stroke-color="#000000" data-shape-stroke-width="5px"><svg xmlns="http://www.w3.org/2000/svg"
+                    version="1.1" width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 192 112">
+                    <defs>
+                        <clipPath id="shape-mask-6-1582932674868">
+                            <rect width="192" height="112" rx="0" ry="0" fill="rgba(0, 0, 0, 0)" stroke="#000000"
+                                stroke-width="10"></rect>
+                        </clipPath>
+                    </defs>
+                    <rect width="192" height="112" rx="0" ry="0" class="shape-element" fill="rgba(0, 0, 0, 0)"
+                        stroke="#000000" stroke-width="10" clip-path="url(#shape-mask-6-1582932674868)"></rect>
+                </svg></div>
+        </div>
+    </section>
+    <section>
+        <div class="sl-block" data-block-type="shape" style="width: 1280px; height: 720px; left: 0px; top: 0px;">
+            <div class="sl-block-content" data-shape-type="rect" data-shape-fill-color="rgba(0, 0, 0, 0)"
+                data-shape-stretch="true" style="z-index: 10;" data-shape-stroke-color="#0000ff"
+                data-shape-stroke-width="10px"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%"
+                    height="100%" preserveAspectRatio="none" viewBox="0 0 1280 720">
+                    <defs>
+                        <clipPath id="shape-mask-1-1582966036261">
+                            <rect width="1280" height="720" rx="0" ry="0" fill="rgba(0, 0, 0, 0)" stroke="#0000ff"
+                                stroke-width="20"></rect>
+                        </clipPath>
+                    </defs>
+                    <rect width="1280" height="720" rx="0" ry="0" class="shape-element" fill="rgba(0, 0, 0, 0)"
+                        stroke="#0000ff" stroke-width="20" clip-path="url(#shape-mask-1-1582966036261)"></rect>
+                </svg></div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="height: auto; width: 133px; left: 1133.5px; top: 671.5px;">
+            <div class="sl-block-content" style="z-index: 11; color: rgb(0, 0, 255); text-align: right;">
+                <p>Exercise</p>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="height: auto; width: 841px; left: 80px; top: 158.5px;">
+            <div class="sl-block-content" style="z-index: 12; text-align: left;">
+                <p><span style="font-size:1.0em">In transit and storage encryption</span></p>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="image"
+            style="width: 120.334px; height: 72px; left: 419.833px; top: 504px; min-width: 1px; min-height: 1px;">
+            <div class="sl-block-content" style="z-index: 13;"><img data-lazy-loaded=""
+                    data-src="/slides/aws-intro/assets/aws-logo.avif">
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="height: auto; width: 119px; left: 580.5px; top: 520.5px;">
+            <div class="sl-block-content" style="z-index: 14;">
+                <p>or</p>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="shape"
+            style="width: 69.0566px; height: 91.5px; left: 765.472px; top: 484.5px;">
+            <div class="sl-block-content" data-shape-type="symbol-user" data-shape-fill-color="#000000"
+                data-shape-stretch="true" style="z-index: 15;"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"
+                    width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 24 32">
+                    <g class="shape-element" fill="#000000" data-viewbox="0 0 24 32">
+                        <path
+                            d="M12 16c-6.625 0-12 5.375-12 12 0 2.211 1.789 4 4 4h16c2.211 0 4-1.789 4-4 0-6.625-5.375-12-12-12zM6 6c0-3.314 2.686-6 6-6s6 2.686 6 6c0 3.314-2.686 6-6 6-3.314 0-6-2.686-6-6z">
+                        </path>
+                    </g>
+                </svg></div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="height: auto; width: 841px; left: 80px; top: 303.5px;">
+            <div class="sl-block-content" style="z-index: 16; text-align: left;">
+                <p><span style="font-size:1.0em">Customer isolation</span></p>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="height: auto; width: 841px; left: 80px; top: 234.5px;">
+            <div class="sl-block-content" style="z-index: 17; text-align: left;">
+                <p><span style="font-size:1.0em">Applications</span></p>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="height: auto; width: 841px; left: 80px; top: 89.5px;">
+            <div class="sl-block-content" style="z-index: 18; text-align: left;">
+                <p>Global network</p>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="sl-block" data-block-type="image"
+            style="width: 1075.2px; height: 589.053px; left: 102.4px; top: 65.4735px; min-width: 1px; min-height: 1px;">
+            <div class="sl-block-content" style="z-index: 10;"><img data-lazy-loaded=""
+                    data-src="/slides/aws-intro/assets/responsibility.avif">
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="sl-block" data-block-type="shape" style="width: 1280px; height: 720px; left: 0px; top: 0px;">
+            <div class="sl-block-content" data-shape-type="rect" data-shape-fill-color="rgba(0, 0, 0, 0)"
+                data-shape-stretch="true" style="z-index: 10;" data-shape-stroke-color="#00ff00"
+                data-shape-stroke-width="10px"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%"
+                    height="100%" preserveAspectRatio="none" viewBox="0 0 1280 720">
+                    <defs>
+                        <clipPath id="shape-mask-1-1583054490472">
+                            <rect width="1280" height="720" rx="0" ry="0" fill="rgba(0, 0, 0, 0)" stroke="#00ff00"
+                                stroke-width="20"></rect>
+                        </clipPath>
+                    </defs>
+                    <rect width="1280" height="720" rx="0" ry="0" class="shape-element" fill="rgba(0, 0, 0, 0)"
+                        stroke="#00ff00" stroke-width="20" clip-path="url(#shape-mask-1-1583054490472)"></rect>
+                </svg></div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="height: auto; width: 226.5px; left: 1040px; top: 671px;">
+            <div class="sl-block-content" style="z-index: 11; color: rgb(0, 255, 0); text-align: right;">
+                <p>Knowledge</p>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="width: 1075px; left: 102.5px; top: 46px; height: auto;">
+            <div class="sl-block-content" style="z-index: 12;">
+                <h1>AWS and Security Processes</h1>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="image"
+            style="width: 800px; height: 432px; left: 240px; top: 177px; min-width: 1px; min-height: 1px;">
+            <div class="sl-block-content"><img data-lazy-loaded=""
+                    data-src="/slides/aws-intro/assets/aws-security-whitepaper-pdf.avif"></div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="height: auto; width: 118px; left: 922px; top: 609px;">
+            <div class="sl-block-content" style="z-index: 14;">
+                <p><a href="https://d0.awsstatic.com/whitepapers/aws-security-whitepaper.pdf" rel="nofollow"
+                        target="_blank">Source</a>
+                </p>
+            </div>
+        </div>
+    </section>
+</section>
+<section class="stack">
+    <section>
+        <div class="sl-block" data-block-type="text" style="height: auto; width: 600px; left: 340px; top: 311px;">
+            <div class="sl-block-content" style="z-index: 10;">
+                <h1>Architecture</h1>
+            </div>
+        </div>
+        <div class="sl-block sl-block-group" data-block-type="group">
+            <div class="sl-block-content sl-block-group-content"
+                style="transform-origin: 640px 360px 0px; z-index: 11;">
+                <div class="sl-block" data-block-type="shape"
+                    style="width: 160px; height: 288px; left: 560px; top: 68.6859px;">
+                    <div class="sl-block-style" style="z-index: 12; opacity: 0.15;">
+                        <div class="sl-block-content" data-shape-type="diamond" data-shape-fill-color="rgb(0, 0, 0)"
+                            data-shape-stretch="true"
+                            style="z-index: 12; transition-duration: 0.3s; transition-delay: 2s;"
+                            data-animation-type="fade-in"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"
+                                width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 160 288">
+                                <polygon points="160,144 80,288 0,144 80,0" class="shape-element" fill="rgb(0, 0, 0)">
+                                </polygon>
+                            </svg></div>
+                    </div>
+                </div>
+                <div class="sl-block" data-block-type="shape"
+                    style="width: 170px; height: 300px; left: 698px; top: 161.686px;">
+                    <div class="sl-block-style" style="z-index: 13; transform: rotate(72deg); opacity: 0.15;">
+                        <div class="sl-block-content" data-shape-type="diamond" data-shape-fill-color="rgb(0, 0, 0)"
+                            data-shape-stretch="true"
+                            style="z-index: 13; transition-delay: 2.5s; transition-duration: 0.3s;"
+                            data-animation-type="fade-in"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"
+                                width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 170 300">
+                                <polygon points="170,150 85,300 0,150 85,0" class="shape-element" fill="rgb(0, 0, 0)">
+                                </polygon>
+                            </svg></div>
+                    </div>
+                </div>
+                <div class="sl-block" data-block-type="shape"
+                    style="width: 170px; height: 300px; left: 643.066px; top: 330px;">
+                    <div class="sl-block-style" style="z-index: 14; transform: rotate(144deg); opacity: 0.15;">
+                        <div class="sl-block-content" data-shape-type="diamond" data-shape-fill-color="rgb(0, 0, 0)"
+                            data-shape-stretch="true"
+                            style="z-index: 14; transition-duration: 0.3s; transition-delay: 3s;"
+                            data-animation-type="fade-in"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"
+                                width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 170 300">
+                                <polygon points="170,150 85,300 0,150 85,0" class="shape-element" fill="rgb(0, 0, 0)">
+                                </polygon>
+                            </svg></div>
+                    </div>
+                </div>
+                <div class="sl-block" data-block-type="shape"
+                    style="width: 170px; height: 300px; left: 465.934px; top: 330px;">
+                    <div class="sl-block-style" style="z-index: 15; transform: rotate(-144deg); opacity: 0.15;">
+                        <div class="sl-block-content" data-shape-type="diamond" data-shape-fill-color="rgb(0, 0, 0)"
+                            data-shape-stretch="true"
+                            style="z-index: 15; transition-duration: 0.3s; transition-delay: 3.5s;"
+                            data-animation-type="fade-in"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"
+                                width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 170 300">
+                                <polygon points="170,150 85,300 0,150 85,0" class="shape-element" fill="rgb(0, 0, 0)">
+                                </polygon>
+                            </svg></div>
+                    </div>
+                </div>
+                <div class="sl-block" data-block-type="shape"
+                    style="width: 170px; height: 300px; left: 412px; top: 161.686px;">
+                    <div class="sl-block-style" style="z-index: 16; transform: rotate(-72deg); opacity: 0.15;">
+                        <div class="sl-block-content" data-shape-type="diamond" data-shape-fill-color="rgb(0, 0, 0)"
+                            data-shape-stretch="true"
+                            style="z-index: 16; transition-duration: 0.3s; transition-delay: 4s;"
+                            data-animation-type="fade-in"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"
+                                width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 170 300">
+                                <polygon points="170,150 85,300 0,150 85,0" class="shape-element" fill="rgb(0, 0, 0)">
+                                </polygon>
+                            </svg></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="sl-block" data-block-type="text" style="width: 1075px; left: 102.5px; top: 311px; height: auto;">
+            <div class="sl-block-content" style="z-index: 10;">
+                <h1>CROPS</h1>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="height: auto; width: 600px; left: 340px; top: 432px;">
+            <div class="sl-block-style" style="z-index: 11; opacity: 0;">
+                <div class="sl-block-content" style="z-index: 11;">
+                    <p>Or any of the other 119 combinations:</p>
+                </div>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="height: auto; width: 1120px; left: 102.5px; top: 471px;">
+            <div class="sl-block-style" style="z-index: 12; opacity: 0;">
+                <div class="sl-block-content" style="z-index: 12;">
+                    <p>CROPS RCOPS OCRPS CORPS ROCPS ORCPS PRCOS RPCOS CPROS PCROS RCPOS CRPOS COPRS OCPRS PCORS CPORS
+                        OPCRS POCRS PORCS OPRCS RPOCS PROCS ORPCS ROPCS SOPCR OSPCR PSOCR SPOCR OPSCR POSCR COSPR OCSPR
+                        SCOPR CSOPR OSCPR SOCPR SPCOR PSCOR CSPOR SCPOR PCSOR CPSOR CPOSR PCOSR OCPSR COPSR POCSR OPCSR
+                        RPCSO PRCSO CRPSO RCPSO PCRSO CPRSO SPRCO PSRCO RSPCO SRPCO PRSCO RPSCO RCSPO CRSPO SRCPO RSCPO
+                        CSRPO SCRPO SCPRO CSPRO PSCRO SPCRO CPSRO PCSRO OCSRP COSRP SOCRP OSCRP CSORP SCORP RCOSP CROSP
+                        ORCSP ROCSP CORSP OCRSP OSRCP SORCP ROSCP ORSCP SROCP RSOCP RSCOP SRCOP CRSOP RCSOP SCROP CSROP
+                        PSROC SPROC RPSOC PRSOC SRPOC RSPOC OSPRC SOPRC POSRC OPSRC SPORC PSORC PROSC RPOSC OPRSC PORSC
+                        ROPSC ORPSC ORSPC ROSPC SORPC OSRPC RSOPC SROPC</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="sl-block" data-block-type="text" style="width: 1075px; left: 102.5px; top: 72px; height: auto;">
+            <div class="sl-block-content" style="z-index: 10;">
+                <h1>CROPS</h1>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="height: auto; width: 600px; left: 340px; top: 177px;">
+            <div class="sl-block-style" style="z-index: 11; opacity: 0.5;">
+                <div class="sl-block-content" style="z-index: 11;">
+                    <p>Or any of the other 119 combinations:</p>
+                </div>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="height: auto; width: 1120px; left: 102.5px; top: 216px;">
+            <div class="sl-block-style" style="z-index: 12; opacity: 0.5;">
+                <div class="sl-block-content" style="z-index: 12;">
+                    <p><s>CROPS</s> RCOPS OCRPS CORPS ROCPS ORCPS PRCOS RPCOS CPROS PCROS RCPOS CRPOS COPRS OCPRS PCORS
+                        CPORS OPCRS POCRS PORCS OPRCS RPOCS PROCS ORPCS ROPCS SOPCR OSPCR PSOCR SPOCR OPSCR POSCR COSPR
+                        OCSPR SCOPR CSOPR OSCPR SOCPR SPCOR PSCOR CSPOR SCPOR PCSOR CPSOR CPOSR PCOSR OCPSR COPSR POCSR
+                        OPCSR RPCSO PRCSO CRPSO RCPSO PCRSO CPRSO SPRCO PSRCO RSPCO SRPCO PRSCO RPSCO RCSPO CRSPO SRCPO
+                        RSCPO CSRPO SCRPO SCPRO CSPRO PSCRO SPCRO CPSRO PCSRO OCSRP COSRP SOCRP OSCRP CSORP SCORP RCOSP
+                        CROSP ORCSP ROCSP CORSP OCRSP OSRCP SORCP ROSCP ORSCP SROCP RSOCP RSCOP SRCOP CRSOP RCSOP SCROP
+                        CSROP PSROC SPROC RPSOC PRSOC SRPOC RSPOC OSPRC SOPRC POSRC OPSRC SPORC PSORC PROSC RPOSC OPRSC
+                        PORSC ROPSC ORPSC ORSPC ROSPC SORPC OSRPC RSOPC SROPC</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="sl-block" data-block-type="shape" style="width: 160px; height: 288px; left: 560px; top: 68.6859px;">
+            <div class="sl-block-style" style="z-index: 10; opacity: 0.15;">
+                <div class="sl-block-content" data-shape-type="diamond" data-shape-fill-color="rgb(0, 0, 0)"
+                    data-shape-stretch="true" style="z-index: 10; transition-duration: 0.3s; transition-delay: 1s;"
+                    data-animation-type="fade-in"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%"
+                        height="100%" preserveAspectRatio="none" viewBox="0 0 160 288">
+                        <polygon points="160,144 80,288 0,144 80,0" class="shape-element" fill="rgb(0, 0, 0)"></polygon>
+                    </svg></div>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="shape" style="width: 170px; height: 300px; left: 698px; top: 161.686px;">
+            <div class="sl-block-style" style="z-index: 11; transform: rotate(72deg); opacity: 0.15;">
+                <div class="sl-block-content" data-shape-type="diamond" data-shape-fill-color="rgb(0, 0, 0)"
+                    data-shape-stretch="true" style="z-index: 11; transition-delay: 1.5s; transition-duration: 0.3s;"
+                    data-animation-type="fade-in"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%"
+                        height="100%" preserveAspectRatio="none" viewBox="0 0 170 300">
+                        <polygon points="170,150 85,300 0,150 85,0" class="shape-element" fill="rgb(0, 0, 0)"></polygon>
+                    </svg></div>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="shape" style="width: 170px; height: 300px; left: 644.066px; top: 330px;">
+            <div class="sl-block-style" style="z-index: 12; transform: rotate(144deg); opacity: 0.15;">
+                <div class="sl-block-content" data-shape-type="diamond" data-shape-fill-color="rgb(0, 0, 0)"
+                    data-shape-stretch="true" style="z-index: 12; transition-duration: 0.3s; transition-delay: 2s;"
+                    data-animation-type="fade-in"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%"
+                        height="100%" preserveAspectRatio="none" viewBox="0 0 170 300">
+                        <polygon points="170,150 85,300 0,150 85,0" class="shape-element" fill="rgb(0, 0, 0)"></polygon>
+                    </svg></div>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="shape" style="width: 170px; height: 300px; left: 465.934px; top: 330px;">
+            <div class="sl-block-style" style="z-index: 13; transform: rotate(-144deg); opacity: 0.15;">
+                <div class="sl-block-content" data-shape-type="diamond" data-shape-fill-color="rgb(0, 0, 0)"
+                    data-shape-stretch="true" style="z-index: 13; transition-duration: 0.3s; transition-delay: 2.5s;"
+                    data-animation-type="fade-in"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%"
+                        height="100%" preserveAspectRatio="none" viewBox="0 0 170 300">
+                        <polygon points="170,150 85,300 0,150 85,0" class="shape-element" fill="rgb(0, 0, 0)"></polygon>
+                    </svg></div>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="shape" style="width: 170px; height: 300px; left: 412px; top: 161.686px;">
+            <div class="sl-block-style" style="z-index: 14; transform: rotate(-72deg); opacity: 0.15;">
+                <div class="sl-block-content" data-shape-type="diamond" data-shape-fill-color="rgb(0, 0, 0)"
+                    data-shape-stretch="true" style="z-index: 14; transition-duration: 0.3s; transition-delay: 3s;"
+                    data-animation-type="fade-in"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%"
+                        height="100%" preserveAspectRatio="none" viewBox="0 0 170 300">
+                        <polygon points="170,150 85,300 0,150 85,0" class="shape-element" fill="rgb(0, 0, 0)"></polygon>
+                    </svg></div>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="height: auto; width: 228px; left: 526px; top: 163.686px;">
+            <div class="sl-block-content fragment fade-in-then-semi-out" data-placeholder-tag="p"
+                data-placeholder-text="Text" style="z-index: 15; color: rgb(255, 255, 255);" data-fragment-index="0">
+                <p><span style="font-size:2.5em">¢</span></p>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="shape"
+            style="width: 79.372px; height: 79.372px; left: 743.314px; top: 269px;">
+            <div class="sl-block-content fragment fade-in-then-semi-out" data-shape-type="symbol-bolt"
+                data-shape-fill-color="rgb(255, 255, 255)" data-shape-stretch="false" style="z-index: 16;"
+                data-fragment-index="1"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%"
+                    preserveAspectRatio="xMidYMid" viewBox="0 0 32 32">
+                    <g class="shape-element" fill="rgb(255, 255, 255)" data-viewbox="0 0 32 32">
+                        <path d="M32 0l-24 16 6 4-14 12 24-12-6-4z"></path>
+                    </g>
+                </svg></div>
+        </div>
+        <div class="sl-block" data-block-type="shape"
+            style="width: 40.56px; height: 78px; left: 699.72px; top: 438.878px;">
+            <div class="sl-block-content fragment fade-in-then-semi-out" data-shape-type="symbol-ribbon"
+                data-shape-fill-color="rgb(255, 255, 255)" data-shape-stretch="false" style="z-index: 17;"
+                data-fragment-index="2"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%"
+                    preserveAspectRatio="xMidYMid" viewBox="0 0 16 32">
+                    <g class="shape-element" fill="rgb(255, 255, 255)" data-viewbox="0 0 16 32">
+                        <path
+                            d="M8 20c-1.41 0-2.742-0.289-4-0.736v12.736l4-4 4 4v-12.736c-1.258 0.447-2.59 0.736-4 0.736zM0 8c0-4.418 3.582-8 8-8s8 3.582 8 8c0 4.418-3.582 8-8 8-4.418 0-8-3.582-8-8z">
+                        </path>
+                    </g>
+                </svg></div>
+        </div>
+        <div class="sl-block" data-block-type="shape"
+            style="width: 80px; height: 80.2676px; left: 457px; top: 268.104px;">
+            <div class="sl-block-content fragment" data-shape-type="symbol-lock"
+                data-shape-fill-color="rgb(255, 255, 255)" data-shape-stretch="false" style="z-index: 18;"
+                data-fragment-index="4"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%"
+                    preserveAspectRatio="xMidYMid" viewBox="-4.76837158203125e-7 0 24 32">
+                    <g class="shape-element" fill="rgb(255, 255, 255)" data-viewbox="-4.76837158203125e-7 0 24 32">
+                        <path
+                            d="M14 0c-5.508 0-9.996 4.484-9.996 10v2h-4.004v14c0 3.309 2.691 6 6 6h12c3.309 0 6-2.691 6-6v-16c0-5.516-4.488-10-10-10zM11.996 24c-1.101 0-1.996-0.895-1.996-2s0.895-2 1.996-2c1.105 0 2 0.895 2 2s-0.894 2-2 2zM20 12h-11.996v-2c0-3.309 2.691-6 5.996-6 3.309 0 6 2.691 6 6v2z">
+                        </path>
+                    </g>
+                </svg></div>
+        </div>
+        <div class="sl-block" data-block-type="shape" style="width: 78px; height: 78px; left: 521px; top: 438.878px;">
+            <div class="sl-block-content fragment fade-in-then-semi-out" data-shape-type="symbol-thin-arrow-up-right"
+                data-shape-fill-color="rgb(255, 255, 255)" data-shape-stretch="true" style="z-index: 19;"
+                data-fragment-index="3"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%"
+                    preserveAspectRatio="none" viewBox="4.00124979019165 4 23.9997501373291 24.000001907348633">
+                    <g class="shape-element" fill="rgb(255, 255, 255)"
+                        data-viewbox="4.00124979019165 4 23.9997501373291 24.000001907348633">
+                        <path
+                            d="M26.001 4c-0 0-0.001 0-0.001 0h-11.999c-1.105 0-2 0.895-2 2s0.895 2 2 2h7.172l-16.586 16.586c-0.781 0.781-0.781 2.047 0 2.828 0.391 0.391 0.902 0.586 1.414 0.586s1.024-0.195 1.414-0.586l16.586-16.586v7.172c0 1.105 0.895 2 2 2s2-0.895 2-2v-14h-1.999z">
+                        </path>
+                    </g>
+                </svg></div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="height: auto; width: 600px; left: 340px; top: 19.6859px;">
+            <div class="sl-block-content fragment fade-in-then-semi-out" data-placeholder-tag="p"
+                data-placeholder-text="Text" style="z-index: 20;" data-fragment-index="0">
+                <p>Cost Optimization</p>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text"
+            style="height: auto; width: 197.925px; left: 940px; top: 248.604px;">
+            <div class="sl-block-content fragment fade-in-then-semi-out" data-placeholder-tag="p"
+                data-placeholder-text="Text" style="z-index: 21; text-align: left;" data-fragment-index="1">
+                <p>Reliability</p>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text"
+            style="height: auto; width: 205.925px; left: 823.686px; top: 609px;">
+            <div class="sl-block-content fragment fade-in-then-semi-out" data-placeholder-tag="p"
+                data-placeholder-text="Text" style="z-index: 22; text-align: left;" data-fragment-index="2">
+                <p>Operational Excellence</p>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text"
+            style="height: auto; width: 205.925px; left: 251.075px; top: 609px;">
+            <div class="sl-block-content fragment fade-in-then-semi-out" data-placeholder-tag="p"
+                data-placeholder-text="Text" style="z-index: 23; text-align: right;" data-fragment-index="3">
+                <p>Performance Efficiency</p>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text"
+            style="height: auto; width: 197.925px; left: 142.075px; top: 249.5px;">
+            <div class="sl-block-content fragment" style="z-index: 24; text-align: right;" data-fragment-index="4">
+                <p>Security</p>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="sl-block" data-block-type="shape" style="width: 1280px; height: 720px; left: 0px; top: 0px;">
+            <div class="sl-block-content" data-shape-type="rect" data-shape-fill-color="rgba(0, 0, 0, 0)"
+                data-shape-stretch="true" style="z-index: 10;" data-shape-stroke-color="#00ff00"
+                data-shape-stroke-width="10px"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%"
+                    height="100%" preserveAspectRatio="none" viewBox="0 0 1280 720">
+                    <defs>
+                        <clipPath id="shape-mask-2-1583056606331">
+                            <rect width="1280" height="720" rx="0" ry="0" fill="rgba(0, 0, 0, 0)" stroke="#00ff00"
+                                stroke-width="20"></rect>
+                        </clipPath>
+                    </defs>
+                    <rect width="1280" height="720" rx="0" ry="0" class="shape-element" fill="rgba(0, 0, 0, 0)"
+                        stroke="#00ff00" stroke-width="20" clip-path="url(#shape-mask-2-1583056606331)"></rect>
+                </svg></div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="height: auto; width: 226.5px; left: 1040px; top: 671px;">
+            <div class="sl-block-content" style="z-index: 11; color: rgb(0, 255, 0); text-align: right;">
+                <p>Knowledge</p>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="width: 1075px; left: 102.5px; top: 46px; height: auto;">
+            <div class="sl-block-content" style="z-index: 12;">
+                <h1>Well-Architected Framework</h1>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="image"
+            style="width: 800px; height: 432px; left: 240px; top: 177px; min-width: 1px; min-height: 1px;">
+            <div class="sl-block-content"><img data-lazy-loaded=""
+                    data-src="/slides/aws-intro/assets/aws-waf-page.avif"></div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="height: auto; width: 118px; left: 922px; top: 609px;">
+            <div class="sl-block-content" style="z-index: 14;">
+                <p><a href="https://docs.aws.amazon.com/wellarchitected/latest/framework/welcome.html" rel="nofollow"
+                        target="_blank">Source</a></p>
+            </div>
+        </div>
+    </section>
+</section>
+<section class="stack">
+    <section>
+        <div class="sl-block" data-block-type="text" style="height: auto; width: 600px; left: 340px; top: 262.5px;">
+            <div class="sl-block-content" style="z-index: 80;">
+                <h1>Amazon Web Services</h1>
+            </div>
+        </div>
+
+        <div class="sl-block sl-block-group" data-block-type="group">
+            <div class="sl-block-content sl-block-group-content"
+                style="transform-origin: 490px 181px 0px; z-index: 19; transition-duration: 0.6s; transition-delay: 5s;"
+                data-animation-type="fade-in">
+                <div class="sl-block" data-block-type="shape"
+                    style="width: 300px; height: 300px; left: 340px; top: 31px;">
+                    <div class="sl-block-style" style="z-index: 20; opacity: 0.15;">
+                        <div class="sl-block-content" data-shape-type="rect" data-shape-fill-color="rgba(0, 0, 0, 0)"
+                            data-shape-stretch="true" style="z-index: 20;" data-shape-stroke-color="#000000"
+                            data-shape-stroke-width="5px"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"
+                                width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 300 300">
+                                <defs>
+                                    <clipPath id="shape-mask-8-1583063597595">
+                                        <rect width="300" height="300" rx="0" ry="0" fill="rgba(0, 0, 0, 0)"
+                                            stroke="#000000" stroke-width="10"></rect>
+                                    </clipPath>
+                                </defs>
+                                <rect width="300" height="300" rx="0" ry="0" class="shape-element"
+                                    fill="rgba(0, 0, 0, 0)" stroke="#000000" stroke-width="10"
+                                    clip-path="url(#shape-mask-8-1583063597595)"></rect>
+                            </svg></div>
+                    </div>
+                </div>
+                <div class="sl-block" data-block-type="image"
+                    style="width: 249.5px; height: 249.5px; left: 365.25px; top: 56.25px; min-width: 1px; min-height: 1px;">
+                    <div class="sl-block-style" style="z-index: 21; opacity: 0.15;">
+                        <div class="sl-block-content" style="z-index: 21;"><img data-lazy-loaded=""
+                                data-src="/slides/aws-intro/assets/aws/amazon-ec2.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sl-block sl-block-group" data-block-type="group">
+            <div class="sl-block-content sl-block-group-content"
+                style="transform-origin: 440px -144px 0px; z-index: 47; transition-duration: 0.6s; transition-delay: 8.5s;"
+                data-animation-type="fade-in">
+                <div class="sl-block" data-block-type="shape"
+                    style="width: 300px; height: 300px; left: 290px; top: -294px;">
+                    <div class="sl-block-style" style="z-index: 48; opacity: 0.15;">
+                        <div class="sl-block-content" data-shape-type="rect" data-shape-fill-color="rgba(0, 0, 0, 0)"
+                            data-shape-stretch="true" style="z-index: 48;" data-shape-stroke-color="#000000"
+                            data-shape-stroke-width="5px"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"
+                                width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 300 300">
+                                <defs>
+                                    <clipPath id="shape-mask-28-1583063767043">
+                                        <rect width="300" height="300" rx="0" ry="0" fill="rgba(0, 0, 0, 0)"
+                                            stroke="#000000" stroke-width="10"></rect>
+                                    </clipPath>
+                                </defs>
+                                <rect width="300" height="300" rx="0" ry="0" class="shape-element"
+                                    fill="rgba(0, 0, 0, 0)" stroke="#000000" stroke-width="10"
+                                    clip-path="url(#shape-mask-28-1583063767043)"></rect>
+                            </svg></div>
+                    </div>
+                </div>
+                <div class="sl-block" data-block-type="image"
+                    style="width: 250px; height: 250px; left: 315px; top: -269px; min-width: 1px; min-height: 1px;">
+                    <div class="sl-block-style" style="z-index: 49; opacity: 0.15;">
+                        <div class="sl-block-content" style="z-index: 49;"><img data-lazy-loaded=""
+                                data-src="/slides/aws-intro/assets/aws/amazon-elb.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sl-block sl-block-group" data-block-type="group">
+            <div class="sl-block-content sl-block-group-content"
+                style="transform-origin: 160px -94px 0px; z-index: 35; transition-duration: 0.6s; transition-delay: 12.3s;"
+                data-animation-type="fade-in">
+                <div class="sl-block" data-block-type="shape"
+                    style="width: 200px; height: 200px; left: 60px; top: -194px;">
+                    <div class="sl-block-style" style="z-index: 36; opacity: 0.15;">
+                        <div class="sl-block-content" data-shape-type="rect" data-shape-fill-color="rgba(0, 0, 0, 0)"
+                            data-shape-stretch="true" style="z-index: 36;" data-shape-stroke-color="#000000"
+                            data-shape-stroke-width="5px"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"
+                                width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 200 200">
+                                <defs>
+                                    <clipPath id="shape-mask-27-1583063758685">
+                                        <rect width="200" height="200" rx="0" ry="0" fill="rgba(0, 0, 0, 0)"
+                                            stroke="#000000" stroke-width="10"></rect>
+                                    </clipPath>
+                                </defs>
+                                <rect width="200" height="200" rx="0" ry="0" class="shape-element"
+                                    fill="rgba(0, 0, 0, 0)" stroke="#000000" stroke-width="10"
+                                    clip-path="url(#shape-mask-27-1583063758685)"></rect>
+                            </svg></div>
+                    </div>
+                </div>
+                <div class="sl-block" data-block-type="image"
+                    style="width: 150px; height: 150px; left: 85px; top: -169px; min-width: 1px; min-height: 1px;">
+                    <div class="sl-block-style" style="z-index: 37; opacity: 0.15;">
+                        <div class="sl-block-content" style="z-index: 37;"><img data-lazy-loaded=""
+                                data-src="/slides/aws-intro/assets/aws/aws-well-architected-tool.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sl-block sl-block-group" data-block-type="group">
+            <div class="sl-block-content sl-block-group-content"
+                style="transform-origin: 188px 154px 0px; z-index: 41; transition-duration: 0.6s; transition-delay: 12s;"
+                data-animation-type="fade-in">
+                <div class="sl-block" data-block-type="shape"
+                    style="width: 250px; height: 250px; left: 63px; top: 29px;">
+                    <div class="sl-block-style" style="z-index: 42; opacity: 0.15;">
+                        <div class="sl-block-content" data-shape-type="rect" data-shape-fill-color="rgba(0, 0, 0, 0)"
+                            data-shape-stretch="true" style="z-index: 42;" data-shape-stroke-color="#000000"
+                            data-shape-stroke-width="5px"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"
+                                width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 250 250">
+                                <defs>
+                                    <clipPath id="shape-mask-24-1583063730245">
+                                        <rect width="250" height="250" rx="0" ry="0" fill="rgba(0, 0, 0, 0)"
+                                            stroke="#000000" stroke-width="10"></rect>
+                                    </clipPath>
+                                </defs>
+                                <rect width="250" height="250" rx="0" ry="0" class="shape-element"
+                                    fill="rgba(0, 0, 0, 0)" stroke="#000000" stroke-width="10"
+                                    clip-path="url(#shape-mask-24-1583063730245)"></rect>
+                            </svg></div>
+                    </div>
+                </div>
+                <div class="sl-block" data-block-type="image"
+                    style="width: 199.75px; height: 199.75px; left: 88.125px; top: 54.125px; min-width: 1px; min-height: 1px;">
+                    <div class="sl-block-style" style="z-index: 43; opacity: 0.15;">
+                        <div class="sl-block-content" style="z-index: 43;"><img data-lazy-loaded=""
+                                data-src="/slides/aws-intro/assets/aws/amazon-cloudfront.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sl-block sl-block-group" data-block-type="group">
+            <div class="sl-block-content sl-block-group-content"
+                style="transform-origin: -112px 129px 0px; z-index: 65; transition-duration: 0.6s; transition-delay: 14.3s;"
+                data-animation-type="fade-in">
+                <div class="sl-block" data-block-type="shape"
+                    style="width: 300px; height: 300px; left: -262px; top: -21px;">
+                    <div class="sl-block-style" style="z-index: 66; opacity: 0.15;">
+                        <div class="sl-block-content" data-shape-type="rect" data-shape-fill-color="rgba(0, 0, 0, 0)"
+                            data-shape-stretch="true" style="z-index: 66;" data-shape-stroke-color="#000000"
+                            data-shape-stroke-width="5px"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"
+                                width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 300 300">
+                                <defs>
+                                    <clipPath id="shape-mask-26-1583063752024">
+                                        <rect width="300" height="300" rx="0" ry="0" fill="rgba(0, 0, 0, 0)"
+                                            stroke="#000000" stroke-width="10"></rect>
+                                    </clipPath>
+                                </defs>
+                                <rect width="300" height="300" rx="0" ry="0" class="shape-element"
+                                    fill="rgba(0, 0, 0, 0)" stroke="#000000" stroke-width="10"
+                                    clip-path="url(#shape-mask-26-1583063752024)"></rect>
+                            </svg></div>
+                    </div>
+                </div>
+                <div class="sl-block" data-block-type="image"
+                    style="width: 249.5px; height: 249.5px; left: -236.75px; top: 4.25px; min-width: 1px; min-height: 1px;">
+                    <div class="sl-block-style" style="z-index: 67; opacity: 0.15;">
+                        <div class="sl-block-content" style="z-index: 67;"><img data-lazy-loaded=""
+                                data-src="/slides/aws-intro/assets/aws/amazon-elasticache.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sl-block sl-block-group" data-block-type="group">
+            <div class="sl-block-content sl-block-group-content"
+                style="transform-origin: 63px 424px 0px; z-index: 44; transition-duration: 0.6s; transition-delay: 14s;"
+                data-animation-type="fade-in">
+                <div class="sl-block" data-block-type="shape"
+                    style="width: 250px; height: 250px; left: -62px; top: 299px;">
+                    <div class="sl-block-style" style="z-index: 45; opacity: 0.15;">
+                        <div class="sl-block-content" data-shape-type="rect" data-shape-fill-color="rgba(0, 0, 0, 0)"
+                            data-shape-stretch="true" style="z-index: 45;" data-shape-stroke-color="#000000"
+                            data-shape-stroke-width="5px"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"
+                                width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 250 250">
+                                <defs>
+                                    <clipPath id="shape-mask-20-1583063707722">
+                                        <rect width="250" height="250" rx="0" ry="0" fill="rgba(0, 0, 0, 0)"
+                                            stroke="#000000" stroke-width="10"></rect>
+                                    </clipPath>
+                                </defs>
+                                <rect width="250" height="250" rx="0" ry="0" class="shape-element"
+                                    fill="rgba(0, 0, 0, 0)" stroke="#000000" stroke-width="10"
+                                    clip-path="url(#shape-mask-20-1583063707722)"></rect>
+                            </svg></div>
+                    </div>
+                </div>
+                <div class="sl-block" data-block-type="image"
+                    style="width: 199.75px; height: 199.75px; left: -36.875px; top: 324.125px; min-width: 1px; min-height: 1px;">
+                    <div class="sl-block-style" style="z-index: 46; opacity: 0.15;">
+                        <div class="sl-block-content" style="z-index: 46;"><img data-lazy-loaded=""
+                                data-src="/slides/aws-intro/assets/aws/amazon-route-53.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sl-block sl-block-group" data-block-type="group">
+            <div class="sl-block-content sl-block-group-content"
+                style="transform-origin: 313px 449px 0px; z-index: 16; transition-duration: 0.6s; transition-delay: 11.5s;"
+                data-animation-type="fade-in">
+                <div class="sl-block" data-block-type="shape"
+                    style="width: 200px; height: 200px; left: 213px; top: 349px;">
+                    <div class="sl-block-style" style="z-index: 17; opacity: 0.15;">
+                        <div class="sl-block-content" data-shape-type="rect" data-shape-fill-color="rgba(0, 0, 0, 0)"
+                            data-shape-stretch="true" style="z-index: 17;" data-shape-stroke-color="#000000"
+                            data-shape-stroke-width="5px"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"
+                                width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 200 200">
+                                <defs>
+                                    <clipPath id="shape-mask-17-1583063687698">
+                                        <rect width="200" height="200" rx="0" ry="0" fill="rgba(0, 0, 0, 0)"
+                                            stroke="#000000" stroke-width="10"></rect>
+                                    </clipPath>
+                                </defs>
+                                <rect width="200" height="200" rx="0" ry="0" class="shape-element"
+                                    fill="rgba(0, 0, 0, 0)" stroke="#000000" stroke-width="10"
+                                    clip-path="url(#shape-mask-17-1583063687698)"></rect>
+                            </svg></div>
+                    </div>
+                </div>
+                <div class="sl-block" data-block-type="image"
+                    style="width: 150px; height: 150px; left: 238px; top: 374px; min-width: 1px; min-height: 1px;">
+                    <div class="sl-block-style" style="z-index: 18; opacity: 0.15;">
+                        <div class="sl-block-content" style="z-index: 18;"><img data-lazy-loaded=""
+                                data-src="/slides/aws-intro/assets/aws/amazon-sqs.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sl-block sl-block-group" data-block-type="group">
+            <div class="sl-block-content sl-block-group-content"
+                style="transform-origin: 540px 449px 0px; z-index: 28; transition-duration: 0.6s; transition-delay: 8s;"
+                data-animation-type="fade-in">
+                <div class="sl-block" data-block-type="shape"
+                    style="width: 200px; height: 200px; left: 440px; top: 349px;">
+                    <div class="sl-block-style" style="z-index: 29; opacity: 0.15;">
+                        <div class="sl-block-content" data-shape-type="rect" data-shape-fill-color="rgba(0, 0, 0, 0)"
+                            data-shape-stretch="true" style="z-index: 29;" data-shape-stroke-color="#000000"
+                            data-shape-stroke-width="5px"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"
+                                width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 200 200">
+                                <defs>
+                                    <clipPath id="shape-mask-10-1583063625260">
+                                        <rect width="200" height="200" rx="0" ry="0" fill="rgba(0, 0, 0, 0)"
+                                            stroke="#000000" stroke-width="10"></rect>
+                                    </clipPath>
+                                </defs>
+                                <rect width="200" height="200" rx="0" ry="0" class="shape-element"
+                                    fill="rgba(0, 0, 0, 0)" stroke="#000000" stroke-width="10"
+                                    clip-path="url(#shape-mask-10-1583063625260)"></rect>
+                            </svg></div>
+                    </div>
+                </div>
+                <div class="sl-block" data-block-type="image"
+                    style="width: 150px; height: 150px; left: 464.75px; top: 374px; min-width: 1px; min-height: 1px;">
+                    <div class="sl-block-style" style="z-index: 30; opacity: 0.15;">
+                        <div class="sl-block-content" style="z-index: 30;"><img data-lazy-loaded=""
+                                data-src="/slides/aws-intro/assets/aws/amazon-sagemaker.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sl-block sl-block-group" data-block-type="group">
+            <div class="sl-block-content sl-block-group-content"
+                style="transform-origin: 213px 726px 0px; z-index: 25; transition-duration: 0.6s; transition-delay: 13.8s;"
+                data-animation-type="fade-in">
+                <div class="sl-block" data-block-type="shape"
+                    style="width: 300px; height: 300px; left: 63px; top: 576px;">
+                    <div class="sl-block-style" style="z-index: 26; opacity: 0.15;">
+                        <div class="sl-block-content" data-shape-type="rect" data-shape-fill-color="rgba(0, 0, 0, 0)"
+                            data-shape-stretch="true" style="z-index: 26;" data-shape-stroke-color="#000000"
+                            data-shape-stroke-width="5px"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"
+                                width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 300 300">
+                                <defs>
+                                    <clipPath id="shape-mask-18-1583063692737">
+                                        <rect width="300" height="300" rx="0" ry="0" fill="rgba(0, 0, 0, 0)"
+                                            stroke="#000000" stroke-width="10"></rect>
+                                    </clipPath>
+                                </defs>
+                                <rect width="300" height="300" rx="0" ry="0" class="shape-element"
+                                    fill="rgba(0, 0, 0, 0)" stroke="#000000" stroke-width="10"
+                                    clip-path="url(#shape-mask-18-1583063692737)"></rect>
+                            </svg></div>
+                    </div>
+                </div>
+                <div class="sl-block" data-block-type="image"
+                    style="width: 249.5px; height: 249.5px; left: 88.25px; top: 601.25px; min-width: 1px; min-height: 1px;">
+                    <div class="sl-block-style" style="z-index: 27; opacity: 0.15;">
+                        <div class="sl-block-content" style="z-index: 27;"><img data-lazy-loaded=""
+                                data-src="/slides/aws-intro/assets/aws/amazon-rds.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sl-block sl-block-group" data-block-type="group">
+            <div class="sl-block-content sl-block-group-content"
+                style="transform-origin: -62px 701px 0px; z-index: 71; transition-duration: 0.6s; transition-delay: 14.5s;"
+                data-animation-type="fade-in">
+                <div class="sl-block" data-block-type="shape"
+                    style="width: 200px; height: 200px; left: -162px; top: 601px;">
+                    <div class="sl-block-style" style="z-index: 72; opacity: 0.15;">
+                        <div class="sl-block-content" data-shape-type="rect" data-shape-fill-color="rgba(0, 0, 0, 0)"
+                            data-shape-stretch="true" style="z-index: 72;" data-shape-stroke-color="#000000"
+                            data-shape-stroke-width="5px"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"
+                                width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 200 200">
+                                <defs>
+                                    <clipPath id="shape-mask-25-1583063737524">
+                                        <rect width="200" height="200" rx="0" ry="0" fill="rgba(0, 0, 0, 0)"
+                                            stroke="#000000" stroke-width="10"></rect>
+                                    </clipPath>
+                                </defs>
+                                <rect width="200" height="200" rx="0" ry="0" class="shape-element"
+                                    fill="rgba(0, 0, 0, 0)" stroke="#000000" stroke-width="10"
+                                    clip-path="url(#shape-mask-25-1583063737524)"></rect>
+                            </svg></div>
+                    </div>
+                </div>
+                <div class="sl-block" data-block-type="image"
+                    style="width: 150.125px; height: 150.125px; left: -137.063px; top: 625.938px; min-width: 1px; min-height: 1px;">
+                    <div class="sl-block-style" style="z-index: 73; opacity: 0.15;">
+                        <div class="sl-block-content" style="z-index: 73;"><img data-lazy-loaded=""
+                                data-src="/slides/aws-intro/assets/aws/aws-x-ray.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sl-block sl-block-group" data-block-type="group">
+            <div class="sl-block-content sl-block-group-content"
+                style="transform-origin: 515px 701px 0px; z-index: 62; transition-duration: 0.6s; transition-delay: 11s;"
+                data-animation-type="fade-in">
+                <div class="sl-block" data-block-type="shape"
+                    style="width: 250px; height: 250px; left: 390px; top: 576px;">
+                    <div class="sl-block-style" style="z-index: 63; opacity: 0.15;">
+                        <div class="sl-block-content" data-shape-type="rect" data-shape-fill-color="rgba(0, 0, 0, 0)"
+                            data-shape-stretch="true" style="z-index: 63;" data-shape-stroke-color="#000000"
+                            data-shape-stroke-width="5px"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"
+                                width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 250 250">
+                                <defs>
+                                    <clipPath id="shape-mask-12-1583063644396">
+                                        <rect width="250" height="250" rx="0" ry="0" fill="rgba(0, 0, 0, 0)"
+                                            stroke="#000000" stroke-width="10"></rect>
+                                    </clipPath>
+                                </defs>
+                                <rect width="250" height="250" rx="0" ry="0" class="shape-element"
+                                    fill="rgba(0, 0, 0, 0)" stroke="#000000" stroke-width="10"
+                                    clip-path="url(#shape-mask-12-1583063644396)"></rect>
+                            </svg></div>
+                    </div>
+                </div>
+                <div class="sl-block" data-block-type="image"
+                    style="width: 199.5px; height: 199.5px; left: 415.25px; top: 601.25px; min-width: 1px; min-height: 1px;">
+                    <div class="sl-block-style" style="z-index: 64; opacity: 0.15;">
+                        <div class="sl-block-content" style="z-index: 64;"><img data-lazy-loaded=""
+                                data-src="/slides/aws-intro/assets/aws/amazon-s3.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sl-block sl-block-group" data-block-type="group">
+            <div class="sl-block-content sl-block-group-content"
+                style="transform-origin: 540px 998px 0px; z-index: 68; transition-duration: 0.6s; transition-delay: 13.5s;"
+                data-animation-type="fade-in">
+                <div class="sl-block" data-block-type="shape"
+                    style="width: 300px; height: 300px; left: 390px; top: 848px;">
+                    <div class="sl-block-style" style="z-index: 69; opacity: 0.15;">
+                        <div class="sl-block-content" data-shape-type="rect" data-shape-fill-color="rgba(0, 0, 0, 0)"
+                            data-shape-stretch="true" style="z-index: 69;" data-shape-stroke-color="#000000"
+                            data-shape-stroke-width="5px"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"
+                                width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 300 300">
+                                <defs>
+                                    <clipPath id="shape-mask-19-1583063698128">
+                                        <rect width="300" height="300" rx="0" ry="0" fill="rgba(0, 0, 0, 0)"
+                                            stroke="#000000" stroke-width="10"></rect>
+                                    </clipPath>
+                                </defs>
+                                <rect width="300" height="300" rx="0" ry="0" class="shape-element"
+                                    fill="rgba(0, 0, 0, 0)" stroke="#000000" stroke-width="10"
+                                    clip-path="url(#shape-mask-19-1583063698128)"></rect>
+                            </svg></div>
+                    </div>
+                </div>
+                <div class="sl-block" data-block-type="image"
+                    style="width: 249.5px; height: 249.5px; left: 415.25px; top: 873.25px; min-width: 1px; min-height: 1px;">
+                    <div class="sl-block-style" style="z-index: 70; opacity: 0.15;">
+                        <div class="sl-block-content" style="z-index: 70;"><img data-lazy-loaded=""
+                                data-src="/slides/aws-intro/assets/aws/amazon-eks.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sl-block sl-block-group" data-block-type="group">
+            <div class="sl-block-content sl-block-group-content"
+                style="transform-origin: 845px 873px 0px; z-index: 50; transition-duration: 0.6s; transition-delay: 10.5s;"
+                data-animation-type="fade-in">
+                <div class="sl-block" data-block-type="shape"
+                    style="width: 250px; height: 250px; left: 720px; top: 748px;">
+                    <div class="sl-block-style" style="z-index: 51; opacity: 0.15;">
+                        <div class="sl-block-content" data-shape-type="rect" data-shape-fill-color="rgba(0, 0, 0, 0)"
+                            data-shape-stretch="true" style="z-index: 51;" data-shape-stroke-color="#000000"
+                            data-shape-stroke-width="5px"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"
+                                width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 250 250">
+                                <defs>
+                                    <clipPath id="shape-mask-16-1583063678810">
+                                        <rect width="250" height="250" rx="0" ry="0" fill="rgba(0, 0, 0, 0)"
+                                            stroke="#000000" stroke-width="10"></rect>
+                                    </clipPath>
+                                </defs>
+                                <rect width="250" height="250" rx="0" ry="0" class="shape-element"
+                                    fill="rgba(0, 0, 0, 0)" stroke="#000000" stroke-width="10"
+                                    clip-path="url(#shape-mask-16-1583063678810)"></rect>
+                            </svg></div>
+                    </div>
+                </div>
+                <div class="sl-block" data-block-type="image"
+                    style="width: 199.875px; height: 199.875px; left: 745.063px; top: 773.063px; min-width: 1px; min-height: 1px;">
+                    <div class="sl-block-style" style="z-index: 52; opacity: 0.15;">
+                        <div class="sl-block-content" style="z-index: 52;"><img data-lazy-loaded=""
+                                data-src="/slides/aws-intro/assets/aws/aws-certificate-manager.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sl-block sl-block-group" data-block-type="group">
+            <div class="sl-block-content sl-block-group-content"
+                style="transform-origin: 1120px 551px 0px; z-index: 22; transition-duration: 0.6s; transition-delay: 10s;"
+                data-animation-type="fade-in">
+                <div class="sl-block" data-block-type="shape"
+                    style="width: 250px; height: 250px; left: 995px; top: 426px;">
+                    <div class="sl-block-style" style="z-index: 23; opacity: 0.15;">
+                        <div class="sl-block-content" data-shape-type="rect" data-shape-fill-color="rgba(0, 0, 0, 0)"
+                            data-shape-stretch="true" style="z-index: 23;" data-shape-stroke-color="#000000"
+                            data-shape-stroke-width="5px"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"
+                                width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 250 250">
+                                <defs>
+                                    <clipPath id="shape-mask-14-1583063663521">
+                                        <rect width="250" height="250" rx="0" ry="0" fill="rgba(0, 0, 0, 0)"
+                                            stroke="#000000" stroke-width="10"></rect>
+                                    </clipPath>
+                                </defs>
+                                <rect width="250" height="250" rx="0" ry="0" class="shape-element"
+                                    fill="rgba(0, 0, 0, 0)" stroke="#000000" stroke-width="10"
+                                    clip-path="url(#shape-mask-14-1583063663521)"></rect>
+                            </svg></div>
+                    </div>
+                </div>
+                <div class="sl-block" data-block-type="image"
+                    style="width: 200px; height: 200px; left: 1020px; top: 451px; min-width: 1px; min-height: 1px;">
+                    <div class="sl-block-style" style="z-index: 24; opacity: 0.15;">
+                        <div class="sl-block-content" style="z-index: 24;"><img data-lazy-loaded=""
+                                data-src="/slides/aws-intro/assets/aws/aws-lambda.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sl-block sl-block-group" data-block-type="group">
+            <div class="sl-block-content sl-block-group-content"
+                style="transform-origin: 1095px 801px 0px; z-index: 38; transition-duration: 0.6s; transition-delay: 13.3s;"
+                data-animation-type="fade-in">
+                <div class="sl-block" data-block-type="shape"
+                    style="width: 200px; height: 200px; left: 995px; top: 701px;">
+                    <div class="sl-block-style" style="z-index: 39; opacity: 0.15;">
+                        <div class="sl-block-content" data-shape-type="rect" data-shape-fill-color="rgba(0, 0, 0, 0)"
+                            data-shape-stretch="true" style="z-index: 39;" data-shape-stroke-color="#000000"
+                            data-shape-stroke-width="5px"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"
+                                width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 200 200">
+                                <defs>
+                                    <clipPath id="shape-mask-15-1583063671305">
+                                        <rect width="200" height="200" rx="0" ry="0" fill="rgba(0, 0, 0, 0)"
+                                            stroke="#000000" stroke-width="10"></rect>
+                                    </clipPath>
+                                </defs>
+                                <rect width="200" height="200" rx="0" ry="0" class="shape-element"
+                                    fill="rgba(0, 0, 0, 0)" stroke="#000000" stroke-width="10"
+                                    clip-path="url(#shape-mask-15-1583063671305)"></rect>
+                            </svg></div>
+                    </div>
+                </div>
+                <div class="sl-block" data-block-type="image"
+                    style="width: 150px; height: 150px; left: 1020px; top: 726px; min-width: 1px; min-height: 1px;">
+                    <div class="sl-block-style" style="z-index: 40; opacity: 0.15;">
+                        <div class="sl-block-content" style="z-index: 40;"><img data-lazy-loaded=""
+                                data-src="/slides/aws-intro/assets/aws/amazon-api-gateway.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sl-block sl-block-group" data-block-type="group">
+            <div class="sl-block-content sl-block-group-content"
+                style="transform-origin: 1430px 607.5px 0px; z-index: 74; transition-duration: 0.6s; transition-delay: 13s;"
+                data-animation-type="fade-in">
+                <div class="sl-block" data-block-type="shape"
+                    style="width: 300px; height: 300px; left: 1280px; top: 457.5px;">
+                    <div class="sl-block-style" style="z-index: 75; opacity: 0.15;">
+                        <div class="sl-block-content" data-shape-type="rect" data-shape-fill-color="rgba(0, 0, 0, 0)"
+                            data-shape-stretch="true" style="z-index: 75;" data-shape-stroke-color="#000000"
+                            data-shape-stroke-width="5px"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"
+                                width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 300 300">
+                                <defs>
+                                    <clipPath id="shape-mask-29-1583063773771">
+                                        <rect width="300" height="300" rx="0" ry="0" fill="rgba(0, 0, 0, 0)"
+                                            stroke="#000000" stroke-width="10"></rect>
+                                    </clipPath>
+                                </defs>
+                                <rect width="300" height="300" rx="0" ry="0" class="shape-element"
+                                    fill="rgba(0, 0, 0, 0)" stroke="#000000" stroke-width="10"
+                                    clip-path="url(#shape-mask-29-1583063773771)"></rect>
+                            </svg></div>
+                    </div>
+                </div>
+                <div class="sl-block" data-block-type="image"
+                    style="width: 250px; height: 250px; left: 1305px; top: 482.5px; min-width: 1px; min-height: 1px;">
+                    <div class="sl-block-style" style="z-index: 76; opacity: 0.15;">
+                        <div class="sl-block-content" style="z-index: 76;"><img data-lazy-loaded=""
+                                data-src="/slides/aws-intro/assets/aws/amazon-cloudwatch.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sl-block sl-block-group" data-block-type="group">
+            <div class="sl-block-content sl-block-group-content"
+                style="transform-origin: 1265px 304px 0px; z-index: 56; transition-duration: 0.6s; transition-delay: 12.8s;"
+                data-animation-type="fade-in">
+                <div class="sl-block" data-block-type="shape"
+                    style="width: 200px; height: 200px; left: 1165px; top: 204px;">
+                    <div class="sl-block-style" style="z-index: 57; opacity: 0.15;">
+                        <div class="sl-block-content" data-shape-type="rect" data-shape-fill-color="rgba(0, 0, 0, 0)"
+                            data-shape-stretch="true" style="z-index: 57;" data-shape-stroke-color="#000000"
+                            data-shape-stroke-width="5px"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"
+                                width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 200 200">
+                                <defs>
+                                    <clipPath id="shape-mask-22-1583063722787">
+                                        <rect width="200" height="200" rx="0" ry="0" fill="rgba(0, 0, 0, 0)"
+                                            stroke="#000000" stroke-width="10"></rect>
+                                    </clipPath>
+                                </defs>
+                                <rect width="200" height="200" rx="0" ry="0" class="shape-element"
+                                    fill="rgba(0, 0, 0, 0)" stroke="#000000" stroke-width="10"
+                                    clip-path="url(#shape-mask-22-1583063722787)"></rect>
+                            </svg></div>
+                    </div>
+                </div>
+                <div class="sl-block" data-block-type="image"
+                    style="width: 150px; height: 150px; left: 1190px; top: 229px; min-width: 1px; min-height: 1px;">
+                    <div class="sl-block-style" style="z-index: 58; opacity: 0.15;">
+                        <div class="sl-block-content" style="z-index: 58;"><img data-lazy-loaded=""
+                                data-src="/slides/aws-intro/assets/aws/aws-kms.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sl-block sl-block-group" data-block-type="group">
+            <div class="sl-block-content sl-block-group-content"
+                style="transform-origin: 1040px 304px 0px; z-index: 10; transition-duration: 0.6s; transition-delay: 9.5s;"
+                data-animation-type="fade-in">
+                <div class="sl-block" data-block-type="shape"
+                    style="width: 200px; height: 200px; left: 940px; top: 204px;">
+                    <div class="sl-block-style" style="z-index: 11; opacity: 0.15;">
+                        <div class="sl-block-content" data-shape-type="rect" data-shape-fill-color="rgba(0, 0, 0, 0)"
+                            data-shape-stretch="true" style="z-index: 11;" data-shape-stroke-color="#000000"
+                            data-shape-stroke-width="5px"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"
+                                width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 200 200">
+                                <defs>
+                                    <clipPath id="shape-mask-13-1583063656862">
+                                        <rect width="200" height="200" rx="0" ry="0" fill="rgba(0, 0, 0, 0)"
+                                            stroke="#000000" stroke-width="10"></rect>
+                                    </clipPath>
+                                </defs>
+                                <rect width="200" height="200" rx="0" ry="0" class="shape-element"
+                                    fill="rgba(0, 0, 0, 0)" stroke="#000000" stroke-width="10"
+                                    clip-path="url(#shape-mask-13-1583063656862)"></rect>
+                            </svg></div>
+                    </div>
+                </div>
+                <div class="sl-block" data-block-type="image"
+                    style="width: 150px; height: 150px; left: 965px; top: 229px; min-width: 1px; min-height: 1px;">
+                    <div class="sl-block-style" style="z-index: 12; opacity: 0.15;">
+                        <div class="sl-block-content" style="z-index: 12;"><img data-lazy-loaded=""
+                                data-src="/slides/aws-intro/assets/aws/amazon-vpc.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sl-block sl-block-group" data-block-type="group">
+            <div class="sl-block-content sl-block-group-content"
+                style="transform-origin: 793px 279px 0px; z-index: 59; transition-duration: 0.6s; transition-delay: 6s;"
+                data-animation-type="fade-in">
+                <div class="sl-block" data-block-type="shape"
+                    style="width: 250px; height: 250px; left: 668px; top: 154px;">
+                    <div class="sl-block-style" style="z-index: 60; opacity: 0.15;">
+                        <div class="sl-block-content" data-shape-type="rect" data-shape-fill-color="rgba(0, 0, 0, 0)"
+                            data-shape-stretch="true" style="z-index: 60;" data-shape-stroke-color="#000000"
+                            data-shape-stroke-width="5px"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"
+                                width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 250 250">
+                                <defs>
+                                    <clipPath id="shape-mask-9-1583063617611">
+                                        <rect width="250" height="250" rx="0" ry="0" fill="rgba(0, 0, 0, 0)"
+                                            stroke="#000000" stroke-width="10"></rect>
+                                    </clipPath>
+                                </defs>
+                                <rect width="250" height="250" rx="0" ry="0" class="shape-element"
+                                    fill="rgba(0, 0, 0, 0)" stroke="#000000" stroke-width="10"
+                                    clip-path="url(#shape-mask-9-1583063617611)"></rect>
+                            </svg></div>
+                    </div>
+                </div>
+                <div class="sl-block" data-block-type="image"
+                    style="width: 200px; height: 200px; left: 693px; top: 179px; min-width: 1px; min-height: 1px;">
+                    <div class="sl-block-style" style="z-index: 61; opacity: 0.15;">
+                        <div class="sl-block-content" style="z-index: 61;"><img data-lazy-loaded=""
+                                data-src="/slides/aws-intro/assets/aws/amazon-ebs.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sl-block sl-block-group" data-block-type="group">
+            <div class="sl-block-content sl-block-group-content"
+                style="transform-origin: 793px 6px 0px; z-index: 53; transition-duration: 0.6s; transition-delay: 9s;"
+                data-animation-type="fade-in">
+                <div class="sl-block" data-block-type="shape"
+                    style="width: 250px; height: 250px; left: 668px; top: -119px;">
+                    <div class="sl-block-style" style="z-index: 54; opacity: 0.15;">
+                        <div class="sl-block-content" data-shape-type="rect" data-shape-fill-color="rgba(0, 0, 0, 0)"
+                            data-shape-stretch="true" style="z-index: 54;" data-shape-stroke-color="#000000"
+                            data-shape-stroke-width="5px"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"
+                                width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 250 250">
+                                <defs>
+                                    <clipPath id="shape-mask-23-1583063727207">
+                                        <rect width="250" height="250" rx="0" ry="0" fill="rgba(0, 0, 0, 0)"
+                                            stroke="#000000" stroke-width="10"></rect>
+                                    </clipPath>
+                                </defs>
+                                <rect width="250" height="250" rx="0" ry="0" class="shape-element"
+                                    fill="rgba(0, 0, 0, 0)" stroke="#000000" stroke-width="10"
+                                    clip-path="url(#shape-mask-23-1583063727207)"></rect>
+                            </svg></div>
+                    </div>
+                </div>
+                <div class="sl-block" data-block-type="image"
+                    style="width: 200px; height: 200px; left: 693px; top: -94px; min-width: 1px; min-height: 1px;">
+                    <div class="sl-block-style" style="z-index: 55; opacity: 0.15;">
+                        <div class="sl-block-content" style="z-index: 55;"><img data-lazy-loaded=""
+                                data-src="/slides/aws-intro/assets/aws/aws-iam.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sl-block sl-block-group" data-block-type="group">
+            <div class="sl-block-content sl-block-group-content"
+                style="transform-origin: 1090px 31px 0px; z-index: 13; transition-duration: 0.6s; transition-delay: 12.5s;"
+                data-animation-type="fade-in">
+                <div class="sl-block" data-block-type="shape"
+                    style="width: 300px; height: 300px; left: 940px; top: -119px;">
+                    <div class="sl-block-style" style="z-index: 14; opacity: 0.15;">
+                        <div class="sl-block-content" data-shape-type="rect" data-shape-fill-color="rgba(0, 0, 0, 0)"
+                            data-shape-stretch="true" style="z-index: 14;" data-shape-stroke-color="#000000"
+                            data-shape-stroke-width="5px"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"
+                                width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 300 300">
+                                <defs>
+                                    <clipPath id="shape-mask-21-1583063718465">
+                                        <rect width="300" height="300" rx="0" ry="0" fill="rgba(0, 0, 0, 0)"
+                                            stroke="#000000" stroke-width="10"></rect>
+                                    </clipPath>
+                                </defs>
+                                <rect width="300" height="300" rx="0" ry="0" class="shape-element"
+                                    fill="rgba(0, 0, 0, 0)" stroke="#000000" stroke-width="10"
+                                    clip-path="url(#shape-mask-21-1583063718465)"></rect>
+                            </svg></div>
+                    </div>
+                </div>
+                <div class="sl-block" data-block-type="image"
+                    style="width: 250px; height: 250px; left: 965px; top: -94px; min-width: 1px; min-height: 1px;">
+                    <div class="sl-block-style" style="z-index: 15; opacity: 0.15;">
+                        <div class="sl-block-content" style="z-index: 15;"><img data-lazy-loaded=""
+                                data-src="/slides/aws-intro/assets/aws/amazon-kinesis.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sl-block sl-block-group" data-block-type="group">
+            <div class="sl-block-content sl-block-group-content"
+                style="transform-origin: 1390px 19px 0px; z-index: 77; transition-duration: 0.6s; transition-delay: 14.4s;"
+                data-animation-type="fade-in">
+                <div class="sl-block" data-block-type="shape"
+                    style="width: 250px; height: 250px; left: 1265px; top: -106px;">
+                    <div class="sl-block-style" style="z-index: 78; opacity: 0.15;">
+                        <div class="sl-block-content" data-shape-type="rect" data-shape-fill-color="rgba(0, 0, 0, 0)"
+                            data-shape-stretch="true" style="z-index: 78;" data-shape-stroke-color="#000000"
+                            data-shape-stroke-width="5px"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"
+                                width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 250 250">
+                                <defs>
+                                    <clipPath id="shape-mask-30-1583063783063">
+                                        <rect width="250" height="250" rx="0" ry="0" fill="rgba(0, 0, 0, 0)"
+                                            stroke="#000000" stroke-width="10"></rect>
+                                    </clipPath>
+                                </defs>
+                                <rect width="250" height="250" rx="0" ry="0" class="shape-element"
+                                    fill="rgba(0, 0, 0, 0)" stroke="#000000" stroke-width="10"
+                                    clip-path="url(#shape-mask-30-1583063783063)"></rect>
+                            </svg></div>
+                    </div>
+                </div>
+                <div class="sl-block" data-block-type="image"
+                    style="width: 200px; height: 200px; left: 1290px; top: -81px; min-width: 1px; min-height: 1px;">
+                    <div class="sl-block-style" style="z-index: 79; opacity: 0.15;">
+                        <div class="sl-block-content" style="z-index: 79;"><img data-lazy-loaded=""
+                                data-src="/slides/aws-intro/assets/aws/amazon-lex.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sl-block sl-block-group" data-block-type="group">
+            <div class="sl-block-content sl-block-group-content"
+                style="transform-origin: 818px 576px 0px; z-index: 31; transition-duration: 0.6s; transition-delay: 7s;"
+                data-animation-type="fade-in">
+                <div class="sl-block" data-block-type="image"
+                    style="width: 250px; height: 250px; left: 693px; top: 451px; min-width: 1px; min-height: 1px;">
+                    <div class="sl-block-style" style="z-index: 34; opacity: 0.15;">
+                        <div class="sl-block-content" style="z-index: 34; transition-duration: 0.6s;"
+                            data-animation-type="fade-in"><img data-lazy-loaded=""
+                                data-src="/slides/aws-intro/assets/aws/amazon-sns.png">
+                        </div>
+                    </div>
+                </div>
+                <div class="sl-block sl-block-group" data-block-type="group">
+                    <div class="sl-block-content sl-block-group-content"
+                        style="transform-origin: 818px 576px 0px; z-index: 32; transition-duration: 0.6s;"
+                        data-animation-type="fade-in">
+                        <div class="sl-block" data-block-type="shape"
+                            style="width: 300px; height: 300px; left: 668px; top: 426px;">
+                            <div class="sl-block-style" style="z-index: 33; opacity: 0.15;">
+                                <div class="sl-block-content" data-shape-type="rect"
+                                    data-shape-fill-color="rgba(0, 0, 0, 0)" data-shape-stretch="true"
+                                    style="z-index: 33;" data-shape-stroke-color="#000000"
+                                    data-shape-stroke-width="5px"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"
+                                        width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 300 300">
+                                        <defs>
+                                            <clipPath id="shape-mask-11-1583063637691">
+                                                <rect width="300" height="300" rx="0" ry="0" fill="rgba(0, 0, 0, 0)"
+                                                    stroke="#000000" stroke-width="10"></rect>
+                                            </clipPath>
+                                        </defs>
+                                        <rect width="300" height="300" rx="0" ry="0" class="shape-element"
+                                            fill="rgba(0, 0, 0, 0)" stroke="#000000" stroke-width="10"
+                                            clip-path="url(#shape-mask-11-1583063637691)"></rect>
+                                    </svg></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="sl-block" data-block-type="shape" style="width: 1280px; height: 720px; left: 0px; top: 0px;">
+            <div class="sl-block-content" data-shape-type="rect" data-shape-fill-color="rgba(0, 0, 0, 0)"
+                data-shape-stretch="true" style="z-index: 10;" data-shape-stroke-color="#00ff00"
+                data-shape-stroke-width="10px"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%"
+                    height="100%" preserveAspectRatio="none" viewBox="0 0 1280 720">
+                    <defs>
+                        <clipPath id="shape-mask-24-1583067925501">
+                            <rect width="1280" height="720" rx="0" ry="0" fill="rgba(0, 0, 0, 0)" stroke="#00ff00"
+                                stroke-width="20"></rect>
+                        </clipPath>
+                    </defs>
+                    <rect width="1280" height="720" rx="0" ry="0" class="shape-element" fill="rgba(0, 0, 0, 0)"
+                        stroke="#00ff00" stroke-width="20" clip-path="url(#shape-mask-24-1583067925501)"></rect>
+                </svg></div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="height: auto; width: 226.5px; left: 1040px; top: 671px;">
+            <div class="sl-block-content" style="z-index: 11; color: rgb(0, 255, 0); text-align: right;">
+                <p>Knowledge</p>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="width: 1075px; left: 102.5px; top: 46px; height: auto;">
+            <div class="sl-block-content" style="z-index: 12;">
+                <h1>Make it simple</h1>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="image"
+            style="width: 800px; height: 432px; left: 240px; top: 177px; min-width: 1px; min-height: 1px;">
+            <div class="sl-block-content"><img data-lazy-loaded=""
+                    data-src="/slides/aws-intro/assets/aws-intro-blog.avif"></div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="height: auto; width: 118px; left: 922px; top: 609px;">
+            <div class="sl-block-content" style="z-index: 14;">
+                <p><a href="https://expeditedsecurity.com/aws-in-plain-english/" rel="nofollow"
+                        target="_blank">Source</a></p>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="sl-block" data-block-type="text" style="width: 1075px; left: 102.5px; top: 95px; height: auto;">
+            <div class="sl-block-content" style="z-index: 10;">
+                <h1>Compute</h1>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="image"
+            style="width: 200px; height: 200px; left: 210px; top: 288px; min-width: 1px; min-height: 1px;">
+            <div class="sl-block-content" style="z-index: 11;"><img data-lazy-loaded=""
+                    data-src="/slides/aws-intro/assets/aws/amazon-ec2.png">
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="image"
+            style="width: 200px; height: 200px; left: 430px; top: 288px; min-width: 1px; min-height: 1px;">
+            <div class="sl-block-content" style="z-index: 12;"><img data-lazy-loaded=""
+                    data-src="/slides/aws-intro/assets/aws/amazon-ecs.png">
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="image"
+            style="width: 200px; height: 200px; left: 650px; top: 288px; min-width: 1px; min-height: 1px;">
+            <div class="sl-block-content" style="z-index: 13;"><img data-lazy-loaded=""
+                    data-src="/slides/aws-intro/assets/aws/amazon-eks.png">
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="image"
+            style="width: 200px; height: 200px; left: 870px; top: 288px; min-width: 1px; min-height: 1px;">
+            <div class="sl-block-content" style="z-index: 14;"><img data-lazy-loaded=""
+                    data-src="/slides/aws-intro/assets/aws/aws-lambda.png">
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="height: auto; width: 200px; left: 210px; top: 496px;">
+            <div class="sl-block-content" style="z-index: 15;">
+                <p>EC2</p>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="height: auto; width: 200px; left: 430px; top: 496px;">
+            <div class="sl-block-content" style="z-index: 16;">
+                <p>ECS</p>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="height: auto; width: 200px; left: 650px; top: 496px;">
+            <div class="sl-block-content" style="z-index: 17;">
+                <p>EKS</p>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="height: auto; width: 200px; left: 870px; top: 496px;">
+            <div class="sl-block-content" style="z-index: 18;">
+                <p>Lambda</p>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="sl-block" data-block-type="text" style="width: 1075px; left: 102.5px; top: 95px; height: auto;">
+            <div class="sl-block-content" style="z-index: 10;">
+                <h1>Compute</h1>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="image"
+            style="width: 200px; height: 200px; left: 210px; top: 238px; min-width: 1px; min-height: 1px;">
+            <div class="sl-block-content" style="z-index: 11;"><img data-lazy-loaded=""
+                    data-src="/slides/aws-intro/assets/aws/amazon-ec2.png">
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="image"
+            style="width: 200px; height: 200px; left: 430px; top: 238px; min-width: 1px; min-height: 1px;">
+            <div class="sl-block-content" style="z-index: 12;"><img data-lazy-loaded=""
+                    data-src="/slides/aws-intro/assets/aws/amazon-ecs.png">
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="image"
+            style="width: 200px; height: 200px; left: 650px; top: 238px; min-width: 1px; min-height: 1px;">
+            <div class="sl-block-content" style="z-index: 13;"><img data-lazy-loaded=""
+                    data-src="/slides/aws-intro/assets/aws/amazon-eks.png">
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="image"
+            style="width: 200px; height: 200px; left: 320px; top: 476px; min-width: 1px; min-height: 1px;">
+            <div class="sl-block-content" style="z-index: 14;"><img data-lazy-loaded=""
+                    data-src="/slides/aws-intro/assets/aws/amazon-lightsail.png">
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="image"
+            style="width: 200px; height: 200px; left: 760px; top: 476px; min-width: 1px; min-height: 1px;">
+            <div class="sl-block-content" style="z-index: 15;"><img data-lazy-loaded=""
+                    data-src="/slides/aws-intro/assets/aws/aws-elastic-beanstalk.png">
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="image"
+            style="width: 200px; height: 200px; left: 540px; top: 476px; min-width: 1px; min-height: 1px;">
+            <div class="sl-block-content" style="z-index: 16;"><img data-lazy-loaded=""
+                    data-src="/slides/aws-intro/assets/aws/aws-fargate.png">
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="image"
+            style="width: 200px; height: 200px; left: 870px; top: 238px; min-width: 1px; min-height: 1px;">
+            <div class="sl-block-content" style="z-index: 17;"><img data-lazy-loaded=""
+                    data-src="/slides/aws-intro/assets/aws/aws-lambda.png">
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="sl-block" data-block-type="text" style="width: 1075px; left: 102.5px; top: 95px; height: auto;">
+            <div class="sl-block-content" style="z-index: 10;">
+                <h1>Database</h1>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="image"
+            style="width: 200px; height: 200px; left: 430px; top: 238px; min-width: 1px; min-height: 1px;">
+            <div class="sl-block-content" style="z-index: 11;"><img data-lazy-loaded=""
+                    data-src="/slides/aws-intro/assets/aws/amazon-aurora.png">
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="image"
+            style="width: 200px; height: 200px; left: 870px; top: 238px; min-width: 1px; min-height: 1px;">
+            <div class="sl-block-content" style="z-index: 12;"><img data-lazy-loaded=""
+                    data-src="/slides/aws-intro/assets/aws/amazon-dynamodb.png">
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="image"
+            style="width: 200px; height: 200px; left: 650px; top: 238px; min-width: 1px; min-height: 1px;">
+            <div class="sl-block-content" style="z-index: 13;"><img data-lazy-loaded=""
+                    data-src="/slides/aws-intro/assets/aws/amazon-elasticache.png">
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="image"
+            style="width: 200px; height: 200px; left: 317.5px; top: 476px; min-width: 1px; min-height: 1px;">
+            <div class="sl-block-content" style="z-index: 14;"><img data-lazy-loaded=""
+                    data-src="/slides/aws-intro/assets/aws/amazon-neptune.png">
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="image"
+            style="width: 200px; height: 200px; left: 537.5px; top: 476px; min-width: 1px; min-height: 1px;">
+            <div class="sl-block-content" style="z-index: 15;"><img data-lazy-loaded=""
+                    data-src="/slides/aws-intro/assets/aws/amazon-qldb.png">
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="image"
+            style="width: 200px; height: 200px; left: 210px; top: 238px; min-width: 1px; min-height: 1px;">
+            <div class="sl-block-content" style="z-index: 16;"><img data-lazy-loaded=""
+                    data-src="/slides/aws-intro/assets/aws/amazon-rds.png">
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="image"
+            style="width: 200px; height: 200px; left: 977.5px; top: 476px; min-width: 1px; min-height: 1px;">
+            <div class="sl-block-content" style="z-index: 17;"><img data-lazy-loaded=""
+                    data-src="/slides/aws-intro/assets/aws/amazon-timestream.png">
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="image"
+            style="width: 200px; height: 200px; left: 97.5px; top: 476px; min-width: 1px; min-height: 1px;">
+            <div class="sl-block-content" style="z-index: 18;"><img data-lazy-loaded=""
+                    data-src="/slides/aws-intro/assets/aws/amazon-documentdb.png">
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="image"
+            style="width: 200px; height: 200px; left: 757.5px; top: 476px; min-width: 1px; min-height: 1px;">
+            <div class="sl-block-content" style="z-index: 19;"><img data-lazy-loaded=""
+                    data-src="/slides/aws-intro/assets/aws/amazon-redshift.png">
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="sl-block" data-block-type="text" style="width: 1075px; left: 102.5px; top: 95px; height: auto;">
+            <div class="sl-block-content" style="z-index: 10;">
+                <h1>Storage</h1>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="image"
+            style="width: 200px; height: 200px; left: 320px; top: 288px; min-width: 1px; min-height: 1px;">
+            <div class="sl-block-content" style="z-index: 11;"><img data-lazy-loaded=""
+                    data-src="/slides/aws-intro/assets/aws/amazon-ebs.png">
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="image"
+            style="width: 200px; height: 200px; left: 540px; top: 288px; min-width: 1px; min-height: 1px;">
+            <div class="sl-block-style" style="z-index: 12; transform: rotate(0deg);">
+                <div class="sl-block-content" style="z-index: 12;"><img data-lazy-loaded=""
+                        data-src="/slides/aws-intro/assets/aws/amazon-efs.png">
+                </div>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="image"
+            style="width: 200px; height: 200px; left: 760px; top: 288px; min-width: 1px; min-height: 1px;">
+            <div class="sl-block-content" style="z-index: 13;"><img data-lazy-loaded=""
+                    data-src="/slides/aws-intro/assets/aws/amazon-s3.png">
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="height: auto; width: 200px; left: 320px; top: 496px;">
+            <div class="sl-block-content" style="z-index: 14;">
+                <p>EBS</p>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="height: auto; width: 200px; left: 540px; top: 496px;">
+            <div class="sl-block-content" style="z-index: 15;">
+                <p>EFS</p>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="height: auto; width: 200px; left: 760px; top: 496px;">
+            <div class="sl-block-content" style="z-index: 16;">
+                <p>S3</p>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="sl-block" data-block-type="text" style="width: 1075px; left: 102.5px; top: 95px; height: auto;">
+            <div class="sl-block-content" style="z-index: 10;">
+                <h1>Honorable mentions</h1>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="image"
+            style="width: 199.75px; height: 199.75px; left: 979.75px; top: 476.125px; min-width: 1px; min-height: 1px;">
+            <div class="sl-block-content" style="z-index: 11;"><img data-lazy-loaded=""
+                    data-src="/slides/aws-intro/assets/aws/aws-kms.png">
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="image"
+            style="width: 199.75px; height: 199.75px; left: 210.375px; top: 237.125px; min-width: 1px; min-height: 1px;">
+            <div class="sl-block-content" style="z-index: 12;"><img data-lazy-loaded=""
+                    data-src="/slides/aws-intro/assets/aws/amazon-elb.png">
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="image"
+            style="width: 199.75px; height: 199.75px; left: 869.875px; top: 237.125px; min-width: 1px; min-height: 1px;">
+            <div class="sl-block-content" style="z-index: 13;"><img data-lazy-loaded=""
+                    data-src="/slides/aws-intro/assets/aws/amazon-cloudfront.png">
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="image"
+            style="width: 199.75px; height: 199.75px; left: 320.25px; top: 476.125px; min-width: 1px; min-height: 1px;">
+            <div class="sl-block-content" style="z-index: 14;"><img data-lazy-loaded=""
+                    data-src="/slides/aws-intro/assets/aws/amazon-sns.png">
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="image"
+            style="width: 199.75px; height: 199.75px; left: 100.5px; top: 476.125px; min-width: 1px; min-height: 1px;">
+            <div class="sl-block-content" style="z-index: 15;"><img data-lazy-loaded=""
+                    data-src="/slides/aws-intro/assets/aws/amazon-sqs.png">
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="image"
+            style="width: 199.75px; height: 199.75px; left: 540px; top: 476.125px; min-width: 1px; min-height: 1px;">
+            <div class="sl-block-content" style="z-index: 16;"><img data-lazy-loaded=""
+                    data-src="/slides/aws-intro/assets/aws/amazon-api-gateway.png">
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="image"
+            style="width: 199.75px; height: 199.75px; left: 430.125px; top: 237.125px; min-width: 1px; min-height: 1px;">
+            <div class="sl-block-content" style="z-index: 17;"><img data-lazy-loaded=""
+                    data-src="/slides/aws-intro/assets/aws/amazon-cloudwatch.png">
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="image"
+            style="width: 200px; height: 200px; left: 649.875px; top: 237px; min-width: 1px; min-height: 1px;">
+            <div class="sl-block-content" style="z-index: 18;"><img data-lazy-loaded=""
+                    data-src="/slides/aws-intro/assets/aws/aws-well-architected-tool.png">
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="image"
+            style="width: 200px; height: 200px; left: 759.75px; top: 476px; min-width: 1px; min-height: 1px;">
+            <div class="sl-block-content" style="z-index: 19;"><img data-lazy-loaded=""
+                    data-src="/slides/aws-intro/assets/aws/aws-trusted-advisor.png">
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="sl-block" data-block-type="shape" style="width: 1280px; height: 720px; left: 0px; top: 0px;">
+            <div class="sl-block-content" data-shape-type="rect" data-shape-fill-color="rgba(0, 0, 0, 0)"
+                data-shape-stretch="true" style="z-index: 10;" data-shape-stroke-color="#00ff00"
+                data-shape-stroke-width="10px"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%"
+                    height="100%" preserveAspectRatio="none" viewBox="0 0 1280 720">
+                    <defs>
+                        <clipPath id="shape-mask-1-1583074060741">
+                            <rect width="1280" height="720" rx="0" ry="0" fill="rgba(0, 0, 0, 0)" stroke="#00ff00"
+                                stroke-width="20"></rect>
+                        </clipPath>
+                    </defs>
+                    <rect width="1280" height="720" rx="0" ry="0" class="shape-element" fill="rgba(0, 0, 0, 0)"
+                        stroke="#00ff00" stroke-width="20" clip-path="url(#shape-mask-1-1583074060741)"></rect>
+                </svg></div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="height: auto; width: 226.5px; left: 1040px; top: 671px;">
+            <div class="sl-block-content" style="z-index: 11; color: rgb(0, 255, 0); text-align: right;">
+                <p>Knowledge</p>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="width: 1075px; left: 102.5px; top: 46px; height: auto;">
+            <div class="sl-block-content" style="z-index: 12;">
+                <h1>AWS website</h1>
+            </div>
+        </div>
+
+        <div class="sl-block" data-block-type="text" style="height: auto; width: 118px; left: 581px; top: 340.5px;">
+            <div class="sl-block-content" style="z-index: 14;">
+                <p><a href="https://aws.amazon.com/" rel="nofollow" target="_blank">Source</a></p>
+            </div>
+        </div>
+    </section>
+</section>
+<section class="stack">
+    <section>
+        <div class="sl-block" data-block-type="shape" style="width: 1280px; height: 720px; left: 0px; top: 0px;">
+            <div class="sl-block-content" data-shape-type="rect" data-shape-fill-color="rgba(0, 0, 0, 0)"
+                data-shape-stretch="true" style="z-index: 10;" data-shape-stroke-color="#880099"
+                data-shape-stroke-width="10px"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%"
+                    height="100%" preserveAspectRatio="none" viewBox="0 0 1280 720">
+                    <defs>
+                        <clipPath id="shape-mask-4-1583062512780">
+                            <rect width="1280" height="720" rx="0" ry="0" fill="rgba(0, 0, 0, 0)" stroke="#880099"
+                                stroke-width="20"></rect>
+                        </clipPath>
+                    </defs>
+                    <rect width="1280" height="720" rx="0" ry="0" class="shape-element" fill="rgba(0, 0, 0, 0)"
+                        stroke="#880099" stroke-width="20" clip-path="url(#shape-mask-4-1583062512780)"></rect>
+                </svg></div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="height: auto; width: 226.5px; left: 1040px; top: 671px;">
+            <div class="sl-block-content" style="z-index: 11; color: rgb(136, 0, 153); text-align: right;">
+                <p>Practice</p>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="height: auto; width: 600px; left: 340px; top: 311px;">
+            <div class="sl-block-content" style="z-index: 12;">
+                <h1>Your turn now!</h1>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="sl-block" data-block-type="shape" style="width: 1280px; height: 720px; left: 0px; top: 0px;">
+            <div class="sl-block-content" data-shape-type="rect" data-shape-fill-color="rgba(0, 0, 0, 0)"
+                data-shape-stretch="true" style="z-index: 10;" data-shape-stroke-color="#880099"
+                data-shape-stroke-width="10px"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%"
+                    height="100%" preserveAspectRatio="none" viewBox="0 0 1280 720">
+                    <defs>
+                        <clipPath id="shape-mask-5-1583062654038">
+                            <rect width="1280" height="720" rx="0" ry="0" fill="rgba(0, 0, 0, 0)" stroke="#880099"
+                                stroke-width="20"></rect>
+                        </clipPath>
+                    </defs>
+                    <rect width="1280" height="720" rx="0" ry="0" class="shape-element" fill="rgba(0, 0, 0, 0)"
+                        stroke="#880099" stroke-width="20" clip-path="url(#shape-mask-5-1583062654038)"></rect>
+                </svg></div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="height: auto; width: 226.5px; left: 1040px; top: 671px;">
+            <div class="sl-block-content" style="z-index: 11; color: rgb(136, 0, 153); text-align: right;">
+                <p>Practice</p>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="height: auto; width: 600px; left: 340px; top: 167px;">
+            <div class="sl-block-content" style="z-index: 12;">
+                <h1>Your turn now!</h1>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="height: auto; width: 600px; left: 340px; top: 340.5px;">
+            <div class="sl-block-content" style="z-index: 13;">
+                <p>Time to trade ideas, design solutions, apply knowledge!</p>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="sl-block" data-block-type="shape" style="width: 1280px; height: 720px; left: 0px; top: 0px;">
+            <div class="sl-block-content" data-shape-type="rect" data-shape-fill-color="rgba(0, 0, 0, 0)"
+                data-shape-stretch="true" style="z-index: 10;" data-shape-stroke-color="#880099"
+                data-shape-stroke-width="10px"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%"
+                    height="100%" preserveAspectRatio="none" viewBox="0 0 1280 720">
+                    <defs>
+                        <clipPath id="shape-mask-6-1583062825002">
+                            <rect width="1280" height="720" rx="0" ry="0" fill="rgba(0, 0, 0, 0)" stroke="#880099"
+                                stroke-width="20"></rect>
+                        </clipPath>
+                    </defs>
+                    <rect width="1280" height="720" rx="0" ry="0" class="shape-element" fill="rgba(0, 0, 0, 0)"
+                        stroke="#880099" stroke-width="20" clip-path="url(#shape-mask-6-1583062825002)"></rect>
+                </svg></div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="height: auto; width: 226.5px; left: 1040px; top: 671px;">
+            <div class="sl-block-content" style="z-index: 11; color: rgb(136, 0, 153); text-align: right;">
+                <p>Practice</p>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="height: auto; width: 600px; left: 340px; top: 167px;">
+            <div class="sl-block-content" style="z-index: 12;">
+                <h1>The situation</h1>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="height: auto; width: 1120px; left: 80px; top: 321px;">
+            <div class="sl-block-content" style="z-index: 13;">
+                <p><em><strong>Bill me up</strong></em> is a company that offers a service to generate invoices, process
+                    payments, etc.</p>
+
+                <p>They asked you to migrate their infrastructure to <strong>AWS</strong>, starting with their core, an
+                    application that creates PDFs.</p>
+
+                <p>&nbsp;</p>
+
+                <p>How would you proceed?</p>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="sl-block" data-block-type="shape" style="width: 1280px; height: 720px; left: 0px; top: 0px;">
+            <div class="sl-block-content" data-shape-type="rect" data-shape-fill-color="rgba(0, 0, 0, 0)"
+                data-shape-stretch="true" style="z-index: 10;" data-shape-stroke-color="#880099"
+                data-shape-stroke-width="10px"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%"
+                    height="100%" preserveAspectRatio="none" viewBox="0 0 1280 720">
+                    <defs>
+                        <clipPath id="shape-mask-7-1583063487104">
+                            <rect width="1280" height="720" rx="0" ry="0" fill="rgba(0, 0, 0, 0)" stroke="#880099"
+                                stroke-width="20"></rect>
+                        </clipPath>
+                    </defs>
+                    <rect width="1280" height="720" rx="0" ry="0" class="shape-element" fill="rgba(0, 0, 0, 0)"
+                        stroke="#880099" stroke-width="20" clip-path="url(#shape-mask-7-1583063487104)"></rect>
+                </svg></div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="height: auto; width: 226.5px; left: 1040px; top: 671px;">
+            <div class="sl-block-content" style="z-index: 11; color: rgb(136, 0, 153); text-align: right;">
+                <p>Practice</p>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="height: auto; width: 600px; left: 340px; top: 167px;">
+            <div class="sl-block-content" style="z-index: 12;">
+                <h1>Your situation</h1>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="height: auto; width: 1120px; left: 80px; top: 321px;">
+            <div class="sl-block-content" style="z-index: 13;">
+                <p>Let's apply these principles to <u><strong>your</strong></u> business!</p>
+            </div>
+        </div>
+    </section>
+</section>
+<section>
+    <div class="sl-block" data-block-type="text" style="width: 1075px; left: 102px; top: 274px; height: auto;">
+        <div class="sl-block-content" style="z-index: 10;">
+            <h1>That's all folks 🎉</h1>
+        </div>
+    </div>
+    <div class="sl-block sl-block-group" data-block-type="group" style="width: auto; height: auto;">
+        <div class="sl-block-content sl-block-group-content" style="transform-origin: 1045.5px 648px 0px; z-index: 15;">
+            <div class="sl-block" data-block-type="image"
+                style="width: 82px; height: 82px; left: 1159px; top: 607px; min-width: 1px; min-height: 1px;">
+                <div class="sl-block-content" style="z-index: 18;"><img data-lazy-loaded=""
+                        data-src="/slides/aws-intro/assets/avatar.avif">
+                </div>
+            </div>
+            <div class="sl-block" data-block-type="text"
+                style="height: auto; min-width: 30px; min-height: 30px; width: 287px; left: 850px; top: 646px;">
+                <div class="sl-block-content"
+                    style="z-index: 17; text-align: right; font-size: 70%; line-height: 0.91; color: rgb(170, 170, 170);">
+                    <p>https://vcz.fr</p>
+                </div>
+            </div>
+            <div class="sl-block" data-block-type="text"
+                style="height: auto; min-width: 30px; min-height: 30px; width: 287px; left: 850px; top: 607px;">
+                <div class="sl-block-content"
+                    style="z-index: 16; text-align: right; line-height: 0.78; border-width: 1px;">
+                    <p style="text-align:right"><span style="font-size:1.0em">Vincenzo <strong>Scalzi</strong></span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
