@@ -19,7 +19,7 @@ least they will be here for as long as this website and its archived version exi
 - [Introducing the Cloud with AWS](/slides/aws-intro/)
 - [First steps with Azure China](/slides/azure-china/)
 - [Building FaaS apps... FaaSt!](/slides/faas/)
-- More coming soon...
+- [Your app on Kubernetes - 2 of 2](/slides/kubernetes-2of2/)
 - [On Load testing](/slides/load-testing/)
 - [Reimagine an app on AWS](/slides/reimagine-on-aws/)
 
