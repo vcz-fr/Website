@@ -17,6 +17,7 @@ slides should be significantly faster to load, but they're missing a lot of feat
 least they will be here for as long as this website and its archived version exists.
 
 - [Introducing the Cloud with AWS](/slides/aws-intro/)
+- [First steps with Azure China](/slides/azure-china/)
 - [Building FaaS apps... FaaSt!](/slides/faas/)
 - More coming soon...
 

@@ -65,7 +65,7 @@
 
 !/assets/
 !/assets/css/
-!/assets/css/global.scss
+!/assets/css/*.scss
 !/assets/font/
 !/assets/font/*.woff
 !/assets/font/*.woff2
