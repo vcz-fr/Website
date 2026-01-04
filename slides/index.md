@@ -21,5 +21,6 @@ least they will be here for as long as this website and its archived version exi
 - [Building FaaS apps... FaaSt!](/slides/faas/)
 - More coming soon...
 - [On Load testing](/slides/load-testing/)
+- [Reimagine an app on AWS](/slides/reimagine-on-aws/)
 
 </div>
