@@ -1,0 +1,671 @@
+---
+layout: slide
+title: "On Load testing"
+---
+
+<section class="stack">
+    <section>
+        <div class="sl-block" data-block-type="text" style="width: 806px; left: 237px; top: 248px; height: auto;">
+            <div class="sl-block-content" style="z-index: 10;">
+                <h1>On Load testing</h1>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="height: auto; width: 600px; left: 340px; top: 346px;">
+            <div class="sl-block-content" style="z-index: 11;">
+                <blockquote>
+                    <p>A short intro about load testing with the remarkable tool that is Gatling.</p>
+                </blockquote>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="sl-block" data-block-type="text" style="width: 550px; left: 38px; top: 86px; height: auto;">
+            <div class="sl-block-content" style="text-align: left; z-index: 10;">
+                <h2>whois</h2>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="width: 550px; left: 38px; top: 160px; height: auto;">
+            <div class="sl-block-content"
+                data-placeholder-text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec metus justo. Aliquam erat volutpat."
+                style="z-index: 11; text-align: left;">
+                <p>% IANA WHOIS server<br>
+                    % for more information on IANA, visit http://www.iana.org<br>
+                    % This query returned 1 object</p>
+
+                <p>&nbsp;</p>
+
+                <p>domain: vcz.fr</p>
+
+                <p>status: ACTIVE</p>
+
+                <p>hold: TIGHT</p>
+
+                <p>press: ➡️ TO CONTINUE</p>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="image"
+            style="width: 330px; height: 330px; left: 800px; top: 194px; min-width: 1px; min-height: 1px;">
+            <div class="sl-block-content" style="z-index: 12;"><img data-lazy-loaded=""
+                    data-src="/slides/load-testing/assets/avatar.avif"></div>
+        </div>
+    </section>
+</section>
+<section class="stack">
+    <section>
+        <div class="sl-block" data-block-type="text" style="width: 1152px; left: 30px; top: 58px; height: auto;">
+            <div class="sl-block-content" style="font-size: 200%; text-align: left; z-index: 10;">
+                <h1>What is</h1>
+
+                <h1><u>Testing?</u></h1>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="sl-block" data-block-type="text" style="width: 1075px; left: 102px; top: 43px; height: auto;">
+            <div class="sl-block-content" style="z-index: 10;">
+                <h2>Probably you now</h2>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="image"
+            style="width: 524px; height: 521px; left: 160px; top: 144px; min-width: 1px; min-height: 1px;">
+            <div class="sl-block-content" style="z-index: 11;"><img style="width: 524px; height: 521px"
+                    data-lazy-loaded="" data-src="/slides/load-testing/assets/ostrich.avif">
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="height: auto; width: 435px; left: 720px; top: 263px;">
+            <div class="sl-block-style" style="z-index: 12; transform: rotate(0deg);">
+                <div class="sl-block-content" style="z-index: 12;">
+                    <blockquote>
+                        <p>Oh no, here he goes about tests again 😭</p>
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="drawing" style="width: 305px; height: 174px; left: 567px; top: 351px;">
+            <div class="sl-block-content" style="z-index: 13;"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"
+                    preserveAspectRatio="none" width="100%" height="100%"
+                    viewBox="809.499267578125 413.2750244140625 305.3739013671875 174.82080078125">
+                    <path fill="rgb(0, 0, 255)"
+                        d="M 1114.769482421875 417.65625 Q 1114.77 417.66 1114.81 419.01 1114.84 420.36 1114.87 421.96 1114.9 423.55 1114.65 425.96 1114.39 428.36 1113.33 431.9 1112.28 435.43 1110.75 438.25 1109.23 441.06 1106.36 443.6 1103.5 446.14 1099.51 448.27 1095.52 450.4 1088.72 452.47 1081.93 454.54 1074.16 456.03 1066.4 457.53 1057.25 458.49 1048.1 459.46 1036.3 460.13 1024.49 460.81 1011.77 461.65 999.05 462.5 989.45 462.94 979.85 463.37 972.17 463.54 964.5 463.7 959.14 464.16 953.77 464.61 949.9 465.2 946.04 465.79 943.17 466.9 940.3 468.02 937.49 470.24 934.69 472.46 931.42 476.24 928.16 480.02 924.84 484.78 921.52 489.53 918.53 494.76 915.53 499.98 912.57 506.04 909.6 512.1 906.58 517.62 903.55 523.14 900.51 528.04 897.47 532.94 894.15 536.97 890.82 540.99 886.64 544.38 882.46 547.78 876.96 551.4 871.46 555.03 863.16 558.87 854.86 562.71 847.91 565.7 840.97 568.69 835.51 571.03 830.06 573.37 826.83 575.05 823.6 576.72 820.92 578.53 818.25 580.34 816.43 583.69 814.62 587.04 812.82 587.84 811.02 588.63 809.95 586.98 808.88 585.32 810.35 584 811.82 582.69 813.34 583.93 814.87 585.18 813.88 586.88 812.89 588.59 811.05 587.88 809.21 587.16 810.16 583.34 811.1 579.51 813.23 577.8 815.37 576.1 818.33 574.2 821.29 572.3 824.68 570.54 828.06 568.79 833.53 566.45 838.99 564.1 845.88 561.13 852.78 558.16 860.71 554.55 868.64 550.93 873.99 547.4 879.33 543.88 883.18 540.84 887.02 537.79 890.13 534.04 893.24 530.29 896.2 525.51 899.17 520.73 902.14 515.31 905.12 509.9 908.16 503.69 911.21 497.48 914.31 492.08 917.41 486.68 920.86 481.68 924.31 476.68 927.96 472.45 931.6 468.21 935.04 465.76 938.49 463.31 941.86 462.09 945.23 460.87 949.28 460.25 953.34 459.63 958.85 459.17 964.37 458.71 972 458.54 979.63 458.38 989.18 457.95 998.72 457.51 1011.47 456.66 1024.21 455.81 1035.89 455.15 1047.56 454.49 1056.5 453.56 1065.43 452.63 1072.82 451.16 1080.21 449.69 1086.15 447.29 1092.1 444.89 1095.5 442.79 1098.91 440.68 1101.61 437.35 1104.32 434.01 1105.52 430.92 1106.73 427.84 1106.92 425.69 1107.1 423.54 1107.13 421.95 1107.16 420.36 1107.19 419.01 1107.23 417.66 1107.23 417.33 1107.23 417 1107.32 416.42 1107.42 415.84 1107.68 415.31 1107.95 414.78 1108.37 414.37 1108.78 413.95 1109.31 413.68 1109.84 413.42 1110.42 413.32 1111 413.23 1111.58 413.32 1112.16 413.42 1112.69 413.68 1113.22 413.95 1113.63 414.37 1114.05 414.78 1114.32 415.31 1114.58 415.84 1114.68 416.42 1114.77 417 1114.77 417.33 Z">
+                    </path>
+                </svg></div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="height: auto; width: 360px; left: 324px; top: 665px;">
+            <div class="sl-block-content" style="z-index: 14; font-size: 50%; text-align: right;">
+                <p>credits: Unsplash</p>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="sl-block" data-block-type="text" style="width: 512px; left: 64px; top: 108px; height: auto;">
+            <div class="sl-block-content" style="text-align: left; z-index: 10;">
+                <h2>What it is</h2>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="width: 512px; left: 64px; top: 216px; height: auto;">
+            <div class="sl-block-content"
+                data-placeholder-text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin urna odio, aliquam vulputate faucibus id, elementum lobortis felis. Mauris urna dolor, placerat ac sagittis quis."
+                style="text-align: left; z-index: 11;">
+                <p>Ensuring, at different stages, that the service you are building, operates <strong>how</strong> you
+                    intended.</p>
+
+                <p>&nbsp;</p>
+
+                <p><strong>how:</strong> behaviors under extreme inputs, feature implementation, project architecture,
+                    dependencies, security, interactions between services, performance, error recoverability, etc.</p>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="width: 512px; left: 704px; top: 108px; height: auto;">
+            <div class="sl-block-content" style="text-align: left; z-index: 12;">
+                <h2>What you get</h2>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="width: 512px; left: 704px; top: 216px; height: auto;">
+            <div class="sl-block-content"
+                data-placeholder-text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin urna odio, aliquam vulputate faucibus id, elementum lobortis felis. Mauris urna dolor, placerat ac sagittis quis."
+                style="text-align: left; z-index: 13;">
+                <p>Less deployment failures, development hell / churn / cost, quality issues, time to market,
+                    reputational damage.</p>
+
+                <p>&nbsp;</p>
+
+                <p>Better deployment frequency, healthier teams, project durability / profitability.</p>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="sl-block" data-block-type="text" style="width: 1075px; left: 102px; top: 43px; height: auto;">
+            <div class="sl-block-content" style="z-index: 10;">
+                <h2>The Test Pyramid</h2>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="image"
+            style="width: 483px; height: 338px; left: 398px; top: 216px; min-width: 1px; min-height: 1px;">
+            <div class="sl-block-content" style="z-index: 11;"><img data-lazy-loaded=""
+                    data-src="/slides/load-testing/assets/test-types.avif">
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="height: auto; width: 360px; left: 520px; top: 554px;">
+            <div class="sl-block-content" style="z-index: 12; font-size: 50%; text-align: right;">
+                <p>credits: Mike Cohn</p>
+            </div>
+        </div>
+        <div class="sl-block sl-block-group" data-block-type="group">
+            <div class="sl-block-content sl-block-group-content"
+                style="transform-origin: 636px 385px 0px; z-index: 13;">
+                <div class="sl-block" data-block-type="drawing"
+                    style="width: 70px; height: 250px; left: 882px; top: 286px;">
+                    <div class="sl-block-content" style="z-index: 14;"><svg xmlns="http://www.w3.org/2000/svg"
+                            version="1.1" preserveAspectRatio="none" width="100%" height="100%"
+                            viewBox="1073.8497314453125 329.0987243652344 70.3248291015625 250.61392211914062">
+                            <path fill="rgb(0, 0, 255)"
+                                d="M 1091.242681655208 574.8971912348653 Q 1091.24 574.9 1091.35 572.72 1091.46 570.55 1092.48 567.79 1093.51 565.04 1096.31 559.86 1099.12 554.67 1102.35 547.73 1105.59 540.79 1109.02 532.27 1112.45 523.76 1115.7 514.01 1118.95 504.26 1121.4 491.7 1123.84 479.13 1125.45 463.02 1127.05 446.9 1127.25 433.6 1127.44 420.29 1127.25 408.39 1127.06 396.48 1125.74 388.04 1124.43 379.6 1121.16 371.46 1117.9 363.33 1113.02 356.49 1108.13 349.66 1104.16 346.29 1100.18 342.92 1097.49 341.41 1094.79 339.9 1091.6 338.64 1088.41 337.39 1085.16 336.37 1081.92 335.34 1081.01 334.92 1080.1 334.51 1079.61 333.64 1079.12 332.77 1079.24 331.78 1079.35 330.78 1080.03 330.05 1080.71 329.31 1081.28 330.02 1081.84 330.73 1083.58 333.75 1085.31 336.78 1085.24 340.51 1085.18 344.23 1084.67 348.05 1084.16 351.87 1083.55 355.07 1082.95 358.26 1081.71 362.85 1080.48 367.43 1079.86 368.3 1079.24 369.18 1078.22 369.53 1077.2 369.87 1076.18 369.55 1075.15 369.24 1074.5 368.37 1073.86 367.51 1075.44 366.95 1077.03 366.39 1083.06 364.44 1089.1 362.49 1094.56 361.31 1100.03 360.13 1106.46 358.79 1112.9 357.45 1118.83 356.61 1124.76 355.76 1128.87 355.53 1132.97 355.3 1135.91 354.34 1138.85 353.37 1136.81 350.85 1134.76 348.33 1130.38 345.97 1125.99 343.6 1122.02 342.65 1118.05 341.69 1114.81 341.35 1111.56 341 1108.28 341 1105.01 341.01 1103.56 339.74 1102.12 338.48 1103.14 336.86 1104.16 335.23 1105.93 335.99 1107.69 336.74 1107.22 338.6 1106.75 340.46 1104.84 340.29 1102.93 340.12 1102.8 338.2 1102.67 336.29 1107.52 335.78 1112.37 335.26 1115.86 335.84 1119.36 336.42 1123.84 337.62 1128.32 338.83 1133.77 341.46 1139.22 344.1 1142.28 348.8 1145.33 353.49 1143.47 356.14 1141.6 358.78 1137.42 359.55 1133.23 360.32 1129.32 360.52 1125.41 360.71 1119.68 361.52 1113.95 362.34 1107.6 363.75 1101.25 365.15 1095.42 366.71 1089.6 368.27 1085.36 368.71 1081.12 369.15 1080.18 369.17 1079.24 369.18 1078.22 369.53 1077.2 369.87 1076.18 369.55 1075.15 369.24 1074.5 368.37 1073.86 367.51 1073.85 366.43 1073.83 365.36 1075.12 361.17 1076.4 356.97 1077 354.01 1077.6 351.04 1077.99 347.54 1078.38 344.04 1079.05 340.24 1079.72 336.43 1079.91 335.47 1080.1 334.51 1079.61 333.64 1079.12 332.77 1079.24 331.78 1079.35 330.78 1080.03 330.05 1080.71 329.31 1081.68 329.12 1082.66 328.92 1086.44 330.6 1090.21 332.28 1093.76 333.9 1097.3 335.51 1100.19 337.18 1103.08 338.85 1106.36 341.24 1109.63 343.64 1111.7 345.8 1113.78 347.96 1118.14 354.72 1122.51 361.48 1125.92 370.15 1129.34 378.82 1130.69 387.59 1132.05 396.35 1132.25 408.36 1132.44 420.37 1132.23 433.87 1132.02 447.38 1130.38 463.76 1128.74 480.13 1126.21 492.99 1123.68 505.85 1120.38 515.74 1117.08 525.63 1113.63 534.19 1110.18 542.76 1107.34 550 1104.51 557.25 1102.19 563.08 1099.88 568.92 1099.32 571.92 1098.76 574.92 1098.76 575.46 1098.76 576.01 1098.66 576.59 1098.57 577.17 1098.3 577.69 1098.03 578.22 1097.62 578.63 1097.2 579.05 1096.68 579.31 1096.15 579.58 1095.57 579.67 1094.99 579.76 1094.41 579.66 1093.83 579.57 1093.31 579.3 1092.78 579.03 1092.37 578.62 1091.95 578.2 1091.69 577.68 1091.42 577.15 1091.33 576.57 1091.24 575.99 1091.24 575.44 Z">
+                            </path>
+                        </svg></div>
+                </div>
+                <div class="sl-block" data-block-type="drawing"
+                    style="width: 64px; height: 265px; left: 320px; top: 232px;">
+                    <div class="sl-block-content" style="z-index: 15;"><svg xmlns="http://www.w3.org/2000/svg"
+                            version="1.1" preserveAspectRatio="none" width="100%" height="100%"
+                            viewBox="511.54437255859375 275.2799987792969 64.91943359375 265.0408630371094">
+                            <path fill="rgb(0, 0, 255)"
+                                d="M 521.76640625 279.875 Q 521.77 279.88 521.77 282.01 521.78 284.14 521.55 287.83 521.32 291.53 520.6 296.68 519.88 301.83 519.17 307.9 518.46 313.97 517.93 321.06 517.39 328.15 517 336.23 516.61 344.31 516.56 353.69 516.51 363.07 516.62 374.29 516.72 385.51 518.04 398.42 519.35 411.32 523.53 427.84 527.71 444.35 532.58 457.7 537.45 471.04 542.08 481.85 546.71 492.65 550.45 500.42 554.18 508.18 557.68 514.45 561.17 520.72 563.34 524.31 565.5 527.91 569.19 532.12 572.88 536.33 573.11 537.11 573.34 537.89 573.07 538.66 572.8 539.42 572.13 539.88 571.45 540.34 570.64 540.32 569.83 540.3 569.52 539.41 569.21 538.51 568.12 535.11 567.04 531.7 566.55 528.6 566.07 525.5 565.94 521.71 565.8 517.91 565.78 513.93 565.76 509.96 566.3 506.93 566.85 503.9 568.11 500.82 569.38 497.74 570.17 496.88 570.97 496.01 572.12 495.77 573.27 495.54 574.34 496.03 575.41 496.51 575.99 497.54 576.57 498.56 575.74 499.09 574.91 499.62 571.37 501.58 567.84 503.53 562.9 505.41 557.96 507.28 551.69 510.17 545.42 513.06 541.94 514.92 538.46 516.79 535.1 518.89 531.74 521 530.64 523.14 529.54 525.28 535.03 526.94 540.53 528.59 546.54 530.47 552.55 532.36 557.57 532.96 562.59 533.55 565.41 533.79 568.23 534.02 569.41 535.25 570.59 536.48 569.56 537.84 568.53 539.2 567.03 538.39 565.52 537.59 566.08 535.98 566.64 534.36 568.32 534.67 570 534.97 569.97 536.67 569.93 538.38 565.95 538.48 561.96 538.58 556.65 537.9 551.34 537.22 544.73 535.87 538.12 534.52 533.81 533.05 529.51 531.57 526.3 528.87 523.09 526.17 524.19 523.02 525.3 519.87 527.46 517.87 529.62 515.87 532.83 514.02 536.04 512.17 539.56 510.38 543.09 508.6 549.11 505.02 555.12 501.44 561.49 499.14 567.86 496.84 569.42 496.42 570.97 496.01 572.12 495.77 573.27 495.54 574.34 496.03 575.41 496.51 575.99 497.54 576.57 498.56 576.44 499.73 576.31 500.89 574.52 505.51 572.73 510.12 572.48 513.98 572.22 517.84 572.19 521.28 572.15 524.71 572.43 527.6 572.71 530.5 572.97 533.44 573.23 536.39 573.29 537.14 573.34 537.89 573.07 538.66 572.8 539.42 572.13 539.88 571.45 540.34 570.64 540.32 569.83 540.3 569.18 539.8 568.54 539.3 564.89 534.91 561.25 530.52 559.03 526.84 556.81 523.16 553.24 516.76 549.68 510.35 545.9 502.49 542.12 494.63 537.44 483.7 532.75 472.76 527.82 459.18 522.88 445.59 518.63 428.67 514.39 411.75 513.06 398.66 511.72 385.56 511.62 374.3 511.51 363.04 511.56 353.55 511.62 344.06 512.01 335.93 512.4 327.79 512.86 320.67 513.32 313.55 513.6 307.42 513.87 301.29 514.06 296.33 514.25 291.38 514.23 287.76 514.22 284.14 514.23 282.01 514.23 279.88 514.23 279.44 514.23 279 514.33 278.42 514.42 277.84 514.69 277.31 514.95 276.79 515.37 276.37 515.79 275.95 516.31 275.69 516.84 275.42 517.42 275.33 518 275.23 518.58 275.33 519.16 275.42 519.69 275.69 520.21 275.95 520.63 276.37 521.05 276.79 521.31 277.31 521.58 277.84 521.67 278.42 521.77 279 521.77 279.44 Z">
+                            </path>
+                        </svg></div>
+                </div>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="height: auto; width: 240px; left: 960px; top: 360px;">
+            <div class="sl-block-content" style="z-index: 16;">
+                <p>More expensive</p>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="height: auto; width: 240px; left: 58px; top: 360px;">
+            <div class="sl-block-content" style="z-index: 17; text-align: right;">
+                <p>Faster</p>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="sl-block" data-block-type="text" style="width: 1075px; left: 102px; top: 43px; height: auto;">
+            <div class="sl-block-content" style="z-index: 10;">
+                <h2>Other types of tests?!</h2>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="image"
+            style="width: 947px; height: 490px; left: 166px; top: 158px; min-width: 1px; min-height: 1px;">
+            <div class="sl-block-content" style="z-index: 11;"><img
+                    style="left: 0px; top: -10px; width: 947px; height: 511px;" data-crop-x="0" data-crop-y="0.020534"
+                    data-crop-width="1" data-crop-height="0.958931" data-lazy-loaded=""
+                    data-src="/slides/load-testing/assets/jimcarrey-vanish.gif"></div>
+        </div>
+    </section>
+    <section>
+        <div class="sl-block" data-block-type="text" style="width: 550px; left: 38px; top: 86px; height: auto;">
+            <div class="sl-block-content" style="text-align: left; z-index: 10;">
+                <h2>My code WORKS!!</h2>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="width: 550px; left: 38px; top: 216px; height: auto;">
+            <div class="sl-block-content"
+                data-placeholder-text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec metus justo. Aliquam erat volutpat."
+                style="z-index: 12; text-align: left;">
+                <p>Yes, but does it work <strong>well</strong>?</p>
+
+                <p>A well-developed application may still be subject to security, performance, architectural,
+                    resilience, cost, etc. issues.</p>
+
+                <p>You can of course follow logs, metrics, traces and KPIs after the fact but what if you shorten the
+                    cycle?</p>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="sl-block" data-block-type="text" style="width: 1075px; left: 102px; top: 274px; height: auto;">
+            <div class="sl-block-content" style="z-index: 10;">
+                <p>Today, we are interested in</p>
+
+                <h1>Load Testing</h1>
+
+                <p>But the other ones are cool too!</p>
+            </div>
+        </div>
+    </section>
+</section>
+<section class="stack">
+    <section>
+        <div class="sl-block" data-block-type="text" style="width: 1152px; left: 30px; top: 58px; height: auto;">
+            <div class="sl-block-content" style="font-size: 200%; text-align: left; z-index: 10;">
+                <h1>What is<br>
+                    <u>Load</u>
+                </h1>
+
+                <h1><u>Testing?</u></h1>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="sl-block" data-block-type="text" style="width: 512px; left: 64px; top: 108px; height: auto;">
+            <div class="sl-block-content" style="text-align: left; z-index: 10;">
+                <h2>Behaviors</h2>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="width: 512px; left: 64px; top: 216px; height: auto;">
+            <div class="sl-block-content"
+                data-placeholder-text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin urna odio, aliquam vulputate faucibus id, elementum lobortis felis. Mauris urna dolor, placerat ac sagittis quis."
+                style="text-align: left; z-index: 11;">
+                <p>How each individual will use my service? Different user groups, profiles, personas have different
+                    impacts on our systems.</p>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="width: 512px; left: 704px; top: 108px; height: auto;">
+            <div class="sl-block-content" style="text-align: left; z-index: 12;">
+                <h2>Crowd effects</h2>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="width: 512px; left: 704px; top: 216px; height: auto;">
+            <div class="sl-block-content"
+                data-placeholder-text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin urna odio, aliquam vulputate faucibus id, elementum lobortis felis. Mauris urna dolor, placerat ac sagittis quis."
+                style="text-align: left; z-index: 13;">
+                <p>How a large population of individuals can impact our systems? What happens when they focus on a
+                    page and when they disperse? What effect did load on a page have on the others?</p>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="sl-block" data-block-type="text" style="width: 1075px; left: 102px; top: 43px; height: auto;">
+            <div class="sl-block-content" style="z-index: 10;">
+                <h2>The anatomy of a Load Test</h2>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="image"
+            style="width: 618px; height: 532px; left: 341px; top: 144px; min-width: 1px; min-height: 1px;">
+            <div class="sl-block-content" style="z-index: 11;"><img data-lazy-loaded=""
+                    data-src="/slides/load-testing/assets/lt-arch-aws.avif">
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="sl-block" data-block-type="text" style="width: 1075px; left: 102px; top: 43px; height: auto;">
+            <div class="sl-block-content" style="z-index: 10;">
+                <h2>The anatomy of a Load Test (bis)</h2>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="height: auto; width: 240px; left: 200px; top: 369px;">
+            <div class="sl-block-content" style="z-index: 11;">
+                <p>Request</p>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="height: auto; width: 240px; left: 520px; top: 346px;">
+            <div class="sl-block-content" style="z-index: 12;">
+                <p>VU</p>
+
+                <p>(Virtual User)</p>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="height: auto; width: 240px; left: 840px; top: 369px;">
+            <div class="sl-block-content" style="z-index: 13;">
+                <p>Scenario</p>
+            </div>
+        </div>
+        <div class="sl-block sl-block-group" data-block-type="group">
+            <div class="sl-block-content sl-block-group-content"
+                style="transform-origin: 485px 372px 0px; z-index: 14;">
+                <div class="sl-block" data-block-type="drawing"
+                    style="width: 161px; height: 23px; left: 409px; top: 364px;">
+                    <div class="sl-block-content" style="z-index: 15;"><svg xmlns="http://www.w3.org/2000/svg"
+                            version="1.1" preserveAspectRatio="none" width="100%" height="100%"
+                            viewBox="574.1530151367188 352.7398681640625 161.5670166015625 23.030120849609375">
+                            <path fill="rgb(0, 0, 255)"
+                                d="M 731.1238940856614 375.766332847175 Q 731.12 375.77 728.93 375.66 726.73 375.55 723.08 374.88 719.42 374.21 714.74 372.81 710.05 371.41 703.62 369.29 697.19 367.17 691.36 365.64 685.53 364.11 680.1 362.71 674.67 361.31 667.56 360.29 660.45 359.27 650.55 358.49 640.66 357.72 631.2 357.73 621.74 357.75 614.61 358.18 607.49 358.62 603.03 359.62 598.56 360.63 593.2 362.99 587.85 365.35 584.3 367 580.75 368.65 579.37 369.94 577.98 371.22 576.19 371.16 574.4 371.1 574.18 369.32 573.95 367.54 575.68 367.04 577.4 366.54 578.16 368.17 578.92 369.79 577.44 370.8 575.95 371.8 574.73 370.49 573.5 369.18 576.03 366.62 578.55 364.06 582.2 362.41 585.86 360.76 591.72 358.27 597.58 355.77 602.35 354.7 607.13 353.63 614.43 353.19 621.72 352.75 631.39 352.74 641.05 352.73 651.12 353.53 661.19 354.33 668.56 355.41 675.93 356.48 681.37 357.88 686.81 359.27 692.66 360.81 698.51 362.35 705.04 363.8 711.57 365.26 716.06 366.19 720.54 367.11 723.76 367.56 726.98 368.01 729.06 368.12 731.13 368.23 731.56 368.23 732 368.23 732.58 368.33 733.16 368.42 733.69 368.69 734.21 368.95 734.63 369.37 735.05 369.79 735.32 370.31 735.58 370.84 735.67 371.42 735.77 372 735.67 372.58 735.58 373.16 735.31 373.69 735.05 374.21 734.63 374.63 734.21 375.05 733.69 375.32 733.16 375.58 732.58 375.67 732 375.77 731.56 375.77 Z">
+                            </path>
+                        </svg></div>
+                </div>
+                <div class="sl-block" data-block-type="drawing"
+                    style="width: 29px; height: 47px; left: 400px; top: 349px;">
+                    <div class="sl-block-content" style="z-index: 16;"><svg xmlns="http://www.w3.org/2000/svg"
+                            version="1.1" preserveAspectRatio="none" width="100%" height="100%"
+                            viewBox="565.8711547851562 337.2773742675781 29.02850341796875 47.63494873046875">
+                            <path fill="rgb(0, 0, 255)"
+                                d="M 584.7670983964491 341.44331619574905 Q 584.77 341.44 584.68 342.68 584.58 343.92 583.84 346.45 583.1 348.98 581.4 352.25 579.7 355.52 577.72 358.71 575.75 361.89 574.01 364.45 572.28 367 570.42 368.93 568.57 370.85 568.36 369.46 568.16 368.07 571.4 368.47 574.65 368.86 578.72 370.57 582.8 372.28 586.65 374.13 590.5 375.97 592.23 377.2 593.96 378.44 594.68 380.94 595.4 383.44 593.05 384.54 590.69 385.64 589.24 383.49 587.78 381.33 589.68 379.55 591.58 377.78 593.63 379.38 595.68 380.98 594.42 383.25 593.16 385.53 588.31 383.4 583.46 381.28 579.16 379.16 574.86 377.05 571.02 376.27 567.19 375.49 566.2 371.81 565.21 368.13 567.2 363.78 569.19 359.43 571.18 355.85 573.16 352.26 574.47 349.54 575.79 346.82 576.38 345.13 576.98 343.44 577.11 342.43 577.23 341.43 577.23 341.21 577.23 340.99 577.33 340.41 577.42 339.83 577.69 339.31 577.96 338.78 578.37 338.36 578.79 337.95 579.32 337.68 579.84 337.42 580.42 337.32 581.01 337.23 581.59 337.33 582.17 337.42 582.69 337.69 583.22 337.96 583.64 338.37 584.05 338.79 584.32 339.32 584.58 339.84 584.68 340.42 584.77 341.01 584.77 341.22 Z">
+                            </path>
+                        </svg></div>
+                </div>
+            </div>
+        </div>
+        <div class="sl-block sl-block-group" data-block-type="group">
+            <div class="sl-block-content sl-block-group-content"
+                style="transform-origin: 811px 381px 0px; z-index: 17;">
+                <div class="sl-block" data-block-type="drawing"
+                    style="width: 161px; height: 23px; left: 735px; top: 372px;">
+                    <div class="sl-block-content" style="z-index: 18;"><svg xmlns="http://www.w3.org/2000/svg"
+                            version="1.1" preserveAspectRatio="none" width="100%" height="100%"
+                            viewBox="574.1530151367188 352.7398681640625 161.5670166015625 23.030120849609375">
+                            <path fill="rgb(0, 0, 255)"
+                                d="M 731.1238940856614 375.766332847175 Q 731.12 375.77 728.93 375.66 726.73 375.55 723.08 374.88 719.42 374.21 714.74 372.81 710.05 371.41 703.62 369.29 697.19 367.17 691.36 365.64 685.53 364.11 680.1 362.71 674.67 361.31 667.56 360.29 660.45 359.27 650.55 358.49 640.66 357.72 631.2 357.73 621.74 357.75 614.61 358.18 607.49 358.62 603.03 359.62 598.56 360.63 593.2 362.99 587.85 365.35 584.3 367 580.75 368.65 579.37 369.94 577.98 371.22 576.19 371.16 574.4 371.1 574.18 369.32 573.95 367.54 575.68 367.04 577.4 366.54 578.16 368.17 578.92 369.79 577.44 370.8 575.95 371.8 574.73 370.49 573.5 369.18 576.03 366.62 578.55 364.06 582.2 362.41 585.86 360.76 591.72 358.27 597.58 355.77 602.35 354.7 607.13 353.63 614.43 353.19 621.72 352.75 631.39 352.74 641.05 352.73 651.12 353.53 661.19 354.33 668.56 355.41 675.93 356.48 681.37 357.88 686.81 359.27 692.66 360.81 698.51 362.35 705.04 363.8 711.57 365.26 716.06 366.19 720.54 367.11 723.76 367.56 726.98 368.01 729.06 368.12 731.13 368.23 731.56 368.23 732 368.23 732.58 368.33 733.16 368.42 733.69 368.69 734.21 368.95 734.63 369.37 735.05 369.79 735.32 370.31 735.58 370.84 735.67 371.42 735.77 372 735.67 372.58 735.58 373.16 735.31 373.69 735.05 374.21 734.63 374.63 734.21 375.05 733.69 375.32 733.16 375.58 732.58 375.67 732 375.77 731.56 375.77 Z">
+                            </path>
+                        </svg></div>
+                </div>
+                <div class="sl-block" data-block-type="drawing"
+                    style="width: 29px; height: 47px; left: 726px; top: 357px;">
+                    <div class="sl-block-content" style="z-index: 19;"><svg xmlns="http://www.w3.org/2000/svg"
+                            version="1.1" preserveAspectRatio="none" width="100%" height="100%"
+                            viewBox="565.8711547851562 337.2773742675781 29.02850341796875 47.63494873046875">
+                            <path fill="rgb(0, 0, 255)"
+                                d="M 584.7670983964491 341.44331619574905 Q 584.77 341.44 584.68 342.68 584.58 343.92 583.84 346.45 583.1 348.98 581.4 352.25 579.7 355.52 577.72 358.71 575.75 361.89 574.01 364.45 572.28 367 570.42 368.93 568.57 370.85 568.36 369.46 568.16 368.07 571.4 368.47 574.65 368.86 578.72 370.57 582.8 372.28 586.65 374.13 590.5 375.97 592.23 377.2 593.96 378.44 594.68 380.94 595.4 383.44 593.05 384.54 590.69 385.64 589.24 383.49 587.78 381.33 589.68 379.55 591.58 377.78 593.63 379.38 595.68 380.98 594.42 383.25 593.16 385.53 588.31 383.4 583.46 381.28 579.16 379.16 574.86 377.05 571.02 376.27 567.19 375.49 566.2 371.81 565.21 368.13 567.2 363.78 569.19 359.43 571.18 355.85 573.16 352.26 574.47 349.54 575.79 346.82 576.38 345.13 576.98 343.44 577.11 342.43 577.23 341.43 577.23 341.21 577.23 340.99 577.33 340.41 577.42 339.83 577.69 339.31 577.96 338.78 578.37 338.36 578.79 337.95 579.32 337.68 579.84 337.42 580.42 337.32 581.01 337.23 581.59 337.33 582.17 337.42 582.69 337.69 583.22 337.96 583.64 338.37 584.05 338.79 584.32 339.32 584.58 339.84 584.68 340.42 584.77 341.01 584.77 341.22 Z">
+                            </path>
+                        </svg></div>
+                </div>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="height: auto; width: 240px; left: 200px; top: 465px;">
+            <div class="sl-block-content fragment" style="z-index: 20;" data-fragment-index="0">
+                <p>+ think time</p>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="sl-block" data-block-type="text" style="width: 512px; left: 64px; top: 108px; height: auto;">
+            <div class="sl-block-content" style="text-align: left; z-index: 10;">
+                <h2>Open model</h2>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="width: 512px; left: 64px; top: 216px; height: auto;">
+            <div class="sl-block-content"
+                data-placeholder-text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin urna odio, aliquam vulputate faucibus id, elementum lobortis felis. Mauris urna dolor, placerat ac sagittis quis."
+                style="text-align: left; z-index: 11;">
+                <p>Inject a given number of VUs per unit of time.<br>
+                    <br>
+                    <strong>No negative feedback:</strong> application will receive load at the same rate even if
+                    down.<br>
+                    <br>
+                    Suited for pushing <strong>queue-based</strong> systems.
+                </p>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="width: 512px; left: 704px; top: 108px; height: auto;">
+            <div class="sl-block-content" style="text-align: left; z-index: 12;">
+                <h2>Closed model</h2>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="width: 512px; left: 704px; top: 216px; height: auto;">
+            <div class="sl-block-content"
+                data-placeholder-text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin urna odio, aliquam vulputate faucibus id, elementum lobortis felis. Mauris urna dolor, placerat ac sagittis quis."
+                style="text-align: left; z-index: 13;">
+                <p>Maintain a given number of active VU.<br>
+                    <br>
+                    <strong>Negative feedback:</strong> application slows down, VUs complete slower.<br>
+                    <br>
+                    <br>
+                    Suited for pushing <strong>interactive</strong> systems.
+                </p>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="sl-block" data-block-type="text" style="width: 1075px; left: 102px; top: 194px; height: auto;">
+            <div class="sl-block-content" style="z-index: 10;">
+                <h2>There are different types of Load Tests!</h2>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="width: 1075px; left: 102px; top: 342px; height: auto;">
+            <div class="sl-block-content" style="z-index: 11; line-height: 1.43;">
+                <ul>
+                    <li>
+                        <strong>Stress tests:</strong> reach limits to find bottlenecks
+                    </li>
+                    <li>
+                        <strong>Benchmarks:</strong> evaluate relative performance
+                    </li>
+                    <li>
+                        <strong>Soak tests:</strong> evaluate capacity over long periods of time
+                    </li>
+                    <li>
+                        <strong>Spike testing:</strong> check reactions to sudden load peaks
+                    </li>
+                    <li>
+                        <strong>Scalability testing:</strong> validate horizontal and vertical scaling
+                    </li>
+                    <li>
+                        <strong>Configuration testing:</strong> A/B test configuration changes
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="sl-block" data-block-type="text" style="width: 1075px; left: 102px; top: 43px; height: auto;">
+            <div class="sl-block-content" style="z-index: 10;">
+                <h2>Check this out!</h2>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="image"
+            style="width: 901px; height: 504px; left: 189px; top: 144px; min-width: 1px; min-height: 1px;"><a
+                class="sl-block-content" style="z-index: 11;"
+                href="https://octoperf.com/blog/2018/04/09/performance-load-stress-testing-explained/"
+                target="_blank"><img style="left: 0px; top: 0px; width: 902px; height: 663px;" data-crop-x="0"
+                    data-crop-y="0" data-crop-width="1" data-crop-height="0.75985" data-lazy-loaded=""
+                    data-src="/slides/load-testing/assets/octoperf-blog.avif"></a>
+        </div>
+    </section>
+    <section>
+        <div class="sl-block" data-block-type="text" style="width: 1075px; left: 102px; top: 43px; height: auto;">
+            <div class="sl-block-content" style="z-index: 10;">
+                <h2>Ok, we're done with this</h2>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="image"
+            style="width: 890px; height: 490px; left: 194px; top: 158px; min-width: 1px; min-height: 1px;">
+            <div class="sl-block-content" style="z-index: 11;"><img data-lazy-loaded=""
+                    data-src="/slides/load-testing/assets/phew.gif"></div>
+        </div>
+    </section>
+</section>
+<section class="stack">
+    <section>
+        <div class="sl-block" data-block-type="text" style="width: 1152px; left: 30px; top: 58px; height: auto;">
+            <div class="sl-block-content" style="font-size: 200%; text-align: left; z-index: 10;">
+                <h1>What<br>
+                    about</h1>
+
+                <h1><u>Gatling?</u></h1>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="sl-block" data-block-type="image"
+            style="width: 617px; height: 105px; left: 331px; top: 307px; min-width: 1px; min-height: 1px;">
+            <div class="sl-block-content" style="z-index: 10;"><img data-lazy-loaded=""
+                    data-src="/slides/load-testing/assets/gatling-logo.svg">
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="height: auto; width: 441px; left: 90px; top: 151px;">
+            <div class="sl-block-content fragment" style="z-index: 11;" data-fragment-index="0">
+                <p>Founded in 2012 in France 🐓</p>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="height: auto; width: 380px; left: 617px; top: 73px;">
+            <div class="sl-block-content fragment" style="z-index: 12;" data-fragment-index="1">
+                <p>Open source and Enterprise</p>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="height: auto; width: 380px; left: 90px; top: 528px;">
+            <div class="sl-block-content fragment" style="z-index: 13;" data-fragment-index="2">
+                <p>Heavy-weight of Load Testing</p>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="height: auto; width: 380px; left: 733px; top: 508px;">
+            <div class="sl-block-content fragment" style="z-index: 14;" data-fragment-index="3">
+                <p>IDE plugins, protocol-agnostic, recorder, HTML reports, etc.</p>
+            </div>
+        </div>
+        <div class="sl-block sl-block-group" data-block-type="group">
+            <div class="sl-block-content sl-block-group-content fragment"
+                style="transform-origin: 499px 506px 0px; z-index: 15;" data-fragment-index="2">
+                <div class="sl-block" data-block-type="drawing"
+                    style="width: 70px; height: 92px; left: 457px; top: 460px;">
+                    <div class="sl-block-content" style="z-index: 16;"><svg xmlns="http://www.w3.org/2000/svg"
+                            version="1.1" preserveAspectRatio="none" width="100%" height="100%"
+                            viewBox="657.280029296875 503.33404541015625 70.42279052734375 92.38592529296875">
+                            <path fill="rgb(0, 0, 255)"
+                                d="M 660.1914899064718 588.1968035602684 Q 660.19 588.2 661.83 587.3 663.47 586.4 665.75 584.75 668.04 583.09 673.26 578.86 678.47 574.62 683.93 569.02 689.39 563.41 694.91 556.44 700.44 549.46 705.81 542.07 711.18 534.67 714.41 529.24 717.65 523.81 719.34 520.46 721.02 517.11 722.11 513.63 723.19 510.14 722.75 508.02 722.3 505.89 723.49 504.32 724.68 502.75 726.41 503.68 728.15 504.61 727.5 506.47 726.85 508.33 724.92 507.98 722.98 507.63 723.02 505.67 723.06 503.7 725.01 503.43 726.96 503.16 727.53 507.74 728.1 512.32 726.79 515.83 725.49 519.34 723.73 522.84 721.96 526.35 718.6 531.96 715.24 537.58 709.8 545.08 704.36 552.57 698.68 559.72 693 566.86 687.55 572.72 682.11 578.57 677.1 583.77 672.09 588.97 669.58 591.04 667.07 593.12 665.31 594.02 663.56 594.93 663.12 595.15 662.68 595.37 662.12 595.54 661.56 595.72 660.97 595.72 660.38 595.71 659.83 595.53 659.27 595.34 658.79 594.99 658.32 594.64 657.98 594.16 657.63 593.68 657.46 593.12 657.28 592.56 657.28 591.97 657.29 591.38 657.47 590.83 657.66 590.27 658.01 589.79 658.36 589.32 658.84 588.98 659.32 588.63 659.75 588.42 Z">
+                            </path>
+                        </svg></div>
+                </div>
+                <div class="sl-block" data-block-type="drawing"
+                    style="width: 45px; height: 39px; left: 496px; top: 462px;">
+                    <div class="sl-block-content" style="z-index: 17;"><svg xmlns="http://www.w3.org/2000/svg"
+                            version="1.1" preserveAspectRatio="none" width="100%" height="100%"
+                            viewBox="696.2794799804688 505.97357177734375 45.1505126953125 39.1639404296875">
+                            <path fill="rgb(0, 0, 255)"
+                                d="M 696.8483697748526 522.8764906619094 Q 696.85 522.88 697.41 521.79 697.97 520.71 699.32 519 700.66 517.28 702.87 515.46 705.07 513.65 707.27 511.96 709.48 510.27 712.62 508.37 715.77 506.47 720.1 506.05 724.43 505.64 727.81 507.43 731.19 509.22 732.62 512.33 734.06 515.44 735.29 518.93 736.53 522.43 737.54 526.09 738.55 529.75 739.99 535.16 741.43 540.58 741.43 541.7 741.43 542.82 740.76 543.72 740.1 544.63 739.04 544.97 737.97 545.31 736.91 544.96 735.84 544.62 735.2 544.35 734.55 544.09 731.99 542.87 729.43 541.65 727.01 540.18 724.58 538.7 723.85 536.25 723.11 533.81 725.41 532.7 727.71 531.59 729.17 533.69 730.62 535.79 728.78 537.56 726.93 539.32 724.9 537.77 722.87 536.23 724.08 533.98 725.29 531.73 729.97 533.87 734.66 536.01 737.35 538.67 740.05 541.33 740.74 542.07 741.43 542.82 740.76 543.72 740.1 544.63 739.04 544.97 737.97 545.31 736.91 544.96 735.84 544.62 735.18 543.71 734.53 542.8 733.19 537.28 731.85 531.76 730.78 528.45 729.71 525.14 728.26 521.87 726.8 518.6 725.19 516.33 723.57 514.06 721.23 513.77 718.9 513.47 716.43 514.99 713.97 516.52 710.8 518.91 707.64 521.3 706.17 522.83 704.71 524.37 704.15 525.31 703.59 526.25 703.48 526.47 703.37 526.69 703.03 527.17 702.68 527.64 702.21 528 701.74 528.35 701.18 528.53 700.62 528.72 700.03 528.72 699.44 528.73 698.88 528.55 698.31 528.37 697.83 528.03 697.36 527.68 697 527.21 696.65 526.74 696.47 526.18 696.28 525.62 696.28 525.03 696.27 524.44 696.45 523.88 696.63 523.31 696.74 523.1 Z">
+                            </path>
+                        </svg></div>
+                </div>
+            </div>
+        </div>
+        <div class="sl-block sl-block-group" data-block-type="group">
+            <div class="sl-block-content sl-block-group-content fragment"
+                style="transform-origin: 999px 435px 0px; z-index: 18;" data-fragment-index="3">
+                <div class="sl-block" data-block-type="drawing"
+                    style="width: 34px; height: 120px; left: 916px; top: 380px;">
+                    <div class="sl-block-content" style="z-index: 19;"><svg xmlns="http://www.w3.org/2000/svg"
+                            version="1.1" preserveAspectRatio="none" width="100%" height="100%"
+                            viewBox="1186.7572021484375 423.38482666015625 34.0233154296875 120.34014892578125">
+                            <path fill="rgb(0, 0, 255)"
+                                d="M 1213.2322265625 539.5625 Q 1213.23 539.56 1213.22 538.11 1213.21 536.66 1213.41 532.22 1213.61 527.77 1214.05 519.78 1214.5 511.78 1214.5 505.53 1214.5 499.29 1214.5 494.35 1214.5 489.41 1214.07 480.78 1213.64 472.15 1211.98 465.48 1210.31 458.82 1208.6 453.58 1206.9 448.33 1204.81 444.84 1202.73 441.35 1200.97 439.18 1199.22 437 1196.84 434.85 1194.46 432.71 1191.05 430.66 1187.64 428.62 1186.96 426.67 1186.29 424.72 1188.11 423.75 1189.93 422.77 1191.17 424.42 1192.42 426.07 1190.99 427.56 1189.56 429.04 1187.86 427.86 1186.17 426.68 1187.07 424.82 1187.97 422.97 1190.73 423.78 1193.48 424.6 1195.95 426.62 1198.42 428.65 1200.86 431.24 1203.31 433.83 1205.17 436.3 1207.02 438.78 1209.31 442.75 1211.6 446.72 1213.38 452.17 1215.16 457.61 1216.88 464.72 1218.61 471.83 1219.05 480.62 1219.5 489.41 1219.5 494.35 1219.5 499.29 1219.5 505.53 1219.5 511.78 1219.95 519.78 1220.39 527.77 1220.59 532.22 1220.79 536.66 1220.78 538.11 1220.77 539.56 1220.77 539.78 1220.77 540 1220.68 540.58 1220.58 541.16 1220.32 541.69 1220.05 542.21 1219.63 542.63 1219.21 543.05 1218.69 543.32 1218.16 543.58 1217.58 543.68 1217 543.77 1216.42 543.68 1215.84 543.58 1215.31 543.32 1214.79 543.05 1214.37 542.63 1213.95 542.21 1213.68 541.69 1213.42 541.16 1213.32 540.58 1213.23 540 1213.23 539.78 Z">
+                            </path>
+                        </svg></div>
+                </div>
+                <div class="sl-block" data-block-type="drawing"
+                    style="width: 38px; height: 52px; left: 908px; top: 370px;">
+                    <div class="sl-block-content" style="z-index: 20;"><svg xmlns="http://www.w3.org/2000/svg"
+                            version="1.1" preserveAspectRatio="none" width="100%" height="100%"
+                            viewBox="1178.3873291015625 413.1925048828125 38.3326416015625 52.0948486328125">
+                            <path fill="rgb(0, 0, 255)"
+                                d="M 1212.125 420.76640625 Q 1212.13 420.77 1210.43 420.8 1208.73 420.83 1206.6 421 1204.47 421.16 1200.74 421.6 1197 422.05 1193.91 422.1 1190.82 422.16 1188.68 422.84 1186.53 423.52 1187.24 426.83 1187.95 430.13 1189.89 435.34 1191.82 440.55 1192.88 445.23 1193.94 449.91 1194.76 452.9 1195.58 455.88 1196.29 458.68 1197.01 461.48 1195.82 463.69 1194.64 465.89 1192.28 465.06 1189.92 464.24 1190.36 461.78 1190.81 459.32 1193.31 459.37 1195.81 459.43 1196.14 461.91 1196.48 464.38 1194.09 465.1 1191.69 465.82 1190.1 461.75 1188.51 457.67 1187.61 454.55 1186.71 451.43 1185.68 447.1 1184.66 442.77 1183.66 439.63 1182.66 436.48 1181.19 433.53 1179.72 430.58 1178.93 427.6 1178.14 424.62 1178.5 421.58 1178.87 418.54 1181.74 416.57 1184.62 414.61 1188.47 414.24 1192.32 413.87 1195.55 413.94 1198.79 414.01 1201.85 413.68 1204.9 413.35 1206.82 413.26 1208.73 413.17 1210.43 413.2 1212.13 413.23 1212.56 413.23 1213 413.23 1213.58 413.33 1214.16 413.42 1214.69 413.69 1215.21 413.95 1215.63 414.37 1216.05 414.79 1216.31 415.31 1216.58 415.84 1216.67 416.42 1216.77 417 1216.67 417.58 1216.58 418.16 1216.31 418.69 1216.05 419.21 1215.63 419.63 1215.21 420.05 1214.69 420.31 1214.16 420.58 1213.58 420.67 1213 420.77 1212.56 420.77 Z">
+                            </path>
+                        </svg></div>
+                </div>
+            </div>
+        </div>
+        <div class="sl-block sl-block-group" data-block-type="group">
+            <div class="sl-block-content sl-block-group-content fragment"
+                style="transform-origin: 732px 227px 0px; z-index: 21;" data-fragment-index="1">
+                <div class="sl-block" data-block-type="drawing"
+                    style="width: 102px; height: 103px; left: 694px; top: 164px;">
+                    <div class="sl-block-content" style="z-index: 22;"><svg xmlns="http://www.w3.org/2000/svg"
+                            version="1.1" preserveAspectRatio="none" width="100%" height="100%"
+                            viewBox="894.5203857421875 207.27499389648438 102.39544677734375 103.80081176757812">
+                            <path fill="rgb(0, 0, 255)"
+                                d="M 996.7677734375 211.4375 Q 996.77 211.44 996.81 212.59 996.85 213.74 996.91 215.59 996.96 217.44 996.58 219.61 996.21 221.78 994.24 225.88 992.27 229.98 989.19 233.23 986.1 236.48 983.54 238.73 980.98 240.98 978.86 242.97 976.74 244.96 974.01 246.97 971.27 248.98 968.24 250.65 965.21 252.31 962.58 253.81 959.96 255.31 956.92 256.83 953.89 258.36 950.75 259.85 947.6 261.35 944.11 262.92 940.61 264.49 937.3 266.26 933.99 268.02 930.59 269.92 927.19 271.81 923.47 274.31 919.74 276.81 917.63 278.7 915.51 280.59 913.28 283.45 911.05 286.31 909.05 289.42 907.05 292.53 906.1 295.07 905.15 297.61 904.37 300.32 903.59 303.03 902.51 306.18 901.42 309.33 899.15 310.59 896.88 311.86 895.28 309.81 893.68 307.76 895.45 305.86 897.22 303.96 899.38 305.41 901.53 306.87 900.43 309.22 899.34 311.57 896.84 310.86 894.34 310.14 895.34 305.38 896.33 300.61 897.26 297.57 898.2 294.53 899.42 291.68 900.64 288.82 902.88 285.52 905.12 282.22 908.09 278.87 911.06 275.51 913.51 273.5 915.95 271.5 920.01 268.85 924.08 266.2 927.51 264.31 930.95 262.43 934.41 260.51 937.86 258.59 941.27 256.94 944.67 255.3 947.74 253.79 950.8 252.28 953.68 250.81 956.55 249.33 959.23 247.82 961.91 246.3 964.55 244.87 967.19 243.44 969.59 241.66 972 239.88 974.2 237.84 976.4 235.8 978.67 233.8 980.93 231.79 983.23 229.01 985.52 226.22 986.97 223.52 988.42 220.83 988.73 219.13 989.04 217.42 989.09 215.58 989.15 213.74 989.19 212.59 989.23 211.44 989.23 211.22 989.23 211 989.32 210.42 989.42 209.84 989.68 209.31 989.95 208.79 990.37 208.37 990.79 207.95 991.31 207.68 991.84 207.42 992.42 207.32 993 207.23 993.58 207.32 994.16 207.42 994.69 207.68 995.21 207.95 995.63 208.37 996.05 208.79 996.32 209.31 996.58 209.84 996.68 210.42 996.77 211 996.77 211.22 Z">
+                            </path>
+                        </svg></div>
+                </div>
+                <div class="sl-block" data-block-type="drawing"
+                    style="width: 73px; height: 44px; left: 667px; top: 246px;">
+                    <div class="sl-block-content" style="z-index: 23;"><svg xmlns="http://www.w3.org/2000/svg"
+                            version="1.1" preserveAspectRatio="none" width="100%" height="100%"
+                            viewBox="867.3399658203125 289.2994079589844 73.09429931640625 44.151702880859375">
+                            <path fill="rgb(0, 0, 255)"
+                                d="M 871.6093322424822 289.2994101915415 Q 871.61 289.3 873.15 289.85 874.69 290.4 876.75 292.29 878.8 294.19 879.5 296.23 880.2 298.28 881.27 301.13 882.33 303.97 884.08 308.12 885.83 312.26 886.97 316.8 888.11 321.34 889.9 325.37 891.68 329.4 891.39 330.59 891.11 331.77 890.17 332.56 889.24 333.35 888.03 333.44 886.81 333.53 885.77 332.89 884.73 332.25 885.37 331.06 886.01 329.88 888.96 325.72 891.92 321.57 896.5 318.88 901.09 316.19 906.29 313.21 911.49 310.23 914.48 308.67 917.47 307.12 920.73 305.69 923.98 304.27 927.98 303.44 931.97 302.62 935.09 303.02 938.21 303.43 939.72 305.33 941.22 307.23 939.57 309.01 937.93 310.8 935.91 309.45 933.89 308.1 934.91 305.9 935.92 303.7 938.26 304.35 940.59 305.01 940.31 307.42 940.02 309.83 936.12 309.62 932.21 309.41 929.11 309.65 926.01 309.88 922.93 311.02 919.86 312.17 917 313.38 914.14 314.6 909.3 318 904.47 321.4 900.51 324.28 896.56 327.16 894.3 329.05 892.04 330.93 891.57 331.35 891.11 331.77 890.17 332.56 889.24 333.35 888.03 333.44 886.81 333.53 885.77 332.89 884.73 332.25 884.27 331.12 883.81 329.99 882.23 326.15 880.65 322.31 879.66 318.58 878.67 314.86 876.91 310.68 875.14 306.51 873.86 302.51 872.58 298.52 871.92 297.61 871.27 296.7 871.05 296.7 870.83 296.7 870.26 296.58 869.69 296.47 869.19 296.18 868.69 295.89 868.3 295.46 867.91 295.04 867.67 294.51 867.43 293.98 867.36 293.4 867.3 292.83 867.42 292.26 867.53 291.69 867.82 291.19 868.11 290.69 868.54 290.3 868.96 289.91 869.49 289.67 870.02 289.43 870.6 289.36 871.17 289.3 871.39 289.3 Z">
+                            </path>
+                        </svg></div>
+                </div>
+            </div>
+        </div>
+        <div class="sl-block sl-block-group" data-block-type="group">
+            <div class="sl-block-content sl-block-group-content fragment"
+                style="transform-origin: 271px 280px 0px; z-index: 24;" data-fragment-index="0">
+                <div class="sl-block" data-block-type="drawing"
+                    style="width: 72px; height: 119px; left: 334px; top: 209px;">
+                    <div class="sl-block-content" style="z-index: 25;"><svg xmlns="http://www.w3.org/2000/svg"
+                            version="1.1" preserveAspectRatio="none" width="100%" height="100%"
+                            viewBox="434.7446594238281 252.13925170898438 72.98031616210938 119.99087524414062">
+                            <path fill="rgb(0, 0, 255)"
+                                d="M 503.34375 259.769482421875 Q 503.34 259.77 501.88 259.8 500.42 259.84 498.6 259.86 496.78 259.88 494.91 260.27 493.04 260.65 490.27 262.11 487.5 263.58 484.75 265.24 482 266.91 478.48 269.29 474.97 271.67 470.51 275.58 466.05 279.49 461.05 285.22 456.06 290.94 453.85 294.53 451.64 298.11 449.55 301.62 447.47 305.12 446.4 308.42 445.33 311.72 444 315.27 442.67 318.82 441.95 322.51 441.24 326.19 441.27 330.65 441.3 335.11 441.71 339.12 442.13 343.13 444.29 347.45 446.46 351.78 449.72 355.08 452.98 358.37 456.2 360.42 459.43 362.47 462.08 363.59 464.73 364.72 465.91 365 467.1 365.29 468.41 367.48 469.73 369.67 467.77 371.32 465.81 372.96 463.88 371.28 461.95 369.6 463.31 367.43 464.67 365.27 467.02 366.27 469.37 367.27 468.75 369.75 468.13 372.23 462.91 371.22 457.7 370.22 454.89 368.13 452.08 366.04 448.45 362.77 444.83 359.5 442.24 356.69 439.66 353.88 438.37 351.24 437.09 348.6 436.16 345.56 435.24 342.53 434.97 338.81 434.71 335.1 434.75 331.89 434.78 328.67 435.01 326.04 435.25 323.4 436.18 320.04 437.11 316.68 438.5 313.23 439.88 309.77 441.32 306.07 442.76 302.37 444.97 298.83 447.19 295.3 449.62 291.59 452.05 287.87 455.69 282.9 459.32 277.93 461.78 275.3 464.24 272.67 467.64 269.5 471.03 266.33 474.53 263.47 478.03 260.62 480.61 258.87 483.2 257.12 487.55 255.14 491.91 253.16 494.34 252.64 496.77 252.12 498.59 252.14 500.42 252.16 501.88 252.2 503.34 252.23 503.67 252.23 504 252.23 504.58 252.32 505.16 252.42 505.69 252.68 506.22 252.95 506.63 253.37 507.05 253.78 507.32 254.31 507.58 254.84 507.68 255.42 507.77 256 507.68 256.58 507.58 257.16 507.32 257.69 507.05 258.22 506.63 258.63 506.22 259.05 505.69 259.32 505.16 259.58 504.58 259.68 504 259.77 503.67 259.77 Z">
+                            </path>
+                        </svg></div>
+                </div>
+                <div class="sl-block" data-block-type="drawing"
+                    style="width: 35px; height: 57px; left: 337px; top: 295px;">
+                    <div class="sl-block-content" style="z-index: 26;"><svg xmlns="http://www.w3.org/2000/svg"
+                            version="1.1" preserveAspectRatio="none" width="100%" height="100%"
+                            viewBox="437.8298645019531 338.2750244140625 35.979248046875 57.042572021484375">
+                            <path fill="rgb(0, 0, 255)"
+                                d="M 462.7677734375 342.4375 Q 462.77 342.44 462.8 343.45 462.84 344.46 462.87 346.01 462.89 347.56 463 349.87 463.1 352.19 463.74 355.39 464.38 358.6 465.84 361.09 467.3 363.58 470.39 368.64 473.49 373.7 473.73 374.96 473.98 376.22 473.44 377.38 472.89 378.55 471.77 379.17 470.65 379.79 469.37 379.63 468.1 379.48 467.15 379.66 466.21 379.84 462.83 380.7 459.46 381.57 456.98 383.28 454.51 384.99 451.28 387.78 448.06 390.57 445.95 392.77 443.83 394.97 441.21 395.19 438.59 395.41 437.96 392.86 437.33 390.31 439.75 389.29 442.17 388.27 443.56 390.5 444.95 392.73 442.96 394.45 440.98 396.17 438.97 394.48 436.96 392.78 439.73 388.84 442.5 384.9 444.77 382.64 447.03 380.38 449.17 378.65 451.31 376.92 454.16 375.29 457.02 373.66 461.18 372.88 465.35 372.1 468.86 373.62 472.38 375.13 473.18 375.67 473.98 376.22 473.44 377.38 472.89 378.55 471.77 379.17 470.65 379.79 469.37 379.63 468.1 379.48 467.16 378.6 466.22 377.73 464.61 375.15 463 372.57 461.44 369.6 459.88 366.64 458.37 363.65 456.86 360.67 456.1 356.66 455.34 352.64 455.22 350.1 455.11 347.56 455.13 346.01 455.16 344.46 455.2 343.45 455.23 342.44 455.23 342.22 455.23 342 455.32 341.42 455.42 340.84 455.68 340.31 455.95 339.79 456.37 339.37 456.79 338.95 457.31 338.68 457.84 338.42 458.42 338.32 459 338.23 459.58 338.32 460.16 338.42 460.69 338.68 461.21 338.95 461.63 339.37 462.05 339.79 462.32 340.31 462.58 340.84 462.68 341.42 462.77 342 462.77 342.22 Z">
+                            </path>
+                        </svg></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="sl-block" data-block-type="text" style="width: 1075px; left: 102px; top: 43px; height: auto;">
+            <div class="sl-block-content" style="z-index: 10;">
+                <h2>To get started</h2>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="image"
+            style="width: 900px; height: 487px; left: 189px; top: 144px; min-width: 1px; min-height: 1px;"><a
+                class="sl-block-content" style="z-index: 12;" href="https://gatling.io/docs/gatling/" rel="nofollow"
+                target="_blank"><img style="left: 0px; top: 0px; width: 900px; height: 533px;" data-crop-x="0"
+                    data-crop-y="0" data-crop-width="1" data-crop-height="0.915572" data-lazy-loaded=""
+                    data-src="/slides/load-testing/assets/gatling-docs.avif"></a>
+        </div>
+    </section>
+    <section>
+        <div class="sl-block" data-block-type="text" style="width: 1075px; left: 102px; top: 194px; height: auto;">
+            <div class="sl-block-content" style="z-index: 10;">
+                <h2>Good to know</h2>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="width: 1075px; left: 102px; top: 268px; height: auto;">
+            <div class="sl-block-content" style="z-index: 11;">
+                <ul>
+                    <li>Handles the load testing</li>
+                    <li>You take care of the logic</li>
+                    <li>I hope you love <strong>Scala</strong> or <strong>Java</strong>
+                    </li>
+                    <li>Pretty easy to run and automate</li>
+                    <li>Do not push too far if local machine</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="sl-block" data-block-type="text" style="width: 1075px; left: 102px; top: 43px; height: auto;">
+            <div class="sl-block-content" style="z-index: 10;">
+                <h2>I want to scale my tests!</h2>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="height: auto; width: 600px; left: 27px; top: 224px;">
+            <div class="sl-block-content" style="z-index: 11;">
+                <p style="text-align:left">Synchronize the following commands:</p>
+
+                <ol>
+                    <li style="text-align: left;">Start as many injectors as you need;</li>
+                    <li style="text-align: left;">Configure your scripts and classes;</li>
+                    <li style="text-align: left;">Start in "no report" mode;</li>
+                    <li style="text-align: left;">Retrieve all simulation logs;</li>
+                    <li style="text-align: left;">Generate the final report.</li>
+                </ol>
+            </div>
+        </div>
+        <div class="sl-block" data-block-type="image"
+            style="width: 534px; height: 392px; left: 654px; top: 183px; min-width: 1px; min-height: 1px;">
+            <div class="sl-block-content" style="z-index: 12;"><img data-lazy-loaded=""
+                    data-src="/slides/load-testing/assets/lt-arch-overview.avif">
+            </div>
+        </div>
+    </section>
+</section>
+<section class="stack">
+    <section>
+        <div class="sl-block" data-block-type="text" style="height: auto; width: 600px; left: 340px; top: 301px;">
+            <div class="sl-block-content" style="z-index: 10;">
+                <p><span style="font-size:3.0em">👋</span></p>
+            </div>
+        </div>
+    </section>
+</section>

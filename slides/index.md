@@ -20,5 +20,6 @@ least they will be here for as long as this website and its archived version exi
 - [First steps with Azure China](/slides/azure-china/)
 - [Building FaaS apps... FaaSt!](/slides/faas/)
 - More coming soon...
+- [On Load testing](/slides/load-testing/)
 
 </div>
