@@ -125,31 +125,6 @@ nav > a:hover,
     .text-center:hover h1 {
         color: rgba(0, 0, 0, 0.1);
     }
-
-    :first-child:hover #logo {
-        transform: skew(-33.7deg);
-        transition-delay: 0s;
-
-        .c {
-            background-color: #4fdfd8;
-            transition-delay: 0s;
-        }
-
-        .b {
-            background-color: #5e97e2;
-            transition-delay: 0s;
-        }
-
-        .g {
-            background-color: #49ff3d;
-            transition-delay: 0s;
-        }
-
-        .y {
-            background-color: #e5f931;
-            transition-delay: 0s;
-        }
-    }
 }
 
 #logo {
@@ -169,13 +144,10 @@ nav > a:hover,
         "y x b"
         "y g g";
 
-    filter: drop-shadow(0 0 7px #809);
     border: solid 2px black;
     border-radius: 1px;
 
-    transition: transform 0.3s;
-    transition-timing-function: cubic-bezier(1, -0.5, 0, 1);
-    transition-delay: 0.8s;
+    transform: skew(-33.7deg);
 
     .x {
         grid-area: x;
@@ -184,28 +156,21 @@ nav > a:hover,
 
     .c {
         grid-area: c;
-        background-color: color-mix(in srgb, #4fdfd8, black 60%);
-        transition: background-color 0.2s;
+        background-color: #4fdfd8;
     }
 
     .b {
         grid-area: b;
-        background-color: color-mix(in srgb, #5e97e2, black 60%);
-        transition: background-color 0.2s;
-        transition-delay: 0.2s;
+        background-color: #5e97e2;
     }
 
     .g {
         grid-area: g;
-        background-color: color-mix(in srgb, #49ff3d, black 60%);
-        transition: background-color 0.2s;
-        transition-delay: 0.4s;
+        background-color: #49ff3d;
     }
 
     .y {
         grid-area: y;
-        background-color: color-mix(in srgb, #e5f931, black 60%);
-        transition: background-color 0.2s;
-        transition-delay: 0.6s;
+        background-color: #e5f931;
     }
 }

@@ -13,7 +13,7 @@ me to 10 slides and not one more.
 
 If you have seen them live, you might feel like they are slightly different. This is normal as there are slight
 differences between the open source version of the framework and the SaaS. An example of this difference is that the
-slides should be significantly faster to load, but they are missing a lot of features including auto-animations and
+slides should be significantly faster to load, but they are m≥issing a lot of features including auto-animations and
 presenter notes. At least they will be here for as long as this website and its archived version exists.
 
 In no particular order:
