@@ -1,7 +1,7 @@
 ---
 title: "Engineering, five years in"
 categories: ["Society"]
-tags: []
+tags: ["personal"]
 ---
 
 _We have done so much, yet we have so much to do_

@@ -40,9 +40,11 @@
 
 !/apps/
 !/apps/*/
-!/apps/*/script.js
+!/apps/*/*.css
+!/apps/*/*.js
+!/apps/*/*.mjs
+!/apps/*/*.html
 !/apps/*/index.md
-!/apps/nsfw/*
 !/apps/index.md
 
 !/blog/

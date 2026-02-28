@@ -9,7 +9,7 @@ layout: default
         Posted on {{ page.date | date: "%A %B %d, %Y" }}<br>
         Category: 
         {% for category in page.categories %}
-            <a href="/categories/{{category | slugify}}">{{ category }}</a>
+            <a href="/blog/categories/{{category | slugify}}">{{ category }}</a>
         {% endfor %}<br>
         Tags: <b>{{ page.tags | sort | join: "</b> ; <b>" }}</b>
     </p>

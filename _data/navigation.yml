@@ -60,10 +60,10 @@ apps:
     text: Anagram
     icon: "&#xf031;"
 
-  - name: nsfw
-    url: /apps/nsfw
-    text: NSFW proxy
-    icon: "&#xf21b;"
+  - name: recombine
+    url: /apps/pdf-recombine
+    text: Recombine
+    icon: "&#xf382;"
 
   - name: wed
     url: /apps/wed
