@@ -1,12 +1,8 @@
 import { Uppy, Dashboard } from "/apps/pdf-recombine/uppy.min.mjs";
-
-// PDF.js worker
 window.pdfjsLib.GlobalWorkerOptions.workerSrc = '/apps/pdf-recombine/pdf.worker.min.js';
 
-// --- Utility: Fast UUID ---
-const generateId = () => window.crypto && crypto.randomUUID ? crypto.randomUUID() : 'id_' + Math.random().toString(36).substr(2, 9);
+const generateId = () => window.crypto && crypto.randomUUID ? crypto.randomUUID() : 'id_' + Math.random().toString(36).substring(2, 9);
 
-// --- State Management ---
 const state = {
     globalPdfs: {}, // { pdfId: { name, arrayBuffer } }
     globalPages: [], // { id, pdfId, pageIndex, canvas, selected, groups: Set(), _pdfPage, _viewport, _rendered }
@@ -16,7 +12,6 @@ const state = {
     draggedPageIndex: null
 };
 
-// --- DOM Elements ---
 const views = {
     upload: document.getElementById('upload-view'),
     workspace: document.getElementById('workspace-view'),
@@ -35,7 +30,6 @@ const els = {
     gridSize: document.getElementById('grid-size')
 };
 
-// --- Performance Trick 1: Intersection Observer for Lazy Rendering ---
 const pageRenderObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -55,7 +49,7 @@ const pageRenderObserver = new IntersectionObserver((entries, observer) => {
     });
 }, { root: document.getElementById('pages-grid'), rootMargin: '400px' }); // Render slightly ahead of viewport
 
-// --- Uppy Initialization ---
+// Uppy
 const uppy = new Uppy({
     restrictions: {
         maxFileSize: 100 * 1024 * 1024,
@@ -97,7 +91,7 @@ uppy.on('complete', async (result) => {
     }
 });
 
-// --- File Processing ---
+// File processing
 async function processZip(blob) {
     const zip = await JSZip.loadAsync(blob);
     const promises = [];
@@ -105,8 +99,7 @@ async function processZip(blob) {
     zip.forEach((relativePath, zipEntry) => {
         const fileName = zipEntry.name.split('/').pop();
 
-        // CRITICAL FIX: Ignore Mac OS resource forks and hidden dotfiles
-        // These cause the "Invalid PDF structure" crash because they are AppleDouble files, not PDFs.
+        // Mac OS resource forks and hidden dotfiles cause the "Invalid PDF structure" crash because they are AppleDouble files, not PDFs.
         if (zipEntry.name.includes('__MACOSX') || fileName.startsWith('.')) {
             return;
         }
@@ -125,15 +118,16 @@ async function processPdf(blob, fileName) {
         const arrayBuffer = await blob.arrayBuffer();
         const pdfId = 'pdf_' + generateId();
 
-        state.globalPdfs[pdfId] = { name: fileName, arrayBuffer: arrayBuffer.slice(0) };
+        // No need to slice/clone the arrayBuffer anymore!
+        state.globalPdfs[pdfId] = { name: fileName, arrayBuffer: arrayBuffer };
 
-        // CRITICAL FIX: Pass a strict Uint8Array clone to PDF.js
-        // This prevents detached arrayBuffer errors and parsing structure errors.
-        const pdfData = new Uint8Array(arrayBuffer.slice(0));
-        const pdf = await window.pdfjsLib.getDocument({ data: pdfData }).promise;
+        // Blob URLs instead of Uint8Array prevent the "enqueue should have stream controller" worker crashes
+        // and avoids detaching the ArrayBuffer needed later by pdf-lib.
+        const objectUrl = URL.createObjectURL(blob);
+        const pdf = await window.pdfjsLib.getDocument({ url: objectUrl }).promise;
         const totalPages = pdf.numPages;
 
-        // Performance Trick 2: Concurrent Batched Promise Processing
+        // Concurrent Batched Promise Processing
         const batchSize = 10;
 
         for (let i = 1; i <= totalPages; i += batchSize) {
@@ -150,8 +144,7 @@ async function processPdf(blob, fileName) {
                 const pageNum = i + index;
                 const viewport = page.getViewport({ scale: 1.0 });
 
-                // Performance Trick 3: Optimized resolution (400px saves 75% memory vs 800px)
-                const scale = 400 / viewport.width;
+                const scale = 800 / viewport.width;
                 const scaledViewport = page.getViewport({ scale: scale });
 
                 const canvas = document.createElement('canvas');
@@ -166,7 +159,7 @@ async function processPdf(blob, fileName) {
                     canvas: canvas,
                     selected: false,
                     groups: new Set(),
-                    _pdfPage: page,          // Store page obj for JIT rendering
+                    _pdfPage: page, // Store page obj for JIT rendering
                     _viewport: scaledViewport,
                     _rendered: false
                 });
@@ -176,16 +169,25 @@ async function processPdf(blob, fileName) {
             await new Promise(r => setTimeout(r, 0));
         }
     } catch (error) {
-        // CRITICAL FIX: Handle invalid PDFs gracefully so the app doesn't crash on batch uploads
+        // Handle invalid PDFs gracefully so the app doesn't crash on batch uploads
         console.error(`Failed to parse PDF "${fileName}":`, error);
         alert(`Skipped "${fileName}": The file appears to be corrupted or is not a valid PDF.`);
     }
 }
 
-// --- Group Management ---
+// Groups
 function createGroup(name = null) {
     const id = 'g_' + generateId();
-    const color = state.groupColors[state.groups.length % state.groupColors.length];
+
+    // Find the first color that isn't currently used by an existing group
+    const usedColors = state.groups.map(g => g.color);
+    let color = state.groupColors.find(c => !usedColors.includes(c));
+
+    // Fallback: If all colors are in use, start cycling again based on length
+    if (!color) {
+        color = state.groupColors[state.groups.length % state.groupColors.length];
+    }
+
     state.groups.push({
         id: id,
         name: name || `Document ${state.groups.length + 1}`,
@@ -217,13 +219,26 @@ function removePageFromGroup(pageId, groupId) {
     }
 }
 
-// --- Rendering ---
+// Rendering
 function renderGroups() {
     containers.groups.innerHTML = '';
     const fragment = document.createDocumentFragment();
 
     state.groups.forEach(group => {
         const count = state.globalPages.filter(p => p.groups.has(group.id)).length;
+        const isActionable = count > 0 || state.groups.length > 1;
+
+        let actionBtnHTML = '';
+        if (isActionable) {
+            const btnTitle = count > 0 ? "Clear all pages from this group" : "Delete empty group";
+            const btnText = count > 0 ? "Clear" : "Delete";
+            actionBtnHTML = `
+                        <button class="btn-action-group" title="${btnTitle}">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M6 18L18 6M6 6l12 12"></path></svg>
+                            ${btnText}
+                        </button>
+                    `;
+        }
 
         const div = document.createElement('div');
         div.className = "group-card";
@@ -234,18 +249,40 @@ function renderGroups() {
                     </div>
                     <div class="group-footer">
                         <span class="group-count">${count} pages assigned</span>
-                        <button class="btn-add-selected" title="Assign selected pages to this group">
-                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M12 4v16m8-8H4"></path></svg>
-                            Add Selected
-                        </button>
+                        <div class="footer-actions">
+                            ${actionBtnHTML}
+                            <button class="btn-add-selected" title="Assign selected pages to this group">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M12 4v16m8-8H4"></path></svg>
+                                Add
+                            </button>
+                        </div>
                     </div>
                 `;
 
+        // Handle renaming
         div.querySelector('input').addEventListener('change', (e) => {
             group.name = e.target.value;
         });
 
+        // Handle assigning selections
         div.querySelector('.btn-add-selected').addEventListener('click', () => assignSelectedToGroup(group.id));
+
+        // Handle clearing/deleting via action button
+        if (isActionable) {
+            div.querySelector('.btn-action-group').addEventListener('click', (e) => {
+                e.stopPropagation();
+                if (count > 0) {
+                    // Remove all pages from this group
+                    state.globalPages.forEach(p => p.groups.delete(group.id));
+                    renderGrid();
+                    renderGroups();
+                } else {
+                    // Delete the empty group
+                    state.groups = state.groups.filter(g => g.id !== group.id);
+                    renderGroups();
+                }
+            });
+        }
 
         fragment.appendChild(div);
     });
@@ -337,7 +374,7 @@ function updateSelectionStatus() {
     els.selectionStatus.textContent = `${count} page${count === 1 ? '' : 's'} selected`;
 }
 
-// --- Drag and Drop Handlers ---
+// Drag and drop
 function handleDragStart(e, index) {
     state.draggedPageIndex = index;
     e.dataTransfer.effectAllowed = 'move';
@@ -404,7 +441,7 @@ function handleDragEnd(e) {
     state.draggedPageIndex = null;
 }
 
-// --- Export Logic ---
+// Export
 async function exportDocuments() {
     showOverlay("Generating PDFs and Archive...");
     try {
@@ -418,8 +455,7 @@ async function exportDocuments() {
 
             const newPdfDoc = await window.PDFLib.PDFDocument.create();
 
-            // Performance Trick 4: Chunk consecutive pages from the same source PDF for bulk copying.
-            // Doing 1 large copy request saves significant parsing overhead compared to N small requests.
+            // Doing 1 large copy request saves significant parsing overhead compared to N small requests
             const copyChunks = [];
             let currentChunk = null;
 
@@ -467,7 +503,6 @@ async function exportDocuments() {
     }
 }
 
-// --- Utilities & Listeners ---
 function showOverlay(text) {
     views.overlayText.textContent = text;
     views.overlay.classList.remove('hidden');

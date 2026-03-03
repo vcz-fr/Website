@@ -261,6 +261,35 @@ body {
     height: 0.75rem;
 }
 
+.footer-actions {
+    display: flex;
+    gap: 0.25rem;
+}
+
+.btn-action-group {
+    background-color: #fee2e2;
+    color: #b91c1c;
+    padding: 0.25rem 0.5rem;
+    border: 1px solid #fca5a5;
+    border-radius: 0.25rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    transition: background-color 0.2s;
+}
+
+.btn-action-group:hover {
+    background-color: #fecaca;
+}
+
+.btn-action-group svg {
+    width: 0.75rem;
+    height: 0.75rem;
+}
+
 .btn-export {
     width: 100%;
     background-color: var(--primary);
