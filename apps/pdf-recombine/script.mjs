@@ -4,14 +4,15 @@ window.pdfjsLib.GlobalWorkerOptions.workerSrc = '/apps/pdf-recombine/pdf.worker.
 const generateId = () => window.crypto && crypto.randomUUID ? crypto.randomUUID() : 'id_' + Math.random().toString(36).substring(2, 9);
 
 const state = {
-    globalPdfs: {}, // { pdfId: { name, arrayBuffer } }
-    globalPages: [], // { id, pdfId, pageIndex, canvas, selected, groups: Set(), _pdfPage, _viewport, _rendered }
-    groups: [], // { id, name, color }
+    globalPdfs: {},
+    globalPages: [],
+    groups: [],
     groupColors: ['#ef4444', '#f59e0b', '#10b981', '#3b82f6', '#8b5cf6', '#ec4899', '#14b8a6', '#f97316'],
     lastSelectedPageIndex: -1,
-    draggedPageIndex: null
+    draggedPageIndices: []
 };
 
+// DOM
 const views = {
     upload: document.getElementById('upload-view'),
     workspace: document.getElementById('workspace-view'),
@@ -40,16 +41,35 @@ const pageRenderObserver = new IntersectionObserver((entries, observer) => {
             if (pageState && !pageState._rendered) {
                 pageState._rendered = true;
                 const ctx = canvas.getContext('2d');
-                // Render asynchronously so main thread doesn't lock
+
+                // Render page and manage PDF instances in memory
                 pageState._pdfPage.render({ canvasContext: ctx, viewport: pageState._viewport })
-                    .promise.catch(e => console.warn("Page render cancelled", e));
+                    .promise
+                    .catch(err => console.warn('Render error', err))
+                    .finally(() => {
+                        // 1. Cleanup individual page resources
+                        try { pageState._pdfPage.cleanup(); } catch (e) { }
+
+                        // 2. Check document-level completion to safely destroy the worker instance
+                        const pdfData = state.globalPdfs[pageState.pdfId];
+                        if (pdfData && pdfData.pdfDoc) {
+                            pdfData.renderedCount = (pdfData.renderedCount || 0) + 1;
+
+                            // If all pages for this PDF are rendered, we no longer need the pdf instance
+                            if (pdfData.renderedCount >= pdfData.totalPages) {
+                                pdfData.pdfDoc.destroy();
+                                pdfData.pdfDoc = null; // Free up the reference
+                            }
+                        }
+                    });
+
                 observer.unobserve(canvas);
             }
         }
     });
-}, { root: document.getElementById('pages-grid'), rootMargin: '400px' }); // Render slightly ahead of viewport
+}, { root: document.getElementById('pages-grid'), rootMargin: '400px' });
 
-// Uppy
+// Init
 const uppy = new Uppy({
     restrictions: {
         maxFileSize: 100 * 1024 * 1024,
@@ -98,16 +118,10 @@ async function processZip(blob) {
 
     zip.forEach((relativePath, zipEntry) => {
         const fileName = zipEntry.name.split('/').pop();
-
-        // Mac OS resource forks and hidden dotfiles cause the "Invalid PDF structure" crash because they are AppleDouble files, not PDFs.
-        if (zipEntry.name.includes('__MACOSX') || fileName.startsWith('.')) {
-            return;
-        }
+        if (zipEntry.name.includes('__MACOSX') || fileName.startsWith('.')) return;
 
         if (zipEntry.name.toLowerCase().endsWith('.pdf') && !zipEntry.dir) {
-            promises.push(
-                zipEntry.async('blob').then(pdfBlob => processPdf(pdfBlob, fileName))
-            );
+            promises.push(zipEntry.async('blob').then(pdfBlob => processPdf(pdfBlob, fileName)));
         }
     });
     await Promise.all(promises);
@@ -118,16 +132,21 @@ async function processPdf(blob, fileName) {
         const arrayBuffer = await blob.arrayBuffer();
         const pdfId = 'pdf_' + generateId();
 
-        // No need to slice/clone the arrayBuffer anymore!
-        state.globalPdfs[pdfId] = { name: fileName, arrayBuffer: arrayBuffer };
-
-        // Blob URLs instead of Uint8Array prevent the "enqueue should have stream controller" worker crashes
-        // and avoids detaching the ArrayBuffer needed later by pdf-lib.
         const objectUrl = URL.createObjectURL(blob);
         const pdf = await window.pdfjsLib.getDocument({ url: objectUrl }).promise;
+        URL.revokeObjectURL(objectUrl); // Release Blob URL immediately
+
         const totalPages = pdf.numPages;
 
-        // Concurrent Batched Promise Processing
+        // Track total & rendered pages for cleanup
+        state.globalPdfs[pdfId] = {
+            name: fileName,
+            arrayBuffer: arrayBuffer,
+            pdfDoc: pdf,
+            totalPages: totalPages,
+            renderedCount: 0
+        };
+
         const batchSize = 10;
 
         for (let i = 1; i <= totalPages; i += batchSize) {
@@ -137,7 +156,6 @@ async function processPdf(blob, fileName) {
             for (let j = 0; j < batchSize && (i + j) <= totalPages; j++) {
                 pagePromises.push(pdf.getPage(i + j));
             }
-
             const pages = await Promise.all(pagePromises);
 
             pages.forEach((page, index) => {
@@ -159,17 +177,15 @@ async function processPdf(blob, fileName) {
                     canvas: canvas,
                     selected: false,
                     groups: new Set(),
-                    _pdfPage: page, // Store page obj for JIT rendering
+                    _pdfPage: page,
                     _viewport: scaledViewport,
                     _rendered: false
                 });
             });
 
-            // Yield to keep UI responsive
             await new Promise(r => setTimeout(r, 0));
         }
     } catch (error) {
-        // Handle invalid PDFs gracefully so the app doesn't crash on batch uploads
         console.error(`Failed to parse PDF "${fileName}":`, error);
         alert(`Skipped "${fileName}": The file appears to be corrupted or is not a valid PDF.`);
     }
@@ -178,35 +194,14 @@ async function processPdf(blob, fileName) {
 // Groups
 function createGroup(name = null) {
     const id = 'g_' + generateId();
-
-    // Find the first color that isn't currently used by an existing group
     const usedColors = state.groups.map(g => g.color);
-    let color = state.groupColors.find(c => !usedColors.includes(c));
-
-    // Fallback: If all colors are in use, start cycling again based on length
-    if (!color) {
-        color = state.groupColors[state.groups.length % state.groupColors.length];
-    }
+    let color = state.groupColors.find(c => !usedColors.includes(c)) || state.groupColors[state.groups.length % state.groupColors.length];
 
     state.groups.push({
         id: id,
         name: name || `Document ${state.groups.length + 1}`,
         color: color
     });
-    renderGroups();
-}
-
-function assignSelectedToGroup(groupId) {
-    const selected = state.globalPages.filter(p => p.selected);
-    if (selected.length === 0) return;
-
-    selected.forEach(p => {
-        p.groups.add(groupId);
-        p.selected = false;
-    });
-    state.lastSelectedPageIndex = -1;
-    renderGrid();
-    updateSelectionStatus();
     renderGroups();
 }
 
@@ -251,33 +246,53 @@ function renderGroups() {
                         <span class="group-count">${count} pages assigned</span>
                         <div class="footer-actions">
                             ${actionBtnHTML}
-                            <button class="btn-add-selected" title="Assign selected pages to this group">
-                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M12 4v16m8-8H4"></path></svg>
-                                Add
-                            </button>
                         </div>
                     </div>
                 `;
 
-        // Handle renaming
+        div.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            if (state.draggedPageIndices && state.draggedPageIndices.length > 0) {
+                e.dataTransfer.dropEffect = 'copy';
+                div.classList.add('group-drag-over');
+            }
+        });
+
+        div.addEventListener('dragleave', (e) => {
+            if (!div.contains(e.relatedTarget)) {
+                div.classList.remove('group-drag-over');
+            }
+        });
+
+        div.addEventListener('drop', (e) => {
+            e.preventDefault();
+            div.classList.remove('group-drag-over');
+            if (state.draggedPageIndices && state.draggedPageIndices.length > 0) {
+                state.draggedPageIndices.forEach(idx => {
+                    state.globalPages[idx].groups.add(group.id);
+                    state.globalPages[idx].selected = false;
+                });
+
+                state.draggedPageIndices = [];
+                state.lastSelectedPageIndex = -1;
+                updateSelectionStatus();
+                renderGrid();
+                renderGroups();
+            }
+        });
+
         div.querySelector('input').addEventListener('change', (e) => {
             group.name = e.target.value;
         });
 
-        // Handle assigning selections
-        div.querySelector('.btn-add-selected').addEventListener('click', () => assignSelectedToGroup(group.id));
-
-        // Handle clearing/deleting via action button
         if (isActionable) {
             div.querySelector('.btn-action-group').addEventListener('click', (e) => {
                 e.stopPropagation();
                 if (count > 0) {
-                    // Remove all pages from this group
                     state.globalPages.forEach(p => p.groups.delete(group.id));
                     renderGrid();
                     renderGroups();
                 } else {
-                    // Delete the empty group
                     state.groups = state.groups.filter(g => g.id !== group.id);
                     renderGroups();
                 }
@@ -301,12 +316,10 @@ function renderGrid() {
         page.canvas.className = "thumbnail-canvas";
         wrapper.appendChild(page.canvas);
 
-        // Queue unrendered canvases to the Intersection Observer
         if (!page._rendered) {
             pageRenderObserver.observe(page.canvas);
         }
 
-        // Drag and Drop attributes and events
         wrapper.draggable = true;
         wrapper.addEventListener('dragstart', (e) => handleDragStart(e, index));
         wrapper.addEventListener('dragover', (e) => handleDragOver(e, index));
@@ -349,6 +362,7 @@ function renderGrid() {
     containers.grid.appendChild(fragment);
 }
 
+// Interaction
 function handlePageClick(e, index) {
     if (e.shiftKey && state.lastSelectedPageIndex !== -1) {
         const start = Math.min(state.lastSelectedPageIndex, index);
@@ -374,24 +388,38 @@ function updateSelectionStatus() {
     els.selectionStatus.textContent = `${count} page${count === 1 ? '' : 's'} selected`;
 }
 
-// Drag and drop
 function handleDragStart(e, index) {
-    state.draggedPageIndex = index;
-    e.dataTransfer.effectAllowed = 'move';
-    // Firefox requires data to be set for drag to work
-    e.dataTransfer.setData('text/plain', index);
-    setTimeout(() => e.target.classList.add('is-dragging'), 0);
+    if (!state.globalPages[index].selected) {
+        state.globalPages.forEach(p => p.selected = false);
+        state.globalPages[index].selected = true;
+
+        document.querySelectorAll('.thumbnail-container').forEach((el, i) => {
+            if (i === index) el.classList.add('selected');
+            else el.classList.remove('selected');
+        });
+        updateSelectionStatus();
+    }
+
+    state.draggedPageIndices = state.globalPages
+        .map((p, i) => p.selected ? i : -1)
+        .filter(i => i !== -1);
+
+    e.dataTransfer.effectAllowed = 'copyMove';
+    e.dataTransfer.setData('text/plain', state.draggedPageIndices.join(','));
+
+    setTimeout(() => {
+        document.querySelectorAll('.thumbnail-container.selected').forEach(el => el.classList.add('is-dragging'));
+    }, 0);
 }
 
 function handleDragOver(e, index) {
-    e.preventDefault(); // Necessary to allow dropping
+    e.preventDefault();
     e.dataTransfer.dropEffect = 'move';
 
-    if (state.draggedPageIndex === index || state.draggedPageIndex === null) return;
+    if (!state.draggedPageIndices || state.draggedPageIndices.includes(index)) return;
 
     const target = e.currentTarget;
     const rect = target.getBoundingClientRect();
-    // Calculate if hovering over the left or right half of the thumbnail
     const midPoint = rect.left + rect.width / 2;
 
     target.classList.remove('drag-over-before', 'drag-over-after');
@@ -412,33 +440,32 @@ function handleDrop(e, targetIndex) {
     const isAfter = target.classList.contains('drag-over-after');
     target.classList.remove('drag-over-before', 'drag-over-after');
 
-    if (state.draggedPageIndex === null || state.draggedPageIndex === targetIndex) return;
+    if (!state.draggedPageIndices || state.draggedPageIndices.length === 0) return;
+    if (state.draggedPageIndices.includes(targetIndex)) return;
 
-    // Remove the dragged item
-    const itemToMove = state.globalPages.splice(state.draggedPageIndex, 1)[0];
+    const draggedPages = state.draggedPageIndices.map(i => state.globalPages[i]);
+    const remainingPages = state.globalPages.filter((_, i) => !state.draggedPageIndices.includes(i));
 
-    // Calculate new insertion index
-    let insertIndex = isAfter ? targetIndex + 1 : targetIndex;
-    if (state.draggedPageIndex < insertIndex) {
-        insertIndex--; // Adjust index because the dragged item was removed from before
-    }
+    const targetPage = state.globalPages[targetIndex];
+    let newInsertIndex = remainingPages.indexOf(targetPage);
 
-    // Insert at new position
-    state.globalPages.splice(insertIndex, 0, itemToMove);
+    if (isAfter) newInsertIndex++;
 
-    // Reset last selection to prevent weird shift-click ranges after reordering
-    state.lastSelectedPageIndex = -1;
-    state.draggedPageIndex = null;
+    remainingPages.splice(newInsertIndex, 0, ...draggedPages);
+    state.globalPages = remainingPages;
+    state.draggedPageIndices = [];
 
     renderGrid();
 }
 
 function handleDragEnd(e) {
-    e.target.classList.remove('is-dragging');
     document.querySelectorAll('.thumbnail-container').forEach(el => {
-        el.classList.remove('drag-over-before', 'drag-over-after');
+        el.classList.remove('is-dragging', 'drag-over-before', 'drag-over-after');
     });
-    state.draggedPageIndex = null;
+    document.querySelectorAll('.group-card').forEach(el => {
+        el.classList.remove('group-drag-over');
+    });
+    state.draggedPageIndices = [];
 }
 
 // Export
@@ -454,8 +481,6 @@ async function exportDocuments() {
             if (groupPages.length === 0) continue;
 
             const newPdfDoc = await window.PDFLib.PDFDocument.create();
-
-            // Doing 1 large copy request saves significant parsing overhead compared to N small requests
             const copyChunks = [];
             let currentChunk = null;
 
@@ -475,7 +500,6 @@ async function exportDocuments() {
                 }
                 const sourceDoc = pdfLibDocsCache[chunk.pdfId];
 
-                // Bulk copy the pages
                 const copiedPages = await newPdfDoc.copyPages(sourceDoc, chunk.indices);
                 copiedPages.forEach(page => newPdfDoc.addPage(page));
             }
@@ -493,7 +517,11 @@ async function exportDocuments() {
 
         showOverlay("Zipping files...");
         const zipBlob = await zip.generateAsync({ type: 'blob' });
-        window.saveAs(zipBlob, 'Split_Documents.zip');
+        window.saveAs(zipBlob, 'Recombined.zip');
+
+        for (const key in pdfLibDocsCache) {
+            delete pdfLibDocsCache[key];
+        }
 
     } catch (err) {
         console.error(err);
@@ -503,6 +531,7 @@ async function exportDocuments() {
     }
 }
 
+// Utilities
 function showOverlay(text) {
     views.overlayText.textContent = text;
     views.overlay.classList.remove('hidden');
@@ -512,11 +541,23 @@ function hideOverlay() {
     views.overlay.classList.add('hidden');
 }
 
+function debounce(func, wait) {
+    let timeout;
+    return function (...args) {
+        clearTimeout(timeout);
+        timeout = setTimeout(() => func.apply(this, args), wait);
+    };
+}
+
 els.addGroupBtn.addEventListener('click', () => createGroup());
 els.exportBtn.addEventListener('click', exportDocuments);
 
+const handleGridResize = debounce((value) => {
+    containers.grid.style.gridTemplateColumns = `repeat(${value}, minmax(0, 1fr))`;
+}, 300);
+
 els.gridSize.addEventListener('input', (e) => {
-    containers.grid.style.gridTemplateColumns = `repeat(${e.target.value}, minmax(0, 1fr))`;
+    handleGridResize(e.target.value);
 });
 
 views.resetBtn.addEventListener('click', () => {
