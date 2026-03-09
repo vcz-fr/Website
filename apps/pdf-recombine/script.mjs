@@ -243,7 +243,7 @@ function renderGroups() {
                         <input type="text" class="group-input" value="${group.name}">
                     </div>
                     <div class="group-footer">
-                        <span class="group-count">${count} pages assigned</span>
+                        <span class="group-count">${count} pages</span>
                         <div class="footer-actions">
                             ${actionBtnHTML}
                         </div>
