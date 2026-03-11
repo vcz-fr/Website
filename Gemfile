@@ -1,4 +1,4 @@
-source "https://rubygems.org"
+source "https://gem.coop"
 
 gem "jekyll", "~> 4.3"
 gem "jekyll-sitemap", "~> 1.4"
