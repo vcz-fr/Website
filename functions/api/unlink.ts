@@ -11,7 +11,7 @@ export const onRequestPost: PagesFunction = async (ctx) => {
         return new Response(null, { status: 400 });
     }
 
-    const { url } = await ctx.request.json();
+    const { url } = <any> await ctx.request.json();
     if (url === null) {
         resp.reason = "No URL to resolve";
         status = 400;
@@ -45,6 +45,6 @@ async function followRedirects(url: string, rec = 0): Promise<Array<{ url: strin
         currentResolution.headers.has("Location");
 
     return isRedirect ?
-        [link, ...await followRedirects(currentResolution.headers.get("Location"), rec + 1)] :
+        [link, ...await followRedirects(currentResolution.headers.get("Location")!, rec + 1)] :
         [link];
 }

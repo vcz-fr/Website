@@ -51,14 +51,4 @@ shortened URL.
     <textarea id="response" placeholder="Response" readonly></textarea>
 </div>
 
-<div class="card" markdown="1">
-
-## Your turn, now!
-
-You can contribute to these apps too! The best way to contribute is actually to leave some feedback. If you wish to
-leave feedback for this application, please click on [this link](https://apps.vcz.fr/apps/feedback/?appid=jM85ke3GcMUb).
-Thank you for your support!
-
-</div>
-
 <script async defer src="script.js"></script>

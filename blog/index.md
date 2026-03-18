@@ -15,9 +15,6 @@ There is no server to manage, no hosting costs or headaches, just a domain. Just
 will never add any third party comment tool or analytics. If you do enjoy the contents, come by [the place that hosts it](https://github.com/vcz-fr/Website){:rel="nofollow"}
 and leave your mark. Or check out my personal website, my Meetup notes or my apps.
 
-Do not forget to [leave some feedback](https://apps.vcz.fr/app/feedback/?appid=DW7RbJ8FWHm5) so that I can make your
-experience better.
-
 </div>
 <div class="card preview" markdown="1">
 

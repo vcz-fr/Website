@@ -45,11 +45,6 @@ apps:
     text: Fowler
     icon: "&#xf040;"
 
-  - name: feedback
-    url:  /apps/feedback
-    text: Feedback
-    icon: "&#xf0a1;"
-
   - name: unlink
     url:  /apps/unlink
     text: Unlink
