@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Batch Replace</title>
+        <link href="/apps/batch-replace/style.css" rel="stylesheet" />
+    </head>
+    <body>
+        <header>
+            <h1>Batch Replace</h1>
+            <div>
+                <button id="process-btn" class="btn-primary">Run process</button>
+            </div>
+        </header>
+
+        <nav class="nav-tabs">
+            <button class="tab-btn active" data-target="view-import">Import</button>
+            <button class="tab-btn" data-target="view-rules">Rules</button>
+            <button class="tab-btn" data-target="view-comparison">Comparison</button>
+            <button class="tab-btn" data-target="view-settings">Settings</button>
+        </nav>
+
+        <main>
+            <div id="view-import" class="view-section active">
+                <h3 style="margin-top: 0; margin-bottom: var(--pad-v)">Import strings</h3>
+                <p style="color: #64748b; margin-top: 0">
+                    Paste your quoted multi-line strings here. Trigger the process from the top header when ready.
+                </p>
+                <textarea
+                    id="input-labels"
+                    placeholder='Example:&#10;"Statement 1&#10;Line 2"&#10;"Statement 2"'
+                ></textarea>
+            </div>
+
+            <div id="view-rules" class="view-section">
+                <div
+                    style="
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        margin-bottom: var(--pad-h);
+                    "
+                >
+                    <h3 style="margin: 0">Text replacement rules</h3>
+                    <div style="display: flex; gap: var(--pad-v)">
+                        <button id="import-rules-btn" class="btn-secondary">Import</button>
+                        <button id="export-rules-btn" class="btn-secondary">Export</button>
+                        <button id="clear-rules-btn" class="btn-danger">Clear all</button>
+                    </div>
+                </div>
+                <div id="rules-container" style="overflow-y: auto; flex: 1; padding-bottom: var(--pad-h)"></div>
+                <div>
+                    <button id="add-rule" class="btn-primary">+ Add rule</button>
+                </div>
+            </div>
+
+            <div id="view-settings" class="view-section">
+                <h3 style="margin-top: 0; margin-bottom: var(--pad-h)">Engine & display settings</h3>
+                <div class="settings-form">
+                    <div class="settings-row">
+                        <label for="setting-max-length" style="flex: 1">Acceptable length</label>
+                        <input type="number" id="setting-max-length" min="1" style="width: 80px" />
+                    </div>
+                    <div class="settings-row">
+                        <input type="checkbox" id="setting-case-sensitive" />
+                        <label for="setting-case-sensitive">Case sensitive rules</label>
+                    </div>
+                    <div class="settings-row">
+                        <input type="checkbox" id="setting-global" />
+                        <label for="setting-global">Replace all matches</label>
+                    </div>
+                    <div class="settings-row">
+                        <input type="checkbox" id="setting-strip-diacritics" />
+                        <label for="setting-strip-diacritics">Strip diacritics before processing</label>
+                    </div>
+                </div>
+            </div>
+
+            <div id="view-comparison" class="view-section">
+                <div class="table-container">
+                    <table id="output-table">
+                        <thead>
+                            <tr>
+                                <th>
+                                    <div class="th-content">
+                                        <span>Original</span>
+                                        <button id="export-inputs-btn" class="btn-secondary btn-icon">
+                                            Export inputs
+                                        </button>
+                                    </div>
+                                </th>
+                                <th>
+                                    <div class="th-content">
+                                        <span>Processed</span>
+                                        <button id="export-outputs-btn" class="btn-secondary btn-icon">
+                                            Export outputs
+                                        </button>
+                                    </div>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td
+                                    colspan="2"
+                                    style="text-align: center; color: #94a3b8; padding: 40px; font-family: sans-serif"
+                                >
+                                    No data processed yet. Import labels and trigger .
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+
+        <template id="rule-row-template">
+            <div class="rule-row">
+                <button class="btn-secondary btn-icon btn-up">↑</button>
+                <button class="btn-secondary btn-icon btn-down">↓</button>
+                <input type="text" class="input-match" placeholder="Regex (e.g. \d+)" />
+                <input type="text" class="input-replace" placeholder="Replace with" />
+                <button class="btn-danger btn-icon btn-delete">X</button>
+            </div>
+        </template>
+
+        <template id="table-row-template">
+            <tr>
+                <td class="td-original"></td>
+                <td class="td-processed"></td>
+            </tr>
+        </template>
+
+        <script src="/apps/batch-replace/script.js" async defer></script>
+    </body>
+</html>

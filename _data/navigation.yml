@@ -60,6 +60,11 @@ apps:
     text: Recombine
     icon: "&#xf382;"
 
+  - name: batch
+    url: /apps/batch-replace
+    text: Batch
+    icon:
+
   - name: wed
     url: /apps/wed
     text: Write Every Day
