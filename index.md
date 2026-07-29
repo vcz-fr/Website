@@ -10,7 +10,7 @@ active: index
 Hello, I'm Vincenzo **Scalzi** and welcome to my corner of the Web!
 
 I love the Web and the gems it contains, the inspiration and the technologies and people that shape it. I am curious
-about everything, a technologist and like to share through my [notes](https://meetups.vcz.fr/), [my newsletter](https://buttondown.com/pylote){:rel="nofollow"},
+about everything, a technologist and like to share through my [notes](https://meetups.vcz.fr/), [my former newsletter](https://buttondown.com/pylote){:rel="nofollow"},
 at meetups, [my slides](https://vcz.fr/slides) and with my co-workers, friends, family, network and so on!
 
 Technology has reached a point where it serves us better by giving us space to grow. I fully embrace this by using
@@ -32,7 +32,7 @@ Finally, I enjoy my time: playing the ukulele, organizing travels, eating out, w
 timeless video-games, reading, writing, learning. It seems I have somehow discovered a rift through spacetime that
 enables me to do and genuinely enjoy all that. Pretty awesome if you ask me!
 
-***
+---
 
 ## Get in touch!
 
@@ -41,16 +41,18 @@ go ahead. I'm open to discussion, even about those things people are usually shy
 and help our industry grow to a better place —as long as this message is present on this website, which it is right
 now.
 
-***
+---
 
 ## About my work
 
 And if you're here to learn about my journey, here you go:
 
+- **Cloud and DevOps Architect** at [Kiiro](https://kiiro.fr/){:rel="nofollow"}  
+  Basically the same as the next item on this list, but back to my roots with AWS. And with more ambitious projects of course!
+
 - **Cloud Architect, DevOps & SRE Lead** at [Pyl.Tech](https://pyl.tech/){:rel="nofollow"}  
   I help our customers better understand the Cloud, the tooling and the piping! I also organize events, write contents
-  on LinkedIn, blog posts and [a public newsletter](https://buttondown.com/pylote){:rel="nofollow"} and contribute
-  things I'm not allowed to talk about ;)
+  on LinkedIn, blog posts and [a public newsletter](https://buttondown.com/pylote){:rel="nofollow"}.
 
 - **Cloud Architect** at [SOPHiA Genetics](https://www.sophiagenetics.com/){:rel="nofollow"}  
   I turbocharged the team that accelerates tech teams; DevOps. By introducing missing practices and a different way of
